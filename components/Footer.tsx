@@ -1,0 +1,49 @@
+import Link from "next/link";
+
+export default function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="bg-ink text-cream">
+      <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          <div className="md:col-span-2">
+            <Link href="/" className="font-display text-3xl tracking-[-0.02em]">
+              UltraLight<span className="text-clay">Home</span>
+            </Link>
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
+              Gestiamo affitti brevi di case selezionate in Italia. Verona,
+              Dolomiti, Costa Smeralda e altro.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Naviga</p>
+            <ul className="mt-5 space-y-3 text-sm">
+              <li><Link href="/properties" className="link-underline">Case</Link></li>
+              <li><Link href="/about" className="link-underline">Chi siamo</Link></li>
+              <li><Link href="/contact" className="link-underline">Contatti</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Contatti</p>
+            <ul className="mt-5 space-y-3 text-sm text-cream/80">
+              <li>Via Mazzini 12, 37121 Verona</li>
+              <li><a href="mailto:hello@ultralighthome.it" className="link-underline">hello@ultralighthome.it</a></li>
+              <li><a href="tel:+390459876543" className="link-underline">+39 045 987 6543</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-cream/50">
+          <p>© {year} UltraLightHome. Tutti i diritti riservati.</p>
+          <div className="flex gap-6">
+            <Link href="#" className="link-underline">Privacy</Link>
+            <Link href="#" className="link-underline">Termini</Link>
+            <Link href="#" className="link-underline">Cookie</Link>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
