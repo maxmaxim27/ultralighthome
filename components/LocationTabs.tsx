@@ -40,7 +40,7 @@ export default function LocationTabs({
             {isActive && (
               <motion.span
                 layoutId="location-tabs-underline"
-                className="absolute left-0 right-0 -bottom-px h-[2px] bg-ink rounded-full"
+                className="absolute left-0 right-0 -bottom-px h-0.5 bg-ink rounded-full"
                 transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               />
             )}
