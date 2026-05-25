@@ -1,4 +1,4 @@
-import { Home, Bed, Bath, Users, ChefHat, MapPin, ArrowUpRight } from "lucide-react";
+import { Home, Bed, Bath, Users, ChefHat, MapPin } from "lucide-react";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
 
@@ -50,16 +50,6 @@ export default function PropertySpecs({ property }: { property: Property }) {
           </ul>
         </>
       )}
-
-      <a
-        href={property.airbnbUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="mt-10 w-full inline-flex items-center justify-center gap-2 bg-ink text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase transition-colors duration-300 hover:bg-terracotta"
-      >
-        Vedi su Airbnb
-        <ArrowUpRight size={16} />
-      </a>
     </aside>
   );
 }

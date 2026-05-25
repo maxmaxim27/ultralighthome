@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { properties, getProperty } from "@/lib/properties";
 import { locations } from "@/lib/locations";
 import PropertyGallery from "@/components/PropertyGallery";
@@ -54,9 +54,20 @@ export default async function PropertyPage({
               </Reveal>
             </div>
             <Reveal delay={0.15}>
-              <p className="max-w-md text-stone leading-relaxed">
-                {property.shortDescription}
-              </p>
+              <div className="md:text-right md:max-w-md md:ml-auto">
+                <p className="text-stone leading-relaxed">
+                  {property.shortDescription}
+                </p>
+                <a
+                  href={property.airbnbUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
+                >
+                  Prenota
+                  <ArrowUpRight size={16} />
+                </a>
+              </div>
             </Reveal>
           </div>
         </SectionWrap>

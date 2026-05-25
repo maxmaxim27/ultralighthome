@@ -22,7 +22,6 @@ export default function Hero() {
 
   return (
     <section className="relative h-screen min-h-[640px] w-full overflow-hidden bg-ink text-cream">
-      {/* Drop hero video at /public/hero.mp4 (and /public/hero.webm) — fallback to remote sample */}
       <video
         ref={videoRef}
         autoPlay
@@ -30,23 +29,9 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        poster="https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=2000&q=80"
         className="absolute inset-0 h-full w-full object-cover"
       >
-        <source src="/hero.webm" type="video/webm" />
-        <source src="/hero.mp4" type="video/mp4" />
-        <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-modern-house-with-a-swimming-pool-at-sunset-32842-large.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-luxury-house-with-a-pool-at-sunset-32849-large.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://assets.mixkit.co/videos/preview/mixkit-tour-of-a-modern-living-room-32743-large.mp4"
-          type="video/mp4"
-        />
+        <source src="/video/hero_sample.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink/60" />

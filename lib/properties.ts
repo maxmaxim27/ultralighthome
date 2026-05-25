@@ -262,6 +262,122 @@ export const properties: Property[] = [
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/rooms/placeholder-villa-porto-cervo",
   },
+
+  // ─────────────── LAGO DI COMO ───────────────
+  {
+    slug: "villa-sul-lago",
+    name: "Villa sul Lago",
+    locationSlug: "lago-como",
+    shortDescription:
+      "Villa liberty a Tremezzina, con giardino terrazzato e darsena privata.",
+    longDescription:
+      "Una villa dei primi del Novecento affacciata sul ramo di Como, recuperata mantenendo i pavimenti in seminato veneziano e gli stucchi originali. Le stanze guardano tutte l'acqua.\n\nIl giardino scende al lago su tre terrazze di limoni e ortensie, fino a una darsena con pontile. A dieci minuti in barca da Bellagio.",
+    coverImage:
+      "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80",
+      "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1600&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&q=80",
+    ],
+    specs: { sqm: 400, bedrooms: 5, bathrooms: 4, guests: 10, hasKitchen: true },
+    features: [
+      "Darsena privata",
+      "Vista lago",
+      "Giardino terrazzato",
+      "Pontile",
+    ],
+    pricePerNightFrom: 0,
+    airbnbUrl: "https://www.airbnb.com/rooms/placeholder-villa-sul-lago",
+  },
+  {
+    slug: "casa-dei-pescatori",
+    name: "Casa dei Pescatori",
+    locationSlug: "lago-como",
+    shortDescription:
+      "Casa di paese a Varenna, raccolta e luminosa, a due passi dall'acqua.",
+    longDescription:
+      "Una casa di pescatori nel borgo di Varenna, alta e stretta su quattro livelli, ristrutturata con intonaci a calce e arredi essenziali in legno chiaro. Da ogni piano si intravede il lago tra i tetti.\n\nIn cima c'è una terrazza solarium con vista sul Grignone. Il battello per Bellagio e Menaggio parte a cinquanta metri.",
+    coverImage:
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1600&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1600&q=80",
+      "https://images.unsplash.com/photo-1616594039964-ae9021a400a0?w=1600&q=80",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1600&q=80",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&q=80",
+    ],
+    specs: { sqm: 130, bedrooms: 3, bathrooms: 2, guests: 6, hasKitchen: true },
+    features: [
+      "Terrazza solarium",
+      "Nel borgo",
+      "Vicino al battello",
+      "Vista lago",
+    ],
+    pricePerNightFrom: 0,
+    airbnbUrl: "https://www.airbnb.com/rooms/placeholder-casa-dei-pescatori",
+  },
+
+  // ─────────────── VAL D'ORCIA ───────────────
+  {
+    slug: "casale-dei-cipressi",
+    name: "Casale dei Cipressi",
+    locationSlug: "val-orcia",
+    shortDescription:
+      "Casale in pietra tra Pienza e Montalcino, con piscina e vista sulle crete.",
+    longDescription:
+      "Un casale del Settecento in pietra serena, su un poggio circondato da cipressi e campi di grano. Recuperato con cotto originale, travi di castagno e camini in pietra in quasi ogni stanza.\n\nLa piscina a sfioro guarda la valle verso il Monte Amiata. Pienza e Montalcino sono a un quarto d'ora, in mezzo a strade bianche e filari di cipressi.",
+    coverImage:
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600573472556-e636c2acda88?w=1600&q=80",
+    ],
+    specs: { sqm: 360, bedrooms: 5, bathrooms: 4, guests: 10, hasKitchen: true },
+    features: [
+      "Piscina a sfioro",
+      "Vista sulle crete",
+      "Camini in pietra",
+      "Strade bianche",
+    ],
+    pricePerNightFrom: 0,
+    airbnbUrl: "https://www.airbnb.com/rooms/placeholder-casale-dei-cipressi",
+  },
+  {
+    slug: "podere-le-querce",
+    name: "Podere le Querce",
+    locationSlug: "val-orcia",
+    shortDescription:
+      "Podere ristrutturato vicino a San Quirico, con orto, oliveto e forno a legna.",
+    longDescription:
+      "Un vecchio podere agricolo alle porte di San Quirico d'Orcia, riportato a vita con intonaci di terra cruda e arredi di recupero. Intorno, un oliveto di duecento piante e un orto curato.\n\nNel cortile c'è un forno a legna e un lungo tavolo di castagno per le cene all'aperto. Le terme di Bagno Vignoni sono a dieci minuti.",
+    coverImage:
+      "https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1200&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1574643156929-51fa098b0394?w=1600&q=80",
+      "https://images.unsplash.com/photo-1605538883669-825200433431?w=1600&q=80",
+      "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?w=1600&q=80",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1600&q=80",
+      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80",
+    ],
+    specs: { sqm: 280, bedrooms: 4, bathrooms: 3, guests: 8, hasKitchen: true },
+    features: [
+      "Forno a legna",
+      "Oliveto",
+      "Orto",
+      "Vicino alle terme",
+    ],
+    pricePerNightFrom: 0,
+    airbnbUrl: "https://www.airbnb.com/rooms/placeholder-podere-le-querce",
+  },
 ];
 
 export function propertiesByLocation(slug: string): Property[] {

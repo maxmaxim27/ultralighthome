@@ -10,6 +10,7 @@ const nav = [
   { href: "/properties", label: "Case" },
   { href: "/about", label: "Chi siamo" },
   { href: "/contact", label: "Contatti" },
+  { href: "/immobile-test", label: "Immobile test" },
 ];
 
 export default function Navbar() {
@@ -28,7 +29,7 @@ export default function Navbar() {
       <header className="fixed top-3 md:top-5 inset-x-0 z-50 px-3 md:px-6 pointer-events-none">
         <div
           className={clsx(
-            "pointer-events-auto mx-auto max-w-400 h-14 md:h-16 relative",
+            "pointer-events-auto mx-auto max-w-[1400px] h-14 md:h-16 relative",
             "flex items-center justify-between gap-4",
             "rounded-full pl-5 pr-5 md:pl-8 md:pr-8",
             "bg-ink/55 backdrop-blur-xl text-cream",
@@ -50,8 +51,10 @@ export default function Navbar() {
                 key={n.href}
                 href={n.href}
                 className={clsx(
-                  "text-sm font-normal transition-opacity hover:opacity-70",
-                  pathname.startsWith(n.href) ? "text-clay" : "text-cream/90",
+                  "text-sm transition-colors",
+                  pathname.startsWith(n.href)
+                    ? "text-cream font-medium underline underline-offset-[6px] decoration-2 decoration-clay"
+                    : "text-cream/70 font-normal hover:text-cream",
                 )}
               >
                 {n.label}
@@ -71,7 +74,11 @@ export default function Navbar() {
             onClick={() => setOpen((v) => !v)}
             className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-cream/10 transition-colors relative z-60"
           >
-            {open ? <X size={22} strokeWidth={1.5} /> : <Menu size={22} strokeWidth={1.5} />}
+            {open ? (
+              <X size={22} strokeWidth={1.5} />
+            ) : (
+              <Menu size={22} strokeWidth={1.5} />
+            )}
           </button>
         </div>
       </header>
@@ -80,7 +87,9 @@ export default function Navbar() {
       <div
         className={clsx(
           "md:hidden fixed inset-0 z-40 bg-ink text-cream transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]",
-          open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none",
+          open
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none",
         )}
       >
         <div className="h-full w-full flex flex-col pt-24 pb-10 px-8">
@@ -92,7 +101,9 @@ export default function Navbar() {
                 onClick={() => setOpen(false)}
                 className={clsx(
                   "font-display text-4xl tracking-[-0.01em] font-light py-4 border-b border-cream/15 transition-all duration-500",
-                  open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
+                  open
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-4",
                 )}
                 style={{ transitionDelay: open ? `${150 + i * 70}ms` : "0ms" }}
               >
