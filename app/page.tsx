@@ -184,15 +184,15 @@ export default function Home() {
             <Reveal delay={0.2} className="lg:col-span-6">
               <div className="relative aspect-[4/3] overflow-hidden bg-bone">
                 <Image
-                  src="https://images.unsplash.com/photo-1568797629192-789acf8e4df3?w=1600&q=80"
-                  alt="Verona"
+                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=80"
+                  alt="Il nostro ufficio a Verona"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-ink/10" />
                 <div className="absolute bottom-4 left-4 text-xs tracking-[0.2em] uppercase text-cream bg-ink/50 backdrop-blur-sm px-3 py-1.5">
-                  45.4384°N · 10.9916°E
+                  Il nostro ufficio
                 </div>
               </div>
             </Reveal>
