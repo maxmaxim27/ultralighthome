@@ -8,8 +8,8 @@ import HomeLocations from "@/components/HomeLocations";
 import Reveal from "@/components/Reveal";
 
 const stats = [
-  { n: "+50", label: "Case gestite" },
-  { n: "4", label: "Regioni" },
+  { n: "13", label: "Case gestite" },
+  { n: "3", label: "Regioni" },
   { n: "94%", label: "Notti occupate" },
   { n: "4.9★", label: "Rating medio" },
 ];

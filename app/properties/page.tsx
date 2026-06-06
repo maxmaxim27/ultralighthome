@@ -2,9 +2,9 @@ import Image from "next/image";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import PropertyCard from "@/components/PropertyCard";
-import { locations } from "@/lib/locations";
+import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
-import type { Location, Property } from "@/lib/types";
+import type { Property } from "@/lib/types";
 
 type Group = {
   key: string;
@@ -15,39 +15,15 @@ type Group = {
   items: Property[];
 };
 
-const MAIN_SLUGS = ["verona", "dolomiti", "costa-smeralda"];
-
 function buildGroups(): Group[] {
-  const groups: Group[] = MAIN_SLUGS.map((slug, i) => {
-    const loc = locations.find((l) => l.slug === slug) as Location;
-    return {
-      key: slug,
-      label: loc.name,
-      number: String(i + 1).padStart(2, "0"),
-      description: loc.description,
-      heroImage: loc.heroImage,
-      items: properties.filter((p) => p.locationSlug === slug),
-    };
-  });
-
-  const otherLocations = locations.filter((l) => !MAIN_SLUGS.includes(l.slug));
-  const otherItems = properties.filter((p) =>
-    otherLocations.some((l) => l.slug === p.locationSlug),
-  );
-
-  if (otherLocations.length > 0) {
-    groups.push({
-      key: "altro",
-      label: "Altro",
-      number: String(groups.length + 1).padStart(2, "0"),
-      description:
-        "Case sparse altrove in Italia, in zone che ci sono piaciute e che curiamo con la stessa attenzione.",
-      heroImage: otherLocations[0].heroImage,
-      items: otherItems,
-    });
-  }
-
-  return groups;
+  return locationGroups.map((g, i) => ({
+    key: g.key,
+    label: g.label,
+    number: String(i + 1).padStart(2, "0"),
+    description: g.description,
+    heroImage: g.heroImage,
+    items: properties.filter((p) => g.locationSlugs.includes(p.locationSlug)),
+  }));
 }
 
 export default function PropertiesPage() {

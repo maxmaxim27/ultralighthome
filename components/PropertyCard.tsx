@@ -3,7 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowUpRight, BedDouble, Bath, Users, Maximize } from "lucide-react";
+import { ArrowUpRight, BedDouble, Bath, Users } from "lucide-react";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
 
@@ -58,11 +58,10 @@ export default function PropertyCard({
             {property.shortDescription}
           </p>
 
-          <div className="mt-5 pt-5 border-t border-stone/10 grid grid-cols-4 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
+          <div className="mt-5 pt-5 border-t border-stone/10 grid grid-cols-3 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
             <Spec icon={<BedDouble size={14} />} label={`${property.specs.bedrooms}`} />
             <Spec icon={<Bath size={14} />} label={`${property.specs.bathrooms}`} />
             <Spec icon={<Users size={14} />} label={`${property.specs.guests}`} />
-            <Spec icon={<Maximize size={14} />} label={`${property.specs.sqm}m²`} />
           </div>
         </div>
       </Link>

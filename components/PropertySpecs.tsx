@@ -1,12 +1,16 @@
-import { Home, Bed, Bath, Users, ChefHat, MapPin } from "lucide-react";
+import { Home, Bed, Bath, Users, ChefHat, MapPin, type LucideIcon } from "lucide-react";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
+
+type Row = { icon: LucideIcon; label: string; value: string | number };
 
 export default function PropertySpecs({ property }: { property: Property }) {
   const loc = locations.find((l) => l.slug === property.locationSlug);
 
-  const rows = [
-    { icon: Home, label: "Metri quadri", value: `${property.specs.sqm} m²` },
+  const rows: Row[] = [
+    ...(property.specs.sqm
+      ? [{ icon: Home, label: "Metri quadri", value: `${property.specs.sqm} m²` }]
+      : []),
     { icon: Bed, label: "Camere", value: property.specs.bedrooms },
     { icon: Bath, label: "Bagni", value: property.specs.bathrooms },
     { icon: Users, label: "Ospiti", value: `Fino a ${property.specs.guests}` },

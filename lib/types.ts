@@ -6,6 +6,14 @@ export type Location = {
   heroImage: string;
 };
 
+export type LocationGroup = {
+  key: string;
+  label: string;
+  description: string;
+  heroImage: string;
+  locationSlugs: string[];
+};
+
 export type Property = {
   slug: string;
   name: string;
@@ -15,7 +23,7 @@ export type Property = {
   coverImage: string;
   gallery: string[];
   specs: {
-    sqm: number;
+    sqm?: number;
     bedrooms: number;
     bathrooms: number;
     guests: number;

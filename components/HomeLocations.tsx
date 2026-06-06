@@ -5,35 +5,24 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import LocationTabs from "./LocationTabs";
 import PropertyCard from "./PropertyCard";
-import { locations } from "@/lib/locations";
+import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 
-const MAIN_SLUGS = ["verona", "dolomiti", "costa-smeralda"];
-const ALTRO_SLUG = "altro";
-
 export default function HomeLocations() {
-  const mainLocations = locations.filter((l) => MAIN_SLUGS.includes(l.slug));
-  const altroLocations = locations.filter((l) => !MAIN_SLUGS.includes(l.slug));
+  const tabLocations = locationGroups.map((g) => ({
+    slug: g.key,
+    name: g.label,
+    region: "",
+    description: g.description,
+    heroImage: g.heroImage,
+  }));
 
-  const tabLocations = [
-    ...mainLocations,
-    {
-      slug: ALTRO_SLUG,
-      name: "Altro",
-      region: "",
-      description: "",
-      heroImage: "",
-    },
-  ];
+  const [active, setActive] = useState(locationGroups[0]?.key ?? "");
 
-  const [active, setActive] = useState(mainLocations[0]?.slug ?? ALTRO_SLUG);
-
-  const items =
-    active === ALTRO_SLUG
-      ? properties
-          .filter((p) => altroLocations.some((l) => l.slug === p.locationSlug))
-          .slice(0, 3)
-      : properties.filter((p) => p.locationSlug === active).slice(0, 3);
+  const group = locationGroups.find((g) => g.key === active);
+  const items = properties
+    .filter((p) => group?.locationSlugs.includes(p.locationSlug))
+    .slice(0, 3);
 
   return (
     <>
