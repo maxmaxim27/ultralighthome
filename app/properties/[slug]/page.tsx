@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { properties, getProperty } from "@/lib/properties";
-import { locations } from "@/lib/locations";
+import { locations, locationGroups } from "@/lib/locations";
 import PropertyGallery from "@/components/PropertyGallery";
 import PropertySpecs from "@/components/PropertySpecs";
 import PropertyCard from "@/components/PropertyCard";
@@ -23,8 +23,14 @@ export default async function PropertyPage({
   if (!property) notFound();
 
   const loc = locations.find((l) => l.slug === property.locationSlug);
+  const group = locationGroups.find((g) =>
+    g.locationSlugs.includes(property.locationSlug),
+  );
   const related = properties
-    .filter((p) => p.locationSlug === property.locationSlug && p.slug !== property.slug)
+    .filter(
+      (p) =>
+        group?.locationSlugs.includes(p.locationSlug) && p.slug !== property.slug,
+    )
     .slice(0, 3);
 
   return (
@@ -120,7 +126,7 @@ export default async function PropertyPage({
             <Reveal>
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
                 <span className="font-display text-clay mr-2">—</span>
-                Altre case in {loc?.name}
+                Altre case in {group?.label ?? loc?.name}
               </p>
             </Reveal>
             <Reveal delay={0.1}>
