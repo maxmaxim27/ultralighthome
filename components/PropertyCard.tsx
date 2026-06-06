@@ -59,9 +59,18 @@ export default function PropertyCard({
           </p>
 
           <div className="mt-5 pt-5 border-t border-stone/10 grid grid-cols-3 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
-            <Spec icon={<BedDouble size={14} />} label={`${property.specs.bedrooms}`} />
-            <Spec icon={<Bath size={14} />} label={`${property.specs.bathrooms}`} />
-            <Spec icon={<Users size={14} />} label={`${property.specs.guests}`} />
+            <Spec
+              icon={<BedDouble size={14} />}
+              label={`${property.specs.bedrooms}`}
+            />
+            <Spec
+              icon={<Bath size={14} />}
+              label={`${property.specs.bathrooms}`}
+            />
+            <Spec
+              icon={<Users size={14} />}
+              label={`${property.specs.guests}`}
+            />
           </div>
         </div>
       </Link>
@@ -71,7 +80,7 @@ export default function PropertyCard({
 
 function Spec({ icon, label }: { icon: React.ReactNode; label: string }) {
   return (
-    <div className="flex items-center gap-1.5 text-stone">
+    <div className="flex items-center justify-center gap-1.5 text-stone">
       <span className="text-clay">{icon}</span>
       <span className="text-ink">{label}</span>
     </div>

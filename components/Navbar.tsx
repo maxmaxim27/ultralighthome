@@ -10,7 +10,6 @@ const nav = [
   { href: "/properties", label: "Case" },
   { href: "/about", label: "Chi siamo" },
   { href: "/contact", label: "Contatti" },
-  { href: "/immobile-test", label: "Immobile test" },
 ];
 
 export default function Navbar() {
