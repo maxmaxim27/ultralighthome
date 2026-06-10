@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
@@ -39,9 +40,19 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="font-display text-base md:text-lg tracking-[-0.01em] font-light shrink-0"
+            className="flex items-center gap-2.5 shrink-0"
           >
-            ULTRALIGHT<span className="text-clay">HOME</span>
+            <Image
+              src="/logo-mark.png"
+              alt="UltraLightHome"
+              width={1660}
+              height={950}
+              priority
+              className="h-6 md:h-7 w-auto brightness-0 invert opacity-90"
+            />
+            <span className="font-logo text-sm md:text-base tracking-[0.14em] leading-none">
+              ULTRALIGHT<span className="text-clay">HOME</span>
+            </span>
           </Link>
 
           <nav className="hidden md:flex items-center gap-8 lg:gap-10 absolute left-1/2 -translate-x-1/2">

@@ -19,6 +19,7 @@
 
   --font-display: var(--font-display);
   --font-sans: var(--font-geist-sans);
+  --font-logo: var(--font-logo);
 }
 
 html {
@@ -42,6 +43,11 @@ body {
   font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
   font-optical-sizing: auto;
   letter-spacing: -0.02em;
+}
+
+.font-logo {
+  font-family: var(--font-logo), "Times New Roman", serif;
+  letter-spacing: 0.12em;
 }
 
 .hairline {

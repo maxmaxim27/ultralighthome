@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import PropertyCard from "@/components/PropertyCard";
@@ -13,6 +12,15 @@ type Group = {
   description: string;
   heroImage: string;
   items: Property[];
+};
+
+// Banner categoria — ink con gradient caldo marcato
+const BANNER = {
+  wrap: "bg-ink",
+  overlay: "bg-gradient-to-br from-clay/55 via-terracotta/15 to-transparent",
+  text: "text-cream",
+  sub: "text-cream/75",
+  num: "text-clay",
 };
 
 function buildGroups(): Group[] {
@@ -74,35 +82,41 @@ export default function PropertiesPage() {
           id={g.key}
           className={gi % 2 === 0 ? "bg-bone" : "bg-cream"}
         >
-          {/* BANNER */}
-          <div className="relative h-[44vh] min-h-[340px] w-full overflow-hidden bg-ink">
-            <Image
-              src={g.heroImage}
-              alt={g.label}
-              fill
-              sizes="100vw"
-              className="object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-transparent to-ink/80" />
-            <div className="relative z-10 h-full mx-auto max-w-[1400px] px-6 md:px-10 flex flex-col justify-end pb-12 md:pb-16 text-cream">
-              <Reveal>
-                <p className="text-xs tracking-[0.3em] uppercase text-cream/80">
-                  <span className="font-display text-clay mr-2">{g.number}</span>
-                  {g.items.length} {g.items.length === 1 ? "casa" : "case"}
-                </p>
-              </Reveal>
-              <Reveal delay={0.1}>
-                <h2 className="font-display mt-3 text-5xl md:text-7xl font-light leading-[0.98] tracking-[-0.02em]">
-                  {g.label}.
-                </h2>
-              </Reveal>
-              <Reveal delay={0.2}>
-                <p className="mt-5 max-w-xl text-cream/80 leading-relaxed">
-                  {g.description}
-                </p>
-              </Reveal>
-            </div>
-          </div>
+          {/* BANNER — test sfondi monocromatici / gradient per categoria */}
+          {(() => {
+            const b = BANNER;
+            return (
+              <div
+                className={`relative h-[44vh] min-h-[340px] w-full overflow-hidden ${b.wrap}`}
+              >
+                {b.overlay && (
+                  <div className={`absolute inset-0 ${b.overlay}`} />
+                )}
+                <div
+                  className={`relative z-10 h-full mx-auto max-w-[1400px] px-6 md:px-10 flex flex-col justify-end pb-12 md:pb-16 ${b.text}`}
+                >
+                  <Reveal>
+                    <p className={`text-xs tracking-[0.3em] uppercase ${b.sub}`}>
+                      <span className={`font-display mr-2 ${b.num}`}>
+                        {g.number}
+                      </span>
+                      {g.items.length} {g.items.length === 1 ? "casa" : "case"}
+                    </p>
+                  </Reveal>
+                  <Reveal delay={0.1}>
+                    <h2 className="font-display mt-3 text-5xl md:text-7xl font-light leading-[0.98] tracking-[-0.02em]">
+                      {g.label}.
+                    </h2>
+                  </Reveal>
+                  <Reveal delay={0.2}>
+                    <p className={`mt-5 max-w-xl leading-relaxed ${b.sub}`}>
+                      {g.description}
+                    </p>
+                  </Reveal>
+                </div>
+              </div>
+            );
+          })()}
 
           {/* GRID */}
           <SectionWrap className="py-20 md:py-28">

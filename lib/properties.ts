@@ -364,7 +364,7 @@ export const properties: Property[] = [
   {
     slug: "thai-rooftop",
     name: "Spazioso Thai Rooftop",
-    locationSlug: "venezia",
+    locationSlug: "mestre",
     shortDescription:
       "Appartamento con terrazza in stile thai vicino a Venezia, con parcheggio gratuito.",
     longDescription:
@@ -390,6 +390,36 @@ export const properties: Property[] = [
     ],
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/thairooftop",
+  },
+  {
+    slug: "villa-lino",
+    name: "Villa Lino",
+    locationSlug: "porto-cervo",
+    shortDescription:
+      "Villa di lusso su due piani a Pantogia, Porto Cervo, con piscina a sfioro privata, palestra e sala cinema.",
+    longDescription:
+      "Villa Lino ha finiture e arredi preziosi e si sviluppa su due piani: 5 camere da letto, 7 servizi igienici, un appartamento privato indipendente, una palestra e una sala cinema. Può ospitare comodamente fino a 10 persone, nel cuore della Costa Smeralda.\n\nQuesta villa è un esempio straordinario di quanto sia grande il design sardo: la luminosità delle pareti bianche, i tetti in castagno sostenuti da monoliti, le rocce e il ginepro incastonati nella parete creano un ambiente unico e scenografico, con luce naturale e forme armoniose. Incorniciata da un panorama incredibile, dispone di una fantastica piscina a sfioro privata di 10×4 metri affacciata sul mare.",
+    coverImage:
+      "/properties/villa-lino/01.jpg",
+    gallery: [
+      "/properties/villa-lino/01.jpg",
+      "/properties/villa-lino/02.jpg",
+      "/properties/villa-lino/03.jpg",
+      "/properties/villa-lino/04.jpg",
+      "/properties/villa-lino/05.jpg",
+      "/properties/villa-lino/06.jpg",
+      "/properties/villa-lino/07.jpg",
+      "/properties/villa-lino/08.jpg",
+    ],
+    specs: { bedrooms: 5, bathrooms: 7, guests: 10, hasKitchen: true },
+    features: [
+      "Piscina a sfioro privata",
+      "Palestra",
+      "Sala cinema",
+      "Vista panoramica sul mare",
+    ],
+    pricePerNightFrom: 0,
+    airbnbUrl: "https://www.airbnb.it/rooms/6654829",
   },
 ];
 

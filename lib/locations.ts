@@ -58,11 +58,18 @@ export const locations: Location[] = [
     heroImage: "/properties/appartamento-cozy/01.jpeg",
   },
   {
-    slug: "venezia",
-    name: "Venezia",
+    slug: "mestre",
+    name: "Mestre",
     region: "Veneto",
     description: "A due passi dalla magia veneziana, con parcheggio comodo.",
     heroImage: "/properties/thai-rooftop/01.jpeg",
+  },
+  {
+    slug: "porto-cervo",
+    name: "Porto Cervo",
+    region: "Sardegna",
+    description: "Nel cuore della Costa Smeralda, tra mare cristallino e granito.",
+    heroImage: "/properties/villa-lino/01.jpg",
   },
 ];
 
@@ -84,11 +91,19 @@ export const locationGroups: LocationGroup[] = [
     locationSlugs: ["verona"],
   },
   {
+    key: "costa-smeralda",
+    label: "Costa Smeralda",
+    description:
+      "Ville esclusive in Sardegna, tra Porto Cervo e Pantogia, affacciate sul mare della Costa Smeralda.",
+    heroImage: "/properties/villa-lino/01.jpg",
+    locationSlugs: ["porto-cervo"],
+  },
+  {
     key: "altro",
     label: "Altro",
     description:
-      "Case sparse altrove in Italia — Roma, Padova, Castelfranco Veneto e Venezia — curate con la stessa attenzione.",
+      "Case sparse altrove in Italia — Roma, Padova, Castelfranco Veneto e Mestre — curate con la stessa attenzione.",
     heroImage: "/properties/dimora-romana/01.jpg",
-    locationSlugs: ["roma", "padova", "castelfranco-veneto", "venezia"],
+    locationSlugs: ["roma", "padova", "castelfranco-veneto", "mestre"],
   },
 ];

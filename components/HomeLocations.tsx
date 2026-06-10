@@ -4,7 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import LocationTabs from "./LocationTabs";
-import PropertyCard from "./PropertyCard";
+import PropertyCarousel from "./PropertyCarousel";
 import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 
@@ -20,9 +20,9 @@ export default function HomeLocations() {
   const [active, setActive] = useState(locationGroups[0]?.key ?? "");
 
   const group = locationGroups.find((g) => g.key === active);
-  const items = properties
-    .filter((p) => group?.locationSlugs.includes(p.locationSlug))
-    .slice(0, 3);
+  const items = properties.filter((p) =>
+    group?.locationSlugs.includes(p.locationSlug),
+  );
 
   return (
     <>
@@ -39,15 +39,9 @@ export default function HomeLocations() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+          className="mt-14"
         >
-          {items.length > 0 ? (
-            items.map((p, i) => <PropertyCard key={p.slug} property={p} index={i} />)
-          ) : (
-            <p className="col-span-full text-center text-stone py-20">
-              In arrivo nuove proprietà in questa destinazione.
-            </p>
-          )}
+          <PropertyCarousel items={items} />
         </motion.div>
       </AnimatePresence>
 

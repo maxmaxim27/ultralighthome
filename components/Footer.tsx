@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -7,8 +8,14 @@ export default function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
-            <Link href="/" className="font-display text-3xl tracking-[-0.02em]">
-              UltraLight<span className="text-clay">Home</span>
+            <Link href="/" className="inline-block" aria-label="UltraLightHome">
+              <Image
+                src="/logo.png"
+                alt="UltraLightHome"
+                width={1972}
+                height={1674}
+                className="h-28 md:h-32 w-auto brightness-0 invert opacity-90"
+              />
             </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
               Gestiamo affitti brevi di case selezionate in Italia. Verona,

@@ -19,62 +19,77 @@ export default function PropertyCard({
   const loc = locations.find((l) => l.slug === property.locationSlug);
 
   return (
-    <motion.div
+    <motion.article
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10% 0px" }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
+      className="group relative bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
     >
+      {/* Whole-card link to the detail page (stretched behind content) */}
       <Link
         href={`/properties/${property.slug}`}
-        className="group block bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
-      >
-        <div className="relative aspect-4/3 overflow-hidden bg-bone">
-          <Image
-            src={property.coverImage}
-            alt={property.name}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+        className="absolute inset-0 z-0"
+        aria-label={property.name}
+      />
+
+      <div className="relative aspect-4/3 overflow-hidden bg-bone pointer-events-none">
+        <Image
+          src={property.coverImage}
+          alt={property.name}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+        />
+
+        <div className="absolute top-4 left-4 inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-ink bg-cream/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+          <span className="size-1.5 rounded-full bg-clay" />
+          {loc?.name}
+        </div>
+
+        <div className="absolute top-4 right-4 size-10 rounded-full bg-cream/90 backdrop-blur-sm flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+          <ArrowUpRight size={18} className="text-ink" />
+        </div>
+
+        <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
+      </div>
+
+      <div className="relative z-10 p-6 md:p-7 pointer-events-none">
+        <h3 className="font-display text-2xl md:text-[1.65rem] leading-tight tracking-[-0.01em] text-ink">
+          {property.name}
+        </h3>
+        <p className="mt-2 text-sm text-stone leading-relaxed line-clamp-2">
+          {property.shortDescription}
+        </p>
+
+        <div className="mt-5 pt-5 border-t border-stone/10 grid grid-cols-3 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
+          <Spec
+            icon={<BedDouble size={14} />}
+            label={`${property.specs.bedrooms}`}
           />
-
-          <div className="absolute top-4 left-4 inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-ink bg-cream/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
-            <span className="size-1.5 rounded-full bg-clay" />
-            {loc?.name}
-          </div>
-
-          <div className="absolute top-4 right-4 size-10 rounded-full bg-cream/90 backdrop-blur-sm flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:translate-x-1">
-            <ArrowUpRight size={18} className="text-ink" />
-          </div>
-
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
+          <Spec
+            icon={<Bath size={14} />}
+            label={`${property.specs.bathrooms}`}
+          />
+          <Spec
+            icon={<Users size={14} />}
+            label={`${property.specs.guests}`}
+          />
         </div>
 
-        <div className="p-6 md:p-7">
-          <h3 className="font-display text-2xl md:text-[1.65rem] leading-tight tracking-[-0.01em] text-ink">
-            {property.name}
-          </h3>
-          <p className="mt-2 text-sm text-stone leading-relaxed line-clamp-2">
-            {property.shortDescription}
-          </p>
-
-          <div className="mt-5 pt-5 border-t border-stone/10 grid grid-cols-3 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
-            <Spec
-              icon={<BedDouble size={14} />}
-              label={`${property.specs.bedrooms}`}
-            />
-            <Spec
-              icon={<Bath size={14} />}
-              label={`${property.specs.bathrooms}`}
-            />
-            <Spec
-              icon={<Users size={14} />}
-              label={`${property.specs.guests}`}
-            />
-          </div>
-        </div>
-      </Link>
-    </motion.div>
+        {/* Prenota — same booking action as the single-property page */}
+        <a
+          href={property.airbnbUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="pointer-events-auto mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-xs tracking-[0.12em] uppercase hover:bg-terracotta transition-colors duration-300"
+        >
+          Prenota
+          <ArrowUpRight size={15} />
+        </a>
+      </div>
+    </motion.article>
   );
 }
 
