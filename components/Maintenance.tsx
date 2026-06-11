@@ -97,7 +97,7 @@ export default function Maintenance() {
           className="mx-reveal text-xs uppercase tracking-[0.22em] text-stone/80"
           style={{ animationDelay: "1.25s" }}
         >
-          Verona · Dolomiti · Costa Smeralda
+          Verona · Dolomiti · Costa Smeralda · Altro
         </p>
         <p
           className="mx-reveal mt-2 text-xs text-stone/60"
