@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Marcellus } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
 
 const bricolage = Bricolage_Grotesque({
   variable: "--font-display",
@@ -19,9 +17,10 @@ const marcellus = Marcellus({
 });
 
 export const metadata: Metadata = {
-  title: "UltraLightHome — Belle case, ben gestite",
+  title: "UltraLightHome — Sito in manutenzione",
   description:
-    "Case selezionate da affittare per soggiorni brevi. Verona, Dolomiti, Costa Smeralda e altro.",
+    "Il sito è in manutenzione. Torniamo presto. Per qualsiasi necessità scrivici a hello@ultralighthome.it.",
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
@@ -35,9 +34,7 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${bricolage.variable} ${marcellus.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        {children}
       </body>
     </html>
   );
