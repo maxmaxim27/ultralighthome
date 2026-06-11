@@ -41,17 +41,33 @@ export default function ContactPage() {
           </Reveal>
           <div className="mt-12 space-y-8">
             {[
-              { icon: MapPin, label: "Indirizzo", value: "Via Mazzini 12\n37121 Verona (VR), Italia" },
+              {
+                icon: MapPin,
+                label: "Indirizzo",
+                value: "Via Mazzini 12\n37121 Verona (VR), Italia",
+              },
               { icon: Mail, label: "Email", value: "hello@ultralighthome.it" },
               { icon: Phone, label: "Telefono", value: "+39 045 987 6543" },
-              { icon: Clock, label: "Orari", value: "Lun – Ven · 9:30 – 18:30\nSabato su appuntamento" },
+              {
+                icon: Clock,
+                label: "Orari",
+                value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento",
+              },
             ].map((row, i) => (
               <Reveal key={row.label} delay={i * 0.08}>
                 <div className="flex items-start gap-5">
-                  <row.icon size={18} strokeWidth={1.4} className="text-clay mt-1 shrink-0" />
+                  <row.icon
+                    size={18}
+                    strokeWidth={1.4}
+                    className="text-clay mt-1 shrink-0"
+                  />
                   <div>
-                    <p className="text-xs tracking-[0.2em] uppercase text-stone">{row.label}</p>
-                    <p className="mt-2 text-ink whitespace-pre-line leading-relaxed">{row.value}</p>
+                    <p className="text-xs tracking-[0.2em] uppercase text-stone">
+                      {row.label}
+                    </p>
+                    <p className="mt-2 text-ink whitespace-pre-line leading-relaxed">
+                      {row.value}
+                    </p>
                   </div>
                 </div>
               </Reveal>
@@ -95,7 +111,9 @@ export default function ContactPage() {
                     defaultValue=""
                     className="w-full bg-transparent border-b border-stone/40 py-3 text-ink focus:outline-none focus:border-ink transition-colors"
                   >
-                    <option value="" disabled>Seleziona…</option>
+                    <option value="" disabled>
+                      Seleziona…
+                    </option>
                     <option value="proprietario">Sono un proprietario</option>
                     <option value="ospite">Sono un ospite</option>
                     <option value="altro">Altro</option>
@@ -133,7 +151,8 @@ export default function ContactPage() {
                   Grazie. Abbiamo ricevuto la tua richiesta.
                 </h3>
                 <p className="mt-4 text-stone leading-relaxed">
-                  Ti risponderemo entro un giorno lavorativo all&apos;indirizzo indicato.
+                  Ti risponderemo entro un giorno lavorativo all&apos;indirizzo
+                  indicato.
                 </p>
               </motion.div>
             )}
