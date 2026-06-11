@@ -1,5 +1,5 @@
 import Maintenance from "@/components/Maintenance";
 
-export default function Home() {
+export default function NotFound() {
   return <Maintenance />;
 }
