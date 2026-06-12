@@ -85,8 +85,6 @@ export default function Maintenance() {
             style={{ animationDelay: "0.85s" }}
           >
             <span className="hairline h-px flex-1" />
-            <span className="text-clay">✳</span>
-            <span className="hairline h-px flex-1" />
           </div>
         </div>
       </main>
