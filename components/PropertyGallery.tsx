@@ -166,21 +166,21 @@ export default function PropertyGallery({
             <button
               aria-label="Chiudi"
               onClick={close}
-              className="absolute top-6 right-6 text-cream/80 hover:text-cream p-3"
+              className="absolute top-6 right-6 z-20 text-cream/80 hover:text-cream p-3"
             >
               <X size={22} />
             </button>
             <button
               aria-label="Precedente"
               onClick={(e) => { e.stopPropagation(); prev(); }}
-              className="absolute left-4 md:left-8 text-cream/80 hover:text-cream p-3"
+              className="absolute left-4 md:left-8 z-20 text-cream/80 hover:text-cream p-3"
             >
               <ChevronLeft size={32} />
             </button>
             <button
               aria-label="Successiva"
               onClick={(e) => { e.stopPropagation(); next(); }}
-              className="absolute right-4 md:right-8 text-cream/80 hover:text-cream p-3"
+              className="absolute right-4 md:right-8 z-20 text-cream/80 hover:text-cream p-3"
             >
               <ChevronRight size={32} />
             </button>
@@ -192,7 +192,7 @@ export default function PropertyGallery({
               exit={{ opacity: 0, scale: 0.96 }}
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="relative w-[92vw] h-[80vh]"
-              onClick={(e) => e.stopPropagation()}
+              onClick={close}
             >
               <Image
                 src={images[openIdx]}
