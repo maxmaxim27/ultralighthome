@@ -43,7 +43,7 @@ export default async function PropertyPage({
               href="/properties"
               className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-stone hover:text-ink link-underline"
             >
-              <ArrowLeft size={14} /> Torna alle case
+              <ArrowLeft size={14} /> Torna agli immobili
             </Link>
           </Reveal>
           <div className="mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">
@@ -82,7 +82,12 @@ export default async function PropertyPage({
       {/* GALLERY — prima cosa visibile */}
       <div className="bg-cream pb-24 md:pb-32">
         <SectionWrap>
-          <PropertyGallery images={property.gallery} alt={property.name} />
+          <PropertyGallery
+            images={property.gallery}
+            alt={property.name}
+            previewCount={6}
+            uniform
+          />
         </SectionWrap>
       </div>
 
@@ -94,7 +99,7 @@ export default async function PropertyPage({
               <Reveal>
                 <p className="text-xs tracking-[0.2em] uppercase text-stone">
                   <span className="font-display text-clay mr-2">—</span>
-                  La casa
+                  L&apos;immobile
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
@@ -126,7 +131,7 @@ export default async function PropertyPage({
             <Reveal>
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
                 <span className="font-display text-clay mr-2">—</span>
-                Altre case in {group?.label ?? loc?.name}
+                Altri immobili in {group?.label ?? loc?.name}
               </p>
             </Reveal>
             <Reveal delay={0.1}>

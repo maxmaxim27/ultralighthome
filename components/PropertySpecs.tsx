@@ -21,7 +21,7 @@ export default function PropertySpecs({ property }: { property: Property }) {
   return (
     <aside className="lg:sticky lg:top-28 bg-bone p-8 lg:p-10">
       <p className="text-xs tracking-[0.2em] uppercase text-stone">
-        <span className="font-display text-clay mr-2">—</span> La casa in breve
+        <span className="font-display text-clay mr-2">—</span> L&apos;immobile in breve
       </p>
 
       <ul className="mt-8 space-y-5">

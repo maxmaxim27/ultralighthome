@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X, LayoutGrid } from "lucide-react";
+import Button from "./Button";
 
 const PREVIEW = 5;
 
@@ -88,15 +89,19 @@ export default function PropertyGallery({
 
       {(hidden > 0 || alwaysShowAllButton) && (
         <div className="mt-6 flex justify-center">
-          <button
+          <Button
+            variant="outline"
+            className="rounded-full"
             onClick={() => setShowAll(true)}
-            className="inline-flex items-center gap-2 rounded-full border border-stone/40 px-7 py-4 text-sm tracking-[0.08em] uppercase text-ink hover:bg-ink hover:text-cream transition-colors duration-300"
           >
             <LayoutGrid size={16} />
             Vedi tutte le foto ({images.length})
-          </button>
+          </Button>
         </div>
       )}
+
+      {/* crisp horizontal close — no ragged empty space below the gallery */}
+      <div className="hairline h-px mt-12 md:mt-16" />
 
       {/* GRID MODAL — tutte le immagini, scrollable */}
       <AnimatePresence>

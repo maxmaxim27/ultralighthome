@@ -22,7 +22,7 @@ export default function LocationTabs({
     : locations;
 
   return (
-    <div className="flex justify-center gap-6 md:gap-12 overflow-x-auto overflow-y-hidden no-scrollbar border-b border-stone/20 -mx-6 md:mx-0 px-6 md:px-0 whitespace-nowrap">
+    <div className="flex justify-start md:justify-center gap-6 md:gap-12 overflow-x-auto overflow-y-hidden no-scrollbar border-b border-stone/20 -mx-6 md:mx-0 px-6 md:px-0 whitespace-nowrap">
       {items.map((loc) => {
         const isActive = active === loc.slug;
         return (

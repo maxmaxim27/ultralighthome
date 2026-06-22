@@ -24,7 +24,7 @@ export default function PropertyCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10% 0px" }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
-      className="group relative bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] hover:-translate-y-1 transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      className="group relative bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] transition-shadow duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
     >
       {/* Whole-card link to the detail page (stretched behind content) */}
       <Link

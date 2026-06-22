@@ -83,14 +83,6 @@ export const locationGroups: LocationGroup[] = [
     locationSlugs: ["valdaora", "brunico", "riscone", "san-cassiano"],
   },
   {
-    key: "verona",
-    label: "Verona",
-    description:
-      "Appartamenti in città, comodi al centro storico e ben serviti.",
-    heroImage: "/properties/verona-green-heaven/01.jpeg",
-    locationSlugs: ["verona"],
-  },
-  {
     key: "costa-smeralda",
     label: "Costa Smeralda",
     description:
@@ -99,10 +91,18 @@ export const locationGroups: LocationGroup[] = [
     locationSlugs: ["porto-cervo"],
   },
   {
+    key: "verona",
+    label: "Verona",
+    description:
+      "Appartamenti in città, comodi al centro storico e ben serviti.",
+    heroImage: "/properties/verona-green-heaven/01.jpeg",
+    locationSlugs: ["verona"],
+  },
+  {
     key: "altro",
     label: "Altro",
     description:
-      "Case sparse altrove in Italia — Roma, Padova, Castelfranco Veneto e Mestre — curate con la stessa attenzione.",
+      "Immobili sparsi altrove in Italia — Roma, Padova, Castelfranco Veneto e Mestre — curati con la stessa attenzione.",
     heroImage: "/properties/dimora-romana/01.jpg",
     locationSlugs: ["roma", "padova", "castelfranco-veneto", "mestre"],
   },

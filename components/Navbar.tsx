@@ -8,8 +8,9 @@ import clsx from "clsx";
 import { Menu, X } from "lucide-react";
 
 const nav = [
-  { href: "/properties", label: "Case" },
+  { href: "/properties", label: "Immobili" },
   { href: "/about", label: "Chi siamo" },
+  { href: "/dove-siamo", label: "Dove siamo" },
   { href: "/contact", label: "Contatti" },
 ];
 
@@ -40,17 +41,19 @@ export default function Navbar() {
           <Link
             href="/"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2.5 shrink-0"
+            className="flex items-center shrink-0"
           >
+            {/* desktop: footer logo image only */}
             <Image
-              src="/logo-mark.png"
+              src="/logo_icon.png"
               alt="UltraLightHome"
-              width={1660}
-              height={950}
+              width={1972}
+              height={1674}
               priority
-              className="h-6 md:h-7 w-auto brightness-0 invert opacity-90"
+              className="hidden md:block h-9 w-auto brightness-0 invert opacity-90"
             />
-            <span className="font-logo text-sm md:text-base tracking-[0.14em] leading-none">
+            {/* mobile: wordmark text only */}
+            <span className="md:hidden font-logo text-base tracking-[0.14em] leading-none">
               ULTRALIGHT<span className="text-clay">HOME</span>
             </span>
           </Link>
@@ -76,7 +79,7 @@ export default function Navbar() {
             href="/contact"
             className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-cream hover:text-ink transition-colors"
           >
-            Affida casa
+            Valuta immobile
           </Link>
 
           <button
@@ -129,12 +132,22 @@ export default function Navbar() {
             )}
             style={{ transitionDelay: open ? "450ms" : "0ms" }}
           >
+            {/* footer logo — sits above the CTA in the open mobile menu */}
+            <div className="mb-8 flex justify-center">
+              <Image
+                src="/logo.png"
+                alt="UltraLightHome"
+                width={1972}
+                height={1674}
+                className="h-24 w-auto brightness-0 invert opacity-80"
+              />
+            </div>
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
               className="block w-full text-center bg-cream text-ink py-4 rounded-full text-sm"
             >
-              Affida la tua casa
+              Valuta immobile
             </Link>
             <div className="mt-6 flex items-center justify-between text-xs tracking-[0.2em] uppercase text-cream/50">
               <span>IT / EN</span>

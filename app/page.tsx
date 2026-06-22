@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Building2, Palette, Megaphone, ArrowUpRight } from "lucide-react";
+import { ButtonLink } from "@/components/Button";
 import Hero from "@/components/Hero";
 import SectionWrap from "@/components/SectionWrap";
 import SectionHeader from "@/components/SectionHeader";
@@ -8,7 +8,7 @@ import HomeLocations from "@/components/HomeLocations";
 import Reveal from "@/components/Reveal";
 
 const stats = [
-  { n: "13", label: "Case gestite" },
+  { n: "13", label: "Immobili gestiti" },
   { n: "3", label: "Regioni" },
   { n: "94%", label: "Notti occupate" },
   { n: "4.9★", label: "Rating medio" },
@@ -19,13 +19,13 @@ const services = [
     icon: Building2,
     title: "Affitti brevi",
     desc:
-      "Ci occupiamo di tutto: prenotazioni, check-in, pulizie, manutenzione, fiscalità. Tu pensi alla casa, il resto lo gestiamo noi.",
+      "Ci occupiamo di tutto: prenotazioni, check-in, pulizie, manutenzione, fiscalità. Tu pensi all'immobile, il resto lo gestiamo noi.",
   },
   {
     icon: Palette,
     title: "Restyling interni",
     desc:
-      "Quando serve, rimettiamo a posto la casa per renderla più accogliente: piccoli interventi o restyling completi, sempre con artigiani del posto.",
+      "Quando serve, rimettiamo a posto l'immobile per renderlo più accogliente: piccoli interventi o restyling completi, sempre con artigiani del posto.",
   },
   {
     icon: Megaphone,
@@ -45,9 +45,9 @@ export default function Home() {
         <SectionWrap>
           <SectionHeader
             eyebrowNumber="01"
-            eyebrowText="Le case"
-            title="Case scelte una a una, in giro per l'Italia."
-            subtitle="Sfoglia le proposte per zona: città, montagna, mare. Ogni casa ha la sua storia e la sua dimensione."
+            eyebrowText="Gli immobili"
+            title="Immobili scelti uno a uno, in giro per l'Italia."
+            subtitle="Sfoglia le proposte per zona: città, montagna, mare. Ogni immobile ha la sua storia e la sua dimensione."
           />
           <div className="mt-16 md:mt-20">
             <HomeLocations />
@@ -79,25 +79,26 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
-                  Poche case, gestite bene.
+                  Pochi immobili, gestiti bene.
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="mt-8 text-base md:text-lg text-stone leading-relaxed">
                   Lavoriamo con un numero limitato di proprietari per dedicare
-                  tempo vero a ogni casa. Niente automatismi, niente turnover di
-                  ospiti a tutti i costi: scegliamo chi entra in casa tua e ci
+                  tempo vero a ogni immobile. Niente automatismi, niente turnover di
+                  ospiti a tutti i costi: scegliamo chi entra nel tuo immobile e ci
                   prendiamo cura di tutto il resto.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
-                <Link
+                <ButtonLink
                   href="/about"
-                  className="mt-10 inline-flex items-center gap-3 link-underline text-sm tracking-[0.12em] uppercase"
+                  variant="outline"
+                  className="mt-10 rounded-full"
                 >
                   Scopri di più
                   <ArrowUpRight size={16} />
-                </Link>
+                </ButtonLink>
               </Reveal>
             </div>
           </div>
@@ -172,13 +173,14 @@ export default function Home() {
                 </div>
               </Reveal>
               <Reveal delay={0.3}>
-                <Link
-                  href="/contact"
-                  className="mt-10 inline-flex items-center gap-3 bg-clay text-cream px-8 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
+                <ButtonLink
+                  href="/dove-siamo"
+                  variant="primary"
+                  className="mt-10 rounded-full"
                 >
-                  Fissa un sopralluogo
+                  Fissa un appuntamento
                   <ArrowUpRight size={16} />
-                </Link>
+                </ButtonLink>
               </Reveal>
             </div>
             <Reveal delay={0.2} className="lg:col-span-6">

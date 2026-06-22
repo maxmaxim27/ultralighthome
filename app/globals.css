@@ -5,8 +5,13 @@
   --bone: #EBE4D7;
   --ink: #1A1815;
   --stone: #6B6357;
-  --clay: #A8856B;
-  --terracotta: #8C5A3C;
+  /* silver accent — matches logo, replaces former bronze/clay + brown/terracotta */
+  --clay: #7E8A90;
+  --terracotta: #5C666C;
+
+  /* both display + logo map to the Cinzel wordmark font */
+  --font-display: var(--font-logo-serif);
+  --font-logo: var(--font-logo-serif);
 }
 
 @theme inline {
@@ -18,7 +23,7 @@
   --color-terracotta: var(--terracotta);
 
   --font-display: var(--font-display);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-logo-serif);
   --font-logo: var(--font-logo);
 }
 
@@ -29,7 +34,8 @@ html {
 body {
   background: var(--cream);
   color: var(--ink);
-  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  /* whole site uses the title/logo font (Cinzel) */
+  font-family: var(--font-logo-serif), "Times New Roman", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,9 +46,9 @@ body {
 }
 
 .font-display {
-  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-display), "Times New Roman", serif;
   font-optical-sizing: auto;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .font-logo {

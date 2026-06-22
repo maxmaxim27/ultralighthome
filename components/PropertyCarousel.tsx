@@ -65,7 +65,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
 
   if (single) {
     return (
-      <div className="flex justify-center">
+      <div className="flex justify-start">
         <div className="w-full max-w-md">
           <PropertyCard property={items[0]} index={0} />
         </div>
@@ -75,7 +75,10 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
 
   return (
     <div className="relative">
-      <div className="overflow-hidden -mx-6 px-6 md:mx-0 md:px-0" ref={emblaRef}>
+      <div
+        className="overflow-hidden -mx-6 px-6 md:mx-0 md:px-0 py-6 md:py-12"
+        ref={emblaRef}
+      >
         <div className="flex gap-6 md:gap-8">
           {items.map((p, i) => (
             <div
@@ -88,7 +91,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
         </div>
       </div>
 
-      <div className="mt-8 flex items-center justify-center gap-4">
+      <div className="flex items-center justify-center gap-4">
         <button
           type="button"
           aria-label="Precedente"

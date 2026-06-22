@@ -43,17 +43,17 @@ export default function PropertiesPage() {
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
-              <span className="font-display text-clay mr-2">—</span> Le case
+              <span className="font-display text-clay mr-2">—</span> Gli immobili
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[0.98] tracking-[-0.02em] max-w-4xl">
-              Le case che curiamo.
+              Gli immobili che curiamo.
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl text-base md:text-lg text-stone leading-relaxed">
-              Una selezione di case da affittare per qualche giorno o qualche
+              Una selezione di immobili da affittare per qualche giorno o qualche
               settimana, raggruppate per dove si trovano.
             </p>
           </Reveal>
@@ -100,7 +100,7 @@ export default function PropertiesPage() {
                       <span className={`font-display mr-2 ${b.num}`}>
                         {g.number}
                       </span>
-                      {g.items.length} {g.items.length === 1 ? "casa" : "case"}
+                      {g.items.length} {g.items.length === 1 ? "immobile" : "immobili"}
                     </p>
                   </Reveal>
                   <Reveal delay={0.1}>
@@ -128,7 +128,7 @@ export default function PropertiesPage() {
               </div>
             ) : (
               <p className="text-center text-stone py-12">
-                In arrivo nuove case in questa zona.
+                In arrivo nuovi immobili in questa zona.
               </p>
             )}
           </SectionWrap>

@@ -18,7 +18,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
-              Gestiamo affitti brevi di case selezionate in Italia. Verona,
+              Gestiamo affitti brevi di immobili selezionati in Italia. Verona,
               Dolomiti, Costa Smeralda e altro.
             </p>
           </div>
@@ -26,7 +26,7 @@ export default function Footer() {
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Naviga</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link href="/properties" className="link-underline">Case</Link></li>
+              <li><Link href="/properties" className="link-underline">Immobili</Link></li>
               <li><Link href="/about" className="link-underline">Chi siamo</Link></li>
               <li><Link href="/contact" className="link-underline">Contatti</Link></li>
             </ul>

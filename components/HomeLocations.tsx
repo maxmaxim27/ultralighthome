@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
+import { ButtonLink } from "./Button";
 import LocationTabs from "./LocationTabs";
 import PropertyCarousel from "./PropertyCarousel";
 import { locationGroups } from "@/lib/locations";
@@ -39,19 +40,20 @@ export default function HomeLocations() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-14"
         >
           <PropertyCarousel items={items} />
         </motion.div>
       </AnimatePresence>
 
       <div className="mt-16 flex justify-center">
-        <Link
+        <ButtonLink
           href="/properties"
-          className="link-underline text-sm tracking-[0.12em] uppercase text-ink"
+          variant="outline"
+          className="rounded-full"
         >
-          Vedi tutti gli immobili →
-        </Link>
+          Vedi tutti gli immobili
+          <ArrowUpRight size={16} />
+        </ButtonLink>
       </div>
     </>
   );

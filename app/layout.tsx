@@ -1,27 +1,21 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Marcellus } from "next/font/google";
+import { Cinzel } from "next/font/google";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-display",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const marcellus = Marcellus({
-  variable: "--font-logo",
-  weight: "400",
+// Logo wordmark font (classic Roman inscriptional serif) — used for titles + brand sitewide
+const cinzel = Cinzel({
+  variable: "--font-logo-serif",
   subsets: ["latin"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "UltraLightHome — Belle case, ben gestite",
+  title: "UltraLightHome — Immobili curati, ben gestiti",
   description:
-    "Case selezionate da affittare per soggiorni brevi. Verona, Dolomiti, Costa Smeralda e altro.",
+    "Immobili selezionati da affittare per soggiorni brevi. Verona, Dolomiti, Costa Smeralda e altro.",
 };
 
 export default function RootLayout({
@@ -32,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${GeistSans.variable} ${bricolage.variable} ${marcellus.variable} h-full antialiased`}
+      className={`${GeistSans.variable} ${cinzel.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
         <Navbar />

@@ -7,13 +7,13 @@ const approach = [
     n: "01",
     title: "Scelta",
     desc:
-      "Prendiamo poche case nuove ogni anno. Prima di accettare un mandato facciamo un sopralluogo e parliamo a lungo con il proprietario.",
+      "Prendiamo pochi immobili nuovi ogni anno. Prima di accettare un mandato facciamo un sopralluogo e parliamo a lungo con il proprietario.",
   },
   {
     n: "02",
     title: "Cura",
     desc:
-      "Se serve, rimettiamo a posto la casa: dai dettagli alla biancheria, fino a piccoli restyling fatti con artigiani del posto.",
+      "Se serve, rimettiamo a posto l'immobile: dai dettagli alla biancheria, fino a piccoli restyling fatti con artigiani del posto.",
   },
   {
     n: "03",
@@ -25,7 +25,7 @@ const approach = [
     n: "04",
     title: "Discrezione",
     desc:
-      "Scegliamo gli ospiti con attenzione e trattiamo la tua casa come tratteremmo la nostra. Senza esagerare.",
+      "Scegliamo gli ospiti con attenzione e trattiamo il tuo immobile come tratteremmo il nostro. Senza esagerare.",
   },
 ];
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[0.98] tracking-[-0.02em] max-w-5xl">
               Una piccola squadra,
               <br />
-              case curate una a una.
+              immobili curati uno a uno.
             </h1>
           </Reveal>
           <Reveal delay={0.25}>
@@ -104,21 +104,21 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
-                  Una casa sul Garda, poi tutto il resto.
+                  Un immobile sul Garda, poi tutto il resto.
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="mt-8 space-y-6 text-stone leading-relaxed">
                   <p>
-                    È iniziato con una sola casa: una villa di famiglia sul lago
+                    È iniziato con un solo immobile: una villa di famiglia sul lago
                     di Garda da affittare quando non veniva usata. Il
                     passaparola ha fatto il resto. Oggi gestiamo più di
-                    cinquanta case tra Veneto, Trentino, Sardegna e qualche
+                    cinquanta immobili tra Veneto, Trentino, Sardegna e qualche
                     altro posto bello.
                   </p>
                   <p>
-                    Continuiamo a lavorare con lo stesso principio: poche case,
-                    gestite bene. Crediamo che la qualità venga dal tempo che
+                    Continuiamo a lavorare con lo stesso principio: pochi immobili,
+                    gestiti bene. Crediamo che la qualità venga dal tempo che
                     dedichi alle cose, non da quante ne fai.
                   </p>
                 </div>
