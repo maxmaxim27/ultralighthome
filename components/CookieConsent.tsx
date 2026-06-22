@@ -25,8 +25,8 @@ export default function CookieConsent() {
             </p>
             <p className="mt-4 text-sm md:text-base text-cream/85 leading-relaxed">
               Usiamo cookie tecnici necessari al sito e, solo con il tuo
-              consenso, cookie di terze parti per mostrare la mappa di Google
-              Maps. Puoi accettare o rifiutare. Dettagli nella{" "}
+              consenso, cookie di terze parti. Puoi accettare o rifiutare.
+              Dettagli nella{" "}
               <Link href="/cookie" className="text-cream link-underline">
                 Cookie Policy
               </Link>
