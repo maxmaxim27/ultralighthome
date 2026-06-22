@@ -1,6 +1,7 @@
 import { Home, Bed, Bath, Users, ChefHat, MapPin, type LucideIcon } from "lucide-react";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
+import AmenityList from "./AmenityList";
 
 type Row = { icon: LucideIcon; label: string; value: string | number };
 
@@ -42,16 +43,7 @@ export default function PropertySpecs({ property }: { property: Property }) {
           <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">
             Caratteristiche
           </p>
-          <ul className="flex flex-wrap gap-2">
-            {property.features.map((f) => (
-              <li
-                key={f}
-                className="text-xs tracking-wide text-ink border border-stone/30 px-3 py-1.5"
-              >
-                {f}
-              </li>
-            ))}
-          </ul>
+          <AmenityList features={property.features} />
         </>
       )}
     </aside>
