@@ -4,6 +4,14 @@ import PropertyCard from "@/components/PropertyCard";
 import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 import type { Property } from "@/lib/types";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Immobili in affitto breve — Dolomiti, Verona, Costa Smeralda",
+  description:
+    "Tutti i nostri immobili da affittare per soggiorni brevi, raggruppati per zona: Dolomiti, Verona, Costa Smeralda e altre città italiane.",
+  alternates: { canonical: "/immobili" },
+};
 
 type Group = {
   key: string;

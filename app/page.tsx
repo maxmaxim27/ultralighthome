@@ -6,6 +6,14 @@ import SectionWrap from "@/components/SectionWrap";
 import SectionHeader from "@/components/SectionHeader";
 import HomeLocations from "@/components/HomeLocations";
 import Reveal from "@/components/Reveal";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Case e appartamenti per soggiorni brevi in Italia",
+  description:
+    "Immobili curati da affittare per qualche giorno: Dolomiti, Verona, Costa Smeralda, Roma e altro. Selezione, gestione e ospitalità con la stessa attenzione.",
+  alternates: { canonical: "/" },
+};
 
 const stats = [
   { n: "13", label: "Immobili gestiti" },

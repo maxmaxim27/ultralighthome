@@ -5,9 +5,10 @@ import Reveal from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 
 export const metadata: Metadata = {
-  title: "Dove siamo — UltraLightHome",
+  title: "Dove siamo",
   description:
     "Il nostro ufficio a Verona. Vieni a trovarci o fissa un appuntamento: Via Mazzini 12, 37121 Verona.",
+  alternates: { canonical: "/dove-siamo" },
 };
 
 const info = [

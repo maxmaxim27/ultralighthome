@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { properties, getProperty } from "@/lib/properties";
 import { locations, locationGroups } from "@/lib/locations";
+import { SITE, absoluteUrl } from "@/lib/site";
 import PropertyGallery from "@/components/PropertyGallery";
 import PropertySpecs from "@/components/PropertySpecs";
 import PropertyCard from "@/components/PropertyCard";
@@ -11,6 +13,40 @@ import Reveal from "@/components/Reveal";
 
 export function generateStaticParams() {
   return properties.map((p) => ({ slug: p.slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const property = getProperty(slug);
+  if (!property) return {};
+
+  const loc = locations.find((l) => l.slug === property.locationSlug);
+  const title = `${property.name} — affitto breve a ${loc?.name ?? "Italia"}`;
+  const url = absoluteUrl(`/immobili/${property.slug}`);
+
+  // OG/Twitter images auto-injected from the co-located opengraph-image route.
+  return {
+    title,
+    description: property.shortDescription,
+    alternates: { canonical: `/immobili/${property.slug}` },
+    openGraph: {
+      type: "website",
+      url,
+      siteName: SITE.name,
+      title,
+      description: property.shortDescription,
+      locale: SITE.locale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: property.shortDescription,
+    },
+  };
 }
 
 export default async function PropertyPage({
@@ -33,8 +69,58 @@ export default async function PropertyPage({
     )
     .slice(0, 3);
 
+  const url = absoluteUrl(`/immobili/${property.slug}`);
+  const lodgingLd = {
+    "@context": "https://schema.org",
+    "@type": "Apartment",
+    name: property.name,
+    description: property.shortDescription,
+    url,
+    image: property.gallery.map((g) => absoluteUrl(g)),
+    numberOfBedrooms: property.specs.bedrooms,
+    numberOfBathroomsTotal: property.specs.bathrooms,
+    occupancy: {
+      "@type": "QuantitativeValue",
+      maxValue: property.specs.guests,
+      unitCode: "C62",
+    },
+    amenityFeature: property.features.map((f) => ({
+      "@type": "LocationFeatureSpecification",
+      name: f,
+      value: true,
+    })),
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: loc?.name,
+      addressRegion: loc?.region,
+      addressCountry: "IT",
+    },
+  };
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Immobili",
+        item: absoluteUrl("/immobili"),
+      },
+      { "@type": "ListItem", position: 3, name: property.name, item: url },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(lodgingLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
       {/* COMPACT HEADER */}
       <section className="bg-cream pt-32 md:pt-36 pb-10">
         <SectionWrap>
