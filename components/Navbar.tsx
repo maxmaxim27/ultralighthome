@@ -8,10 +8,10 @@ import clsx from "clsx";
 import { Menu, X } from "lucide-react";
 
 const nav = [
-  { href: "/properties", label: "Immobili" },
-  { href: "/about", label: "Chi siamo" },
+  { href: "/immobili", label: "Immobili" },
+  { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/dove-siamo", label: "Dove siamo" },
-  { href: "/contact", label: "Contatti" },
+  { href: "/contatti", label: "Contatti" },
 ];
 
 export default function Navbar() {
@@ -76,7 +76,7 @@ export default function Navbar() {
           </nav>
 
           <Link
-            href="/contact"
+            href="/contatti"
             className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-cream hover:text-ink transition-colors"
           >
             Valuta immobile
@@ -143,7 +143,7 @@ export default function Navbar() {
               />
             </div>
             <Link
-              href="/contact"
+              href="/contatti"
               onClick={() => setOpen(false)}
               className="block w-full text-center bg-cream text-ink py-4 rounded-full text-sm"
             >

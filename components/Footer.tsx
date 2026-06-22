@@ -26,9 +26,9 @@ export default function Footer() {
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Naviga</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link href="/properties" className="link-underline">Immobili</Link></li>
-              <li><Link href="/about" className="link-underline">Chi siamo</Link></li>
-              <li><Link href="/contact" className="link-underline">Contatti</Link></li>
+              <li><Link href="/immobili" className="link-underline">Immobili</Link></li>
+              <li><Link href="/chi-siamo" className="link-underline">Chi siamo</Link></li>
+              <li><Link href="/contatti" className="link-underline">Contatti</Link></li>
             </ul>
           </div>
 

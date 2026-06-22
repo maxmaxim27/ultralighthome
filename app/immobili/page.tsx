@@ -20,7 +20,6 @@ const BANNER = {
   overlay: "bg-gradient-to-br from-clay/55 via-terracotta/15 to-transparent",
   text: "text-cream",
   sub: "text-cream/75",
-  num: "text-clay",
 };
 
 function buildGroups(): Group[] {
@@ -43,19 +42,14 @@ export default function PropertiesPage() {
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
-              <span className="font-display text-clay mr-2">—</span> Gli immobili
+              <span className="font-display text-clay mr-2">—</span> Gli
+              immobili
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[0.98] tracking-[-0.02em] max-w-4xl">
               Gli immobili che curiamo.
             </h1>
-          </Reveal>
-          <Reveal delay={0.2}>
-            <p className="mt-8 max-w-2xl text-base md:text-lg text-stone leading-relaxed">
-              Una selezione di immobili da affittare per qualche giorno o qualche
-              settimana, raggruppate per dove si trovano.
-            </p>
           </Reveal>
 
           {/* anchor nav */}
@@ -67,7 +61,9 @@ export default function PropertiesPage() {
                   href={`#${g.key}`}
                   className="text-sm tracking-[0.08em] uppercase link-underline text-ink"
                 >
-                  <span className="font-display text-clay mr-2">{g.number}</span>
+                  <span className="font-display text-clay mr-2">
+                    {g.number}
+                  </span>
                   {g.label}
                 </a>
               ))}
@@ -96,17 +92,17 @@ export default function PropertiesPage() {
                   className={`relative z-10 h-full mx-auto max-w-[1400px] px-6 md:px-10 flex flex-col justify-end pb-12 md:pb-16 ${b.text}`}
                 >
                   <Reveal>
-                    <p className={`text-xs tracking-[0.3em] uppercase ${b.sub}`}>
-                      <span className={`font-display mr-2 ${b.num}`}>
-                        {g.number}
-                      </span>
-                      {g.items.length} {g.items.length === 1 ? "immobile" : "immobili"}
-                    </p>
-                  </Reveal>
-                  <Reveal delay={0.1}>
-                    <h2 className="font-display mt-3 text-5xl md:text-7xl font-light leading-[0.98] tracking-[-0.02em]">
+                    <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.98] tracking-[-0.02em]">
                       {g.label}.
                     </h2>
+                  </Reveal>
+                  <Reveal delay={0.1}>
+                    <p
+                      className={`mt-2 text-xs tracking-[0.3em] uppercase ${b.sub}`}
+                    >
+                      {g.items.length}{" "}
+                      {g.items.length === 1 ? "immobile" : "immobili"}
+                    </p>
                   </Reveal>
                   <Reveal delay={0.2}>
                     <p className={`mt-5 max-w-xl leading-relaxed ${b.sub}`}>

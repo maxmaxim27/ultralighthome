@@ -47,7 +47,7 @@ export default function HomeLocations() {
 
       <div className="mt-16 flex justify-center">
         <ButtonLink
-          href="/properties"
+          href="/immobili"
           variant="outline"
           className="rounded-full"
         >

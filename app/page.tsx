@@ -92,7 +92,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.3}>
                 <ButtonLink
-                  href="/about"
+                  href="/chi-siamo"
                   variant="outline"
                   className="mt-10 rounded-full"
                 >

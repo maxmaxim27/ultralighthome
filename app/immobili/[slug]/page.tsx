@@ -40,7 +40,7 @@ export default async function PropertyPage({
         <SectionWrap>
           <Reveal>
             <Link
-              href="/properties"
+              href="/immobili"
               className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-stone hover:text-ink link-underline"
             >
               <ArrowLeft size={14} /> Torna agli immobili

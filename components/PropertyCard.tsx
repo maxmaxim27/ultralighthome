@@ -28,7 +28,7 @@ export default function PropertyCard({
     >
       {/* Whole-card link to the detail page (stretched behind content) */}
       <Link
-        href={`/properties/${property.slug}`}
+        href={`/immobili/${property.slug}`}
         className="absolute inset-0 z-0"
         aria-label={property.name}
       />
