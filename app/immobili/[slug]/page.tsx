@@ -154,7 +154,7 @@ export default async function PropertyPage({
                   href={property.airbnbUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-clay text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
                 >
                   Prenota
                   <ArrowUpRight size={16} />

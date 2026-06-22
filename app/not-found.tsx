@@ -23,7 +23,7 @@ export default function NotFound() {
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-xl text-base md:text-lg text-stone leading-relaxed">
               L&apos;immobile o la pagina che cerchi non esiste, o è stata
-              spostata. Torna a casa o sfoglia gli immobili che curiamo.
+              spostata. Torna alla home o sfoglia gli immobili che curiamo.
             </p>
           </Reveal>
           <Reveal delay={0.3}>
@@ -33,7 +33,7 @@ export default function NotFound() {
               </ButtonLink>
               <ButtonLink
                 href="/immobili"
-                variant="outline"
+                variant="primary"
                 className="rounded-full"
               >
                 Vedi gli immobili

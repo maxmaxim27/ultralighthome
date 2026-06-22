@@ -90,7 +90,7 @@ export default function PropertyGallery({
       {(hidden > 0 || alwaysShowAllButton) && (
         <div className="mt-6 flex justify-center">
           <Button
-            variant="outline"
+            variant="primary"
             className="rounded-full"
             onClick={() => setShowAll(true)}
           >

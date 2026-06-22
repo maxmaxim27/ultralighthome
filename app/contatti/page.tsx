@@ -133,7 +133,7 @@ export default function ContactPage() {
 
                 <button
                   type="submit"
-                  className="mt-6 inline-flex items-center gap-3 bg-clay text-cream px-8 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
+                  className="mt-6 inline-flex items-center gap-3 rounded-full bg-clay text-cream px-8 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
                 >
                   Invia richiesta
                 </button>

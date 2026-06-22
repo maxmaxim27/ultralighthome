@@ -83,7 +83,7 @@ export default function PropertyCard({
           target="_blank"
           rel="noopener noreferrer"
           onClick={(e) => e.stopPropagation()}
-          className="pointer-events-auto mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-xs tracking-[0.12em] uppercase hover:bg-terracotta transition-colors duration-300"
+          className="pointer-events-auto mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-clay text-cream px-6 py-3.5 text-xs tracking-[0.12em] uppercase hover:bg-terracotta transition-colors duration-300"
         >
           Prenota
           <ArrowUpRight size={15} />

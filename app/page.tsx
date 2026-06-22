@@ -101,7 +101,7 @@ export default function Home() {
               <Reveal delay={0.3}>
                 <ButtonLink
                   href="/chi-siamo"
-                  variant="outline"
+                  variant="primary"
                   className="mt-10 rounded-full"
                 >
                   Scopri di più
