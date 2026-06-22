@@ -176,8 +176,8 @@ export default function Home() {
               <Reveal delay={0.2}>
                 <div className="mt-10 space-y-2 text-stone">
                   <p>Via Mazzini 12 — 37121 Verona</p>
-                  <p>+39 045 987 6543</p>
-                  <p>hello@ultralighthome.it</p>
+                  <p>+39 379 299 7428</p>
+                  <p>info@ultralighthome.it</p>
                 </div>
               </Reveal>
               <Reveal delay={0.3}>

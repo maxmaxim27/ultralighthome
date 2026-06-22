@@ -19,8 +19,8 @@ const info = [
     value: "Via Mazzini 12\n37121 Verona (VR), Italia",
   },
   { icon: Clock, label: "Orari", value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento" },
-  { icon: Phone, label: "Telefono", value: "+39 045 987 6543" },
-  { icon: Mail, label: "Email", value: "hello@ultralighthome.it" },
+  { icon: Phone, label: "Telefono", value: "+39 379 299 7428" },
+  { icon: Mail, label: "Email", value: "info@ultralighthome.it" },
 ];
 
 const MAP_SRC =

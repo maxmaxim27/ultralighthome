@@ -37,8 +37,8 @@ export default function Footer() {
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Contatti</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
               <li>Via Mazzini 12, 37121 Verona</li>
-              <li><a href="mailto:hello@ultralighthome.it" className="link-underline">hello@ultralighthome.it</a></li>
-              <li><a href="tel:+390459876543" className="link-underline">+39 045 987 6543</a></li>
+              <li><a href="mailto:info@ultralighthome.it" className="link-underline">info@ultralighthome.it</a></li>
+              <li><a href="tel:+393792997428" className="link-underline">+39 379 299 7428</a></li>
             </ul>
           </div>
         </div>

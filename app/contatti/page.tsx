@@ -46,8 +46,8 @@ export default function ContactPage() {
                 label: "Indirizzo",
                 value: "Via Mazzini 12\n37121 Verona (VR), Italia",
               },
-              { icon: Mail, label: "Email", value: "hello@ultralighthome.it" },
-              { icon: Phone, label: "Telefono", value: "+39 045 987 6543" },
+              { icon: Mail, label: "Email", value: "info@ultralighthome.it" },
+              { icon: Phone, label: "Telefono", value: "+39 379 299 7428" },
               {
                 icon: Clock,
                 label: "Orari",
