@@ -3,6 +3,7 @@ import { MapPin, Mail, Phone, Clock } from "lucide-react";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
+import MapEmbed from "@/components/MapEmbed";
 
 export const metadata: Metadata = {
   title: "Dove siamo",
@@ -94,16 +95,8 @@ export default function DoveSiamoPage() {
           </Reveal>
         </div>
 
-        {/* RIGHT — map */}
-        <div className="relative min-h-[360px] lg:min-h-0 bg-bone">
-          <iframe
-            title="Mappa — Ufficio UltraLightHome, Verona"
-            src={MAP_SRC}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="absolute inset-0 h-full w-full grayscale-[0.2]"
-          />
-        </div>
+        {/* RIGHT — map (embed Google Maps con consenso: nessun cookie prima del click) */}
+        <MapEmbed src={MAP_SRC} title="Mappa — Ufficio UltraLightHome, Verona" />
       </div>
     </>
   );

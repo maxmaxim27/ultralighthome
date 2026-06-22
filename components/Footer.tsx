@@ -45,9 +45,9 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-cream/50">
           <p>© {year} UltraLightHome. Tutti i diritti riservati.</p>
           <div className="flex gap-6">
-            <Link href="#" className="link-underline">Privacy</Link>
-            <Link href="#" className="link-underline">Termini</Link>
-            <Link href="#" className="link-underline">Cookie</Link>
+            <Link href="/privacy" className="link-underline">Privacy</Link>
+            <Link href="/termini" className="link-underline">Termini</Link>
+            <Link href="/cookie" className="link-underline">Cookie</Link>
           </div>
         </div>
       </div>
