@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import CookiePreferencesButton from "./CookiePreferencesButton";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -48,6 +49,7 @@ export default function Footer() {
             <Link href="/privacy" className="link-underline">Privacy</Link>
             <Link href="/termini" className="link-underline">Termini</Link>
             <Link href="/cookie" className="link-underline">Cookie</Link>
+            <CookiePreferencesButton />
           </div>
         </div>
       </div>

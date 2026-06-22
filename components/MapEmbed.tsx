@@ -1,9 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { MapPin } from "lucide-react";
-
-const STORAGE_KEY = "ulh-maps-consent";
+import { useConsent } from "./consent";
 
 export default function MapEmbed({
   src,
@@ -12,21 +10,10 @@ export default function MapEmbed({
   src: string;
   title: string;
 }) {
-  const [consented, setConsented] = useState(false);
+  const { consent, ready, reopen } = useConsent();
 
-  // Restore a previous choice so the user isn't asked on every visit.
-  useEffect(() => {
-    if (typeof window !== "undefined" && localStorage.getItem(STORAGE_KEY) === "1") {
-      setConsented(true);
-    }
-  }, []);
-
-  function accept() {
-    localStorage.setItem(STORAGE_KEY, "1");
-    setConsented(true);
-  }
-
-  if (consented) {
+  // Map loads only once marketing/third-party consent is granted.
+  if (ready && consent === "granted") {
     return (
       <div className="relative min-h-[360px] lg:min-h-0 bg-bone">
         <iframe
@@ -40,7 +27,7 @@ export default function MapEmbed({
     );
   }
 
-  // Consent gate: nothing from Google loads until the user accepts.
+  // Placeholder when consent is missing or denied — invites re-opening the banner.
   return (
     <div className="relative min-h-[360px] lg:min-h-0 bg-ink text-cream flex flex-col items-center justify-center gap-5 p-10 text-center overflow-hidden">
       <div
@@ -49,24 +36,16 @@ export default function MapEmbed({
       />
       <MapPin size={40} strokeWidth={1.2} className="relative text-cream" />
       <p className="relative max-w-sm text-sm text-cream/80 leading-relaxed">
-        La mappa è fornita da Google Maps, che installa cookie di terze parti.
-        Caricala solo se acconsenti.
+        Accetta i cookie di terze parti per visualizzare la mappa di Google
+        Maps.
       </p>
-      <div className="relative flex flex-wrap items-center justify-center gap-4">
-        <button
-          type="button"
-          onClick={accept}
-          className="inline-flex items-center rounded-full bg-clay text-cream px-7 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
-        >
-          Mostra la mappa
-        </button>
-        <a
-          href="/cookie"
-          className="text-xs tracking-[0.12em] uppercase text-cream/70 hover:text-cream link-underline"
-        >
-          Cookie policy
-        </a>
-      </div>
+      <button
+        type="button"
+        onClick={reopen}
+        className="relative inline-flex items-center rounded-full bg-clay text-cream px-7 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
+      >
+        Gestisci cookie
+      </button>
     </div>
   );
 }

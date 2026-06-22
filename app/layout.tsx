@@ -5,6 +5,8 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import CookieConsent from "@/components/CookieConsent";
+import { ConsentProvider } from "@/components/consent";
 import { SITE, absoluteUrl } from "@/lib/site";
 
 // Logo wordmark font (classic Roman inscriptional serif) — used for titles + brand sitewide
@@ -89,10 +91,13 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
-        <WhatsAppButton />
+        <ConsentProvider>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <CookieConsent />
+        </ConsentProvider>
       </body>
     </html>
   );

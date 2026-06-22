@@ -60,11 +60,12 @@ export default function CookiePage() {
       <section>
         <h2>3. Gestione del consenso</h2>
         <p>
-          Poiché i cookie di terze parti vengono attivati solo previo consenso,
-          non è presente un banner generale: il consenso è richiesto in modo
-          puntuale al momento del caricamento della mappa. Puoi revocare il
-          consenso cancellando i cookie e i dati del sito dalle impostazioni del
-          browser.
+          Alla prima visita compare un banner che ti consente di{" "}
+          <strong>accettare</strong> o <strong>rifiutare</strong> i cookie di
+          terze parti. I cookie di Google Maps vengono installati solo se
+          presti il consenso. Puoi modificare la tua scelta in qualsiasi
+          momento tramite il link <strong>&laquo;Gestisci cookie&raquo;</strong>{" "}
+          presente nel footer di ogni pagina.
         </p>
       </section>
 
