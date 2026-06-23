@@ -13,27 +13,27 @@ export const metadata: Metadata = {
 const approach = [
   {
     n: "01",
-    title: "Scelta",
+    title: "Contatto",
     desc:
-      "Prendiamo pochi immobili nuovi ogni anno. Prima di accettare un mandato facciamo un sopralluogo e parliamo a lungo con il proprietario.",
+      "Ci scrivi o ci chiami. Ci raccontiamo, capiamo cosa cerchi e se siamo l'interlocutore giusto per te.",
   },
   {
     n: "02",
+    title: "Valutazione immobile",
+    desc:
+      "Facciamo un sopralluogo e parliamo a lungo con te: valutiamo posizione, potenziale e cosa serve per partire bene.",
+  },
+  {
+    n: "03",
     title: "Cura",
     desc:
       "Se serve, rimettiamo a posto l'immobile: dai dettagli alla biancheria, fino a piccoli restyling fatti con artigiani del posto.",
   },
   {
-    n: "03",
+    n: "04",
     title: "Operatività",
     desc:
       "Prenotazioni, prezzi, check-in, pulizie, manutenzione: gestiamo tutto noi, e ti mandiamo un report ogni tre mesi.",
-  },
-  {
-    n: "04",
-    title: "Discrezione",
-    desc:
-      "Scegliamo gli ospiti con attenzione e trattiamo il tuo immobile come tratteremmo il nostro. Senza esagerare.",
   },
 ];
 
@@ -95,8 +95,8 @@ export default function AboutPage() {
             <Reveal className="lg:col-span-6 lg:col-start-1">
               <div className="relative aspect-[4/5] overflow-hidden bg-bone">
                 <Image
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1600&q=80"
-                  alt="Come abbiamo iniziato"
+                  src="/properties/villa-lino/01.jpg"
+                  alt="Villa in Costa Smeralda"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -163,6 +163,21 @@ export default function AboutPage() {
               </Reveal>
             ))}
           </div>
+
+          <Reveal delay={0.2}>
+            <div className="mt-20 md:mt-24 border-t border-stone/15 pt-12 md:pt-16 max-w-3xl">
+              <h3 className="font-display text-2xl md:text-3xl font-light tracking-[-0.01em]">
+                E poi c&apos;è la discrezione.
+              </h3>
+              <p className="mt-5 text-stone leading-relaxed">
+                Sopra ogni passo c&apos;è un modo di lavorare che non si misura
+                in checklist: scegliamo gli ospiti con attenzione e trattiamo il
+                tuo immobile come tratteremmo il nostro. Riservatezza sui tuoi
+                dati e sulle tue cose, presenza quando serve e un passo indietro
+                quando non serve. Senza esagerare.
+              </p>
+            </div>
+          </Reveal>
         </SectionWrap>
       </div>
 

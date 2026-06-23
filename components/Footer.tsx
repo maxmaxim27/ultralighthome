@@ -27,8 +27,12 @@ export default function Footer() {
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Naviga</p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li><Link href="/immobili" className="link-underline">Immobili</Link></li>
+              <li><Link href="/immobili#dolomiti" className="link-underline">Dolomiti</Link></li>
+              <li><Link href="/immobili#costa-smeralda" className="link-underline">Costa Smeralda</Link></li>
+              <li><Link href="/immobili#verona" className="link-underline">Verona</Link></li>
+              <li><Link href="/immobili#altro" className="link-underline">Altro</Link></li>
               <li><Link href="/chi-siamo" className="link-underline">Chi siamo</Link></li>
+              <li><Link href="/dove-siamo" className="link-underline">Dove siamo</Link></li>
               <li><Link href="/contatti" className="link-underline">Contatti</Link></li>
             </ul>
           </div>

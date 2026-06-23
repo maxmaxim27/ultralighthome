@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
 
@@ -73,7 +72,7 @@ export default function Hero() {
           className="mt-10 max-w-xl text-base md:text-lg text-cream/80 leading-relaxed"
         >
           Gestiamo affitti brevi di immobili selezionati, tra città, montagna e
-          mare. Verona, Dolomiti, Costa Smeralda e altro.
+          mare. Dolomiti, Costa Smeralda, Verona e altro.
         </motion.div>
       </div>
 

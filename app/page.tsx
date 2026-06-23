@@ -70,8 +70,8 @@ export default function Home() {
             <Reveal className="lg:col-span-7 lg:col-start-1">
               <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden bg-cream">
                 <Image
-                  src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1600&q=80"
-                  alt="La nostra filosofia"
+                  src="/properties/dolomiti-living/01.jpeg"
+                  alt="Chalet sulle Dolomiti"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover"
