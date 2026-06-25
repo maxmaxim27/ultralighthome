@@ -54,7 +54,7 @@ export default function DoveSiamoPage() {
       {/* INFO + MAP */}
       <div className="grid grid-cols-1 lg:grid-cols-2 border-t border-stone/20">
         {/* LEFT — info */}
-        <div className="bg-bone p-10 md:p-16 lg:p-20 lg:border-r border-stone/20">
+        <div className="bg-bone p-10 md:p-16 lg:p-20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
               Ufficio Verona.
@@ -96,7 +96,9 @@ export default function DoveSiamoPage() {
         </div>
 
         {/* RIGHT — map (embed Google Maps con consenso: nessun cookie prima del click) */}
-        <MapEmbed src={MAP_SRC} title="Mappa — Ufficio UltraLightHome, Verona" />
+        <div className="bg-bone p-10 md:p-16 lg:p-20 flex">
+          <MapEmbed src={MAP_SRC} title="Mappa — Ufficio UltraLightHome, Verona" />
+        </div>
       </div>
     </>
   );

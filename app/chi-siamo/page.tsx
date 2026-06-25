@@ -38,26 +38,10 @@ const approach = [
 ];
 
 const team = [
-  {
-    name: "Giulia Bertani",
-    role: "Founder",
-    img: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80",
-  },
-  {
-    name: "Federico Costa",
-    role: "Operations",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80",
-  },
-  {
-    name: "Sara Endrizzi",
-    role: "Interior",
-    img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80",
-  },
-  {
-    name: "Marco Pala",
-    role: "Property Manager Sardegna",
-    img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80",
-  },
+  { name: "Alberto Cavinato", img: "/about/alberto-cavinato.jpeg" },
+  { name: "Alberto Disarò", img: "/about/alberto-disaro.JPG" },
+  { name: "IGW Studio", img: "/about/igw-studio.jpeg" },
+  { name: "Pamela", img: "/about/fotografa-pamela.jpg" },
 ];
 
 export default function AboutPage() {
@@ -87,6 +71,8 @@ export default function AboutPage() {
           </Reveal>
         </SectionWrap>
       </div>
+
+      <div className="h-20 bg-gradient-to-b from-[#dddddd] to-[#F5F1EA]" />
 
       {/* STORY */}
       <div className="bg-cream py-28 md:py-40">
@@ -120,9 +106,8 @@ export default function AboutPage() {
                   <p>
                     È iniziato con un solo immobile: una villa di famiglia sul lago
                     di Garda da affittare quando non veniva usata. Il
-                    passaparola ha fatto il resto. Oggi gestiamo più di
-                    cinquanta immobili tra Veneto, Trentino, Sardegna e qualche
-                    altro posto bello.
+                    passaparola ha fatto il resto. Oggi gestiamo immobili tra
+                    Veneto, Trentino, Sardegna e qualche altro posto bello.
                   </p>
                   <p>
                     Continuiamo a lavorare con lo stesso principio: pochi immobili,
@@ -135,6 +120,8 @@ export default function AboutPage() {
           </div>
         </SectionWrap>
       </div>
+
+      <div className="h-20 bg-gradient-to-b from-[#F5F1EA] to-[#dddddd]" />
 
       {/* APPROACH */}
       <div className="bg-bone py-28 md:py-40">
@@ -181,6 +168,8 @@ export default function AboutPage() {
         </SectionWrap>
       </div>
 
+      <div className="h-20 bg-gradient-to-b from-[#dddddd] to-[#F5F1EA]" />
+
       {/* TEAM */}
       <div className="bg-cream py-28 md:py-40">
         <SectionWrap>
@@ -207,10 +196,9 @@ export default function AboutPage() {
                     className="object-cover grayscale"
                   />
                 </div>
-                <h3 className="font-display mt-6 text-xl md:text-2xl font-light tracking-[-0.01em]">
+                <h3 className="font-display mt-6 text-xl md:text-2xl font-light tracking-[-0.01em] text-center">
                   {m.name}
                 </h3>
-                <p className="mt-1 text-sm text-stone">{m.role}</p>
               </Reveal>
             ))}
           </div>

@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="bg-ink text-cream">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div className="md:col-span-2">
+          <div className="md:col-span-2 text-center md:text-left">
             <Link href="/" className="inline-block" aria-label="UltraLightHome">
               <Image
                 src="/logo.png"
@@ -18,13 +18,13 @@ export default function Footer() {
                 className="h-28 md:h-32 w-auto brightness-0 invert opacity-90"
               />
             </Link>
-            <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70">
+            <p className="mt-6 max-w-md text-sm leading-relaxed text-cream/70 mx-auto md:mx-0">
               Gestiamo affitti brevi di immobili selezionati in Italia. Verona,
               Dolomiti, Costa Smeralda e altro.
             </p>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Naviga</p>
             <ul className="mt-5 space-y-3 text-sm">
               <li><Link href="/immobili#dolomiti" className="link-underline">Dolomiti</Link></li>
@@ -37,7 +37,7 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div>
+          <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">Contatti</p>
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
               <li>Via Mazzini 12, 37121 Verona</li>
@@ -47,8 +47,8 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-xs text-cream/50">
-          <p>© {year} UltraLightHome. Tutti i diritti riservati.</p>
+        <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 text-xs text-cream/50">
+          <p className="text-center md:text-left">© {year} UltraLightHome. Tutti i diritti riservati.</p>
           <div className="flex gap-6">
             <Link href="/privacy" className="link-underline">Privacy</Link>
             <Link href="/termini" className="link-underline">Termini</Link>

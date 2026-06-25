@@ -2,15 +2,15 @@
 
 :root {
   --cream: #F5F1EA;
-  --bone: #EBE4D7;
+  --bone: #dddddd;
   --ink: #1A1815;
   --stone: #6B6357;
   /* silver accent — matches logo, replaces former bronze/clay + brown/terracotta */
   --clay: #7E8A90;
   --terracotta: #5C666C;
 
-  /* both display + logo map to the Cinzel wordmark font */
-  --font-display: var(--font-logo-serif);
+  /* display = Cormorant Garamond, logo = Cinzel (brand mark only) */
+  --font-display: var(--font-heading);
   --font-logo: var(--font-logo-serif);
 }
 
@@ -23,7 +23,7 @@
   --color-terracotta: var(--terracotta);
 
   --font-display: var(--font-display);
-  --font-sans: var(--font-logo-serif);
+  --font-sans: var(--font-sans-body);
   --font-logo: var(--font-logo);
 }
 
@@ -35,7 +35,7 @@ body {
   background: var(--cream);
   color: var(--ink);
   /* whole site uses the title/logo font (Cinzel) */
-  font-family: var(--font-logo-serif), "Times New Roman", serif;
+  font-family: var(--font-sans-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

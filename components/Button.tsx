@@ -15,7 +15,7 @@ const base =
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-clay text-cream px-7 py-3.5 hover:bg-terracotta",
+    "bg-[#5a5a5a] text-cream px-7 py-3.5 hover:bg-[#515151]",
   outline:
     "border border-ink text-ink px-7 py-3.5 hover:bg-ink hover:text-cream",
   ghost: "text-ink link-underline px-0 py-1",

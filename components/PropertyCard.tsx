@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight, BedDouble, Bath, Users } from "lucide-react";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
+import BookingButton from "@/components/BookingButton";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -77,17 +78,11 @@ export default function PropertyCard({
           />
         </div>
 
-        {/* Prenota — same booking action as the single-property page */}
-        <a
-          href={property.airbnbUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          onClick={(e) => e.stopPropagation()}
-          className="pointer-events-auto mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink text-cream px-6 py-3.5 text-xs tracking-[0.12em] uppercase hover:bg-terracotta transition-colors duration-300"
-        >
-          Prenota
-          <ArrowUpRight size={15} />
-        </a>
+        <BookingButton
+          vikeyUrl={property.vikeyUrl}
+          airbnbUrl={property.airbnbUrl}
+          size="card"
+        />
       </div>
     </motion.article>
   );

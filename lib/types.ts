@@ -32,4 +32,7 @@ export type Property = {
   features: string[];
   pricePerNightFrom: number;
   airbnbUrl: string;
+  /** Vikey hosted booking-engine page. When set, the "Prenota" button links
+   *  here instead of Airbnb. */
+  vikeyUrl?: string;
 };

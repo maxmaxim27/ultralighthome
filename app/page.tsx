@@ -26,20 +26,17 @@ const services = [
   {
     icon: Building2,
     title: "Affitti brevi",
-    desc:
-      "Ci occupiamo di tutto: prenotazioni, check-in, pulizie, manutenzione, fiscalità. Tu pensi all'immobile, il resto lo gestiamo noi.",
+    desc: "Ci occupiamo di tutto: prenotazioni, check-in, pulizie, manutenzione, fiscalità. Tu pensi all'immobile, il resto lo gestiamo noi.",
   },
   {
     icon: Palette,
     title: "Restyling interni",
-    desc:
-      "Quando serve, rimettiamo a posto l'immobile per renderlo più accogliente: piccoli interventi o restyling completi, sempre con artigiani del posto.",
+    desc: "Quando serve, rimettiamo a posto l'immobile per renderlo più accogliente: piccoli interventi o restyling completi, sempre con artigiani del posto.",
   },
   {
     icon: Megaphone,
     title: "Foto e annunci",
-    desc:
-      "Foto fatte bene, testi scritti con cura, presenza sui canali giusti. Senza esagerare, ma con attenzione.",
+    desc: "Foto fatte bene, testi scritti con cura, presenza sui canali giusti. Senza esagerare, ma con attenzione.",
   },
 ];
 
@@ -70,7 +67,7 @@ export default function Home() {
             <Reveal className="lg:col-span-7 lg:col-start-1">
               <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden bg-cream">
                 <Image
-                  src="/properties/dolomiti-living/01.jpeg"
+                  src="/properties/dolomiti-living/02.jpeg"
                   alt="Chalet sulle Dolomiti"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -93,9 +90,9 @@ export default function Home() {
               <Reveal delay={0.2}>
                 <p className="mt-8 text-base md:text-lg text-stone leading-relaxed">
                   Lavoriamo con un numero limitato di proprietari per dedicare
-                  tempo vero a ogni immobile. Niente automatismi, niente turnover di
-                  ospiti a tutti i costi: scegliamo chi entra nel tuo immobile e ci
-                  prendiamo cura di tutto il resto.
+                  tempo vero a ogni immobile. Niente automatismi, niente
+                  turnover di ospiti a tutti i costi: scegliamo chi entra nel
+                  tuo immobile e ci prendiamo cura di tutto il resto.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -144,7 +141,11 @@ export default function Home() {
         <SectionWrap>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
             {stats.map((s, i) => (
-              <Reveal key={s.label} delay={i * 0.08} className="text-center md:text-left">
+              <Reveal
+                key={s.label}
+                delay={i * 0.08}
+                className="text-center md:text-left"
+              >
                 <p className="font-display text-5xl md:text-6xl lg:text-7xl font-light text-clay leading-none tracking-[-0.02em]">
                   {s.n}
                 </p>

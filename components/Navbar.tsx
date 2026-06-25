@@ -6,12 +6,14 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
+import ContactDialog from "@/components/ContactDialog";
 
 const nav = [
   { href: "/immobili", label: "Immobili" },
   { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/dove-siamo", label: "Dove siamo" },
   { href: "/contatti", label: "Contatti" },
+  { href: "/font", label: "Font" },
 ];
 
 export default function Navbar() {
@@ -75,12 +77,17 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <Link
-            href="/contatti"
-            className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-cream hover:text-ink transition-colors"
-          >
-            Valuta immobile
-          </Link>
+          <ContactDialog
+            trigger={(open) => (
+              <button
+                type="button"
+                onClick={open}
+                className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-cream hover:text-ink transition-colors"
+              >
+                Valuta immobile
+              </button>
+            )}
+          />
 
           <button
             aria-label={open ? "Chiudi menu" : "Apri menu"}
@@ -142,13 +149,17 @@ export default function Navbar() {
                 className="h-24 w-auto brightness-0 invert opacity-80"
               />
             </div>
-            <Link
-              href="/contatti"
-              onClick={() => setOpen(false)}
-              className="block w-full text-center bg-cream text-ink py-4 rounded-full text-sm"
-            >
-              Valuta immobile
-            </Link>
+            <ContactDialog
+              trigger={(openDialog) => (
+                <button
+                  type="button"
+                  onClick={() => { setOpen(false); openDialog(); }}
+                  className="block w-full text-center bg-cream text-ink py-4 rounded-full text-sm"
+                >
+                  Valuta immobile
+                </button>
+              )}
+            />
             <div className="mt-6 flex items-center justify-between text-xs tracking-[0.2em] uppercase text-cream/50">
               <span>IT / EN</span>
               <span>Verona · Dolomiti · Costa Smeralda</span>

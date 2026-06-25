@@ -8,6 +8,7 @@ import { SITE, absoluteUrl } from "@/lib/site";
 import PropertyGallery from "@/components/PropertyGallery";
 import PropertySpecs from "@/components/PropertySpecs";
 import PropertyCard from "@/components/PropertyCard";
+import BookingButton from "@/components/BookingButton";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 
@@ -150,15 +151,11 @@ export default async function PropertyPage({
                 <p className="text-stone leading-relaxed">
                   {property.shortDescription}
                 </p>
-                <a
-                  href={property.airbnbUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-2 rounded-full bg-ink text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
-                >
-                  Prenota
-                  <ArrowUpRight size={16} />
-                </a>
+                <BookingButton
+                  vikeyUrl={property.vikeyUrl}
+                  airbnbUrl={property.airbnbUrl}
+                  size="hero"
+                />
               </div>
             </Reveal>
           </div>

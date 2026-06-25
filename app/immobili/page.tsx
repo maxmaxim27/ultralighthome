@@ -24,7 +24,7 @@ type Group = {
 
 // Banner categoria — ink con gradient caldo marcato
 const BANNER = {
-  wrap: "bg-ink",
+  wrap: "bg-[#313131]",
   overlay: "bg-gradient-to-br from-clay/55 via-terracotta/15 to-transparent",
   text: "text-cream",
   sub: "text-cream/75",

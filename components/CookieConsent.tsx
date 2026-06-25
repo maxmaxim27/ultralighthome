@@ -36,7 +36,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={accept}
-                className="inline-flex items-center rounded-full bg-clay text-cream px-7 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-terracotta transition-colors duration-300"
+                className="inline-flex items-center rounded-full bg-[#5a5a5a] text-cream px-7 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300"
               >
                 Accetta
               </button>

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel } from "next/font/google";
-import { GeistSans } from "geist/font/sans";
+import { Cinzel, DM_Serif_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -9,11 +8,24 @@ import CookieConsent from "@/components/CookieConsent";
 import { ConsentProvider } from "@/components/consent";
 import { SITE, absoluteUrl } from "@/lib/site";
 
-// Logo wordmark font (classic Roman inscriptional serif) — used for titles + brand sitewide
 const cinzel = Cinzel({
   variable: "--font-logo-serif",
   subsets: ["latin"],
   display: "swap",
+});
+
+const dmSerif = DM_Serif_Display({
+  variable: "--font-heading",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400"],
+});
+
+const dmSans = DM_Sans({
+  variable: "--font-sans-body",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["300", "400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -84,7 +96,7 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${GeistSans.variable} ${cinzel.variable} h-full antialiased`}
+      className={`${dmSans.variable} ${cinzel.variable} ${dmSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
         <script

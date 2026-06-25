@@ -1,34 +1,28 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import clsx from "clsx";
 import type { Property } from "@/lib/types";
 import PropertyCard from "./PropertyCard";
 
+const AUTOPLAY_DELAY = 5000;
+
 export default function PropertyCarousel({ items }: { items: Property[] }) {
   const single = items.length <= 1;
+  const [paused, setPaused] = useState(false);
+  const pausedRef = useRef(paused);
+  useEffect(() => {
+    pausedRef.current = paused;
+  }, [paused]);
 
-  const [emblaRef, emblaApi] = useEmblaCarousel(
-    {
-      align: "start",
-      loop: false,
-      containScroll: "trimSnaps",
-      active: !single,
-    },
-    single
-      ? []
-      : [
-          Autoplay({
-            delay: 5000,
-            stopOnInteraction: false,
-            stopOnMouseEnter: true,
-            stopOnLastSnap: true,
-          }),
-        ],
-  );
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    align: "start",
+    loop: false,
+    containScroll: "trimSnaps",
+    active: !single,
+  });
 
   const [selected, setSelected] = useState(0);
   const [snaps, setSnaps] = useState<number[]>([]);
@@ -55,6 +49,17 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
     };
   }, [emblaApi, onSelect]);
 
+  // custom autoplay with wrap-around
+  useEffect(() => {
+    if (!emblaApi || single) return;
+    const id = setInterval(() => {
+      if (pausedRef.current) return;
+      if (emblaApi.canScrollNext()) emblaApi.scrollNext();
+      else emblaApi.scrollTo(0);
+    }, AUTOPLAY_DELAY);
+    return () => clearInterval(id);
+  }, [emblaApi, single]);
+
   if (items.length === 0) {
     return (
       <p className="text-center text-stone py-20">
@@ -65,7 +70,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
 
   if (single) {
     return (
-      <div className="flex justify-start">
+      <div className="flex justify-start py-6 md:py-12">
         <div className="w-full max-w-md">
           <PropertyCard property={items[0]} index={0} />
         </div>
@@ -74,7 +79,11 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
   }
 
   return (
-    <div className="relative">
+    <div
+      className="relative"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div
         className="overflow-hidden -mx-6 px-6 md:mx-0 md:px-0 py-6 md:py-12"
         ref={emblaRef}
