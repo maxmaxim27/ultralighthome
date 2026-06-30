@@ -14,26 +14,22 @@ const approach = [
   {
     n: "01",
     title: "Contatto",
-    desc:
-      "Ci scrivi o ci chiami. Ci raccontiamo, capiamo cosa cerchi e se siamo l'interlocutore giusto per te.",
+    desc: "Ci scrivi o ci chiami. Ci raccontiamo, capiamo cosa cerchi e se siamo l'interlocutore giusto per te.",
   },
   {
     n: "02",
     title: "Valutazione immobile",
-    desc:
-      "Facciamo un sopralluogo e parliamo a lungo con te: valutiamo posizione, potenziale e cosa serve per partire bene.",
+    desc: "Facciamo un sopralluogo e parliamo a lungo con te: valutiamo posizione, potenziale e cosa serve per partire bene.",
   },
   {
     n: "03",
     title: "Cura",
-    desc:
-      "Se serve, rimettiamo a posto l'immobile: dai dettagli alla biancheria, fino a piccoli restyling fatti con artigiani del posto.",
+    desc: "Se serve, rimettiamo a posto l'immobile: dai dettagli alla biancheria, fino a piccoli restyling fatti con artigiani del posto.",
   },
   {
     n: "04",
     title: "Operatività",
-    desc:
-      "Prenotazioni, prezzi, check-in, pulizie, manutenzione: gestiamo tutto noi, e ti mandiamo un report ogni tre mesi.",
+    desc: "Prenotazioni, prezzi, check-in, pulizie, manutenzione: gestiamo tutto noi, e ti mandiamo un report ogni tre mesi.",
   },
 ];
 
@@ -72,16 +68,14 @@ export default function AboutPage() {
         </SectionWrap>
       </div>
 
-      <div className="h-20 bg-gradient-to-b from-[#dddddd] to-[#F5F1EA]" />
-
       {/* STORY */}
       <div className="bg-cream py-28 md:py-40">
         <SectionWrap>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <Reveal className="lg:col-span-6 lg:col-start-1">
-              <div className="relative aspect-[4/5] overflow-hidden bg-bone">
+              <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone">
                 <Image
-                  src="/properties/villa-lino/01.jpg"
+                  src="/extra/costa-smeralda.jpg"
                   alt="Villa in Costa Smeralda"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
@@ -104,15 +98,15 @@ export default function AboutPage() {
               <Reveal delay={0.2}>
                 <div className="mt-8 space-y-6 text-stone leading-relaxed">
                   <p>
-                    È iniziato con un solo immobile: una villa di famiglia sul lago
-                    di Garda da affittare quando non veniva usata. Il
+                    È iniziato con un solo immobile: una villa di famiglia sul
+                    lago di Garda da affittare quando non veniva usata. Il
                     passaparola ha fatto il resto. Oggi gestiamo immobili tra
                     Veneto, Trentino, Sardegna e qualche altro posto bello.
                   </p>
                   <p>
-                    Continuiamo a lavorare con lo stesso principio: pochi immobili,
-                    gestiti bene. Crediamo che la qualità venga dal tempo che
-                    dedichi alle cose, non da quante ne fai.
+                    Continuiamo a lavorare con lo stesso principio: pochi
+                    immobili, gestiti bene. Crediamo che la qualità venga dal
+                    tempo che dedichi alle cose, non da quante ne fai.
                   </p>
                 </div>
               </Reveal>
@@ -120,8 +114,6 @@ export default function AboutPage() {
           </div>
         </SectionWrap>
       </div>
-
-      <div className="h-20 bg-gradient-to-b from-[#F5F1EA] to-[#dddddd]" />
 
       {/* APPROACH */}
       <div className="bg-bone py-28 md:py-40">
@@ -146,7 +138,9 @@ export default function AboutPage() {
                 <h3 className="font-display mt-6 text-2xl md:text-3xl font-light tracking-[-0.01em]">
                   {a.title}
                 </h3>
-                <p className="mt-4 text-stone leading-relaxed max-w-md">{a.desc}</p>
+                <p className="mt-4 text-stone leading-relaxed max-w-md">
+                  {a.desc}
+                </p>
               </Reveal>
             ))}
           </div>
@@ -167,8 +161,6 @@ export default function AboutPage() {
           </Reveal>
         </SectionWrap>
       </div>
-
-      <div className="h-20 bg-gradient-to-b from-[#dddddd] to-[#F5F1EA]" />
 
       {/* TEAM */}
       <div className="bg-cream py-28 md:py-40">

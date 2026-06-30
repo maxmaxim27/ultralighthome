@@ -15,11 +15,10 @@ export const metadata: Metadata = {
   alternates: { canonical: "/" },
 };
 
-const stats = [
-  { n: "13", label: "Immobili gestiti" },
-  { n: "3", label: "Regioni" },
-  { n: "94%", label: "Notti occupate" },
-  { n: "4.9★", label: "Rating medio" },
+const partners = [
+  { src: "/logos/vikey-logo.png", alt: "Vikey", width: 240 },
+  { src: "/logos/airbnb-logo.png", alt: "Airbnb", width: 240 },
+  { src: "/logos/booking-logo.png", alt: "Booking.com", width: 280 },
 ];
 
 const services = [
@@ -60,14 +59,40 @@ export default function Home() {
         </SectionWrap>
       </div>
 
-      {/* ABOUT PREVIEW */}
+      {/* SERVICES — 02 Come lavoriamo */}
       <div className="bg-bone py-28 md:py-40">
+        <SectionWrap>
+          <SectionHeader
+            eyebrowNumber="02"
+            eyebrowText="Come lavoriamo"
+            title="Cosa facciamo, in concreto."
+          />
+          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-px bg-stone/20">
+            {services.map((s, i) => (
+              <Reveal
+                key={s.title}
+                delay={i * 0.1}
+                className="bg-bone p-10 md:p-12"
+              >
+                <s.icon size={28} strokeWidth={1.3} className="text-clay" />
+                <h3 className="font-display mt-8 text-2xl md:text-3xl font-light tracking-[-0.01em]">
+                  {s.title}
+                </h3>
+                <p className="mt-5 text-stone leading-relaxed">{s.desc}</p>
+              </Reveal>
+            ))}
+          </div>
+        </SectionWrap>
+      </div>
+
+      {/* ABOUT PREVIEW — 03 Chi siamo */}
+      <div className="bg-cream py-28 md:py-40">
         <SectionWrap>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <Reveal className="lg:col-span-7 lg:col-start-1">
-              <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden bg-cream">
+              <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden rounded-3xl bg-bone">
                 <Image
-                  src="/properties/dolomiti-living/02.jpeg"
+                  src="/extra/dolomiti.jpg"
                   alt="Chalet sulle Dolomiti"
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
@@ -78,8 +103,8 @@ export default function Home() {
             <div className="lg:col-span-5">
               <Reveal>
                 <p className="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-stone">
-                  <span className="font-display text-clay">02</span>
-                  <span>Come lavoriamo</span>
+                  <span className="font-display text-clay">03</span>
+                  <span>Chi siamo</span>
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
@@ -110,63 +135,15 @@ export default function Home() {
         </SectionWrap>
       </div>
 
-      {/* SERVICES */}
-      <div className="bg-cream py-28 md:py-40">
-        <SectionWrap>
-          <SectionHeader
-            eyebrowNumber="03"
-            eyebrowText="Servizi"
-            title="Cosa facciamo, in concreto."
-          />
-          <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-px bg-stone/20">
-            {services.map((s, i) => (
-              <Reveal
-                key={s.title}
-                delay={i * 0.1}
-                className="bg-cream p-10 md:p-12"
-              >
-                <s.icon size={28} strokeWidth={1.3} className="text-clay" />
-                <h3 className="font-display mt-8 text-2xl md:text-3xl font-light tracking-[-0.01em]">
-                  {s.title}
-                </h3>
-                <p className="mt-5 text-stone leading-relaxed">{s.desc}</p>
-              </Reveal>
-            ))}
-          </div>
-        </SectionWrap>
-      </div>
-
-      {/* STATS */}
-      <div className="bg-ink text-cream py-24 md:py-32">
-        <SectionWrap>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-12 md:gap-8">
-            {stats.map((s, i) => (
-              <Reveal
-                key={s.label}
-                delay={i * 0.08}
-                className="text-center md:text-left"
-              >
-                <p className="font-display text-5xl md:text-6xl lg:text-7xl font-light text-clay leading-none tracking-[-0.02em]">
-                  {s.n}
-                </p>
-                <p className="mt-4 text-xs tracking-[0.2em] uppercase text-cream/60">
-                  {s.label}
-                </p>
-              </Reveal>
-            ))}
-          </div>
-        </SectionWrap>
-      </div>
-
-      {/* CONTACT PREVIEW */}
-      <div className="bg-cream py-28 md:py-40">
+      {/* CONTACT PREVIEW — 04 Dove siamo */}
+      <div className="bg-bone py-28 md:py-40">
         <SectionWrap>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-6">
               <Reveal>
                 <p className="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-stone">
                   <span className="font-display text-clay">04</span>
-                  <span>Ufficio Verona</span>
+                  <span>Dove siamo</span>
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
@@ -176,7 +153,7 @@ export default function Home() {
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="mt-10 space-y-2 text-stone">
-                  <p>Via Mazzini 12 — 37121 Verona</p>
+                  <p>Lungadige Matteotti 14 — 37126 Verona</p>
                   <p>+39 379 299 7428</p>
                   <p>info@ultralighthome.it</p>
                 </div>
@@ -193,7 +170,7 @@ export default function Home() {
               </Reveal>
             </div>
             <Reveal delay={0.2} className="lg:col-span-6">
-              <div className="relative aspect-[4/3] overflow-hidden bg-bone">
+              <div className="relative aspect-[4/3] overflow-hidden bg-cream">
                 <Image
                   src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=80"
                   alt="Il nostro ufficio a Verona"
@@ -208,6 +185,35 @@ export default function Home() {
               </div>
             </Reveal>
           </div>
+        </SectionWrap>
+      </div>
+
+      {/* PARTNERS */}
+      <div className="bg-cream py-20 md:py-24">
+        <SectionWrap>
+          <Reveal className="text-center">
+            <h2 className="font-display text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
+              In collaborazione con
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="mt-14 md:mt-16 flex flex-wrap items-center justify-center gap-x-16 gap-y-12 md:gap-x-48">
+              {partners.map((p) => (
+                <div
+                  key={p.alt}
+                  className="flex h-14 md:h-20 items-center justify-center"
+                >
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    width={p.width}
+                    height={96}
+                    className="max-h-full w-auto object-contain opacity-80 transition-opacity duration-300 hover:opacity-100"
+                  />
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </SectionWrap>
       </div>
     </>

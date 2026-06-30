@@ -8,12 +8,14 @@ import Image from "next/image";
 
 type Props = {
   vikeyUrl?: string;
+  bookingUrl?: string;
   airbnbUrl: string;
   size?: "card" | "hero";
 };
 
 export default function BookingButton({
   vikeyUrl,
+  bookingUrl,
   airbnbUrl,
   size = "hero",
 }: Props) {
@@ -36,7 +38,8 @@ export default function BookingButton({
       ? "pointer-events-auto mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#5a5a5a] text-cream px-6 py-3.5 text-xs tracking-[0.12em] uppercase hover:bg-[#515151] transition-colors duration-300"
       : "mt-6 inline-flex items-center gap-2 rounded-full bg-[#5a5a5a] text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300";
 
-  if (!vikeyUrl) {
+  // No alternative platforms → link straight to Airbnb.
+  if (!vikeyUrl && !bookingUrl) {
     return (
       <a
         href={airbnbUrl}
@@ -92,50 +95,53 @@ export default function BookingButton({
                 Come vuoi prenotare?
               </h2>
               <p className="mt-4 text-sm text-stone leading-relaxed">
-                Puoi prenotare direttamente su Vikey o tramite Airbnb.
+                Scegli dove completare la prenotazione: il prezzo finale cambia
+                in base alle commissioni di ciascuna piattaforma.
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4">
-                {/* Vikey */}
-                <a
-                  href={vikeyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setOpen(false)}
-                  className="group flex items-center gap-4 rounded-2xl border-2 border-[#5a5a5a] bg-[#5a5a5a] text-cream p-5 hover:bg-[#515151] hover:border-[#515151] transition-colors duration-200"
-                >
-                  <Image
-                    src="/logos/vikey-logo.png"
-                    alt="Vikey"
-                    width={48}
-                    height={24}
-                    className="shrink-0 brightness-0 invert object-contain"
-                  />
-                  <div className="flex-1 text-left">
-                    <p className="flex flex-col-reverse md:flex-row font-display text-lg font-light tracking-[-0.01em] md:items-center gap-2">
-                      Prenota su Vikey
-                      <span className="text-[10px] tracking-[0.15em] uppercase bg-cream/20 rounded-full px-2 py-0.5 w-fit">
-                        Consigliato
-                      </span>
-                    </p>
-                    <p className="mt-1 text-xs text-cream/80 leading-relaxed">
-                      Piattaforma sicura e certificata. Commissioni più basse
-                      rispetto ad Airbnb.
-                    </p>
-                  </div>
-                  <ArrowUpRight
-                    size={16}
-                    className="shrink-0 opacity-70 group-hover:opacity-100"
-                  />
-                </a>
+                {/* Vikey — grey, recommended */}
+                {vikeyUrl && (
+                  <a
+                    href={vikeyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="group flex items-center gap-4 rounded-2xl border-2 border-[#5a5a5a] bg-[#5a5a5a] text-cream p-5 hover:bg-[#515151] hover:border-[#515151] transition-colors duration-200"
+                  >
+                    <Image
+                      src="/logos/vikey-logo.png"
+                      alt="Vikey"
+                      width={48}
+                      height={24}
+                      className="shrink-0 brightness-0 invert object-contain"
+                    />
+                    <div className="flex-1 text-left">
+                      <p className="flex flex-col-reverse md:flex-row font-display text-lg font-light tracking-[-0.01em] md:items-center gap-2">
+                        Prenota su Vikey
+                        <span className="text-[10px] tracking-[0.15em] uppercase bg-cream/20 rounded-full px-2 py-0.5 w-fit">
+                          Consigliato
+                        </span>
+                      </p>
+                      <p className="mt-1 text-sm text-cream/80 leading-relaxed">
+                        Piattaforma sicura e certificata, con le commissioni più
+                        basse.
+                      </p>
+                    </div>
+                    <ArrowUpRight
+                      size={16}
+                      className="shrink-0 opacity-70 group-hover:opacity-100"
+                    />
+                  </a>
+                )}
 
-                {/* Airbnb */}
+                {/* Airbnb — grey */}
                 <a
                   href={airbnbUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setOpen(false)}
-                  className="group flex items-center gap-4 rounded-2xl border border-stone/25 p-5 hover:bg-stone/5 transition-colors duration-200"
+                  className="group flex items-center gap-4 rounded-2xl border border-stone/15 bg-stone/10 p-5 hover:bg-stone/15 transition-colors duration-200"
                 >
                   <Image
                     src="/logos/airbnb-logo.png"
@@ -148,9 +154,8 @@ export default function BookingButton({
                     <p className="font-display text-lg font-light tracking-[-0.01em] text-ink">
                       Prenota su Airbnb
                     </p>
-                    <p className="mt-1 text-xs text-stone leading-relaxed">
-                      Tramite la piattaforma Airbnb. Potrebbero applicarsi
-                      commissioni di servizio aggiuntive.
+                    <p className="mt-1 text-sm text-stone leading-relaxed">
+                      Il nostro partner principale, con commissioni moderate.
                     </p>
                   </div>
                   <ArrowUpRight
@@ -158,6 +163,37 @@ export default function BookingButton({
                     className="shrink-0 text-stone opacity-60 group-hover:opacity-100"
                   />
                 </a>
+
+                {/* Booking — white */}
+                {bookingUrl && (
+                  <a
+                    href={bookingUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setOpen(false)}
+                    className="group flex items-center gap-4 rounded-2xl border border-stone/25 bg-cream p-5 hover:bg-stone/5 transition-colors duration-200"
+                  >
+                    <Image
+                      src="/logos/booking-logo.png"
+                      alt="Booking.com"
+                      width={48}
+                      height={24}
+                      className="shrink-0 object-contain"
+                    />
+                    <div className="flex-1 text-left">
+                      <p className="font-display text-lg font-light tracking-[-0.01em] text-ink">
+                        Prenota su Booking
+                      </p>
+                      <p className="mt-1 text-sm text-stone leading-relaxed">
+                        Piattaforma internazionale, con commissioni più elevate.
+                      </p>
+                    </div>
+                    <ArrowUpRight
+                      size={16}
+                      className="shrink-0 text-stone opacity-60 group-hover:opacity-100"
+                    />
+                  </a>
+                )}
               </div>
             </motion.div>
           </div>

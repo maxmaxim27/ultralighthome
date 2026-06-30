@@ -9,9 +9,9 @@
   --clay: #7E8A90;
   --terracotta: #5C666C;
 
-  /* display = Cormorant Garamond, logo = Cinzel (brand mark only) */
+  /* display + logo = Libre Baskerville, body = Nunito Sans */
   --font-display: var(--font-heading);
-  --font-logo: var(--font-logo-serif);
+  --font-logo: var(--font-heading);
 }
 
 @theme inline {
@@ -34,7 +34,7 @@ html {
 body {
   background: var(--cream);
   color: var(--ink);
-  /* whole site uses the title/logo font (Cinzel) */
+  /* whole site body = Nunito Sans */
   font-family: var(--font-sans-body), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

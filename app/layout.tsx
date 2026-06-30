@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Cinzel, DM_Serif_Display, DM_Sans } from "next/font/google";
+import { Libre_Baskerville, Nunito_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,24 +8,18 @@ import CookieConsent from "@/components/CookieConsent";
 import { ConsentProvider } from "@/components/consent";
 import { SITE, absoluteUrl } from "@/lib/site";
 
-const cinzel = Cinzel({
-  variable: "--font-logo-serif",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const dmSerif = DM_Serif_Display({
+const libreBaskerville = Libre_Baskerville({
   variable: "--font-heading",
   subsets: ["latin"],
   display: "swap",
-  weight: ["400"],
+  weight: ["400", "700"],
 });
 
-const dmSans = DM_Sans({
+const nunitoSans = Nunito_Sans({
   variable: "--font-sans-body",
   subsets: ["latin"],
   display: "swap",
-  weight: ["300", "400", "500"],
+  weight: ["300", "400", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -96,7 +90,7 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${dmSans.variable} ${cinzel.variable} ${dmSerif.variable} h-full antialiased`}
+      className={`${nunitoSans.variable} ${libreBaskerville.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-cream text-ink">
         <script

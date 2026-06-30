@@ -14,12 +14,40 @@ const REQUEST_TYPES = [
 
 export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [tipo, setTipo] = useState<string>("");
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
-    onSuccess?.();
+    if (sending) return;
+
+    const data = new FormData(e.currentTarget);
+    const payload = {
+      name: String(data.get("name") ?? ""),
+      email: String(data.get("email") ?? ""),
+      message: String(data.get("message") ?? ""),
+      type: tipo,
+    };
+
+    setSending(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("request failed");
+      setSubmitted(true);
+      onSuccess?.();
+    } catch {
+      setError(
+        "Invio non riuscito. Riprova o scrivici a info@ultralighthome.it.",
+      );
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -73,11 +101,18 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             />
           </div>
 
+          {error && (
+            <p className="text-sm text-red-700" role="alert">
+              {error}
+            </p>
+          )}
+
           <button
             type="submit"
-            className="inline-flex items-center gap-3 rounded-full bg-[#5a5a5a] text-cream px-8 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300"
+            disabled={sending}
+            className="inline-flex items-center gap-3 rounded-full bg-[#5a5a5a] text-cream px-8 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            Invia richiesta
+            {sending ? "Invio in corso…" : "Invia richiesta"}
           </button>
         </motion.form>
       ) : (

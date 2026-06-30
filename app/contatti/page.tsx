@@ -3,7 +3,7 @@
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
-import { Mail, Phone, MapPin, Clock } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 
 export default function ContactPage() {
 
@@ -32,18 +32,8 @@ export default function ContactPage() {
           </Reveal>
           <div className="mt-12 space-y-8">
             {[
-              {
-                icon: MapPin,
-                label: "Indirizzo",
-                value: "Via Mazzini 12\n37121 Verona (VR), Italia",
-              },
               { icon: Mail, label: "Email", value: "info@ultralighthome.it" },
               { icon: Phone, label: "Telefono", value: "+39 379 299 7428" },
-              {
-                icon: Clock,
-                label: "Orari",
-                value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento",
-              },
             ].map((row, i) => (
               <Reveal key={row.label} delay={i * 0.08}>
                 <div className="flex items-start gap-5">

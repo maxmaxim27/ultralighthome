@@ -153,6 +153,7 @@ export default async function PropertyPage({
                 </p>
                 <BookingButton
                   vikeyUrl={property.vikeyUrl}
+                  bookingUrl={property.bookingUrl}
                   airbnbUrl={property.airbnbUrl}
                   size="hero"
                 />

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { MapPin, Clock } from "lucide-react";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
@@ -8,7 +8,7 @@ import MapEmbed from "@/components/MapEmbed";
 export const metadata: Metadata = {
   title: "Dove siamo",
   description:
-    "Il nostro ufficio a Verona. Vieni a trovarci o fissa un appuntamento: Via Mazzini 12, 37121 Verona.",
+    "Il nostro ufficio a Verona. Vieni a trovarci o fissa un appuntamento: Lungadige Matteotti 14, 37126 Verona.",
   alternates: { canonical: "/dove-siamo" },
 };
 
@@ -16,15 +16,13 @@ const info = [
   {
     icon: MapPin,
     label: "Indirizzo",
-    value: "Via Mazzini 12\n37121 Verona (VR), Italia",
+    value: "Lungadige Matteotti 14\n37126 Verona (VR), Italia",
   },
   { icon: Clock, label: "Orari", value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento" },
-  { icon: Phone, label: "Telefono", value: "+39 379 299 7428" },
-  { icon: Mail, label: "Email", value: "info@ultralighthome.it" },
 ];
 
 const MAP_SRC =
-  "https://www.google.com/maps?q=Via%20Mazzini%2012,%2037121%20Verona&output=embed";
+  "https://www.google.com/maps?q=Lungadige%20Matteotti%2014,%2037126%20Verona&output=embed";
 
 export default function DoveSiamoPage() {
   return (
@@ -84,7 +82,7 @@ export default function DoveSiamoPage() {
 
           <Reveal delay={0.4}>
             <ButtonLink
-              href="https://www.google.com/maps/dir/?api=1&destination=Via%20Mazzini%2012,%2037121%20Verona"
+              href="https://www.google.com/maps/dir/?api=1&destination=Lungadige%20Matteotti%2014,%2037126%20Verona"
               target="_blank"
               rel="noopener noreferrer"
               variant="primary"

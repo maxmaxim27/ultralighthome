@@ -13,7 +13,6 @@ const nav = [
   { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/dove-siamo", label: "Dove siamo" },
   { href: "/contatti", label: "Contatti" },
-  { href: "/font", label: "Font" },
 ];
 
 export default function Navbar() {

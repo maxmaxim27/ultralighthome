@@ -25,7 +25,7 @@ export default function PropertyCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10% 0px" }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
-      className="group relative bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] transition-shadow duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      className="group relative flex h-full flex-col bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] transition-shadow duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
     >
       {/* Whole-card link to the detail page (stretched behind content) */}
       <Link
@@ -55,7 +55,7 @@ export default function PropertyCard({
         <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/40 to-transparent pointer-events-none" />
       </div>
 
-      <div className="relative z-10 p-6 md:p-7 pointer-events-none">
+      <div className="relative z-10 flex flex-1 flex-col p-6 md:p-7 pointer-events-none">
         <h3 className="font-display text-2xl md:text-[1.65rem] leading-tight tracking-[-0.01em] text-ink">
           {property.name}
         </h3>
@@ -63,7 +63,11 @@ export default function PropertyCard({
           {property.shortDescription}
         </p>
 
-        <div className="mt-5 pt-5 border-t border-stone/10 grid grid-cols-3 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
+        {/* Flexible spacer: keeps a minimum gap to the divider while pushing
+            the spec/booking block to the bottom so it aligns across cards. */}
+        <div className="mt-auto min-h-5" />
+
+        <div className="pt-5 border-t border-stone/10 grid grid-cols-3 gap-2 text-[11px] tracking-[0.1em] uppercase text-stone">
           <Spec
             icon={<BedDouble size={14} />}
             label={`${property.specs.bedrooms}`}
@@ -80,6 +84,7 @@ export default function PropertyCard({
 
         <BookingButton
           vikeyUrl={property.vikeyUrl}
+          bookingUrl={property.bookingUrl}
           airbnbUrl={property.airbnbUrl}
           size="card"
         />

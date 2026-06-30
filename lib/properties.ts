@@ -229,6 +229,7 @@ export const properties: Property[] = [
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/vallum2",
     vikeyUrl: "https://booking.vikey.it/?local_key=vgUVvrc05EhhfcpX7639tpvKJzkiTTNqx384GCmFqt4",
+    bookingUrl: "https://www.booking.com/Share-A8E6gj2",
   },
   {
     slug: "vallum-4",
@@ -268,6 +269,7 @@ export const properties: Property[] = [
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/vallum4",
     vikeyUrl: "https://booking.vikey.it/?local_key=vgUVvrc05EhhfcpX7639tpvJJws-dDN5x384GCmFqt4",
+    bookingUrl: "https://www.booking.com/Share-A8E6gj2",
   },
   {
     slug: "vallum-6",
@@ -307,6 +309,7 @@ export const properties: Property[] = [
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/vallum6",
     vikeyUrl: "https://booking.vikey.it/?local_key=vgUVvrc05EhhfcpX7639tpvIJyc0Kk1Lx384GCmFqt4",
+    bookingUrl: "https://www.booking.com/Share-A8E6gj2",
   },
   {
     slug: "verona-green-heaven",
@@ -346,6 +349,7 @@ export const properties: Property[] = [
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/veronagreenheaven",
     vikeyUrl: "https://booking.vikey.it/?local_key=vgUVvrc05EhhfcpX7639to68JzkFK1Rex384GCmFqt4",
+    bookingUrl: "https://www.booking.com/Share-cDipnKp",
   },
   {
     slug: "dimora-romana",
