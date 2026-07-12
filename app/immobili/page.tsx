@@ -17,7 +17,6 @@ type Group = {
   key: string;
   label: string;
   number: string;
-  description: string;
   heroImage: string;
   items: Property[];
 };
@@ -35,7 +34,6 @@ function buildGroups(): Group[] {
     key: g.key,
     label: g.label,
     number: String(i + 1).padStart(2, "0"),
-    description: g.description,
     heroImage: g.heroImage,
     items: properties.filter((p) => g.locationSlugs.includes(p.locationSlug)),
   }));
@@ -91,7 +89,7 @@ export default function PropertiesPage() {
             const b = BANNER;
             return (
               <div
-                className={`relative h-[44vh] min-h-[340px] w-full overflow-hidden ${b.wrap}`}
+                className={`relative h-[34vh] min-h-[240px] w-full overflow-hidden ${b.wrap}`}
               >
                 {b.overlay && (
                   <div className={`absolute inset-0 ${b.overlay}`} />
@@ -101,7 +99,7 @@ export default function PropertiesPage() {
                 >
                   <Reveal>
                     <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.98] tracking-[-0.02em]">
-                      {g.label}.
+                      {g.label}
                     </h2>
                   </Reveal>
                   <Reveal delay={0.1}>
@@ -110,11 +108,6 @@ export default function PropertiesPage() {
                     >
                       {g.items.length}{" "}
                       {g.items.length === 1 ? "immobile" : "immobili"}
-                    </p>
-                  </Reveal>
-                  <Reveal delay={0.2}>
-                    <p className={`mt-5 max-w-xl leading-relaxed ${b.sub}`}>
-                      {g.description}
                     </p>
                   </Reveal>
                 </div>

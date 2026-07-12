@@ -52,15 +52,15 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[0.98] tracking-[-0.02em] max-w-5xl">
-              Una piccola squadra,
+            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.02em] max-w-5xl">
+              Una squadra,
               <br />
               immobili curati uno a uno.
             </h1>
           </Reveal>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-2xl text-base md:text-lg text-stone leading-relaxed">
-              UltraLightHome nasce nel 2017. Da allora gestiamo affitti brevi
+              UltraLightHome nasce nel 2021. Da allora gestiamo affitti brevi
               per chi cerca un interlocutore vero, non un&apos;agenzia che ti
               tratta come un numero.
             </p>
@@ -92,21 +92,15 @@ export default function AboutPage() {
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
-                  Un immobile sul Garda, poi tutto il resto.
+                  Un immobile a Sottomarina, poi tutto il resto.
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="mt-8 space-y-6 text-stone leading-relaxed">
                   <p>
-                    È iniziato con un solo immobile: una villa di famiglia sul
-                    lago di Garda da affittare quando non veniva usata. Il
-                    passaparola ha fatto il resto. Oggi gestiamo immobili tra
-                    Veneto, Trentino, Sardegna e qualche altro posto bello.
-                  </p>
-                  <p>
-                    Continuiamo a lavorare con lo stesso principio: pochi
-                    immobili, gestiti bene. Crediamo che la qualità venga dal
-                    tempo che dedichi alle cose, non da quante ne fai.
+                    Un immobile a Sottomarina con affitto stagionale con
+                    costanza e passione fino agli chalet e ville in Costa
+                    Smeralda.
                   </p>
                 </div>
               </Reveal>
@@ -126,7 +120,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-[-0.01em] max-w-3xl">
-              Quattro passi, una sola logica.
+              Quattro passi, una direzione.
             </h2>
           </Reveal>
           <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-20">

@@ -68,7 +68,8 @@ export const locations: Location[] = [
     slug: "porto-cervo",
     name: "Porto Cervo",
     region: "Sardegna",
-    description: "Nel cuore della Costa Smeralda, tra mare cristallino e granito.",
+    description:
+      "Nel cuore della Costa Smeralda, tra mare cristallino e granito.",
     heroImage: "/properties/villa-lino/01.jpg",
   },
 ];
@@ -77,32 +78,24 @@ export const locationGroups: LocationGroup[] = [
   {
     key: "dolomiti",
     label: "Dolomiti",
-    description:
-      "Appartamenti e monolocali tra Valdaora, Brunico, Riscone e San Cassiano, perfetti per inverno ed estate.",
     heroImage: "/properties/dolomiti-haus/01.jpg",
     locationSlugs: ["valdaora", "brunico", "riscone", "san-cassiano"],
   },
   {
     key: "costa-smeralda",
     label: "Costa Smeralda",
-    description:
-      "Ville esclusive in Sardegna, tra Porto Cervo e Pantogia, affacciate sul mare della Costa Smeralda.",
     heroImage: "/properties/villa-lino/01.jpg",
     locationSlugs: ["porto-cervo"],
   },
   {
     key: "verona",
     label: "Verona",
-    description:
-      "Appartamenti in città, comodi al centro storico e ben serviti.",
     heroImage: "/properties/verona-green-heaven/01.jpeg",
     locationSlugs: ["verona"],
   },
   {
     key: "altro",
-    label: "Altro",
-    description:
-      "Immobili sparsi altrove in Italia — Roma, Padova, Castelfranco Veneto e Mestre — curati con la stessa attenzione.",
+    label: "Altrove",
     heroImage: "/properties/dimora-romana/01.jpg",
     locationSlugs: ["roma", "padova", "castelfranco-veneto", "mestre"],
   },

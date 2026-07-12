@@ -18,7 +18,11 @@ const info = [
     label: "Indirizzo",
     value: "Lungadige Matteotti 14\n37126 Verona (VR), Italia",
   },
-  { icon: Clock, label: "Orari", value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento" },
+  {
+    icon: Clock,
+    label: "Orari",
+    value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento",
+  },
 ];
 
 const MAP_SRC =
@@ -55,7 +59,7 @@ export default function DoveSiamoPage() {
         <div className="bg-bone p-10 md:p-16 lg:p-20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
-              Ufficio Verona.
+              Ufficio nel cuore di Verona.
             </h2>
           </Reveal>
           <div className="mt-12 space-y-8">
@@ -95,7 +99,10 @@ export default function DoveSiamoPage() {
 
         {/* RIGHT — map (embed Google Maps con consenso: nessun cookie prima del click) */}
         <div className="bg-bone p-10 md:p-16 lg:p-20 flex">
-          <MapEmbed src={MAP_SRC} title="Mappa — Ufficio UltraLightHome, Verona" />
+          <MapEmbed
+            src={MAP_SRC}
+            title="Mappa — Ufficio UltraLightHome, Verona"
+          />
         </div>
       </div>
     </>

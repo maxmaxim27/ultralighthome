@@ -9,7 +9,6 @@ export type Location = {
 export type LocationGroup = {
   key: string;
   label: string;
-  description: string;
   heroImage: string;
   locationSlugs: string[];
 };

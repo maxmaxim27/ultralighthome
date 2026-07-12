@@ -50,7 +50,7 @@ export default function Home() {
           <SectionHeader
             eyebrowNumber="01"
             eyebrowText="Gli immobili"
-            title="Immobili scelti uno a uno, in giro per l'Italia."
+            title="Appartamenti, ville e chalet nel territorio nazionale"
             subtitle="Sfoglia le proposte per zona: città, montagna, mare. Ogni immobile ha la sua storia e la sua dimensione."
           />
           <div className="mt-16 md:mt-20">
@@ -65,7 +65,7 @@ export default function Home() {
           <SectionHeader
             eyebrowNumber="02"
             eyebrowText="Come lavoriamo"
-            title="Cosa facciamo, in concreto."
+            title="I nostri servizi"
           />
           <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-px bg-stone/20">
             {services.map((s, i) => (
@@ -108,8 +108,8 @@ export default function Home() {
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
-                <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
-                  Pochi immobili, gestiti bene.
+                <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
+                  Immobili gestiti con metodo. Clienti soddisfatti.
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>

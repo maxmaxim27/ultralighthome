@@ -9,7 +9,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const REQUEST_TYPES = [
   { value: "proprietario", label: "Sono un proprietario" },
   { value: "ospite", label: "Sono un ospite" },
-  { value: "altro", label: "Altro" },
+  { value: "collaboratore", label: "Voglio collaborare" },
 ];
 
 export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
@@ -75,7 +75,9 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
                 <button
                   key={t.value}
                   type="button"
-                  onClick={() => setTipo((prev) => (prev === t.value ? "" : t.value))}
+                  onClick={() =>
+                    setTipo((prev) => (prev === t.value ? "" : t.value))
+                  }
                   className={[
                     "text-left px-3 py-2 rounded-xl border text-sm transition-colors duration-150",
                     tipo === t.value
@@ -128,7 +130,8 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             Grazie. Abbiamo ricevuto la tua richiesta.
           </h3>
           <p className="mt-3 text-sm text-stone leading-relaxed">
-            Ti risponderemo entro un giorno lavorativo all&apos;indirizzo indicato.
+            Ti risponderemo entro un giorno lavorativo all&apos;indirizzo
+            indicato.
           </p>
         </motion.div>
       )}

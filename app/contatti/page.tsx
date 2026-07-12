@@ -5,8 +5,36 @@ import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone } from "lucide-react";
 
-export default function ContactPage() {
+function Instagram({
+  size = 24,
+  strokeWidth = 2,
+  className,
+}: {
+  size?: number;
+  strokeWidth?: number;
+  className?: string;
+}) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={strokeWidth}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  );
+}
 
+export default function ContactPage() {
   return (
     <div className="pt-32 md:pt-40 pb-0">
       <SectionWrap className="pb-20">
@@ -27,16 +55,39 @@ export default function ContactPage() {
         <div className="bg-bone p-10 md:p-16 lg:p-20 lg:border-r border-stone/20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
-              Ufficio Verona.
+              Contattaci.
             </h2>
           </Reveal>
           <div className="mt-12 space-y-8">
             {[
-              { icon: Mail, label: "Email", value: "info@ultralighthome.it" },
-              { icon: Phone, label: "Telefono", value: "+39 379 299 7428" },
+              {
+                icon: Mail,
+                label: "Email",
+                value: "info@ultralighthome.it",
+                href: "mailto:info@ultralighthome.it",
+              },
+              {
+                icon: Phone,
+                label: "Telefono",
+                value: "+39 379 299 7428",
+                href: "tel:+393792997428",
+              },
+              {
+                icon: Instagram,
+                label: "Instagram",
+                value: "@ultralighthome",
+                href: "https://instagram.com/ultralighthome",
+                external: true,
+              },
             ].map((row, i) => (
               <Reveal key={row.label} delay={i * 0.08}>
-                <div className="flex items-start gap-5">
+                <a
+                  href={row.href}
+                  {...(row.external
+                    ? { target: "_blank", rel: "noopener noreferrer" }
+                    : {})}
+                  className="flex items-start gap-5 group"
+                >
                   <row.icon
                     size={18}
                     strokeWidth={1.4}
@@ -46,11 +97,11 @@ export default function ContactPage() {
                     <p className="text-xs tracking-[0.2em] uppercase text-stone">
                       {row.label}
                     </p>
-                    <p className="mt-2 text-ink whitespace-pre-line leading-relaxed">
+                    <p className="mt-2 text-ink whitespace-pre-line leading-relaxed transition-colors group-hover:text-clay">
                       {row.value}
                     </p>
                   </div>
-                </div>
+                </a>
               </Reveal>
             ))}
           </div>
