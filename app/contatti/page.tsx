@@ -92,6 +92,7 @@ export default function ContactPage() {
                     size={18}
                     strokeWidth={1.4}
                     className="text-clay mt-1 shrink-0"
+                    aria-hidden="true"
                   />
                   <div>
                     <p className="text-xs tracking-[0.2em] uppercase text-stone">
@@ -99,6 +100,9 @@ export default function ContactPage() {
                     </p>
                     <p className="mt-2 text-ink whitespace-pre-line leading-relaxed transition-colors group-hover:text-clay">
                       {row.value}
+                      {row.external && (
+                        <span className="sr-only"> (si apre in una nuova scheda)</span>
+                      )}
                     </p>
                   </div>
                 </a>

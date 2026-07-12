@@ -14,7 +14,7 @@ export default function HomeLocations() {
     slug: g.key,
     name: g.label,
     region: "",
-    description: g.description,
+    description: "",
     heroImage: g.heroImage,
   }));
 
