@@ -14,22 +14,22 @@ const approach = [
   {
     n: "01",
     title: "Contatto",
-    desc: "Ci scrivi o ci chiami. Ci raccontiamo, capiamo cosa cerchi e se siamo l'interlocutore giusto per te.",
+    desc: "Ogni collaborazione nasce da un incontro diretto con il proprietario: solo conoscendoci davvero possiamo costruire un rapporto solido e capire realmente le sue esigenze e i suoi obiettivi.",
   },
   {
     n: "02",
     title: "Valutazione immobile",
-    desc: "Facciamo un sopralluogo e parliamo a lungo con te: valutiamo posizione, potenziale e cosa serve per partire bene.",
+    desc: "Attraverso un'analisi comparativa del mercato locale definiamo il reale potenziale di rendita dell'immobile e la strategia più efficace per massimizzarlo.",
   },
   {
     n: "03",
     title: "Cura",
-    desc: "Se serve, rimettiamo a posto l'immobile: dai dettagli alla biancheria, fino a piccoli restyling fatti con artigiani del posto.",
+    desc: "Ci affidiamo a maestranze e professionisti del design d'interni locali ogni volta che la proprietà lo richiede, per valorizzarne al meglio ogni ambiente.",
   },
   {
     n: "04",
     title: "Operatività",
-    desc: "Prenotazioni, prezzi, check-in, pulizie, manutenzione: gestiamo tutto noi, e ti mandiamo un report ogni tre mesi.",
+    desc: "Gestiamo ogni aspetto operativo dell'immobile in totale autonomia, garantendo al proprietario un report trimestrale puntuale sui risultati ottenuti.",
   },
 ];
 
@@ -145,11 +145,9 @@ export default function AboutPage() {
                 E poi c&apos;è la discrezione.
               </h3>
               <p className="mt-5 text-stone leading-relaxed">
-                Sopra ogni passo c&apos;è un modo di lavorare che non si misura
-                in checklist: scegliamo gli ospiti con attenzione e trattiamo il
-                tuo immobile come tratteremmo il nostro. Riservatezza sui tuoi
-                dati e sulle tue cose, presenza quando serve e un passo indietro
-                quando non serve. Senza esagerare.
+                La discrezione è qualcosa che va oltre il semplice lavoro.
+                Significa scegliere con attenzione gli ospiti, gestire ogni
+                immobile con cura e proteggere la riservatezza dei tuoi dati.
               </p>
             </div>
           </Reveal>

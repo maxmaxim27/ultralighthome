@@ -71,8 +71,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 1.3, ease: EASE }}
           className="mt-10 max-w-xl text-base md:text-lg text-cream/80 leading-relaxed"
         >
-          Gestiamo affitti brevi di immobili selezionati, tra città, montagna e
-          mare. Dolomiti, Costa Smeralda, Verona e altro.
+          Selezioniamo e gestiamo proprietà d&apos;eccellenza tra Dolomiti,
+          Costa Smeralda e Verona.
         </motion.div>
       </div>
 
