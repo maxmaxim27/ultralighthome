@@ -16,7 +16,7 @@ const TYPE_LABELS: Record<string, string> = {
   altro: "Altro",
 };
 
-const FROM = "UltraLightHome <noreply@ultralighthome.it>";
+const FROM = "UltraLightHome <noreply@send.ultralighthome.it>";
 
 function escapeHtml(s: string) {
   return s
