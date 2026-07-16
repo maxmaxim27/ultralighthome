@@ -115,8 +115,8 @@ export default function AboutPage() {
                 <div className="mt-8 space-y-6 text-stone leading-relaxed">
                   <p>
                     Un immobile a Sottomarina con affitto stagionale con
-                    costanza e passione fino agli chalet e ville in Costa
-                    Smeralda.
+                    costanza e passione fino agli chalet nelle dolomiti e ville
+                    in Costa Smeralda.
                   </p>
                 </div>
               </Reveal>

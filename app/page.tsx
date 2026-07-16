@@ -25,17 +25,17 @@ const services = [
   {
     icon: Building2,
     title: "Affitti brevi",
-    desc: "Ci occupiamo di tutto: prenotazioni, check-in, pulizie, manutenzione, fiscalità. Tu pensi all'immobile, il resto lo gestiamo noi.",
+    desc: "Gestiamo ogni aspetto operativo dell'immobile: prenotazioni, check-in, pulizie, manutenzione e adempimenti fiscali. Il proprietario si dedica all'immobile, noi a tutto il resto.",
   },
   {
     icon: Palette,
     title: "Restyling interni",
-    desc: "Quando serve, rimettiamo a posto l'immobile per renderlo più accogliente: piccoli interventi o restyling completi, sempre con artigiani del posto.",
+    desc: "Quando necessario, curiamo la riqualificazione dell'immobile per renderlo più accogliente, dai piccoli interventi ai restyling completi, avvalendoci di artigiani e professionisti del territorio.",
   },
   {
     icon: Megaphone,
     title: "Foto e annunci",
-    desc: "Foto fatte bene, testi scritti con cura, presenza sui canali giusti. Senza esagerare, ma con attenzione.",
+    desc: "Realizziamo fotografie professionali e testi curati, garantendo presenza sui canali più adeguati, con attenzione costante e senza eccessi.",
   },
 ];
 

@@ -41,7 +41,7 @@ export default function DoveSiamoPage() {
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
-              Vieni a trovarci a Verona.
+              Ufficio nel cuore di Verona.
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
@@ -59,7 +59,7 @@ export default function DoveSiamoPage() {
         <div className="bg-bone p-10 md:p-16 lg:p-20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
-              Ufficio nel cuore di Verona.
+              Vieni a trovarci a Verona.
             </h2>
           </Reveal>
           <div className="mt-12 space-y-8">
