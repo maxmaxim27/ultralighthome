@@ -53,7 +53,7 @@ export default function PropertiesPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[0.98] tracking-[-0.02em] max-w-4xl">
+            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
               Gli immobili che curiamo.
             </h1>
           </Reveal>
@@ -79,11 +79,7 @@ export default function PropertiesPage() {
       </div>
 
       {groups.map((g, gi) => (
-        <section
-          key={g.key}
-          id={g.key}
-          className={gi % 2 === 0 ? "bg-bone" : "bg-cream"}
-        >
+        <section key={g.key} id={g.key} className="bg-bone">
           {/* BANNER — test sfondi monocromatici / gradient per categoria */}
           {(() => {
             const b = BANNER;
@@ -98,7 +94,7 @@ export default function PropertiesPage() {
                   className={`relative z-10 h-full mx-auto max-w-[1400px] px-6 md:px-10 flex flex-col justify-end pb-12 md:pb-16 ${b.text}`}
                 >
                   <Reveal>
-                    <h2 className="font-display text-5xl md:text-7xl font-light leading-[0.98] tracking-[-0.02em]">
+                    <h2 className="font-display text-5xl md:text-7xl font-light leading-[1.2] tracking-[-0.01em]">
                       {g.label}
                     </h2>
                   </Reveal>

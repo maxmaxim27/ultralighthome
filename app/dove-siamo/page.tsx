@@ -40,7 +40,7 @@ export default function DoveSiamoPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[0.98] tracking-[-0.02em] max-w-4xl">
+            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
               Vieni a trovarci a Verona.
             </h1>
           </Reveal>

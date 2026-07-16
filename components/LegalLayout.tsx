@@ -21,7 +21,7 @@ export default function LegalLayout({
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <h1 className="font-display mt-6 text-4xl md:text-6xl font-light leading-[1] tracking-[-0.02em] max-w-4xl">
+          <h1 className="font-display mt-6 text-4xl md:text-6xl font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
             {title}
           </h1>
         </Reveal>

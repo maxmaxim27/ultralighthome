@@ -34,10 +34,26 @@ const approach = [
 ];
 
 const team = [
-  { name: "Alberto Cavinato", img: "/about/alberto-cavinato.jpeg" },
-  { name: "Alberto Disarò", img: "/about/alberto-disaro.JPG" },
-  { name: "IGW Studio", img: "/about/igw-studio.jpeg" },
-  { name: "Pamela", img: "/about/fotografa-pamela.jpg" },
+  {
+    name: "Alberto Cavinato",
+    roles: ["Founder", "Sales Manager"],
+    img: "/about/alberto-cavinato.jpeg",
+  },
+  {
+    name: "Alberto Disarò",
+    roles: ["Co-Founder", "Property Manager"],
+    img: "/about/alberto-disaro.JPG",
+  },
+  {
+    name: "IGW Studio",
+    roles: ["Interior Designer"],
+    img: "/about/igw-studio.jpeg",
+  },
+  {
+    name: "Pamela",
+    roles: ["Fotografa"],
+    img: "/about/fotografa-pamela.jpg",
+  },
 ];
 
 export default function AboutPage() {
@@ -91,7 +107,7 @@ export default function AboutPage() {
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
-                <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
+                <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
                   Un immobile a Sottomarina, poi tutto il resto.
                 </h2>
               </Reveal>
@@ -119,7 +135,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-[-0.01em] max-w-3xl">
+            <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.2] tracking-[-0.01em] max-w-3xl">
               Quattro passi, una direzione.
             </h2>
           </Reveal>
@@ -164,14 +180,14 @@ export default function AboutPage() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.05] tracking-[-0.01em]">
+            <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.2] tracking-[-0.01em]">
               Le persone che ci sono dietro.
             </h2>
           </Reveal>
           <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
             {team.map((m, i) => (
               <Reveal key={m.name} delay={i * 0.08}>
-                <div className="relative aspect-[4/5] overflow-hidden bg-bone">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone">
                   <Image
                     src={m.img}
                     alt={m.name}
@@ -183,6 +199,11 @@ export default function AboutPage() {
                 <h3 className="font-display mt-6 text-xl md:text-2xl font-light tracking-[-0.01em] text-center">
                   {m.name}
                 </h3>
+                <div className="mt-2 text-center text-sm text-stone leading-relaxed">
+                  {m.roles.map((r) => (
+                    <p key={r}>{r}</p>
+                  ))}
+                </div>
               </Reveal>
             ))}
           </div>

@@ -14,7 +14,7 @@ export default function NotFound() {
             </p>
           </Reveal>
           <Reveal delay={0.1}>
-            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-8xl font-light leading-[0.95] tracking-[-0.02em]">
+            <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-8xl font-light leading-[1.2] tracking-[-0.01em]">
               Questa porta
               <br />
               non si apre.

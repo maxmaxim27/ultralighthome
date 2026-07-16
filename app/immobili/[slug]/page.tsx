@@ -141,7 +141,7 @@ export default async function PropertyPage({
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
-                <h1 className="font-display mt-3 text-4xl md:text-6xl lg:text-7xl font-light leading-[1] tracking-[-0.02em] max-w-4xl">
+                <h1 className="font-display mt-3 text-4xl md:text-6xl lg:text-7xl font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
                   {property.name}
                 </h1>
               </Reveal>
@@ -187,7 +187,7 @@ export default async function PropertyPage({
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
-                <h2 className="font-display mt-5 text-3xl md:text-4xl font-light leading-[1.1] tracking-[-0.01em]">
+                <h2 className="font-display mt-5 text-3xl md:text-4xl font-light leading-[1.2] tracking-[-0.01em]">
                   Cosa ti aspetta.
                 </h2>
               </Reveal>
@@ -219,7 +219,7 @@ export default async function PropertyPage({
               </p>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em] mb-16">
+              <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em] mb-16">
                 Da vedere anche.
               </h2>
             </Reveal>

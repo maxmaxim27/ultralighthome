@@ -45,9 +45,12 @@ export default function Hero() {
               transition: { staggerChildren: 0.08, delayChildren: 0.5 },
             },
           }}
-          className="font-display mt-6 max-w-5xl text-[2.6rem] sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.98] tracking-[-0.02em] font-light"
+          className="font-display mt-6 max-w-3xl text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] tracking-[-0.01em] font-light"
         >
-          {["Soggiorni", "che lasciano", "il segno."].map((line, i) => (
+          {[
+            "Selezioniamo e gestiamo",
+            "proprietà d'eccellenza tra Dolomiti, Costa Smeralda e Verona.",
+          ].map((line, i) => (
             <motion.span
               key={i}
               variants={{
@@ -64,16 +67,6 @@ export default function Hero() {
             </motion.span>
           ))}
         </motion.h1>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 1.3, ease: EASE }}
-          className="mt-10 max-w-xl text-base md:text-lg text-cream/80 leading-relaxed"
-        >
-          Selezioniamo e gestiamo proprietà d&apos;eccellenza tra Dolomiti,
-          Costa Smeralda e Verona.
-        </motion.div>
       </div>
 
       <motion.div

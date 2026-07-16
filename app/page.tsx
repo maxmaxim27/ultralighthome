@@ -147,7 +147,7 @@ export default function Home() {
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
-                <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
+                <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
                   Vieni a trovarci, o scrivici.
                 </h2>
               </Reveal>
@@ -192,7 +192,7 @@ export default function Home() {
       <div className="bg-cream py-20 md:py-24">
         <SectionWrap>
           <Reveal className="text-center">
-            <h2 className="font-display text-4xl md:text-5xl font-light leading-[1.05] tracking-[-0.01em]">
+            <h2 className="font-display text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
               In collaborazione con
             </h2>
           </Reveal>
