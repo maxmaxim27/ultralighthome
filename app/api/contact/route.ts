@@ -2,7 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { issueToken, verifyToken } from "@/lib/form-token";
 
-export const runtime = "edge";
 export const dynamic = "force-dynamic";
 
 // Where each request type is routed.
