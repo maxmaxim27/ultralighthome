@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import Image from "next/image";
+import { useMounted } from "@/lib/use-mounted";
 
 type Props = {
   vikeyUrl?: string;
@@ -20,11 +21,7 @@ export default function BookingButton({
   size = "hero",
 }: Props) {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useMounted();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

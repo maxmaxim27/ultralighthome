@@ -78,7 +78,7 @@ export default function PropertiesPage() {
         </SectionWrap>
       </div>
 
-      {groups.map((g, gi) => (
+      {groups.map((g) => (
         <section key={g.key} id={g.key} className="bg-bone">
           {/* BANNER — test sfondi monocromatici / gradient per categoria */}
           {(() => {

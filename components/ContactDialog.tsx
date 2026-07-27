@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
+import { useMounted } from "@/lib/use-mounted";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
@@ -12,9 +13,7 @@ type Props = {
 
 export default function ContactDialog({ trigger }: Props) {
   const [open, setOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => { setMounted(true); }, []);
+  const mounted = useMounted();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";

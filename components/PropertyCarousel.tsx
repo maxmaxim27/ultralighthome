@@ -37,6 +37,10 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
 
   useEffect(() => {
     if (!emblaApi) return;
+    // Embla is an external system: its snap list only exists once the API is
+    // created, so the initial read has to happen here. This is the pattern
+    // Embla documents for React.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSnaps(emblaApi.scrollSnapList());
     onSelect(emblaApi);
     emblaApi.on("select", onSelect);

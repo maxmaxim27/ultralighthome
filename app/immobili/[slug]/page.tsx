@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { properties, getProperty } from "@/lib/properties";
 import { locations, locationGroups } from "@/lib/locations";
 import { SITE, absoluteUrl } from "@/lib/site";

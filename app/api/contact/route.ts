@@ -11,13 +11,40 @@ const RECIPIENTS: Record<string, string> = {
 };
 const FALLBACK_RECIPIENT = "info@ultralighthome.it";
 
+// Keep in sync with REQUEST_TYPES in components/ContactForm.tsx.
 const TYPE_LABELS: Record<string, string> = {
   proprietario: "Sono un proprietario",
   ospite: "Sono un ospite",
+  collaboratore: "Voglio collaborare",
   altro: "Altro",
 };
 
 const FROM = "UltraLightHome <noreply@send.ultralighthome.it>";
+
+// Per-IP throttle held in the isolate's memory. It resets whenever Cloudflare
+// recycles the isolate and is not shared between colos, so it is a cheap first
+// line of defence, not a guarantee — the WAF rate-limiting rule is the real one.
+const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
+const hits = new Map<string, number[]>();
+
+function rateLimited(req: Request) {
+  const ip = req.headers.get("CF-Connecting-IP") ?? "unknown";
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter(
+    (t) => now - t < RATE_LIMIT.windowMs,
+  );
+  recent.push(now);
+  hits.set(ip, recent);
+
+  // Keep the map from growing without bound in a long-lived isolate.
+  if (hits.size > 5_000) {
+    for (const [key, stamps] of hits) {
+      if (stamps.every((t) => now - t >= RATE_LIMIT.windowMs)) hits.delete(key);
+    }
+  }
+
+  return recent.length > RATE_LIMIT.max;
+}
 
 function escapeHtml(s: string) {
   return s
@@ -37,6 +64,13 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
+  if (rateLimited(req)) {
+    return NextResponse.json(
+      { error: "rate-limited" },
+      { status: 429, headers: { "Retry-After": "600" } },
+    );
+  }
+
   let body: Record<string, unknown>;
   try {
     body = await req.json();
