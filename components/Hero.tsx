@@ -10,11 +10,31 @@ export default function Hero() {
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
+
+    // Safari revokes muted-inline autoplay while the device is in Low Power
+    // Mode, so the attribute alone is not enough. A user gesture lifts the
+    // restriction for the rest of the session, and on iOS a scroll always
+    // starts as a touchstart, so scrolling counts too.
+    const GESTURES = ["pointerdown", "touchstart", "scroll"] as const;
+
+    const stopWaiting = () => {
+      for (const name of GESTURES) {
+        document.removeEventListener(name, onGesture);
+      }
+    };
+
+    const onGesture = () => {
+      v.play().then(stopWaiting, () => {});
+    };
+
     v.muted = true;
-    const tryPlay = () => v.play().catch(() => {});
-    tryPlay();
-    v.addEventListener("canplay", tryPlay, { once: true });
-    return () => v.removeEventListener("canplay", tryPlay);
+    v.play().catch(() => {
+      for (const name of GESTURES) {
+        document.addEventListener(name, onGesture, { passive: true });
+      }
+    });
+
+    return stopWaiting;
   }, []);
 
   return (
