@@ -1,7 +1,9 @@
 // Central site config — single source of truth for SEO (URLs, brand, contacts).
 export const SITE = {
   name: "UltraLightHome",
-  url: "https://www.ultralighthome.it",
+  // Apex, matching the hostname actually served and the security.txt canonical.
+  // www is not configured; point it here with a Cloudflare redirect rule.
+  url: "https://ultralighthome.it",
   locale: "it_IT",
   description:
     "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda, Roma e altro. Case curate, ben gestite, pronte da prenotare.",
