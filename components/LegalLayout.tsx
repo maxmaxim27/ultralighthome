@@ -13,7 +13,7 @@ export default function LegalLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="bg-cream pt-32 md:pt-40 pb-24 md:pb-32">
+    <div className="bg-white pt-32 md:pt-40 pb-24 md:pb-32">
       <SectionWrap>
         <Reveal>
           <p className="text-xs tracking-[0.2em] uppercase text-stone">

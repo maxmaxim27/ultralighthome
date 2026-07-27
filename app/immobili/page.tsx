@@ -44,7 +44,7 @@ export default function PropertiesPage() {
 
   return (
     <>
-      <div className="pt-32 md:pt-40 pb-16 md:pb-20 bg-cream">
+      <div className="pt-32 md:pt-40 pb-16 md:pb-20 bg-white">
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">

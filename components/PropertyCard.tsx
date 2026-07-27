@@ -25,7 +25,7 @@ export default function PropertyCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-10% 0px" }}
       transition={{ duration: 0.7, delay: index * 0.08, ease: EASE }}
-      className="group relative flex h-full flex-col bg-cream rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] transition-shadow duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      className="group relative flex h-full flex-col bg-white rounded-3xl overflow-hidden border border-stone/10 shadow-[0_2px_8px_-4px_rgba(0,0,0,0.06)] hover:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.18)] transition-shadow duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
     >
       {/* Whole-card link to the detail page (stretched behind content) */}
       <Link
@@ -43,12 +43,12 @@ export default function PropertyCard({
           className="object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
         />
 
-        <div className="absolute top-4 left-4 inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-ink bg-cream/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
+        <div className="absolute top-4 left-4 inline-flex items-center gap-2 text-[10px] tracking-[0.2em] uppercase text-ink bg-white/90 backdrop-blur-sm px-3 py-1.5 rounded-full">
           <span className="size-1.5 rounded-full bg-clay" />
           {loc?.name}
         </div>
 
-        <div className="absolute top-4 right-4 size-10 rounded-full bg-cream/90 backdrop-blur-sm flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:translate-x-1">
+        <div className="absolute top-4 right-4 size-10 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1 group-hover:translate-x-1">
           <ArrowUpRight size={18} className="text-ink" />
         </div>
 

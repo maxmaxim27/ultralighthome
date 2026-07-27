@@ -43,7 +43,7 @@ export default function CookieConsent() {
               <button
                 type="button"
                 onClick={reject}
-                className="inline-flex items-center rounded-full border border-cream/40 text-cream px-7 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-cream hover:text-ink transition-colors duration-300"
+                className="inline-flex items-center rounded-full border border-cream/40 text-cream px-7 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-white hover:text-ink transition-colors duration-300"
               >
                 Rifiuta
               </button>

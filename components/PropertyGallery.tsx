@@ -111,9 +111,9 @@ export default function PropertyGallery({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-[90] bg-cream overflow-y-auto overscroll-contain"
+            className="fixed inset-0 z-[90] bg-white overflow-y-auto overscroll-contain"
           >
-            <div className="sticky top-0 z-10 flex items-center justify-between bg-cream/90 backdrop-blur-md px-6 md:px-10 py-5 border-b border-stone/15">
+            <div className="sticky top-0 z-10 flex items-center justify-between bg-white/90 backdrop-blur-md px-6 md:px-10 py-5 border-b border-stone/15">
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
                 {alt} — {images.length} foto
               </p>

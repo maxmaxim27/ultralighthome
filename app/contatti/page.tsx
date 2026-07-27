@@ -36,7 +36,7 @@ function Instagram({
 
 export default function ContactPage() {
   return (
-    <div className="pt-32 md:pt-40 pb-0">
+    <div className="bg-white pt-32 md:pt-40 pb-0">
       <SectionWrap className="pb-20">
         <Reveal>
           <p className="text-xs tracking-[0.2em] uppercase text-stone">
@@ -112,7 +112,7 @@ export default function ContactPage() {
         </div>
 
         {/* RIGHT — form */}
-        <div className="bg-cream p-10 md:p-16 lg:p-20">
+        <div className="bg-white p-10 md:p-16 lg:p-20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
               Scrivici.

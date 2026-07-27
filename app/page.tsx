@@ -45,7 +45,7 @@ export default function Home() {
       <Hero />
 
       {/* PORTFOLIO BY LOCATION */}
-      <div className="bg-cream py-28 md:py-40">
+      <div className="bg-white py-28 md:py-40">
         <SectionWrap>
           <SectionHeader
             eyebrowNumber="01"
@@ -86,7 +86,7 @@ export default function Home() {
       </div>
 
       {/* ABOUT PREVIEW — 03 Chi siamo */}
-      <div className="bg-cream py-28 md:py-40">
+      <div className="bg-white py-28 md:py-40">
         <SectionWrap>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <Reveal className="lg:col-span-7 lg:col-start-1">
@@ -170,7 +170,7 @@ export default function Home() {
               </Reveal>
             </div>
             <Reveal delay={0.2} className="lg:col-span-6">
-              <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-white">
                 <Image
                   src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=80"
                   alt="Il nostro ufficio a Verona"
@@ -189,7 +189,7 @@ export default function Home() {
       </div>
 
       {/* PARTNERS */}
-      <div className="bg-cream py-20 md:py-24">
+      <div className="bg-white py-20 md:py-24">
         <SectionWrap>
           <Reveal className="text-center">
             <h2 className="font-display text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">

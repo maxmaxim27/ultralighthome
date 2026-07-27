@@ -35,45 +35,11 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink/60" />
 
-      <div className="relative z-10 h-full mx-auto max-w-[1400px] px-6 md:px-10 flex flex-col justify-end pb-24 md:pb-32">
-        <motion.h1
-          initial="hidden"
-          animate="visible"
-          variants={{
-            hidden: {},
-            visible: {
-              transition: { staggerChildren: 0.08, delayChildren: 0.5 },
-            },
-          }}
-          className="font-display mt-6 max-w-3xl text-[2rem] sm:text-4xl md:text-5xl lg:text-6xl leading-[1.2] tracking-[-0.01em] font-light"
-        >
-          {[
-            "Selezioniamo e gestiamo",
-            "proprietà d'eccellenza tra Dolomiti, Costa Smeralda e Verona.",
-          ].map((line, i) => (
-            <motion.span
-              key={i}
-              variants={{
-                hidden: { opacity: 0, y: 30 },
-                visible: {
-                  opacity: 1,
-                  y: 0,
-                  transition: { duration: 0.8, ease: EASE },
-                },
-              }}
-              className="block"
-            >
-              {line}
-            </motion.span>
-          ))}
-        </motion.h1>
-      </div>
-
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.8 }}
-        className="absolute bottom-8 right-8 md:right-10 z-10 flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-cream/70"
+        className="absolute bottom-8 left-0 md:left-10 z-10 flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-cream/70"
       >
         Scroll
         <ArrowDown size={14} className="animate-pulse" />

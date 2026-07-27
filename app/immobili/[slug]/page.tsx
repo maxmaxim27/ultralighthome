@@ -123,7 +123,7 @@ export default async function PropertyPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       {/* COMPACT HEADER */}
-      <section className="bg-cream pt-32 md:pt-36 pb-10">
+      <section className="bg-white pt-32 md:pt-36 pb-10">
         <SectionWrap>
           <Reveal>
             <Link
@@ -164,7 +164,7 @@ export default async function PropertyPage({
       </section>
 
       {/* GALLERY — prima cosa visibile */}
-      <div className="bg-cream pb-24 md:pb-32">
+      <div className="bg-white pb-24 md:pb-32">
         <SectionWrap>
           <PropertyGallery
             images={property.gallery}
@@ -210,7 +210,7 @@ export default async function PropertyPage({
 
       {/* RELATED */}
       {related.length > 0 && (
-        <div className="bg-cream py-24 md:py-32">
+        <div className="bg-white py-24 md:py-32">
           <SectionWrap>
             <Reveal>
               <p className="text-xs tracking-[0.2em] uppercase text-stone">

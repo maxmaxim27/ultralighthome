@@ -77,7 +77,7 @@ export default function BookingButton({
               role="dialog"
               aria-modal="true"
               aria-label="Scegli la piattaforma di prenotazione"
-              className="pointer-events-auto relative w-full max-w-lg bg-cream rounded-3xl p-8 md:p-10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.35)] text-left"
+              className="pointer-events-auto relative w-full max-w-lg bg-white rounded-3xl p-8 md:p-10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.35)] text-left"
             >
               <button
                 type="button"
@@ -119,7 +119,7 @@ export default function BookingButton({
                     <div className="flex-1 text-left">
                       <p className="flex flex-col-reverse md:flex-row font-display text-lg font-light tracking-[-0.01em] md:items-center gap-2">
                         Prenota su Vikey
-                        <span className="text-[10px] tracking-[0.15em] uppercase bg-cream/20 rounded-full px-2 py-0.5 w-fit">
+                        <span className="text-[10px] tracking-[0.15em] uppercase bg-white/20 rounded-full px-2 py-0.5 w-fit">
                           Consigliato
                         </span>
                       </p>
@@ -171,7 +171,7 @@ export default function BookingButton({
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={() => setOpen(false)}
-                    className="group flex items-center gap-4 rounded-2xl border border-stone/25 bg-cream p-5 hover:bg-stone/5 transition-colors duration-200"
+                    className="group flex items-center gap-4 rounded-2xl border border-stone/25 bg-white p-5 hover:bg-stone/5 transition-colors duration-200"
                   >
                     <Image
                       src="/logos/booking-logo.png"

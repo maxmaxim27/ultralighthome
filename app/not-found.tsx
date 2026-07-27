@@ -4,7 +4,7 @@ import Reveal from "@/components/Reveal";
 
 export default function NotFound() {
   return (
-    <section className="bg-cream min-h-[80vh] flex items-center pt-32 pb-24">
+    <section className="bg-white min-h-[80vh] flex items-center pt-32 pb-24">
       <SectionWrap>
         <div className="max-w-3xl">
           <Reveal>

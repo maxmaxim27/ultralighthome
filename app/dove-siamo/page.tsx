@@ -32,7 +32,7 @@ export default function DoveSiamoPage() {
   return (
     <>
       {/* HERO */}
-      <div className="bg-cream pt-32 md:pt-40 pb-16 md:pb-20">
+      <div className="bg-white pt-32 md:pt-40 pb-16 md:pb-20">
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">

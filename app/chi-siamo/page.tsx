@@ -50,7 +50,7 @@ const team = [
     img: "/about/igw-studio.jpeg",
   },
   {
-    name: "Pamela",
+    name: "Pamela Zamberlan",
     roles: ["Fotografa"],
     img: "/about/fotografa-pamela.jpg",
   },
@@ -76,7 +76,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-2xl text-base md:text-lg text-stone leading-relaxed">
-              UltraLightHome nasce nel 2021. Da allora gestiamo affitti brevi
+              Ultralight Home nasce nel 2021. Da allora gestiamo affitti brevi
               per chi cerca un interlocutore vero, non un&apos;agenzia che ti
               tratta come un numero.
             </p>
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </div>
 
       {/* STORY */}
-      <div className="bg-cream py-28 md:py-40">
+      <div className="bg-white py-28 md:py-40">
         <SectionWrap>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <Reveal className="lg:col-span-6 lg:col-start-1">
@@ -114,9 +114,10 @@ export default function AboutPage() {
               <Reveal delay={0.2}>
                 <div className="mt-8 space-y-6 text-stone leading-relaxed">
                   <p>
-                    Un immobile a Sottomarina con affitto stagionale con
-                    costanza e passione fino agli chalet nelle Dolomiti e ville
-                    in Costa Smeralda.
+                    Abbiamo iniziato con un appartamento a Sottomarina dedicato
+                    agli affitti stagionali, costruendo il nostro percorso con
+                    costanza e passione fino ad arrivare agli chalet nelle
+                    Dolomiti e ville in Costa Smeralda.
                   </p>
                 </div>
               </Reveal>
@@ -171,7 +172,7 @@ export default function AboutPage() {
       </div>
 
       {/* TEAM */}
-      <div className="bg-cream py-28 md:py-40">
+      <div className="bg-white py-28 md:py-40">
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
@@ -187,7 +188,7 @@ export default function AboutPage() {
           <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
             {team.map((m, i) => (
               <Reveal key={m.name} delay={i * 0.08}>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone border border-stone/5 shadow-[0_32px_70px_-16px_rgba(0,0,0,0.3)]">
                   <Image
                     src={m.img}
                     alt={m.name}
@@ -197,7 +198,13 @@ export default function AboutPage() {
                   />
                 </div>
                 <h3 className="font-display mt-6 text-xl md:text-2xl font-light tracking-[-0.01em] text-center">
-                  {m.name}
+                  {m.name.split(" ").map((word, idx, arr) => (
+                    <span key={idx}>
+                      {word}
+                      {idx < arr.length - 1 && <br className="sm:hidden" />}
+                      {idx < arr.length - 1 && " "}
+                    </span>
+                  ))}
                 </h3>
                 <div className="mt-2 text-center text-sm text-stone leading-relaxed">
                   {m.roles.map((r) => (

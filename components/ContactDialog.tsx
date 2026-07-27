@@ -46,7 +46,7 @@ export default function ContactDialog({ trigger }: Props) {
               role="dialog"
               aria-modal="true"
               aria-label="Valuta il tuo immobile"
-              className="pointer-events-auto relative w-full max-w-xl bg-cream rounded-3xl p-8 md:p-10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.35)] text-left overflow-y-auto max-h-[90vh]"
+              className="pointer-events-auto relative w-full max-w-xl bg-white rounded-3xl p-8 md:p-10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.35)] text-left overflow-y-auto max-h-[90vh]"
             >
               <button
                 type="button"

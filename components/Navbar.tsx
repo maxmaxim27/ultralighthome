@@ -81,7 +81,7 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={open}
-                className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-cream hover:text-ink transition-colors"
+                className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-white hover:text-ink transition-colors"
               >
                 Valuta immobile
               </button>
@@ -91,7 +91,7 @@ export default function Navbar() {
           <button
             aria-label={open ? "Chiudi menu" : "Apri menu"}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-cream/10 transition-colors relative z-60"
+            className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative z-60"
           >
             {open ? (
               <X size={22} strokeWidth={1.5} />
@@ -153,7 +153,7 @@ export default function Navbar() {
                 <button
                   type="button"
                   onClick={() => { setOpen(false); openDialog(); }}
-                  className="block w-full text-center bg-cream text-ink py-4 rounded-full text-sm"
+                  className="block w-full text-center bg-white text-ink py-4 rounded-full text-sm"
                 >
                   Valuta immobile
                 </button>
