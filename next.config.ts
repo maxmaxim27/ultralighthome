@@ -17,7 +17,10 @@ const CSP = [
   "form-action 'self'",
   "base-uri 'self'",
   "object-src 'none'",
-  "upgrade-insecure-requests",
+  // Production is HTTPS-only, so this is free there. In development it would
+  // rewrite every asset request to https://, which `next dev` cannot answer —
+  // that silently breaks video and images when testing from a phone over LAN.
+  ...(process.env.NODE_ENV === "production" ? ["upgrade-insecure-requests"] : []),
 ].join("; ");
 
 // Applied to worker-rendered responses. public/_headers covers the same ground
