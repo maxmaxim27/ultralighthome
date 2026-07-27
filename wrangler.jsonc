@@ -7,8 +7,7 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  },
-  "images": {
-    "binding": "IMAGES"
   }
+  // No "images" binding on purpose: next.config.ts sets images.unoptimized, so
+  // nothing goes through Cloudflare Images and nothing can bill transformations.
 }
