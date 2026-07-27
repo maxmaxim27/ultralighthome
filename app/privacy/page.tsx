@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
-import { SITE } from "@/lib/site";
+import { LEGAL, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -14,7 +14,7 @@ export default function PrivacyPage() {
     <LegalLayout
       eyebrow="Privacy"
       title="Informativa sulla privacy."
-      updated="[DA COMPILARE]"
+      updated={LEGAL.updated}
     >
       <section>
         <p>
@@ -27,9 +27,9 @@ export default function PrivacyPage() {
       <section>
         <h2>1. Titolare del trattamento</h2>
         <p>
-          Titolare del trattamento è <strong>[DA COMPILARE — ragione sociale]</strong>,
-          P.IVA <strong>[DA COMPILARE]</strong>, con sede in{" "}
-          <strong>[DA COMPILARE — indirizzo]</strong>.
+          Titolare del trattamento è <strong>{LEGAL.owner}</strong>, P.IVA{" "}
+          <strong>{LEGAL.vat}</strong>, con sede in{" "}
+          <strong>{LEGAL.address}</strong>.
         </p>
         <p>
           Per qualsiasi richiesta relativa ai tuoi dati puoi scrivere a{" "}
@@ -73,9 +73,11 @@ export default function PrivacyPage() {
       <section>
         <h2>4. Conservazione dei dati</h2>
         <p>
-          Conserviamo i dati per il tempo necessario alle finalità indicate e
-          comunque non oltre <strong>[DA COMPILARE — es. 24 mesi]</strong> dalla
-          tua ultima richiesta, salvo diversi obblighi di legge.
+          Conserviamo i dati del modulo contatti per il tempo necessario alle
+          finalità indicate e comunque non oltre{" "}
+          <strong>{LEGAL.retention}</strong> dall&apos;ultimo scambio con te,
+          salvo diversi obblighi di legge. I log tecnici del server sono
+          conservati per periodi più brevi dal fornitore di hosting.
         </p>
       </section>
 
@@ -83,9 +85,43 @@ export default function PrivacyPage() {
         <h2>5. Destinatari dei dati</h2>
         <p>
           I dati possono essere trattati da fornitori che ci supportano
-          nell&apos;erogazione del servizio (es. hosting e gestione del sito),
-          nominati responsabili del trattamento. Non vendiamo i tuoi dati a
-          terzi.
+          nell&apos;erogazione del servizio, nominati responsabili del
+          trattamento ai sensi dell&apos;art. 28 GDPR. Non vendiamo i tuoi dati
+          a terzi. I fornitori attualmente utilizzati sono:
+        </p>
+        <ul>
+          <li>
+            <strong>Cloudflare, Inc.</strong> — hosting del sito e protezione
+            dell&apos;infrastruttura. Tratta dati di navigazione (indirizzo IP,
+            log tecnici).{" "}
+            <a
+              href="https://www.cloudflare.com/privacypolicy/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy policy
+            </a>
+            .
+          </li>
+          <li>
+            <strong>Resend (Plus Five Five, Inc.)</strong> — recapito delle
+            email generate dal modulo contatti. Tratta nome, email e contenuto
+            del messaggio.{" "}
+            <a
+              href="https://resend.com/legal/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Privacy policy
+            </a>
+            .
+          </li>
+        </ul>
+        <p>
+          Entrambi i fornitori hanno sede negli Stati Uniti: il trasferimento
+          avviene sulla base delle Clausole Contrattuali Standard approvate
+          dalla Commissione Europea e, ove applicabile, della certificazione
+          EU-U.S. Data Privacy Framework.
         </p>
         <p>
           La pagina <a href="/dove-siamo">Dove siamo</a> integra una mappa di{" "}

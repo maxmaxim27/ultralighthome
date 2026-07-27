@@ -12,6 +12,17 @@ export const SITE = {
   twitter: "@ultralighthome",
 } as const;
 
+// Legal identity — used by the privacy, cookie and terms pages and by the footer.
+export const LEGAL = {
+  owner: "Alberto Disarò",
+  vat: "05601980286",
+  address: "Via Cristoforo Colombo 5, 35016 Piazzola sul Brenta (PD)",
+  court: "Padova",
+  // Retention of contact-form data, counted from the last exchange.
+  retention: "24 mesi",
+  updated: "27 luglio 2026",
+} as const;
+
 export function absoluteUrl(path = ""): string {
   return `${SITE.url}${path.startsWith("/") ? path : `/${path}`}`;
 }

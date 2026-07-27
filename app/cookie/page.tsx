@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
-import { SITE } from "@/lib/site";
+import { LEGAL, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
@@ -14,7 +14,7 @@ export default function CookiePage() {
     <LegalLayout
       eyebrow="Cookie"
       title="Informativa sui cookie."
-      updated="[DA COMPILARE]"
+      updated={LEGAL.updated}
     >
       <section>
         <p>
@@ -34,6 +34,12 @@ export default function CookiePage() {
           marketing. I font sono ospitati direttamente sul nostro sito e non
           comportano richieste a server esterni.
         </p>
+        <p>
+          La tua scelta sui cookie di terze parti viene salvata nel{" "}
+          <em>local storage</em> del browser (chiave <code>ulh-consent</code>):
+          resta sul tuo dispositivo, non viene trasmessa ai nostri server e puoi
+          cancellarla svuotando i dati del sito dal browser.
+        </p>
       </section>
 
       <section>
@@ -49,7 +55,8 @@ export default function CookiePage() {
           La mappa <strong>non viene caricata automaticamente</strong>: resta
           sostituita da un&apos;anteprima e i contenuti di Google — con i
           relativi cookie — vengono attivati <strong>solo dopo il tuo consenso
-          esplicito</strong>, cliccando &laquo;Mostra la mappa&raquo;.
+          esplicito</strong>, prestato tramite il banner richiamabile dal
+          pulsante &laquo;Gestisci cookie&raquo;.
         </p>
         <p>
           Per i dettagli sul trattamento da parte di Google consulta la{" "}

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
-import { SITE } from "@/lib/site";
+import { LEGAL, SITE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Termini e condizioni",
@@ -14,14 +14,15 @@ export default function TerminiPage() {
     <LegalLayout
       eyebrow="Termini"
       title="Termini e condizioni."
-      updated="[DA COMPILARE]"
+      updated={LEGAL.updated}
     >
       <section>
         <h2>1. Oggetto</h2>
         <p>
-          Questo sito è la vetrina di <strong>[DA COMPILARE — ragione sociale]</strong>{" "}
-          e presenta gli immobili gestiti per soggiorni brevi. La consultazione
-          del sito implica l&apos;accettazione dei presenti termini.
+          Questo sito è la vetrina di <strong>{LEGAL.owner}</strong>, P.IVA{" "}
+          <strong>{LEGAL.vat}</strong>, con sede in {LEGAL.address}, e presenta
+          gli immobili gestiti per soggiorni brevi. La consultazione del sito
+          implica l&apos;accettazione dei presenti termini.
         </p>
       </section>
 
@@ -60,7 +61,7 @@ export default function TerminiPage() {
         <h2>5. Legge applicabile e foro competente</h2>
         <p>
           I presenti termini sono regolati dalla legge italiana. Per ogni
-          controversia è competente il foro di <strong>[DA COMPILARE]</strong>,
+          controversia è competente il foro di <strong>{LEGAL.court}</strong>,
           fatte salve le norme inderogabili a tutela del consumatore.
         </p>
       </section>

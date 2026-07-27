@@ -69,10 +69,13 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
       setSubmitted(true);
       onSuccess?.();
     } catch (err) {
+      const reason = err instanceof Error ? err.message : "";
       setError(
-        err instanceof Error && err.message === "too-fast"
+        reason === "too-fast"
           ? "Invio troppo rapido. Attendi un momento e riprova."
-          : "Invio non riuscito. Riprova o scrivici a info@ultralighthome.it.",
+          : reason === "rate-limited"
+            ? "Hai inviato troppe richieste. Riprova tra qualche minuto."
+            : "Invio non riuscito. Riprova o scrivici a info@ultralighthome.it.",
       );
     } finally {
       setSending(false);
@@ -167,6 +170,15 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
           >
             {sending ? "Invio in corso…" : "Invia richiesta"}
           </button>
+
+          {/* Art. 13 GDPR: the notice has to be reachable where the data is collected. */}
+          <p className="text-xs text-stone leading-relaxed">
+            Inviando il modulo dichiari di aver letto l&apos;
+            <a href="/privacy" className="underline hover:text-ink">
+              informativa sulla privacy
+            </a>
+            . Usiamo i tuoi dati solo per rispondere alla tua richiesta.
+          </p>
         </motion.form>
       ) : (
         <motion.div

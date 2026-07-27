@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CookiePreferencesButton from "./CookiePreferencesButton";
+import { LEGAL } from "@/lib/site";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -91,7 +92,9 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 text-xs text-cream/50">
           <p className="text-center md:text-left">
-            © {year} UltralightHome. Tutti i diritti riservati.
+            © {year} UltraLightHome. Tutti i diritti riservati.
+            <br />
+            {LEGAL.owner} — P.IVA {LEGAL.vat} — {LEGAL.address}
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="link-underline">
