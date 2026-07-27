@@ -94,7 +94,7 @@ export default function Footer() {
           <p className="text-center md:text-left">
             © {year} UltraLightHome. Tutti i diritti riservati.
             <br />
-            {LEGAL.owner} — P.IVA {LEGAL.vat} — {LEGAL.address}
+            P.IVA {LEGAL.vat}
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="link-underline">
