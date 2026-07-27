@@ -116,8 +116,8 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             />
           </div>
 
-          <Field label="Nome e cognome" name="name" required />
-          <Field label="Email" name="email" type="email" required />
+          <Field label="Nome e cognome" name="name" required maxLength={120} />
+          <Field label="Email" name="email" type="email" required maxLength={254} />
 
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-stone mb-2">
@@ -153,6 +153,7 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
               name="message"
               required
               rows={4}
+              maxLength={5000}
               className="w-full bg-transparent border-b border-stone/40 py-2 text-ink focus:outline-none focus:border-ink transition-colors resize-none"
             />
           </div>
@@ -207,11 +208,13 @@ function Field({
   name,
   type = "text",
   required,
+  maxLength,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  maxLength?: number;
 }) {
   return (
     <div>
@@ -222,6 +225,7 @@ function Field({
         name={name}
         type={type}
         required={required}
+        maxLength={maxLength}
         className="w-full bg-transparent border-b border-stone/40 py-2 text-ink focus:outline-none focus:border-ink transition-colors"
       />
     </div>

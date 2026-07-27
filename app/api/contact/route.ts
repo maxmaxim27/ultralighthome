@@ -24,27 +24,42 @@ const FROM = "UltraLightHome <noreply@send.ultralighthome.it>";
 // Per-IP throttle held in the isolate's memory. It resets whenever Cloudflare
 // recycles the isolate and is not shared between colos, so it is a cheap first
 // line of defence, not a guarantee — the WAF rate-limiting rule is the real one.
-const RATE_LIMIT = { max: 5, windowMs: 10 * 60 * 1000 };
+const WINDOW_MS = 10 * 60 * 1000;
+// Submitting is expensive (it sends mail), minting a token is not, so the two
+// get separate budgets. A real visitor asks for one token per form view plus a
+// refresh every six hours.
+const LIMITS = { POST: 5, GET: 30 };
 const hits = new Map<string, number[]>();
 
-function rateLimited(req: Request) {
+function rateLimited(req: Request, max: number) {
   const ip = req.headers.get("CF-Connecting-IP") ?? "unknown";
   const now = Date.now();
-  const recent = (hits.get(ip) ?? []).filter(
-    (t) => now - t < RATE_LIMIT.windowMs,
-  );
+  const key = `${req.method}:${ip}`;
+  const recent = (hits.get(key) ?? []).filter((t) => now - t < WINDOW_MS);
   recent.push(now);
-  hits.set(ip, recent);
+  hits.set(key, recent);
 
   // Keep the map from growing without bound in a long-lived isolate.
   if (hits.size > 5_000) {
-    for (const [key, stamps] of hits) {
-      if (stamps.every((t) => now - t >= RATE_LIMIT.windowMs)) hits.delete(key);
+    for (const [k, stamps] of hits) {
+      if (stamps.every((t) => now - t >= WINDOW_MS)) hits.delete(k);
     }
   }
 
-  return recent.length > RATE_LIMIT.max;
+  return recent.length > max;
 }
+
+function tooManyRequests() {
+  return NextResponse.json(
+    { error: "rate-limited" },
+    { status: 429, headers: { "Retry-After": "600" } },
+  );
+}
+
+// Caps on what a genuine enquiry can contain. Without them a single request can
+// carry hundreds of kilobytes into an outgoing email.
+const MAX_BODY_BYTES = 16 * 1024;
+const MAX_LENGTHS = { name: 120, email: 254, message: 5_000 };
 
 function escapeHtml(s: string) {
   return s
@@ -54,7 +69,9 @@ function escapeHtml(s: string) {
 }
 
 // Issues the signed timestamp the form sends back on submit.
-export async function GET() {
+export async function GET(req: Request) {
+  if (rateLimited(req, LIMITS.GET)) return tooManyRequests();
+
   const secret = process.env.FORM_SECRET;
   const token = secret ? await issueToken(secret) : "";
   return NextResponse.json(
@@ -64,16 +81,23 @@ export async function GET() {
 }
 
 export async function POST(req: Request) {
-  if (rateLimited(req)) {
-    return NextResponse.json(
-      { error: "rate-limited" },
-      { status: 429, headers: { "Retry-After": "600" } },
-    );
+  if (rateLimited(req, LIMITS.POST)) return tooManyRequests();
+
+  // Reject oversized payloads before spending CPU parsing them.
+  const declared = Number(req.headers.get("Content-Length") ?? 0);
+  if (declared > MAX_BODY_BYTES) {
+    return NextResponse.json({ error: "Richiesta troppo grande" }, { status: 413 });
   }
 
   let body: Record<string, unknown>;
   try {
-    body = await req.json();
+    // Read as text first: Content-Length can be absent on a chunked request,
+    // so the declared size above is a hint, not a guarantee.
+    const raw = await req.text();
+    if (raw.length > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: "Richiesta troppo grande" }, { status: 413 });
+    }
+    body = JSON.parse(raw);
   } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   }
@@ -101,6 +125,13 @@ export async function POST(req: Request) {
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Campi mancanti" }, { status: 400 });
+  }
+  if (
+    name.length > MAX_LENGTHS.name ||
+    email.length > MAX_LENGTHS.email ||
+    message.length > MAX_LENGTHS.message
+  ) {
+    return NextResponse.json({ error: "Campi troppo lunghi" }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     return NextResponse.json({ error: "Email non valida" }, { status: 400 });
