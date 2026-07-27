@@ -6,7 +6,12 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
+    // Everything goes through the Next worker, except the video: served from
+    // the worker it comes back as a plain 200 with no Accept-Ranges, and
+    // Safari's media loader needs byte ranges (206) to stream progressively.
+    // The asset worker answers ranges natively and still applies public/_headers.
+    "run_worker_first": ["/*", "!/video/*"]
   }
   // No "images" binding on purpose: next.config.ts sets images.unoptimized, so
   // nothing goes through Cloudflare Images and nothing can bill transformations.

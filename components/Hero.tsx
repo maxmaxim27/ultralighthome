@@ -11,27 +11,32 @@ export default function Hero() {
     const v = videoRef.current;
     if (!v) return;
 
-    // Safari revokes muted-inline autoplay while the device is in Low Power
-    // Mode, so the attribute alone is not enough. A user gesture lifts the
-    // restriction for the rest of the session, and on iOS a scroll always
-    // starts as a touchstart, so scrolling counts too.
-    const GESTURES = ["pointerdown", "touchstart", "scroll"] as const;
-
-    const stopWaiting = () => {
-      for (const name of GESTURES) {
-        document.removeEventListener(name, onGesture);
-      }
+    // In Low Power Mode Safari ignores `preload` as well as `autoplay`: the
+    // element sits at readyState 0 with nothing buffered, so a bare play() has
+    // no data to start from and the native play button appears to do nothing.
+    // Kicking off the load explicitly is what makes playback actually start.
+    const start = () => {
+      if (v.readyState === v.HAVE_NOTHING) v.load();
+      return v.play();
     };
 
     const onGesture = () => {
-      v.play().then(stopWaiting, () => {});
+      start().catch(() => {});
     };
 
-    v.muted = true;
-    v.play().catch(() => {
-      for (const name of GESTURES) {
-        document.addEventListener(name, onGesture, { passive: true });
-      }
+    const stopWaiting = () => {
+      document.removeEventListener("pointerdown", onGesture);
+      v.removeEventListener("playing", stopWaiting);
+    };
+
+    // Only `playing` proves playback really began — a resolved play() promise
+    // does not, since Safari can stall the element right afterwards.
+    v.addEventListener("playing", stopWaiting);
+
+    start().catch(() => {
+      // Autoplay refused. Nothing but a real user activation lifts that, and it
+      // lifts it for the rest of the page's life, so one listener is enough.
+      document.addEventListener("pointerdown", onGesture, { passive: true });
     });
 
     return stopWaiting;
@@ -46,10 +51,15 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
+        // Shown whenever playback is blocked or still buffering, which on iOS
+        // in Low Power Mode is the whole time until the first tap.
+        poster="/video/hero-poster.jpg"
+        // A plain `src` over a <source> child: Safari's resource selection for
+        // child elements is asynchronous and never retries, and load() only
+        // re-runs reliably against the attribute.
+        src="/video/hero.mp4"
         className="absolute inset-0 h-full w-full object-cover"
-      >
-        <source src="/video/hero.mp4" type="video/mp4" />
-      </video>
+      />
 
       <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/30 to-ink/60" />
 
