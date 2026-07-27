@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { issueToken, verifyToken } from "@/lib/form-token";
 
 export const runtime = "edge";
+export const dynamic = "force-dynamic";
 
 // Where each request type is routed.
 const RECIPIENTS: Record<string, string> = {
@@ -25,12 +27,38 @@ function escapeHtml(s: string) {
     .replace(/>/g, "&gt;");
 }
 
+// Issues the signed timestamp the form sends back on submit.
+export async function GET() {
+  const secret = process.env.FORM_SECRET;
+  const token = secret ? await issueToken(secret) : "";
+  return NextResponse.json(
+    { token },
+    { headers: { "Cache-Control": "no-store" } },
+  );
+}
+
 export async function POST(req: Request) {
   let body: Record<string, unknown>;
   try {
     body = await req.json();
   } catch {
     return NextResponse.json({ error: "Invalid body" }, { status: 400 });
+  }
+
+  // Honeypot: a real user never sees this field, so any value means a bot.
+  // Answer 200 so the bot cannot tell it was filtered.
+  if (String(body.website ?? "").trim() !== "") {
+    return NextResponse.json({ ok: true });
+  }
+
+  // Time trap: reject forms submitted faster than a human can type, or replayed
+  // from a stale token. Skipped when FORM_SECRET is unset so the form keeps working.
+  const formSecret = process.env.FORM_SECRET;
+  if (formSecret) {
+    const check = await verifyToken(formSecret, String(body.token ?? ""));
+    if (check !== "ok") {
+      return NextResponse.json({ error: check }, { status: 400 });
+    }
   }
 
   const name = String(body.name ?? "").trim();
