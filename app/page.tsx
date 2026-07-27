@@ -115,9 +115,9 @@ export default function Home() {
               <Reveal delay={0.2}>
                 <p className="mt-8 text-base md:text-lg text-stone leading-relaxed">
                   Lavoriamo con un numero limitato di proprietari per dedicare
-                  tempo vero a ogni immobile. Niente automatismi, niente
-                  turnover di ospiti a tutti i costi: scegliamo chi entra nel
-                  tuo immobile e ci prendiamo cura di tutto il resto.
+                  tempo vero a ogni immobile. Utilizziamo strumenti e
+                  automazioni per migliorare l’esperienza degli ospiti, senza
+                  rinunciare a una gestione attenta e personalizzata.
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
