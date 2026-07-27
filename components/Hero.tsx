@@ -37,6 +37,7 @@ export default function Hero() {
       // Autoplay refused. Nothing but a real user activation lifts that, and it
       // lifts it for the rest of the page's life, so one listener is enough.
       document.addEventListener("pointerdown", onGesture, { passive: true });
+      document.addEventListener("touchstart", onGesture, { passive: true });
     });
 
     return stopWaiting;
@@ -50,7 +51,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
         // Shown whenever playback is blocked or still buffering, which on iOS
         // in Low Power Mode is the whole time until the first tap.
         poster="/video/hero-poster.jpg"
