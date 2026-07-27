@@ -1,0 +1,4 @@
+Contact: mailto:info@ultralighthome.it
+Expires: 2027-07-27T00:00:00.000Z
+Preferred-Languages: it, en
+Canonical: https://ultralighthome.it/.well-known/security.txt
