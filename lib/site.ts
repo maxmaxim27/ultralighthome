@@ -1,6 +1,6 @@
 // Central site config — single source of truth for SEO (URLs, brand, contacts).
 export const SITE = {
-  name: "UltraLightHome",
+  name: "Ultralight Home",
   // Apex, matching the hostname actually served and the security.txt canonical.
   // www is not configured; point it here with a Cloudflare redirect rule.
   url: "https://ultralighthome.it",
