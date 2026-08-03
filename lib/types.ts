@@ -36,4 +36,7 @@ export type Property = {
   vikeyUrl?: string;
   /** Booking.com share link. When set, Booking appears in the platform chooser. */
   bookingUrl?: string;
+  /** When true the property is not bookable yet: the "Prenota" CTA is replaced
+   *  by a non-interactive "Disponibile a breve" badge. */
+  comingSoon?: boolean;
 };

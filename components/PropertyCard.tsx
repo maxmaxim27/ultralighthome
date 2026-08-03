@@ -86,6 +86,7 @@ export default function PropertyCard({
           vikeyUrl={property.vikeyUrl}
           bookingUrl={property.bookingUrl}
           airbnbUrl={property.airbnbUrl}
+          comingSoon={property.comingSoon}
           size="card"
         />
       </div>

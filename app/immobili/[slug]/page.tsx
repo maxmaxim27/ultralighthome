@@ -155,6 +155,7 @@ export default async function PropertyPage({
                   vikeyUrl={property.vikeyUrl}
                   bookingUrl={property.bookingUrl}
                   airbnbUrl={property.airbnbUrl}
+                  comingSoon={property.comingSoon}
                   size="hero"
                 />
               </div>

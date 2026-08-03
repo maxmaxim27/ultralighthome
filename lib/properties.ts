@@ -532,6 +532,7 @@ export const properties: Property[] = [
     ],
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.it/rooms/6654829",
+    comingSoon: true,
   },
 ];
 

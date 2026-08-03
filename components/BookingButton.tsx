@@ -11,6 +11,7 @@ type Props = {
   vikeyUrl?: string;
   bookingUrl?: string;
   airbnbUrl: string;
+  comingSoon?: boolean;
   size?: "card" | "hero";
 };
 
@@ -18,6 +19,7 @@ export default function BookingButton({
   vikeyUrl,
   bookingUrl,
   airbnbUrl,
+  comingSoon = false,
   size = "hero",
 }: Props) {
   const [open, setOpen] = useState(false);
@@ -34,6 +36,18 @@ export default function BookingButton({
     size === "card"
       ? "pointer-events-auto mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#5a5a5a] text-cream px-6 py-3.5 text-xs tracking-[0.12em] uppercase hover:bg-[#515151] transition-colors duration-300"
       : "mt-6 inline-flex items-center gap-2 rounded-full bg-[#5a5a5a] text-cream px-7 py-4 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300";
+
+  // Not bookable yet → inert badge. Deliberately not a <button disabled>: no
+  // focus, no hover, no handlers. On a card it keeps the parent's
+  // pointer-events-none so a click still opens the property page.
+  if (comingSoon) {
+    const badgeClass =
+      size === "card"
+        ? "mt-6 inline-flex w-full items-center justify-center rounded-full border border-stone/15 bg-stone/10 text-stone px-6 py-3.5 text-xs tracking-[0.12em] uppercase"
+        : "mt-6 inline-flex items-center rounded-full border border-stone/15 bg-stone/10 text-stone px-7 py-4 text-sm tracking-[0.08em] uppercase";
+
+    return <span className={badgeClass}>Disponibile a breve</span>;
+  }
 
   // No alternative platforms → link straight to Airbnb.
   if (!vikeyUrl && !bookingUrl) {
