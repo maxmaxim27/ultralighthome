@@ -419,6 +419,8 @@ export const properties: Property[] = [
     ],
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/centrumliving",
+    vikeyUrl:
+      "https://booking.vikey.it/?local_key=vgUVvrc05EhhfcpX7639tpu3Jy5ifjJmx384GCmFqt4",
   },
   {
     slug: "appartamento-cozy",
@@ -456,6 +458,10 @@ export const properties: Property[] = [
     ],
     pricePerNightFrom: 0,
     airbnbUrl: "https://www.airbnb.com/h/appartamentocozy",
+    vikeyUrl:
+      "https://booking.vikey.it/?local_key=vgUVvrc05EhhfcpX7639tpu6Jwg_cXtfx384GCmFqt4",
+    bookingUrl:
+      "https://booking.com/?checkin=2026-07-18&checkout=2026-07-19&room1=A,A,&no_rooms=1&group_adults=2&group_children=0&req_adults=2&req_children=0&aid=898224&app_hotel_id=15462051&label=hotel_details-6VfMWAG@1784285697&from_sn=ios",
   },
   {
     slug: "thai-rooftop",
