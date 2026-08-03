@@ -11,7 +11,10 @@ export default function manifest(): MetadataRoute.Manifest {
     background_color: "#F5F1EA",
     theme_color: "#1A1815",
     icons: [
-      { src: "/logo_icon.png", sizes: "any", type: "image/png" },
+      { src: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { src: "/icon-512.png", sizes: "512x512", type: "image/png" },
+      // The mark sits at 76% of the square, inside the maskable safe zone.
+      { src: "/icon-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }
