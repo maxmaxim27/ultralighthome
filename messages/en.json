@@ -83,5 +83,27 @@
     "accept": "Accept",
     "reject": "Decline",
     "managePreferences": "Manage cookies"
+  },
+  "hero": {
+    "scroll": "Scroll"
+  },
+  "contactDialog": {
+    "ariaLabel": "Value your property",
+    "close": "Close",
+    "title": "Let's talk about your property.",
+    "description": "Fill in the form. We will reply within one working day."
+  },
+  "property": {
+    "summaryHeading": "The property at a glance",
+    "sqm": "Floor area",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "guests": "Guests",
+    "guestsUpTo": "Up to {count}",
+    "kitchen": "Kitchen",
+    "kitchenEquipped": "Yes, fully equipped",
+    "kitchenNone": "—",
+    "location": "Location",
+    "featuresHeading": "Features"
   }
 }

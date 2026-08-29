@@ -83,5 +83,27 @@
     "accept": "Akzeptieren",
     "reject": "Ablehnen",
     "managePreferences": "Cookies verwalten"
+  },
+  "hero": {
+    "scroll": "Scrollen"
+  },
+  "contactDialog": {
+    "ariaLabel": "Bewerten Sie Ihre Immobilie",
+    "close": "Schließen",
+    "title": "Sprechen wir über Ihre Immobilie.",
+    "description": "Füllen Sie das Formular aus. Wir antworten innerhalb eines Werktags."
+  },
+  "property": {
+    "summaryHeading": "Die Immobilie im Überblick",
+    "sqm": "Wohnfläche",
+    "bedrooms": "Schlafzimmer",
+    "bathrooms": "Badezimmer",
+    "guests": "Gäste",
+    "guestsUpTo": "Bis zu {count}",
+    "kitchen": "Küche",
+    "kitchenEquipped": "Ja, ausgestattet",
+    "kitchenNone": "—",
+    "location": "Lage",
+    "featuresHeading": "Ausstattung"
   }
 }

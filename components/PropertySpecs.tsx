@@ -1,28 +1,30 @@
 import { Home, Bed, Bath, Users, ChefHat, MapPin, type LucideIcon } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
 import AmenityList from "./AmenityList";
 
 type Row = { icon: LucideIcon; label: string; value: string | number };
 
-export default function PropertySpecs({ property }: { property: Property }) {
+export default async function PropertySpecs({ property }: { property: Property }) {
+  const t = await getTranslations("property");
   const loc = locations.find((l) => l.slug === property.locationSlug);
 
   const rows: Row[] = [
     ...(property.specs.sqm
-      ? [{ icon: Home, label: "Metri quadri", value: `${property.specs.sqm} m²` }]
+      ? [{ icon: Home, label: t("sqm"), value: `${property.specs.sqm} m²` }]
       : []),
-    { icon: Bed, label: "Camere", value: property.specs.bedrooms },
-    { icon: Bath, label: "Bagni", value: property.specs.bathrooms },
-    { icon: Users, label: "Ospiti", value: `Fino a ${property.specs.guests}` },
-    { icon: ChefHat, label: "Cucina", value: property.specs.hasKitchen ? "Sì, attrezzata" : "—" },
-    { icon: MapPin, label: "Località", value: loc?.name ?? "" },
+    { icon: Bed, label: t("bedrooms"), value: property.specs.bedrooms },
+    { icon: Bath, label: t("bathrooms"), value: property.specs.bathrooms },
+    { icon: Users, label: t("guests"), value: t("guestsUpTo", { count: property.specs.guests }) },
+    { icon: ChefHat, label: t("kitchen"), value: property.specs.hasKitchen ? t("kitchenEquipped") : t("kitchenNone") },
+    { icon: MapPin, label: t("location"), value: loc?.name ?? "" },
   ];
 
   return (
     <aside className="lg:sticky lg:top-28 bg-bone p-8 lg:p-10">
       <p className="text-xs tracking-[0.2em] uppercase text-stone">
-        <span className="font-display text-clay mr-2">—</span> L&apos;immobile in breve
+        <span className="font-display text-clay mr-2">—</span> {t("summaryHeading")}
       </p>
 
       <ul className="mt-8 space-y-5">
@@ -41,7 +43,7 @@ export default function PropertySpecs({ property }: { property: Property }) {
         <>
           <div className="hairline h-px my-8" />
           <p className="text-xs tracking-[0.2em] uppercase text-stone mb-4">
-            Caratteristiche
+            {t("featuresHeading")}
           </p>
           <AmenityList features={property.features} />
         </>

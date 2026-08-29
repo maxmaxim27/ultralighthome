@@ -83,5 +83,27 @@
     "accept": "Accetta",
     "reject": "Rifiuta",
     "managePreferences": "Gestisci cookie"
+  },
+  "hero": {
+    "scroll": "Scroll"
+  },
+  "contactDialog": {
+    "ariaLabel": "Valuta il tuo immobile",
+    "close": "Chiudi",
+    "title": "Parliamo del tuo immobile.",
+    "description": "Compila il modulo. Risponderemo entro un giorno lavorativo."
+  },
+  "property": {
+    "summaryHeading": "L'immobile in breve",
+    "sqm": "Metri quadri",
+    "bedrooms": "Camere",
+    "bathrooms": "Bagni",
+    "guests": "Ospiti",
+    "guestsUpTo": "Fino a {count}",
+    "kitchen": "Cucina",
+    "kitchenEquipped": "Sì, attrezzata",
+    "kitchenNone": "—",
+    "location": "Località",
+    "featuresHeading": "Caratteristiche"
   }
 }
