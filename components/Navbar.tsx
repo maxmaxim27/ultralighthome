@@ -5,17 +5,19 @@ import { Link, usePathname } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ContactDialog from "@/components/ContactDialog";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const nav = [
-  { href: "/immobili", label: "Immobili" },
-  { href: "/chi-siamo", label: "Chi siamo" },
-  { href: "/dove-siamo", label: "Dove siamo" },
-  { href: "/contatti", label: "Contatti" },
+  { href: "/immobili", key: "properties" },
+  { href: "/chi-siamo", key: "about" },
+  { href: "/dove-siamo", key: "locations" },
+  { href: "/contatti", key: "contact" },
 ] as const;
 
 export default function Navbar() {
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -71,7 +73,7 @@ export default function Navbar() {
                     : "text-cream/70 font-normal hover:text-cream",
                 )}
               >
-                {n.label}
+                {t(n.key)}
               </Link>
             ))}
           </nav>
@@ -84,7 +86,7 @@ export default function Navbar() {
                   onClick={open}
                   className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-white hover:text-ink transition-colors"
                 >
-                  Valuta immobile
+                  {t("evaluate")}
                 </button>
               )}
             />
@@ -94,7 +96,7 @@ export default function Navbar() {
             </div>
 
             <button
-              aria-label={open ? "Chiudi menu" : "Apri menu"}
+              aria-label={open ? t("closeMenu") : t("openMenu")}
               onClick={() => setOpen((v) => !v)}
               className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative z-60"
             >
@@ -132,7 +134,7 @@ export default function Navbar() {
                 )}
                 style={{ transitionDelay: open ? `${150 + i * 70}ms` : "0ms" }}
               >
-                {n.label}
+                {t(n.key)}
               </Link>
             ))}
           </nav>
@@ -161,7 +163,7 @@ export default function Navbar() {
                   onClick={() => { setOpen(false); openDialog(); }}
                   className="block w-full text-center bg-white text-ink py-4 rounded-full text-sm"
                 >
-                  Valuta immobile
+                  {t("evaluate")}
                 </button>
               )}
             />

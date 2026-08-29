@@ -4,5 +4,20 @@
     "it": "Italiano",
     "en": "English",
     "de": "Deutsch"
+  },
+  "nav": {
+    "properties": "Immobilien",
+    "about": "Über uns",
+    "locations": "Standorte",
+    "contact": "Kontakt",
+    "evaluate": "Immobilie bewerten",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "common": {
+    "discoverMore": "Mehr erfahren",
+    "backHome": "Zur Startseite",
+    "seeProperties": "Immobilien ansehen",
+    "newTab": "(öffnet in einem neuen Tab)"
   }
 }

@@ -4,5 +4,20 @@
     "it": "Italiano",
     "en": "English",
     "de": "Deutsch"
+  },
+  "nav": {
+    "properties": "Properties",
+    "about": "About",
+    "locations": "Locations",
+    "contact": "Contact",
+    "evaluate": "Value my property",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "discoverMore": "Find out more",
+    "backHome": "Back to home",
+    "seeProperties": "See our properties",
+    "newTab": "(opens in a new tab)"
   }
 }
