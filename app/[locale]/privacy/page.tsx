@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 import { pick } from "@/lib/i18n-content";
@@ -20,151 +20,127 @@ export default async function PrivacyPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("privacy");
+
+  // Shared rich-text tags: a sentence carrying a link stays one message.
+  const strong = (chunks: React.ReactNode) => <strong>{chunks}</strong>;
+  const mail = (chunks: React.ReactNode) => (
+    <a href={`mailto:${SITE.email}`}>{chunks}</a>
+  );
+  const where = (chunks: React.ReactNode) => (
+    <Link href="/dove-siamo">{chunks}</Link>
+  );
+  const cookies = (chunks: React.ReactNode) => (
+    <Link href="/cookie">{chunks}</Link>
+  );
+  const cloudflareLink = (chunks: React.ReactNode) => (
+    <a
+      href="https://www.cloudflare.com/privacypolicy/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {chunks}
+    </a>
+  );
+  const resendLink = (chunks: React.ReactNode) => (
+    <a
+      href="https://resend.com/legal/privacy-policy"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {chunks}
+    </a>
+  );
+  const garanteLink = (chunks: React.ReactNode) => (
+    <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">
+      {chunks}
+    </a>
+  );
 
   return (
     <LegalLayout
-      eyebrow="Privacy"
-      title="Informativa sulla privacy."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
       updated={LEGAL.updated}
     >
       <section>
-        <p>
-          La presente informativa descrive come trattiamo i dati personali
-          raccolti tramite questo sito, ai sensi del Regolamento UE 2016/679
-          (&laquo;GDPR&raquo;) e della normativa italiana applicabile.
-        </p>
+        <p>{t("intro")}</p>
       </section>
 
       <section>
-        <h2>1. Titolare del trattamento</h2>
+        <h2>{t("controller.heading")}</h2>
         <p>
-          Titolare del trattamento è <strong>{LEGAL.owner}</strong>, P.IVA{" "}
-          <strong>{LEGAL.vat}</strong>, con sede in{" "}
-          <strong>{LEGAL.address}</strong>.
+          {t.rich("controller.body", {
+            strong,
+            owner: LEGAL.owner,
+            vat: LEGAL.vat,
+            address: LEGAL.address,
+          })}
         </p>
-        <p>
-          Per qualsiasi richiesta relativa ai tuoi dati puoi scrivere a{" "}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-        </p>
+        <p>{t.rich("controller.contact", { mail, email: SITE.email })}</p>
       </section>
 
       <section>
-        <h2>2. Dati che raccogliamo</h2>
+        <h2>{t("collected.heading")}</h2>
         <ul>
-          <li>
-            <strong>Dati del modulo contatti:</strong> nome e cognome, email e
-            il contenuto del messaggio che ci invii.
-          </li>
-          <li>
-            <strong>Dati di navigazione:</strong> dati tecnici raccolti
-            automaticamente dai server (es. indirizzo IP, log di accesso) per il
-            funzionamento e la sicurezza del sito.
-          </li>
+          <li>{t.rich("collected.items.0", { strong })}</li>
+          <li>{t.rich("collected.items.1", { strong })}</li>
         </ul>
       </section>
 
       <section>
-        <h2>3. Finalità e base giuridica</h2>
+        <h2>{t("purposes.heading")}</h2>
         <ul>
-          <li>
-            Rispondere alle tue richieste e gestire i contatti — base giuridica:
-            esecuzione di misure precontrattuali e legittimo interesse (art. 6.1
-            lett. b e f GDPR).
-          </li>
-          <li>
-            Garantire sicurezza e corretto funzionamento del sito — legittimo
-            interesse (art. 6.1 lett. f GDPR).
-          </li>
-          <li>
-            Adempiere a obblighi di legge — art. 6.1 lett. c GDPR.
-          </li>
+          <li>{t("purposes.items.0")}</li>
+          <li>{t("purposes.items.1")}</li>
+          <li>{t("purposes.items.2")}</li>
         </ul>
       </section>
 
       <section>
-        <h2>4. Conservazione dei dati</h2>
+        <h2>{t("retention.heading")}</h2>
         <p>
-          Conserviamo i dati del modulo contatti per il tempo necessario alle
-          finalità indicate e comunque non oltre{" "}
-          <strong>{pick(LEGAL.retention, locale)}</strong> dall&apos;ultimo scambio con te,
-          salvo diversi obblighi di legge. I log tecnici del server sono
-          conservati per periodi più brevi dal fornitore di hosting.
+          {t.rich("retention.body", {
+            strong,
+            retention: pick(LEGAL.retention, locale),
+          })}
         </p>
       </section>
 
       <section>
-        <h2>5. Destinatari dei dati</h2>
-        <p>
-          I dati possono essere trattati da fornitori che ci supportano
-          nell&apos;erogazione del servizio, nominati responsabili del
-          trattamento ai sensi dell&apos;art. 28 GDPR. Non vendiamo i tuoi dati
-          a terzi. I fornitori attualmente utilizzati sono:
-        </p>
+        <h2>{t("recipients.heading")}</h2>
+        <p>{t("recipients.intro")}</p>
         <ul>
           <li>
-            <strong>Cloudflare, Inc.</strong> — hosting del sito e protezione
-            dell&apos;infrastruttura. Tratta dati di navigazione (indirizzo IP,
-            log tecnici).{" "}
-            <a
-              href="https://www.cloudflare.com/privacypolicy/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy policy
-            </a>
-            .
+            {t.rich("recipients.items.0", {
+              strong,
+              link: cloudflareLink,
+            })}
           </li>
           <li>
-            <strong>Resend (Plus Five Five, Inc.)</strong> — recapito delle
-            email generate dal modulo contatti. Tratta nome, email e contenuto
-            del messaggio.{" "}
-            <a
-              href="https://resend.com/legal/privacy-policy"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Privacy policy
-            </a>
-            .
+            {t.rich("recipients.items.1", {
+              strong,
+              link: resendLink,
+            })}
           </li>
         </ul>
+        <p>{t("recipients.transfers")}</p>
+        <p>{t.rich("recipients.maps", { strong, where, cookies })}</p>
+      </section>
+
+      <section>
+        <h2>{t("rights.heading")}</h2>
+        <p>{t.rich("rights.body", { mail, email: SITE.email })}</p>
         <p>
-          Entrambi i fornitori hanno sede negli Stati Uniti: il trasferimento
-          avviene sulla base delle Clausole Contrattuali Standard approvate
-          dalla Commissione Europea e, ove applicabile, della certificazione
-          EU-U.S. Data Privacy Framework.
-        </p>
-        <p>
-          La pagina <Link href="/dove-siamo">Dove siamo</Link> integra una
-          mappa di{" "}
-          <strong>Google Maps</strong> (Google Ireland Ltd.), caricata solo
-          previo tuo consenso: in tal caso Google può trattare dati, anche con
-          trasferimento verso gli Stati Uniti, nel rispetto delle garanzie
-          previste dal GDPR. Maggiori informazioni nella{" "}
-          <Link href="/cookie">Cookie Policy</Link>.
+          {t.rich("rights.complaint", {
+            link: garanteLink,
+          })}
         </p>
       </section>
 
       <section>
-        <h2>6. I tuoi diritti</h2>
-        <p>
-          Hai diritto di accedere ai tuoi dati, chiederne la rettifica o la
-          cancellazione, limitarne o opporti al trattamento, e alla portabilità
-          dei dati (artt. 15-22 GDPR). Puoi esercitare questi diritti scrivendo a{" "}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-        </p>
-        <p>
-          Hai inoltre diritto di proporre reclamo al Garante per la protezione
-          dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener noreferrer">garanteprivacy.it</a>).
-        </p>
-      </section>
-
-      <section>
-        <h2>7. Cookie</h2>
-        <p>
-          L&apos;uso dei cookie è descritto nella nostra{" "}
-          <Link href="/cookie">Cookie Policy</Link>.
-        </p>
+        <h2>{t("cookies.heading")}</h2>
+        <p>{t.rich("cookies.body", { cookies })}</p>
       </section>
     </LegalLayout>
   );

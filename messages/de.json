@@ -304,5 +304,53 @@
     "eyebrow": "Seite nicht gefunden",
     "title": "Diese Tür<br></br>lässt sich nicht öffnen.",
     "body": "Die Immobilie oder die Seite, die Sie suchen, gibt es nicht, oder sie wurde verschoben. Kehren Sie zur Startseite zurück oder sehen Sie sich die Immobilien an, die wir betreuen."
+  },
+  "privacy": {
+    "eyebrow": "Datenschutz",
+    "title": "Datenschutzerklärung.",
+    "intro": "Diese Erklärung beschreibt, wie wir die über diese Website erhobenen personenbezogenen Daten verarbeiten, gemäß der Verordnung (EU) 2016/679 („GDPR“) und dem geltenden italienischen Recht.",
+    "controller": {
+      "heading": "1. Verantwortlicher",
+      "body": "Verantwortlicher ist <strong>{owner}</strong>, MwSt.-Nr. <strong>{vat}</strong>, mit Sitz in <strong>{address}</strong>.",
+      "contact": "Für jede Anfrage zu Ihren Daten können Sie an <mail>{email}</mail> schreiben."
+    },
+    "collected": {
+      "heading": "2. Daten, die wir erheben",
+      "items": {
+        "0": "<strong>Daten aus dem Kontaktformular:</strong> Vor- und Nachname, E-Mail-Adresse und der Inhalt der Nachricht, die Sie uns senden.",
+        "1": "<strong>Navigationsdaten:</strong> technische Daten, die von den Servern automatisch erhoben werden (z. B. IP-Adresse, Zugriffsprotokolle), für den Betrieb und die Sicherheit der Website."
+      }
+    },
+    "purposes": {
+      "heading": "3. Zwecke und Rechtsgrundlage",
+      "items": {
+        "0": "Beantwortung Ihrer Anfragen und Verwaltung der Kontakte — Rechtsgrundlage: Durchführung vorvertraglicher Maßnahmen und berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f GDPR).",
+        "1": "Gewährleistung der Sicherheit und des ordnungsgemäßen Betriebs der Website — berechtigtes Interesse (Art. 6 Abs. 1 lit. f GDPR).",
+        "2": "Erfüllung gesetzlicher Pflichten — Art. 6 Abs. 1 lit. c GDPR."
+      }
+    },
+    "retention": {
+      "heading": "4. Speicherdauer",
+      "body": "Wir speichern die Daten aus dem Kontaktformular so lange, wie es für die genannten Zwecke erforderlich ist, in jedem Fall jedoch nicht länger als <strong>{retention}</strong> ab dem letzten Austausch mit Ihnen, vorbehaltlich anderer gesetzlicher Pflichten. Die technischen Protokolle des Servers werden vom Hosting-Anbieter für kürzere Zeiträume gespeichert."
+    },
+    "recipients": {
+      "heading": "5. Empfänger der Daten",
+      "intro": "Die Daten können von Dienstleistern verarbeitet werden, die uns bei der Erbringung des Dienstes unterstützen und gemäß Art. 28 GDPR als Auftragsverarbeiter benannt sind. Wir verkaufen Ihre Daten nicht an Dritte. Derzeit werden folgende Dienstleister eingesetzt:",
+      "items": {
+        "0": "<strong>Cloudflare, Inc.</strong> — Hosting der Website und Schutz der Infrastruktur. Verarbeitet Navigationsdaten (IP-Adresse, technische Protokolle). <link>Datenschutzerklärung</link>.",
+        "1": "<strong>Resend (Plus Five Five, Inc.)</strong> — Zustellung der über das Kontaktformular erzeugten E-Mails. Verarbeitet Name, E-Mail-Adresse und Inhalt der Nachricht. <link>Datenschutzerklärung</link>."
+      },
+      "transfers": "Beide Dienstleister haben ihren Sitz in den Vereinigten Staaten: Die Übermittlung erfolgt auf der Grundlage der von der Europäischen Kommission genehmigten Standardvertragsklauseln und, soweit anwendbar, der Zertifizierung nach dem EU-U.S. Data Privacy Framework.",
+      "maps": "Die Seite <where>Standorte</where> bindet eine Karte von <strong>Google Maps</strong> (Google Ireland Ltd.) ein, die nur nach Ihrer vorherigen Einwilligung geladen wird: In diesem Fall kann Google Daten verarbeiten, auch mit Übermittlung in die Vereinigten Staaten, unter Einhaltung der im GDPR vorgesehenen Garantien. Weitere Informationen finden Sie in der <cookies>Cookie-Richtlinie</cookies>."
+    },
+    "rights": {
+      "heading": "6. Ihre Rechte",
+      "body": "Sie haben das Recht auf Auskunft über Ihre Daten (Auskunftsrecht), das Recht auf Berichtigung oder Löschung, das Recht auf Einschränkung der Verarbeitung sowie das Widerspruchsrecht gegen die Verarbeitung und das Recht auf Datenübertragbarkeit (Art. 15-22 GDPR). Sie können diese Rechte ausüben, indem Sie an <mail>{email}</mail> schreiben.",
+      "complaint": "Sie haben außerdem das Recht, Beschwerde bei der italienischen Datenschutzbehörde, Garante per la protezione dei dati personali (<link>garanteprivacy.it</link>), einzulegen."
+    },
+    "cookies": {
+      "heading": "7. Cookies",
+      "body": "Die Verwendung von Cookies ist in unserer <cookies>Cookie-Richtlinie</cookies> beschrieben."
+    }
   }
 }
