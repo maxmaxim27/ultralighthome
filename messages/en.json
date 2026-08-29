@@ -167,5 +167,10 @@
       "dolomiti": "Chalet in the Dolomites",
       "office": "Our office in Verona"
     }
+  },
+  "propertiesPage": {
+    "eyebrow": "The properties",
+    "title": "The properties we look after.",
+    "empty": "New properties are coming to this area."
   }
 }

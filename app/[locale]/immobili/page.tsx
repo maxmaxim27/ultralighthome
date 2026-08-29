@@ -50,6 +50,7 @@ export default async function PropertiesPage({
   setRequestLocale(locale);
 
   const t = await getTranslations("property");
+  const tPage = await getTranslations("propertiesPage");
   const groups = buildGroups();
 
   return (
@@ -58,13 +59,13 @@ export default async function PropertiesPage({
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
-              <span className="font-display text-clay mr-2">—</span> Gli
-              immobili
+              <span className="font-display text-clay mr-2">—</span>{" "}
+              {tPage("eyebrow")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
-              Gli immobili che curiamo.
+              {tPage("title")}
             </h1>
           </Reveal>
 
@@ -130,7 +131,7 @@ export default async function PropertiesPage({
               </div>
             ) : (
               <p className="text-center text-stone py-12">
-                In arrivo nuovi immobili in questa zona.
+                {tPage("empty")}
               </p>
             )}
           </SectionWrap>

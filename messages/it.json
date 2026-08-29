@@ -167,5 +167,10 @@
       "dolomiti": "Chalet sulle Dolomiti",
       "office": "Il nostro ufficio a Verona"
     }
+  },
+  "propertiesPage": {
+    "eyebrow": "Gli immobili",
+    "title": "Gli immobili che curiamo.",
+    "empty": "In arrivo nuovi immobili in questa zona."
   }
 }

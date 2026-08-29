@@ -167,5 +167,10 @@
       "dolomiti": "Chalet in den Dolomiten",
       "office": "Unser Büro in Verona"
     }
+  },
+  "propertiesPage": {
+    "eyebrow": "Die Immobilien",
+    "title": "Die Immobilien, die wir betreuen.",
+    "empty": "In dieser Region kommen neue Immobilien hinzu."
   }
 }
