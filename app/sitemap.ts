@@ -32,6 +32,9 @@ function entry(
   const languages = Object.fromEntries(
     routing.locales.map((l) => [l, localeUrl(href, l)]),
   );
+  // Google raccomanda x-default anche nella sitemap, non solo nell'head:
+  // stesso valore, l'italiano, per non dire due cose diverse.
+  languages["x-default"] = localeUrl(href, routing.defaultLocale);
 
   return {
     url: localeUrl(href, locale),
