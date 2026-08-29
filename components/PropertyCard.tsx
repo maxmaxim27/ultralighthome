@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BedDouble, Bath, Users } from "lucide-react";
 import type { Property } from "@/lib/types";
@@ -29,7 +29,7 @@ export default function PropertyCard({
     >
       {/* Whole-card link to the detail page (stretched behind content) */}
       <Link
-        href={`/immobili/${property.slug}`}
+        href={{ pathname: "/immobili/[slug]", params: { slug: property.slug } }}
         className="absolute inset-0 z-0"
         aria-label={property.name}
       />

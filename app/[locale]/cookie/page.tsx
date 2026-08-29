@@ -3,6 +3,7 @@ import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
@@ -54,7 +55,7 @@ export default async function CookiePage({
       <section>
         <h2>2. Cookie di terze parti — Google Maps</h2>
         <p>
-          Nella pagina <a href="/dove-siamo">Dove siamo</a> incorporiamo una
+          Nella pagina <Link href="/dove-siamo">Dove siamo</Link> incorporiamo una
           mappa di <strong>Google Maps</strong>. Questo servizio, fornito da
           Google Ireland Ltd., può installare cookie di terze parti e trattare
           dati (incluso l&apos;indirizzo IP), con possibili trasferimenti verso

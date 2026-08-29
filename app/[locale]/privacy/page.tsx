@@ -3,6 +3,7 @@ import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { Link } from "@/i18n/navigation";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -133,12 +134,13 @@ export default async function PrivacyPage({
           EU-U.S. Data Privacy Framework.
         </p>
         <p>
-          La pagina <a href="/dove-siamo">Dove siamo</a> integra una mappa di{" "}
+          La pagina <Link href="/dove-siamo">Dove siamo</Link> integra una
+          mappa di{" "}
           <strong>Google Maps</strong> (Google Ireland Ltd.), caricata solo
           previo tuo consenso: in tal caso Google può trattare dati, anche con
           trasferimento verso gli Stati Uniti, nel rispetto delle garanzie
           previste dal GDPR. Maggiori informazioni nella{" "}
-          <a href="/cookie">Cookie Policy</a>.
+          <Link href="/cookie">Cookie Policy</Link>.
         </p>
       </section>
 
@@ -160,7 +162,7 @@ export default async function PrivacyPage({
         <h2>7. Cookie</h2>
         <p>
           L&apos;uso dei cookie è descritto nella nostra{" "}
-          <a href="/cookie">Cookie Policy</a>.
+          <Link href="/cookie">Cookie Policy</Link>.
         </p>
       </section>
     </LegalLayout>

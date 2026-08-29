@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { ArrowLeft } from "lucide-react";
 import { properties, getProperty } from "@/lib/properties";

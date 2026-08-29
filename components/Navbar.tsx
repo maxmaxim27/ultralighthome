@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
@@ -14,7 +13,7 @@ const nav = [
   { href: "/chi-siamo", label: "Chi siamo" },
   { href: "/dove-siamo", label: "Dove siamo" },
   { href: "/contatti", label: "Contatti" },
-];
+] as const;
 
 export default function Navbar() {
   const pathname = usePathname();

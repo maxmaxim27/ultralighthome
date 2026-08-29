@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -175,9 +176,9 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
           {/* Art. 13 GDPR: the notice has to be reachable where the data is collected. */}
           <p className="text-xs text-stone leading-relaxed">
             Inviando il modulo dichiari di aver letto l&apos;
-            <a href="/privacy" className="underline hover:text-ink">
+            <Link href="/privacy" className="underline hover:text-ink">
               informativa sulla privacy
-            </a>
+            </Link>
             . Usiamo i tuoi dati solo per rispondere alla tua richiesta.
           </p>
         </motion.form>

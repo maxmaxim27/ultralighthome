@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import CookiePreferencesButton from "./CookiePreferencesButton";
 import { LEGAL } from "@/lib/site";
 
@@ -27,25 +27,34 @@ export default function Footer() {
             </p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
-                <Link href="/immobili#dolomiti" className="link-underline">
+                <Link
+                  href={{ pathname: "/immobili", hash: "dolomiti" }}
+                  className="link-underline"
+                >
                   Dolomiti
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/immobili#costa-smeralda"
+                  href={{ pathname: "/immobili", hash: "costa-smeralda" }}
                   className="link-underline"
                 >
                   Costa Smeralda
                 </Link>
               </li>
               <li>
-                <Link href="/immobili#verona" className="link-underline">
+                <Link
+                  href={{ pathname: "/immobili", hash: "verona" }}
+                  className="link-underline"
+                >
                   Verona
                 </Link>
               </li>
               <li>
-                <Link href="/immobili#altro" className="link-underline">
+                <Link
+                  href={{ pathname: "/immobili", hash: "altro" }}
+                  className="link-underline"
+                >
                   Altro
                 </Link>
               </li>
