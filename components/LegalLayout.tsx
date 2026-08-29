@@ -1,7 +1,7 @@
-import { getFormatter, getLocale, getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
-import { routing } from "@/i18n/routing";
+import { FORMATTING_LOCALES, routing, type Locale } from "@/i18n/routing";
 
 export default async function LegalLayout({
   eyebrow,
@@ -17,8 +17,11 @@ export default async function LegalLayout({
   children: React.ReactNode;
 }) {
   const t = await getTranslations("legal");
-  const format = await getFormatter();
-  const locale = await getLocale();
+  const locale = (await getLocale()) as Locale;
+  const updatedLabel = new Intl.DateTimeFormat(FORMATTING_LOCALES[locale], {
+    dateStyle: "long",
+    timeZone: "Europe/Rome",
+  }).format(new Date(updated));
 
   return (
     <div className="bg-white pt-32 md:pt-40 pb-24 md:pb-32">
@@ -35,9 +38,7 @@ export default async function LegalLayout({
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-6 text-xs tracking-[0.12em] uppercase text-stone">
-            {t("lastUpdated", {
-              date: format.dateTime(new Date(updated), { dateStyle: "long" }),
-            })}
+            {t("lastUpdated", { date: updatedLabel })}
           </p>
         </Reveal>
 

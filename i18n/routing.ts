@@ -3,6 +3,16 @@ import { defineRouting } from "next-intl/routing";
 export const locales = ["it", "en", "de"] as const;
 export type Locale = (typeof locales)[number];
 
+/** I codici di lingua del sito sono generici (`en`), ma l'ordine dei campi di
+ *  una data lo decide il locale: `en` darebbe "July 27, 2026" accanto a un
+ *  testo in inglese britannico. Qui la forma regionale, usata solo per
+ *  formattare. */
+export const FORMATTING_LOCALES: Record<Locale, string> = {
+  it: "it-IT",
+  en: "en-GB",
+  de: "de-DE",
+};
+
 /** La scelta di lingua del visitatore va ricordata per un anno, non solo per
  *  la sessione del browser (comportamento di default di next-intl). Unica
  *  definizione: la usano sia `routing` sia `rememberLocale` in
