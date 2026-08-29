@@ -107,6 +107,12 @@
     "location": "Location",
     "featuresHeading": "Features"
   },
+  "propertyDetail": {
+    "sectionLabel": "The property",
+    "heading": "What to expect.",
+    "relatedLabel": "More properties in {location}",
+    "relatedHeading": "You may also like."
+  },
   "map": {
     "consentMessage": "Accept third-party cookies to view the map."
   },

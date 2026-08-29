@@ -107,6 +107,12 @@
     "location": "Lage",
     "featuresHeading": "Ausstattung"
   },
+  "propertyDetail": {
+    "sectionLabel": "Die Immobilie",
+    "heading": "Das erwartet Sie.",
+    "relatedLabel": "Weitere Immobilien in {location}",
+    "relatedHeading": "Auch interessant."
+  },
   "map": {
     "consentMessage": "Akzeptieren Sie Cookies von Drittanbietern, um die Google-Maps-Karte anzuzeigen."
   },

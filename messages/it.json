@@ -107,6 +107,12 @@
     "location": "Località",
     "featuresHeading": "Caratteristiche"
   },
+  "propertyDetail": {
+    "sectionLabel": "L'immobile",
+    "heading": "Cosa ti aspetta.",
+    "relatedLabel": "Altri immobili in {location}",
+    "relatedHeading": "Da vedere anche."
+  },
   "map": {
     "consentMessage": "Accetta i cookie di terze parti per visualizzare la mappa di Google Maps."
   },

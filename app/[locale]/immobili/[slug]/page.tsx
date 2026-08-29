@@ -67,6 +67,7 @@ export default async function PropertyPage({
   if (!property) notFound();
 
   const tAmenities = await getTranslations("amenities");
+  const tPropertyDetail = await getTranslations("propertyDetail");
   const shortDescription = pick(property.shortDescription, locale);
   const loc = locations.find((l) => l.slug === property.locationSlug);
   const group = locationGroups.find((g) =>
@@ -193,12 +194,12 @@ export default async function PropertyPage({
               <Reveal>
                 <p className="text-xs tracking-[0.2em] uppercase text-stone">
                   <span className="font-display text-clay mr-2">—</span>
-                  L&apos;immobile
+                  {tPropertyDetail("sectionLabel")}
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-3xl md:text-4xl font-light leading-[1.2] tracking-[-0.01em]">
-                  Cosa ti aspetta.
+                  {tPropertyDetail("heading")}
                 </h2>
               </Reveal>
               <div className="hairline h-px my-10" />
@@ -227,13 +228,14 @@ export default async function PropertyPage({
             <Reveal>
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
                 <span className="font-display text-clay mr-2">—</span>
-                Altri immobili in{" "}
-                {group ? pick(group.label, locale) : loc?.name}
+                {tPropertyDetail("relatedLabel", {
+                  location: group ? pick(group.label, locale) : (loc?.name ?? ""),
+                })}
               </p>
             </Reveal>
             <Reveal delay={0.1}>
               <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em] mb-16">
-                Da vedere anche.
+                {tPropertyDetail("relatedHeading")}
               </h2>
             </Reveal>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
