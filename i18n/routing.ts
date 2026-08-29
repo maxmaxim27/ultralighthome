@@ -70,7 +70,7 @@ export const routing = defineRouting({
     "/termini": {
       it: "/termini",
       en: "/terms",
-      de: "/agb",
+      de: "/nutzungsbedingungen",
     },
   },
 });
