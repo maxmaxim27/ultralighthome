@@ -126,5 +126,46 @@
   },
   "legal": {
     "lastUpdated": "Last updated: {date}"
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "The properties",
+      "title": "Apartments, villas and chalets across Italy",
+      "subtitle": "Browse by area: city, mountains, sea. Every property has its own story and its own scale."
+    },
+    "services": {
+      "eyebrow": "How we work",
+      "title": "Our services",
+      "shortLets": {
+        "title": "Short lets",
+        "desc": "We handle every operational aspect of the property: bookings, check-ins, cleaning, maintenance and tax obligations. The owner attends to the property, we to everything else."
+      },
+      "restyling": {
+        "title": "Interior restyling",
+        "desc": "Where needed, we oversee the refurbishment of the property to make it more welcoming, from small interventions to complete restyling, working with local craftspeople and professionals."
+      },
+      "photos": {
+        "title": "Photography and listings",
+        "desc": "We produce professional photography and carefully written copy, and make sure the property is present on the most suitable channels, with constant attention and without excess."
+      }
+    },
+    "about": {
+      "eyebrow": "About us",
+      "title": "Properties managed with method. Satisfied clients.",
+      "body": "We work with a limited number of owners so that we can give real time to every property. We use tools and automation to improve the guest experience, without giving up attentive, personal management."
+    },
+    "where": {
+      "eyebrow": "Where we are",
+      "title": "Come and see us, or write to us.",
+      "cta": "Arrange an appointment",
+      "officeCaption": "Our office"
+    },
+    "partners": {
+      "title": "In partnership with"
+    },
+    "alt": {
+      "dolomiti": "Chalet in the Dolomites",
+      "office": "Our office in Verona"
+    }
   }
 }

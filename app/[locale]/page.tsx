@@ -7,7 +7,7 @@ import SectionHeader from "@/components/SectionHeader";
 import HomeLocations from "@/components/HomeLocations";
 import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
@@ -24,22 +24,10 @@ const partners = [
 ];
 
 const services = [
-  {
-    icon: Building2,
-    title: "Affitti brevi",
-    desc: "Gestiamo ogni aspetto operativo dell'immobile: prenotazioni, check-in, pulizie, manutenzione e adempimenti fiscali. Il proprietario si dedica all'immobile, noi a tutto il resto.",
-  },
-  {
-    icon: Palette,
-    title: "Restyling interni",
-    desc: "Quando necessario, curiamo la riqualificazione dell'immobile per renderlo più accogliente, dai piccoli interventi ai restyling completi, avvalendoci di artigiani e professionisti del territorio.",
-  },
-  {
-    icon: Megaphone,
-    title: "Foto e annunci",
-    desc: "Realizziamo fotografie professionali e testi curati, garantendo presenza sui canali più adeguati, con attenzione costante e senza eccessi.",
-  },
-];
+  { icon: Building2, key: "shortLets" },
+  { icon: Palette, key: "restyling" },
+  { icon: Megaphone, key: "photos" },
+] as const;
 
 export default async function Home({
   params,
@@ -48,6 +36,9 @@ export default async function Home({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+
+  const t = await getTranslations("home");
+  const tCommon = await getTranslations("common");
 
   return (
     <>
@@ -58,9 +49,9 @@ export default async function Home({
         <SectionWrap>
           <SectionHeader
             eyebrowNumber="01"
-            eyebrowText="Gli immobili"
-            title="Appartamenti, ville e chalet nel territorio nazionale"
-            subtitle="Sfoglia le proposte per zona: città, montagna, mare. Ogni immobile ha la sua storia e la sua dimensione."
+            eyebrowText={t("portfolio.eyebrow")}
+            title={t("portfolio.title")}
+            subtitle={t("portfolio.subtitle")}
           />
           <div className="mt-16 md:mt-20">
             <HomeLocations />
@@ -73,21 +64,23 @@ export default async function Home({
         <SectionWrap>
           <SectionHeader
             eyebrowNumber="02"
-            eyebrowText="Come lavoriamo"
-            title="I nostri servizi"
+            eyebrowText={t("services.eyebrow")}
+            title={t("services.title")}
           />
           <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-px bg-stone/20">
             {services.map((s, i) => (
               <Reveal
-                key={s.title}
+                key={s.key}
                 delay={i * 0.1}
                 className="bg-bone p-10 md:p-12"
               >
                 <s.icon size={28} strokeWidth={1.3} className="text-clay" />
                 <h3 className="font-display mt-8 text-2xl md:text-3xl font-light tracking-[-0.01em]">
-                  {s.title}
+                  {t(`services.${s.key}.title`)}
                 </h3>
-                <p className="mt-5 text-stone leading-relaxed">{s.desc}</p>
+                <p className="mt-5 text-stone leading-relaxed">
+                  {t(`services.${s.key}.desc`)}
+                </p>
               </Reveal>
             ))}
           </div>
@@ -102,7 +95,7 @@ export default async function Home({
               <div className="relative aspect-[4/5] lg:aspect-[5/6] overflow-hidden rounded-3xl bg-bone">
                 <Image
                   src="/extra/dolomiti.jpg"
-                  alt="Chalet sulle Dolomiti"
+                  alt={t("alt.dolomiti")}
                   fill
                   sizes="(max-width: 1024px) 100vw, 55vw"
                   className="object-cover"
@@ -113,20 +106,17 @@ export default async function Home({
               <Reveal>
                 <p className="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-stone">
                   <span className="font-display text-clay">03</span>
-                  <span>Chi siamo</span>
+                  <span>{t("about.eyebrow")}</span>
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
-                  Immobili gestiti con metodo. Clienti soddisfatti.
+                  {t("about.title")}
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>
                 <p className="mt-8 text-base md:text-lg text-stone leading-relaxed">
-                  Lavoriamo con un numero limitato di proprietari per dedicare
-                  tempo vero a ogni immobile. Utilizziamo strumenti e
-                  automazioni per migliorare l’esperienza degli ospiti, senza
-                  rinunciare a una gestione attenta e personalizzata.
+                  {t("about.body")}
                 </p>
               </Reveal>
               <Reveal delay={0.3}>
@@ -135,7 +125,7 @@ export default async function Home({
                   variant="primary"
                   className="mt-10 rounded-full"
                 >
-                  Scopri di più
+                  {tCommon("discoverMore")}
                   <ArrowUpRight size={16} />
                 </ButtonLink>
               </Reveal>
@@ -152,12 +142,12 @@ export default async function Home({
               <Reveal>
                 <p className="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-stone">
                   <span className="font-display text-clay">04</span>
-                  <span>Dove siamo</span>
+                  <span>{t("where.eyebrow")}</span>
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
-                  Vieni a trovarci, o scrivici.
+                  {t("where.title")}
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>
@@ -173,7 +163,7 @@ export default async function Home({
                   variant="primary"
                   className="mt-10 rounded-full"
                 >
-                  Fissa un appuntamento
+                  {t("where.cta")}
                   <ArrowUpRight size={16} />
                 </ButtonLink>
               </Reveal>
@@ -182,14 +172,14 @@ export default async function Home({
               <div className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-white">
                 <Image
                   src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=80"
-                  alt="Il nostro ufficio a Verona"
+                  alt={t("alt.office")}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 ring-1 ring-inset ring-ink/10" />
                 <div className="absolute bottom-4 left-4 text-xs tracking-[0.2em] uppercase text-cream bg-ink/50 backdrop-blur-sm px-3 py-1.5">
-                  Il nostro ufficio
+                  {t("where.officeCaption")}
                 </div>
               </div>
             </Reveal>
@@ -202,7 +192,7 @@ export default async function Home({
         <SectionWrap>
           <Reveal className="text-center">
             <h2 className="font-display text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
-              In collaborazione con
+              {t("partners.title")}
             </h2>
           </Reveal>
           <Reveal delay={0.1}>

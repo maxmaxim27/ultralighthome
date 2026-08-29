@@ -126,5 +126,46 @@
   },
   "legal": {
     "lastUpdated": "Zuletzt aktualisiert: {date}"
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "Die Immobilien",
+      "title": "Wohnungen, Villen und Chalets in ganz Italien",
+      "subtitle": "Durchstöbern Sie die Angebote nach Gebiet: Stadt, Berge, Meer. Jede Immobilie hat ihre eigene Geschichte und ihre eigene Größe."
+    },
+    "services": {
+      "eyebrow": "Wie wir arbeiten",
+      "title": "Unsere Leistungen",
+      "shortLets": {
+        "title": "Kurzzeitvermietung",
+        "desc": "Wir übernehmen den gesamten operativen Betrieb der Immobilie: Buchungen, Check-in, Reinigung, Instandhaltung und steuerliche Pflichten. Der Eigentümer widmet sich der Immobilie, wir uns allem Übrigen."
+      },
+      "restyling": {
+        "title": "Restyling der Innenräume",
+        "desc": "Wo es nötig ist, betreuen wir die Aufwertung der Immobilie, damit sie einladender wird – von kleinen Eingriffen bis zum vollständigen Restyling, gemeinsam mit Handwerkern und Fachleuten aus der Region."
+      },
+      "photos": {
+        "title": "Fotos und Inserate",
+        "desc": "Wir erstellen professionelle Fotografien und sorgfältige Texte und sorgen für Präsenz auf den passendsten Kanälen, mit beständiger Aufmerksamkeit und ohne Übertreibung."
+      }
+    },
+    "about": {
+      "eyebrow": "Über uns",
+      "title": "Immobilien mit Methode geführt. Zufriedene Kunden.",
+      "body": "Wir arbeiten mit einer begrenzten Zahl von Eigentümern, um jeder Immobilie wirklich Zeit widmen zu können. Wir setzen Werkzeuge und Automatisierungen ein, um das Erlebnis der Gäste zu verbessern, ohne auf eine aufmerksame und persönliche Betreuung zu verzichten."
+    },
+    "where": {
+      "eyebrow": "Wo wir sind",
+      "title": "Besuchen Sie uns, oder schreiben Sie uns.",
+      "cta": "Termin vereinbaren",
+      "officeCaption": "Unser Büro"
+    },
+    "partners": {
+      "title": "In Zusammenarbeit mit"
+    },
+    "alt": {
+      "dolomiti": "Chalet in den Dolomiten",
+      "office": "Unser Büro in Verona"
+    }
   }
 }

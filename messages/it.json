@@ -126,5 +126,46 @@
   },
   "legal": {
     "lastUpdated": "Ultimo aggiornamento: {date}"
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "Gli immobili",
+      "title": "Appartamenti, ville e chalet nel territorio nazionale",
+      "subtitle": "Sfoglia le proposte per zona: città, montagna, mare. Ogni immobile ha la sua storia e la sua dimensione."
+    },
+    "services": {
+      "eyebrow": "Come lavoriamo",
+      "title": "I nostri servizi",
+      "shortLets": {
+        "title": "Affitti brevi",
+        "desc": "Gestiamo ogni aspetto operativo dell'immobile: prenotazioni, check-in, pulizie, manutenzione e adempimenti fiscali. Il proprietario si dedica all'immobile, noi a tutto il resto."
+      },
+      "restyling": {
+        "title": "Restyling interni",
+        "desc": "Quando necessario, curiamo la riqualificazione dell'immobile per renderlo più accogliente, dai piccoli interventi ai restyling completi, avvalendoci di artigiani e professionisti del territorio."
+      },
+      "photos": {
+        "title": "Foto e annunci",
+        "desc": "Realizziamo fotografie professionali e testi curati, garantendo presenza sui canali più adeguati, con attenzione costante e senza eccessi."
+      }
+    },
+    "about": {
+      "eyebrow": "Chi siamo",
+      "title": "Immobili gestiti con metodo. Clienti soddisfatti.",
+      "body": "Lavoriamo con un numero limitato di proprietari per dedicare tempo vero a ogni immobile. Utilizziamo strumenti e automazioni per migliorare l’esperienza degli ospiti, senza rinunciare a una gestione attenta e personalizzata."
+    },
+    "where": {
+      "eyebrow": "Dove siamo",
+      "title": "Vieni a trovarci, o scrivici.",
+      "cta": "Fissa un appuntamento",
+      "officeCaption": "Il nostro ufficio"
+    },
+    "partners": {
+      "title": "In collaborazione con"
+    },
+    "alt": {
+      "dolomiti": "Chalet sulle Dolomiti",
+      "office": "Il nostro ufficio a Verona"
+    }
   }
 }
