@@ -62,7 +62,7 @@
     "next": "Next photo"
   },
   "carousel": {
-    "empty": "New properties are coming soon to this destination.",
+    "empty": "New properties are coming to this destination.",
     "previous": "Previous",
     "next": "Next",
     "goTo": "Go to property {index}"
@@ -142,7 +142,7 @@
       },
       "restyling": {
         "title": "Interior restyling",
-        "desc": "Where needed, we oversee the refurbishment of the property to make it more welcoming, from small interventions to complete restyling, working with local craftspeople and professionals."
+        "desc": "Where needed, we oversee the refurbishment of the property to make it more welcoming, from small improvements to complete restyling, working with local craftspeople and professionals."
       },
       "photos": {
         "title": "Photography and listings",
@@ -151,7 +151,7 @@
     },
     "about": {
       "eyebrow": "About us",
-      "title": "Properties managed with method. Satisfied clients.",
+      "title": "Methodical management. Satisfied clients.",
       "body": "We work with a limited number of owners so that we can give real time to every property. We use tools and automation to improve the guest experience, without giving up attentive, personal management."
     },
     "where": {
@@ -177,12 +177,12 @@
     "hero": {
       "eyebrow": "About us",
       "title": "One team,<br></br>properties looked after one by one.",
-      "body": "Ultralight Home was founded in 2021. Since then we have managed short lets for people who want someone real to deal with, not an agency that treats you as a number."
+      "body": "Ultralight Home was founded in 2021. Since then we have managed short lets for owners who want someone real to deal with, not an agency that treats you like a number."
     },
     "story": {
       "eyebrow": "How we started",
       "title": "One property in Sottomarina, then everything else.",
-      "body": "We began with an apartment in Sottomarina let out seasonally, building our way forward with constancy and passion until we reached the chalets in the Dolomites and villas in Costa Smeralda."
+      "body": "We began with an apartment in Sottomarina let out seasonally, building our way forward steadily and with real passion until we reached the chalets in the Dolomites and villas on the Costa Smeralda."
     },
     "approach": {
       "eyebrow": "How we work",
@@ -202,17 +202,17 @@
         },
         "3": {
           "title": "Operations",
-          "desc": "We handle every operational aspect of the property entirely on our own, giving the owner a punctual quarterly report on the results."
+          "desc": "We handle every operational aspect of the property with complete autonomy, giving the owner a quarterly report on the results, on time."
         }
       }
     },
     "discretion": {
       "title": "And then there is discretion.",
-      "body": "Discretion is something that goes beyond the work itself. It means choosing guests attentively, managing every property with care and protecting the confidentiality of your data."
+      "body": "Discretion is something that goes beyond the work itself. It means choosing guests carefully, managing every property with care and protecting the confidentiality of your data."
     },
     "team": {
       "eyebrow": "The team",
-      "title": "The people behind it."
+      "title": "The people behind it all."
     },
     "roles": {
       "founder": "Founder",
@@ -223,13 +223,13 @@
       "photographer": "Photographer"
     },
     "alt": {
-      "costaSmeralda": "Villa in Costa Smeralda"
+      "costaSmeralda": "Villa on the Costa Smeralda"
     }
   },
   "where": {
     "eyebrow": "Where we are",
     "title": "An office in the heart of Verona.",
-    "body": "We see visitors by appointment at our office in the centre. Arrange an appointment and let's talk about your property in person.",
+    "body": "We receive visitors by appointment at our office in the centre. Arrange an appointment and let's talk about your property in person.",
     "infoTitle": "Come and see us in Verona.",
     "address": {
       "label": "Address",
@@ -240,7 +240,7 @@
       "value": "Mon – Fri · 9:30 – 18:30\nBy appointment only"
     },
     "cta": "Directions",
-    "mapTitle": "Map — UltraLightHome office, Verona"
+    "mapTitle": "Map — Ultralight Home office, Verona"
   },
   "contactPage": {
     "eyebrow": "Contact",

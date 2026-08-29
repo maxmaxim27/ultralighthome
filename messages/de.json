@@ -62,7 +62,7 @@
     "next": "Nächstes Foto"
   },
   "carousel": {
-    "empty": "Für dieses Reiseziel kommen bald neue Immobilien hinzu.",
+    "empty": "Für dieses Reiseziel kommen neue Immobilien hinzu.",
     "previous": "Zurück",
     "next": "Weiter",
     "goTo": "Zu Immobilie {index} wechseln"
@@ -151,7 +151,7 @@
     },
     "about": {
       "eyebrow": "Über uns",
-      "title": "Immobilien mit Methode geführt. Zufriedene Kunden.",
+      "title": "Immobilien mit Methode verwaltet. Zufriedene Kunden.",
       "body": "Wir arbeiten mit einer begrenzten Zahl von Eigentümern, um jeder Immobilie wirklich Zeit widmen zu können. Wir setzen Werkzeuge und Automatisierungen ein, um das Erlebnis der Gäste zu verbessern, ohne auf eine aufmerksame und persönliche Betreuung zu verzichten."
     },
     "where": {
@@ -182,7 +182,7 @@
     "story": {
       "eyebrow": "Wie wir angefangen haben",
       "title": "Eine Immobilie in Sottomarina, dann alles Weitere.",
-      "body": "Angefangen haben wir mit einer Wohnung in Sottomarina, die saisonal vermietet wurde, und haben unseren Weg mit Beständigkeit und Leidenschaft weitergebaut, bis hin zu den Chalets in den Dolomiten und den Villen in der Costa Smeralda."
+      "body": "Angefangen haben wir mit einer Wohnung in Sottomarina, die saisonal vermietet wurde, und haben unseren Weg mit Beständigkeit und Leidenschaft fortgesetzt, bis hin zu den Chalets in den Dolomiten und den Villen an der Costa Smeralda."
     },
     "approach": {
       "eyebrow": "Wie wir arbeiten",
@@ -190,7 +190,7 @@
       "items": {
         "0": {
           "title": "Kontakt",
-          "desc": "Jede Zusammenarbeit beginnt mit einem persönlichen Treffen mit dem Eigentümer: Nur wenn wir uns wirklich kennen, können wir eine belastbare Beziehung aufbauen und seine Bedürfnisse und Ziele wirklich verstehen."
+          "desc": "Jede Zusammenarbeit beginnt mit einem persönlichen Treffen mit dem Eigentümer: Nur wenn wir uns wirklich kennen, können wir eine belastbare Beziehung aufbauen und seine Bedürfnisse und Ziele tatsächlich verstehen."
         },
         "1": {
           "title": "Bewertung der Immobilie",
@@ -207,8 +207,8 @@
       }
     },
     "discretion": {
-      "title": "Und dann ist da die Diskretion.",
-      "body": "Diskretion ist etwas, das über die reine Arbeit hinausgeht. Sie bedeutet, die Gäste aufmerksam auszuwählen, jede Immobilie sorgfältig zu führen und die Vertraulichkeit Ihrer Daten zu schützen."
+      "title": "Und dann ist da noch die Diskretion.",
+      "body": "Diskretion ist etwas, das über die reine Arbeit hinausgeht. Sie bedeutet, die Gäste aufmerksam auszuwählen, jede Immobilie sorgfältig zu betreuen und die Vertraulichkeit Ihrer Daten zu schützen."
     },
     "team": {
       "eyebrow": "Das Team",
@@ -223,7 +223,7 @@
       "photographer": "Fotografin"
     },
     "alt": {
-      "costaSmeralda": "Villa in der Costa Smeralda"
+      "costaSmeralda": "Villa an der Costa Smeralda"
     }
   },
   "where": {
@@ -240,7 +240,7 @@
       "value": "Mo – Fr · 9:30 – 18:30\nNur nach Vereinbarung"
     },
     "cta": "Wegbeschreibung",
-    "mapTitle": "Karte — Büro UltraLightHome, Verona"
+    "mapTitle": "Karte — Büro Ultralight Home, Verona"
   },
   "contactPage": {
     "eyebrow": "Kontakt",
