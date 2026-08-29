@@ -111,5 +111,16 @@
   },
   "locationTabs": {
     "all": "Tutti"
+  },
+  "homeLocations": {
+    "seeAll": "Vedi tutti gli immobili"
+  },
+  "whatsapp": {
+    "ariaLabel": "Scrivici su WhatsApp",
+    "message": "Ciao! Vorrei fissare un appuntamento."
+  },
+  "amenityList": {
+    "showLess": "Mostra meno",
+    "showMore": "Mostra di più (+{count})"
   }
 }

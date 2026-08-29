@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { ButtonLink } from "./Button";
 import LocationTabs from "./LocationTabs";
 import PropertyCarousel from "./PropertyCarousel";
@@ -10,6 +11,7 @@ import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 
 export default function HomeLocations() {
+  const t = useTranslations("homeLocations");
   const tabLocations = locationGroups.map((g) => ({
     slug: g.key,
     name: g.label,
@@ -51,7 +53,7 @@ export default function HomeLocations() {
           variant="primary"
           className="rounded-full"
         >
-          Vedi tutti gli immobili
+          {t("seeAll")}
           <ArrowUpRight size={16} />
         </ButtonLink>
       </div>

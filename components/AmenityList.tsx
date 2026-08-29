@@ -1,10 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 
 const DEFAULT_VISIBLE = 5;
 
 export default function AmenityList({ features }: { features: string[] }) {
+  const t = useTranslations("amenityList");
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? features : features.slice(0, DEFAULT_VISIBLE);
   const hidden = features.length - DEFAULT_VISIBLE;
@@ -28,7 +30,7 @@ export default function AmenityList({ features }: { features: string[] }) {
           onClick={() => setShowAll((s) => !s)}
           className="mt-4 text-xs tracking-[0.12em] uppercase text-clay hover:text-ink link-underline transition-colors"
         >
-          {showAll ? "Mostra meno" : `Mostra di più (+${hidden})`}
+          {showAll ? t("showLess") : t("showMore", { count: hidden })}
         </button>
       )}
     </>

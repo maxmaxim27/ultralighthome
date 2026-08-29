@@ -111,5 +111,16 @@
   },
   "locationTabs": {
     "all": "All"
+  },
+  "homeLocations": {
+    "seeAll": "See all properties"
+  },
+  "whatsapp": {
+    "ariaLabel": "Message us on WhatsApp",
+    "message": "Hello! I would like to arrange an appointment."
+  },
+  "amenityList": {
+    "showLess": "Show less",
+    "showMore": "Show more (+{count})"
   }
 }
