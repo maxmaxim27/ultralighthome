@@ -251,5 +251,10 @@
     "emailLabel": "Email",
     "phoneLabel": "Phone",
     "instagramLabel": "Instagram"
+  },
+  "notFound": {
+    "eyebrow": "Page not found",
+    "title": "This door<br></br>does not open.",
+    "body": "The property or the page you are looking for does not exist, or it has been moved. Go back to the home page or browse the properties we look after."
   }
 }

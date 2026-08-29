@@ -251,5 +251,10 @@
     "emailLabel": "Email",
     "phoneLabel": "Telefono",
     "instagramLabel": "Instagram"
+  },
+  "notFound": {
+    "eyebrow": "Pagina non trovata",
+    "title": "Questa porta<br></br>non si apre.",
+    "body": "L'immobile o la pagina che cerchi non esiste, o è stata spostata. Torna alla home o sfoglia gli immobili che curiamo."
   }
 }

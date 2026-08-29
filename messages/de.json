@@ -251,5 +251,10 @@
     "emailLabel": "E-Mail",
     "phoneLabel": "Telefon",
     "instagramLabel": "Instagram"
+  },
+  "notFound": {
+    "eyebrow": "Seite nicht gefunden",
+    "title": "Diese Tür<br></br>lässt sich nicht öffnen.",
+    "body": "Die Immobilie oder die Seite, die Sie suchen, gibt es nicht, oder sie wurde verschoben. Kehren Sie zur Startseite zurück oder sehen Sie sich die Immobilien an, die wir betreuen."
   }
 }
