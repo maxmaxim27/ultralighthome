@@ -241,5 +241,15 @@
     },
     "cta": "Indicazioni stradali",
     "mapTitle": "Mappa — Ufficio UltraLightHome, Verona"
+  },
+  "contactPage": {
+    "eyebrow": "Contatti",
+    "title": "Iniziamo una conversazione.",
+    "infoTitle": "Contattaci.",
+    "formTitle": "Scrivici.",
+    "formIntro": "Compila il modulo. Risponderemo entro un giorno lavorativo.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefono",
+    "instagramLabel": "Instagram"
   }
 }

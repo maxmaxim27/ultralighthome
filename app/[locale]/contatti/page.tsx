@@ -4,6 +4,7 @@ import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import ContactForm from "@/components/ContactForm";
 import { Mail, Phone } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 function Instagram({
   size = 24,
@@ -35,17 +36,21 @@ function Instagram({
 }
 
 export default function ContactPage() {
+  const t = useTranslations("contactPage");
+  const tCommon = useTranslations("common");
+
   return (
     <div className="bg-white pt-32 md:pt-40 pb-0">
       <SectionWrap className="pb-20">
         <Reveal>
           <p className="text-xs tracking-[0.2em] uppercase text-stone">
-            <span className="font-display text-clay mr-2">—</span> Contatti
+            <span className="font-display text-clay mr-2">—</span>{" "}
+            {t("eyebrow")}
           </p>
         </Reveal>
         <Reveal delay={0.1}>
           <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
-            Iniziamo una conversazione.
+            {t("title")}
           </h1>
         </Reveal>
       </SectionWrap>
@@ -55,32 +60,35 @@ export default function ContactPage() {
         <div className="bg-bone p-10 md:p-16 lg:p-20 lg:border-r border-stone/20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
-              Contattaci.
+              {t("infoTitle")}
             </h2>
           </Reveal>
           <div className="mt-12 space-y-8">
             {[
               {
                 icon: Mail,
-                label: "Email",
+                key: "email",
+                label: t("emailLabel"),
                 value: "info@ultralighthome.it",
                 href: "mailto:info@ultralighthome.it",
               },
               {
                 icon: Phone,
-                label: "Telefono",
+                key: "phone",
+                label: t("phoneLabel"),
                 value: "+39 379 299 7428",
                 href: "tel:+393792997428",
               },
               {
                 icon: Instagram,
-                label: "Instagram",
+                key: "instagram",
+                label: t("instagramLabel"),
                 value: "@ultralighthome",
                 href: "https://instagram.com/ultralighthome",
                 external: true,
               },
             ].map((row, i) => (
-              <Reveal key={row.label} delay={i * 0.08}>
+              <Reveal key={row.key} delay={i * 0.08}>
                 <a
                   href={row.href}
                   {...(row.external
@@ -101,7 +109,7 @@ export default function ContactPage() {
                     <p className="mt-2 text-ink whitespace-pre-line leading-relaxed transition-colors group-hover:text-clay">
                       {row.value}
                       {row.external && (
-                        <span className="sr-only"> (si apre in una nuova scheda)</span>
+                        <span className="sr-only"> {tCommon("newTab")}</span>
                       )}
                     </p>
                   </div>
@@ -115,12 +123,12 @@ export default function ContactPage() {
         <div className="bg-white p-10 md:p-16 lg:p-20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
-              Scrivici.
+              {t("formTitle")}
             </h2>
           </Reveal>
           <Reveal delay={0.1}>
             <p className="mt-4 text-stone leading-relaxed max-w-md">
-              Compila il modulo. Risponderemo entro un giorno lavorativo.
+              {t("formIntro")}
             </p>
           </Reveal>
 

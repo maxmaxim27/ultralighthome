@@ -241,5 +241,15 @@
     },
     "cta": "Directions",
     "mapTitle": "Map — UltraLightHome office, Verona"
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Let's start a conversation.",
+    "infoTitle": "Get in touch.",
+    "formTitle": "Write to us.",
+    "formIntro": "Fill in the form. We will reply within one working day.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "instagramLabel": "Instagram"
   }
 }

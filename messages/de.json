@@ -241,5 +241,15 @@
     },
     "cta": "Wegbeschreibung",
     "mapTitle": "Karte — Büro UltraLightHome, Verona"
+  },
+  "contactPage": {
+    "eyebrow": "Kontakt",
+    "title": "Beginnen wir ein Gespräch.",
+    "infoTitle": "Nehmen Sie Kontakt auf.",
+    "formTitle": "Schreiben Sie uns.",
+    "formIntro": "Füllen Sie das Formular aus. Wir antworten innerhalb eines Werktags.",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon",
+    "instagramLabel": "Instagram"
   }
 }
