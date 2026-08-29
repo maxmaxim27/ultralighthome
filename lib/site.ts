@@ -1,3 +1,5 @@
+import type { Localized } from "./i18n-content";
+
 // Central site config — single source of truth for SEO (URLs, brand, contacts).
 export const SITE = {
   name: "Ultralight Home",
@@ -20,9 +22,16 @@ export const LEGAL = {
   vat: "05601980286",
   address: "Via Cristoforo Colombo 5, 35016 Piazzola sul Brenta (PD)",
   court: "Padova",
-  // Retention of contact-form data, counted from the last exchange.
-  retention: "24 mesi",
-  updated: "27 luglio 2026",
+  // Retention of contact-form data, counted from the last exchange. Prose, so
+  // it is translated; the period itself is identical in all three languages.
+  retention: {
+    it: "24 mesi",
+    en: "24 months",
+    de: "24 Monate",
+  } satisfies Localized,
+  // ISO date, formatted per locale by LegalLayout via next-intl's formatter:
+  // one source of truth, so a policy update means editing a single string.
+  updated: "2026-07-27",
 } as const;
 
 export function absoluteUrl(path = ""): string {

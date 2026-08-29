@@ -172,7 +172,8 @@
     "wifiFast": "Schnelles WLAN"
   },
   "legal": {
-    "lastUpdated": "Zuletzt aktualisiert: {date}"
+    "lastUpdated": "Zuletzt aktualisiert: {date}",
+    "translationNotice": "Diese Seite ist eine Übersetzung zur Erleichterung des Verständnisses. Bei Abweichungen zwischen den Fassungen ist der italienische Text maßgeblich."
   },
   "home": {
     "portfolio": {

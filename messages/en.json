@@ -172,7 +172,8 @@
     "wifiFast": "Fast wifi"
   },
   "legal": {
-    "lastUpdated": "Last updated: {date}"
+    "lastUpdated": "Last updated: {date}",
+    "translationNotice": "This page is a translation provided for convenience. In the event of any discrepancy between versions, the Italian text prevails."
   },
   "home": {
     "portfolio": {

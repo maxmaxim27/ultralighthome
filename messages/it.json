@@ -172,7 +172,8 @@
     "wifiFast": "Wifi veloce"
   },
   "legal": {
-    "lastUpdated": "Ultimo aggiornamento: {date}"
+    "lastUpdated": "Ultimo aggiornamento: {date}",
+    "translationNotice": "Questa pagina è disponibile anche in inglese e tedesco. In caso di discrepanza fra le versioni, prevale il testo italiano."
   },
   "home": {
     "portfolio": {

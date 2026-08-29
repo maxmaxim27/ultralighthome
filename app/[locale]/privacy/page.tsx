@@ -4,6 +4,7 @@ import { LEGAL, SITE } from "@/lib/site";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
+import { pick } from "@/lib/i18n-content";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -85,7 +86,7 @@ export default async function PrivacyPage({
         <p>
           Conserviamo i dati del modulo contatti per il tempo necessario alle
           finalità indicate e comunque non oltre{" "}
-          <strong>{LEGAL.retention}</strong> dall&apos;ultimo scambio con te,
+          <strong>{pick(LEGAL.retention, locale)}</strong> dall&apos;ultimo scambio con te,
           salvo diversi obblighi di legge. I log tecnici del server sono
           conservati per periodi più brevi dal fornitore di hosting.
         </p>
