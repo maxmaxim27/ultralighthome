@@ -19,7 +19,7 @@ export const locations: Location[] = [
     description: {
       it: "Nel cuore della Val Pusteria, a due passi dagli impianti.",
       en: "In the heart of Val Pusteria, a short walk from the lifts.",
-      de: "Im Herzen des Val Pusteria, wenige Schritte von den Liften entfernt.",
+      de: "Im Herzen des Pustertals, wenige Schritte von den Liften entfernt.",
     },
     heroImage: "/properties/casa-evelyn/01.jpeg",
   },
