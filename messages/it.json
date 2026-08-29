@@ -60,5 +60,28 @@
     "close": "Chiudi",
     "previous": "Precedente",
     "next": "Successiva"
+  },
+  "carousel": {
+    "empty": "In arrivo nuove proprietà in questa destinazione.",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "goTo": "Vai alla proprietà {index}"
+  },
+  "footer": {
+    "navHeading": "Naviga",
+    "linkOther": "Altro",
+    "copyright": "© {year} Ultralight Home. Tutti i diritti riservati.",
+    "vatLabel": "P.IVA {vat}",
+    "privacyLink": "Privacy",
+    "termsLink": "Termini",
+    "cookieLink": "Cookie"
+  },
+  "cookie": {
+    "dialogAriaLabel": "Preferenze cookie",
+    "label": "Cookie",
+    "banner": "Usiamo cookie tecnici necessari al sito e, solo con il tuo consenso, cookie di terze parti. Puoi accettare o rifiutare. Dettagli nella <link>Cookie Policy</link>.",
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "managePreferences": "Gestisci cookie"
   }
 }

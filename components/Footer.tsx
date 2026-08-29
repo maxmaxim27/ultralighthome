@@ -1,9 +1,12 @@
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import CookiePreferencesButton from "./CookiePreferencesButton";
 import { LEGAL } from "@/lib/site";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink text-cream">
@@ -23,7 +26,7 @@ export default function Footer() {
 
           <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">
-              Naviga
+              {t("navHeading")}
             </p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
@@ -55,22 +58,22 @@ export default function Footer() {
                   href={{ pathname: "/immobili", hash: "altro" }}
                   className="link-underline"
                 >
-                  Altro
+                  {t("linkOther")}
                 </Link>
               </li>
               <li>
                 <Link href="/chi-siamo" className="link-underline">
-                  Chi siamo
+                  {tNav("about")}
                 </Link>
               </li>
               <li>
                 <Link href="/dove-siamo" className="link-underline">
-                  Dove siamo
+                  {tNav("locations")}
                 </Link>
               </li>
               <li>
                 <Link href="/contatti" className="link-underline">
-                  Contatti
+                  {tNav("contact")}
                 </Link>
               </li>
             </ul>
@@ -78,7 +81,7 @@ export default function Footer() {
 
           <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">
-              Contatti
+              {tNav("contact")}
             </p>
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
               <li>Lungadige Matteotti 14, 37126 Verona</li>
@@ -101,19 +104,19 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 text-xs text-cream/50">
           <p className="text-center md:text-left">
-            © {year} Ultralight Home. Tutti i diritti riservati.
+            {t("copyright", { year })}
             <br />
-            P.IVA {LEGAL.vat}
+            {t("vatLabel", { vat: LEGAL.vat })}
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="link-underline">
-              Privacy
+              {t("privacyLink")}
             </Link>
             <Link href="/termini" className="link-underline">
-              Termini
+              {t("termsLink")}
             </Link>
             <Link href="/cookie" className="link-underline">
-              Cookie
+              {t("cookieLink")}
             </Link>
             <CookiePreferencesButton />
           </div>
