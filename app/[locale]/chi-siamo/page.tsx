@@ -4,13 +4,16 @@ import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Chi siamo — gestione affitti brevi dal 2017",
-  description:
-    "UltraLightHome gestisce affitti brevi in Italia dal 2017: pochi immobili, scelti con cura e seguiti in ogni dettaglio. Conosci il nostro approccio e il team.",
-  alternates: { canonical: "/chi-siamo" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/chi-siamo", key: "about" });
+}
 
 const approach = ["01", "02", "03", "04"] as const;
 

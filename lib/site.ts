@@ -6,7 +6,8 @@ export const SITE = {
   // Apex, matching the hostname actually served and the security.txt canonical.
   // www is not configured; point it here with a Cloudflare redirect rule.
   url: "https://ultralighthome.it",
-  locale: "it_IT",
+  // La lingua non vive qui: og:locale lo deriva dal locale della richiesta in
+  // lib/seo.ts, e il sito parla tre lingue.
   description:
     "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda, Roma e altro. Case curate, ben gestite, pronte da prenotare.",
   // Keep in sync with components/Footer.tsx + components/WhatsAppButton.tsx

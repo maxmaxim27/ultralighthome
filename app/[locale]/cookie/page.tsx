@@ -3,14 +3,17 @@ import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { LOCALE_COOKIE_MAX_AGE, type Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 
-export const metadata: Metadata = {
-  title: "Cookie Policy",
-  description:
-    "Informativa sui cookie di UltraLightHome: usiamo solo cookie tecnici necessari, nessuna profilazione.",
-  alternates: { canonical: "/cookie" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/cookie", key: "cookiePolicy" });
+}
 
 export default async function CookiePage({
   params,

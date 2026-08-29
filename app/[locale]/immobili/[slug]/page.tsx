@@ -5,6 +5,7 @@ import { ArrowLeft } from "lucide-react";
 import { properties, getProperty } from "@/lib/properties";
 import { locations, locationGroups } from "@/lib/locations";
 import { SITE, absoluteUrl } from "@/lib/site";
+import { localeUrl, pageMetadata } from "@/lib/seo";
 import PropertyGallery from "@/components/PropertyGallery";
 import PropertySpecs from "@/components/PropertySpecs";
 import PropertyCard from "@/components/PropertyCard";
@@ -27,33 +28,32 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<Metadata> {
   const { locale, slug } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
   const property = getProperty(slug);
+
+  // Slug inesistente: la pagina chiama notFound() e Next scarta i metadata di
+  // questo segmento a favore di quelli del layout, dove vive il titolo del 404.
   if (!property) return {};
 
   const loc = locations.find((l) => l.slug === property.locationSlug);
-  const title = `${property.name} — affitto breve a ${loc?.name ?? "Italia"}`;
-  const url = absoluteUrl(`/immobili/${property.slug}`);
-  const description = pick(property.shortDescription, locale);
+  const title = loc
+    ? t("property.title", { name: property.name, location: loc.name })
+    : property.name;
 
-  // OG/Twitter images auto-injected from the co-located opengraph-image route.
-  return {
+  return pageMetadata({
+    locale,
+    href: { pathname: "/immobili/[slug]", params: { slug } },
     title,
-    description,
-    alternates: { canonical: `/immobili/${property.slug}` },
-    openGraph: {
-      type: "website",
-      url,
-      siteName: SITE.name,
-      title,
-      description,
-      locale: SITE.locale,
+    description: pick(property.shortDescription, locale),
+    ogTitle: `${property.name} — ${SITE.name}`,
+    image: {
+      url: localeUrl(
+        { pathname: "/immobili/[slug]/opengraph-image", params: { slug } },
+        locale,
+      ),
+      alt: t("property.ogAlt", { name: property.name }),
     },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-    },
-  };
+  });
 }
 
 export default async function PropertyPage({
@@ -68,6 +68,7 @@ export default async function PropertyPage({
 
   const tAmenities = await getTranslations("amenities");
   const tPropertyDetail = await getTranslations("propertyDetail");
+  const tNav = await getTranslations("nav");
   const shortDescription = pick(property.shortDescription, locale);
   const loc = locations.find((l) => l.slug === property.locationSlug);
   const group = locationGroups.find((g) =>
@@ -80,13 +81,17 @@ export default async function PropertyPage({
     )
     .slice(0, 3);
 
-  const url = absoluteUrl(`/immobili/${property.slug}`);
+  const url = localeUrl(
+    { pathname: "/immobili/[slug]", params: { slug: property.slug } },
+    locale,
+  );
   const lodgingLd = {
     "@context": "https://schema.org",
     "@type": "Apartment",
     name: property.name,
     description: shortDescription,
     url,
+    inLanguage: locale,
     image: property.gallery.map((g) => absoluteUrl(g)),
     numberOfBedrooms: property.specs.bedrooms,
     numberOfBathroomsTotal: property.specs.bathrooms,
@@ -111,12 +116,17 @@ export default async function PropertyPage({
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: SITE.name,
+        item: localeUrl("/", locale),
+      },
       {
         "@type": "ListItem",
         position: 2,
-        name: "Immobili",
-        item: absoluteUrl("/immobili"),
+        name: tNav("properties"),
+        item: localeUrl("/immobili", locale),
       },
       { "@type": "ListItem", position: 3, name: property.name, item: url },
     ],
@@ -140,7 +150,7 @@ export default async function PropertyPage({
               href="/immobili"
               className="inline-flex items-center gap-2 text-xs tracking-[0.2em] uppercase text-stone hover:text-ink link-underline"
             >
-              <ArrowLeft size={14} /> Torna agli immobili
+              <ArrowLeft size={14} /> {tPropertyDetail("backToProperties")}
             </Link>
           </Reveal>
           <div className="mt-8 flex flex-col md:flex-row md:items-end md:justify-between gap-6">

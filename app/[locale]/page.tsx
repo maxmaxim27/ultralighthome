@@ -9,13 +9,31 @@ import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { localeUrl, pageMetadata } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Case e appartamenti per soggiorni brevi in Italia",
-  description:
-    "Immobili curati da affittare per qualche giorno: Dolomiti, Verona, Costa Smeralda, Roma e altro. Selezione, gestione e ospitalità con la stessa attenzione.",
-  alternates: { canonical: "/" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "meta" });
+
+  return pageMetadata({
+    locale,
+    href: "/",
+    // Il template `%s — Ultralight Home` del layout non si applica alla pagina
+    // dello stesso segmento, quindi il brand va aggiunto qui a mano.
+    title: `${t("home.title")} — ${SITE.name}`,
+    description: t("home.description"),
+    ogTitle: `${SITE.name} — ${t("siteTagline")}`,
+    image: {
+      url: localeUrl("/opengraph-image", locale),
+      alt: t("ogAlt"),
+    },
+  });
+}
 
 const partners = [
   { src: "/logos/vikey-logo.png", alt: "Vikey", width: 240 },

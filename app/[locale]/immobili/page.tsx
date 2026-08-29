@@ -7,14 +7,17 @@ import type { Property } from "@/lib/types";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 import { pick } from "@/lib/i18n-content";
 
-export const metadata: Metadata = {
-  title: "Immobili in affitto breve — Dolomiti, Verona, Costa Smeralda",
-  description:
-    "Tutti i nostri immobili da affittare per soggiorni brevi, raggruppati per zona: Dolomiti, Verona, Costa Smeralda e altre città italiane.",
-  alternates: { canonical: "/immobili" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/immobili", key: "properties" });
+}
 
 type Group = {
   key: string;

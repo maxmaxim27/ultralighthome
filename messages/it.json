@@ -111,7 +111,8 @@
     "sectionLabel": "L'immobile",
     "heading": "Cosa ti aspetta.",
     "relatedLabel": "Altri immobili in {location}",
-    "relatedHeading": "Da vedere anche."
+    "relatedHeading": "Da vedere anche.",
+    "backToProperties": "Torna agli immobili"
   },
   "map": {
     "consentMessage": "Accetta i cookie di terze parti per visualizzare la mappa di Google Maps."
@@ -288,7 +289,7 @@
       "value": "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento"
     },
     "cta": "Indicazioni stradali",
-    "mapTitle": "Mappa — Ufficio UltraLightHome, Verona"
+    "mapTitle": "Mappa — Ufficio Ultralight Home, Verona"
   },
   "contactPage": {
     "eyebrow": "Contatti",
@@ -411,6 +412,55 @@
     "contact": {
       "heading": "6. Contatti",
       "body": "Per qualsiasi domanda sui presenti termini: <mail>{email}</mail>."
+    }
+  },
+  "meta": {
+    "siteTagline": "Immobili curati, ben gestiti",
+    "description": "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda, Roma e altro. Case curate, ben gestite, pronte da prenotare.",
+    "keywords": "affitti brevi, case vacanza Italia, appartamenti Dolomiti, appartamenti Verona, appartamenti Roma, villa Costa Smeralda, soggiorni brevi, Plan de Corones, Val Pusteria, Porto Cervo",
+    "ogAlt": "Ultralight Home — Immobili curati, ben gestiti",
+    "ogLine1": "Immobili curati,",
+    "ogLine2": "ben gestiti.",
+    "ogPlaces": "Dolomiti · Verona · Costa Smeralda · Roma",
+    "home": {
+      "title": "Case e appartamenti per soggiorni brevi in Italia",
+      "description": "Immobili curati da affittare per qualche giorno: Dolomiti, Verona, Costa Smeralda, Roma e altro. Selezione, gestione e ospitalità con la stessa attenzione."
+    },
+    "properties": {
+      "title": "Immobili in affitto breve: Dolomiti, Verona, Costa Smeralda",
+      "description": "Tutti i nostri immobili da affittare per soggiorni brevi, raggruppati per zona: Dolomiti, Verona, Costa Smeralda e altre città italiane."
+    },
+    "property": {
+      "title": "{name}, affitto breve a {location}",
+      "ogAlt": "{name} — Ultralight Home"
+    },
+    "about": {
+      "title": "Chi siamo: gestione affitti brevi dal 2021",
+      "description": "Ultralight Home gestisce affitti brevi in Italia dal 2021: pochi immobili, scelti con cura e seguiti in ogni dettaglio. Il nostro approccio e il team."
+    },
+    "where": {
+      "title": "Dove siamo",
+      "description": "Il nostro ufficio a Verona. Vieni a trovarci o fissa un appuntamento: Lungadige Matteotti 14, 37126 Verona."
+    },
+    "contact": {
+      "title": "Contatti: parla con noi",
+      "description": "Scrivici per affittare un immobile o affidarci la gestione del tuo: email, telefono, WhatsApp. Rispondiamo in giornata."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Informativa sul trattamento dei dati personali di Ultralight Home ai sensi del Regolamento UE 2016/679 (GDPR)."
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy",
+      "description": "Informativa sui cookie di Ultralight Home: solo cookie tecnici necessari, nessuna profilazione."
+    },
+    "terms": {
+      "title": "Termini e condizioni",
+      "description": "Termini e condizioni d'uso del sito Ultralight Home."
+    },
+    "notFound": {
+      "title": "Pagina non trovata",
+      "description": "L'indirizzo richiesto non corrisponde a nessuna pagina del sito."
     }
   }
 }

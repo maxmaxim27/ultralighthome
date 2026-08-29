@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contatti — parla con noi",
-  description:
-    "Scrivici per affittare un immobile o affidarci la gestione del tuo: email, telefono, WhatsApp. Rispondiamo in giornata.",
-  alternates: { canonical: "/contatti" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/contatti", key: "contact" });
+}
 
 export default async function ContattiLayout({
   children,

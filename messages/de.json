@@ -111,7 +111,8 @@
     "sectionLabel": "Die Immobilie",
     "heading": "Das erwartet Sie.",
     "relatedLabel": "Weitere Immobilien in {location}",
-    "relatedHeading": "Auch interessant."
+    "relatedHeading": "Auch interessant.",
+    "backToProperties": "Zurück zu den Immobilien"
   },
   "map": {
     "consentMessage": "Akzeptieren Sie Cookies von Drittanbietern, um die Google-Maps-Karte anzuzeigen."
@@ -411,6 +412,55 @@
     "contact": {
       "heading": "6. Kontakt",
       "body": "Für Fragen zu diesen Bedingungen: <mail>{email}</mail>."
+    }
+  },
+  "meta": {
+    "siteTagline": "Gepflegte Immobilien, gut verwaltet",
+    "description": "Ausgewählte Ferienwohnungen für kurze Aufenthalte: Kronplatz und Dolomiten, Verona, Costa Smeralda, Rom und mehr. Gepflegt, gut verwaltet, sofort buchbar.",
+    "keywords": "Ferienwohnung Kronplatz, Ferienwohnung Bruneck, Ferienwohnung Olang, Unterkunft Pustertal, Ferienwohnung Dolomiten, Ferienwohnung Südtirol, Ferienhaus Verona, Ferienwohnung Rom, Villa Costa Smeralda, Kurzzeitmiete Italien",
+    "ogAlt": "Ultralight Home — Gepflegte Immobilien, gut verwaltet",
+    "ogLine1": "Gepflegte Immobilien,",
+    "ogLine2": "gut verwaltet.",
+    "ogPlaces": "Dolomiten · Verona · Costa Smeralda · Rom",
+    "home": {
+      "title": "Ferienwohnungen und Ferienhäuser in Italien",
+      "description": "Gepflegte Immobilien für ein paar Tage: Kronplatz und Dolomiten, Verona, Costa Smeralda, Rom und mehr. Auswahl, Verwaltung und Gastfreundschaft mit derselben Sorgfalt."
+    },
+    "properties": {
+      "title": "Ferienwohnungen zur Kurzzeitmiete: Dolomiten, Verona, Costa Smeralda",
+      "description": "Alle unsere Unterkünfte für kurze Aufenthalte, nach Region geordnet: Kronplatz und Dolomiten, Verona, Costa Smeralda und weitere italienische Städte."
+    },
+    "property": {
+      "title": "{name}, Ferienwohnung in {location}",
+      "ogAlt": "{name} — Ultralight Home"
+    },
+    "about": {
+      "title": "Über uns: Kurzzeitvermietung seit 2021",
+      "description": "Ultralight Home verwaltet seit 2021 Kurzzeitvermietungen in Italien: wenige Immobilien, sorgfältig ausgewählt und in jedem Detail betreut. Unser Ansatz und unser Team."
+    },
+    "where": {
+      "title": "Standort",
+      "description": "Unser Büro in Verona. Besuchen Sie uns oder vereinbaren Sie einen Termin: Lungadige Matteotti 14, 37126 Verona."
+    },
+    "contact": {
+      "title": "Kontakt: sprechen Sie mit uns",
+      "description": "Schreiben Sie uns, wenn Sie eine Unterkunft mieten oder uns die Verwaltung Ihrer Immobilie anvertrauen möchten: E-Mail, Telefon, WhatsApp. Wir antworten noch am selben Tag."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Informationen zur Verarbeitung personenbezogener Daten durch Ultralight Home gemäß Verordnung (EU) 2016/679 (DSGVO)."
+    },
+    "cookiePolicy": {
+      "title": "Cookie-Richtlinie",
+      "description": "Cookie-Hinweis von Ultralight Home: ausschließlich technisch notwendige Cookies, keine Profilbildung."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "description": "Nutzungsbedingungen für die Website von Ultralight Home."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die aufgerufene Adresse entspricht keiner Seite dieser Website."
     }
   }
 }

@@ -3,12 +3,16 @@ import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Termini e condizioni",
-  description: "Termini e condizioni d'uso del sito UltraLightHome.",
-  alternates: { canonical: "/termini" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/termini", key: "terms" });
+}
 
 export default async function TerminiPage({
   params,

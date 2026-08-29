@@ -6,13 +6,16 @@ import { ButtonLink } from "@/components/Button";
 import MapEmbed from "@/components/MapEmbed";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Dove siamo",
-  description:
-    "Il nostro ufficio a Verona. Vieni a trovarci o fissa un appuntamento: Lungadige Matteotti 14, 37126 Verona.",
-  alternates: { canonical: "/dove-siamo" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/dove-siamo", key: "where" });
+}
 
 const info = [
   { icon: MapPin, key: "address" },

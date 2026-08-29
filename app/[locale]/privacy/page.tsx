@@ -3,15 +3,18 @@ import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { staticPageMetadata } from "@/lib/seo";
 import { Link } from "@/i18n/navigation";
 import { pick } from "@/lib/i18n-content";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Informativa sul trattamento dei dati personali di UltraLightHome ai sensi del Regolamento UE 2016/679 (GDPR).",
-  alternates: { canonical: "/privacy" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return staticPageMetadata({ locale, href: "/privacy", key: "privacy" });
+}
 
 export default async function PrivacyPage({
   params,

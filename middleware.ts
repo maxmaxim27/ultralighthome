@@ -49,14 +49,13 @@ export default function middleware(request: NextRequest) {
 }
 
 export const config = {
-  // Esclude API, asset statici, file di Next, qualsiasi percorso con estensione, e le
-  // route immagine di metadata non puntate (opengraph-image, twitter-image) — ma solo
-  // quando sono gia' esplicitamente prefissate con una lingua (es. /de/immobili/x/opengraph-image)
-  // o sono la route radice (/opengraph-image): li' Next le risolve da solo, senza rewrite.
-  // La forma senza prefisso e senza lingua esplicita (es. /immobili/x/opengraph-image, italiano
-  // di default) deve INVECE attraversare il middleware: e' lui a inserire il prefisso "it"
-  // implicito via rewrite — escluderla romperebbe quella route (regressione verificata).
-  matcher: [
-    "/((?!api|_next|_vercel|.*\\..*|(?:opengraph-image|twitter-image)$|(?:it|en|de)/.*(?:opengraph-image|twitter-image)$).*)",
-  ],
+  // Esclude API, asset statici, file di Next e qualsiasi percorso con estensione.
+  //
+  // Le route immagine di metadata (opengraph-image) NON sono escluse: da quando
+  // vivono tutte dentro app/[locale]/ hanno bisogno del middleware esattamente
+  // come le pagine. /opengraph-image e /immobili/x/opengraph-image devono
+  // ricevere il prefisso "it" implicito via rewrite, e soprattutto
+  // /de/immobilien/x/opengraph-image va riscritto sulla cartella /immobili
+  // tramite la mappa `pathnames`: senza passare di qui risponderebbe 404.
+  matcher: ["/((?!api|_next|_vercel|.*\\..*).*)"],
 };

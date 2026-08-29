@@ -42,6 +42,18 @@ export const routing = defineRouting({
       en: "/properties/[slug]",
       de: "/immobilien/[slug]",
     },
+    // Le route immagine di metadata sono URL pubblici come gli altri: senza
+    // questa voce /de/immobilien/x/opengraph-image non verrebbe riscritto
+    // sulla cartella /immobili e risponderebbe 404, lasciando senza anteprima
+    // ogni link tedesco o inglese condiviso su WhatsApp.
+    "/immobili/[slug]/opengraph-image": {
+      it: "/immobili/[slug]/opengraph-image",
+      en: "/properties/[slug]/opengraph-image",
+      de: "/immobilien/[slug]/opengraph-image",
+    },
+    // Uguale nelle tre lingue, ma dichiararla la rende raggiungibile da
+    // getPathname() e quindi citabile negli og:image del layout.
+    "/opengraph-image": "/opengraph-image",
     "/chi-siamo": {
       it: "/chi-siamo",
       en: "/about",
