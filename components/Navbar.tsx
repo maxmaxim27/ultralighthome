@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
 import ContactDialog from "@/components/ContactDialog";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const nav = [
   { href: "/immobili", label: "Immobili" },
@@ -76,29 +77,35 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <ContactDialog
-            trigger={(open) => (
-              <button
-                type="button"
-                onClick={open}
-                className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-white hover:text-ink transition-colors"
-              >
-                Valuta immobile
-              </button>
-            )}
-          />
+          <div className="flex items-center gap-3">
+            <ContactDialog
+              trigger={(open) => (
+                <button
+                  type="button"
+                  onClick={open}
+                  className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-white hover:text-ink transition-colors"
+                >
+                  Valuta immobile
+                </button>
+              )}
+            />
 
-          <button
-            aria-label={open ? "Chiudi menu" : "Apri menu"}
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative z-60"
-          >
-            {open ? (
-              <X size={22} strokeWidth={1.5} />
-            ) : (
-              <Menu size={22} strokeWidth={1.5} />
-            )}
-          </button>
+            <div className="hidden md:block">
+              <LanguageSwitcher variant="desktop" />
+            </div>
+
+            <button
+              aria-label={open ? "Chiudi menu" : "Apri menu"}
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative z-60"
+            >
+              {open ? (
+                <X size={22} strokeWidth={1.5} />
+              ) : (
+                <Menu size={22} strokeWidth={1.5} />
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -159,9 +166,8 @@ export default function Navbar() {
                 </button>
               )}
             />
-            <div className="mt-6 flex items-center justify-between text-xs tracking-[0.2em] uppercase text-cream/50">
-              <span>IT / EN</span>
-              <span>Verona · Dolomiti · Costa Smeralda</span>
+            <div className="mt-6">
+              <LanguageSwitcher variant="mobile" onSelect={() => setOpen(false)} />
             </div>
           </div>
         </div>
