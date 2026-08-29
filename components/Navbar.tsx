@@ -49,7 +49,7 @@ export default function Navbar() {
             {/* desktop: footer logo image only */}
             <Image
               src="/logo_icon.png"
-              alt="UltraLightHome"
+              alt="Ultralight Home"
               width={1972}
               height={1674}
               priority
@@ -150,7 +150,7 @@ export default function Navbar() {
             <div className="mb-8 flex justify-center">
               <Image
                 src="/logo.png"
-                alt="UltraLightHome"
+                alt="Ultralight Home"
                 width={1972}
                 height={1674}
                 className="h-24 w-auto brightness-0 invert opacity-80"

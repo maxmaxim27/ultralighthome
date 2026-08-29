@@ -19,7 +19,7 @@ const TYPE_LABELS: Record<string, string> = {
   altro: "Altro",
 };
 
-const FROM = "UltraLightHome <noreply@send.ultralighthome.it>";
+const FROM = "Ultralight Home <noreply@send.ultralighthome.it>";
 
 // Per-IP throttle held in the isolate's memory. It resets whenever Cloudflare
 // recycles the isolate and is not shared between colos, so it is a cheap first

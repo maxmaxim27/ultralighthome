@@ -13,10 +13,10 @@ export default async function Footer() {
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2 flex items-center justify-center">
-            <Link href="/" className="inline-block" aria-label="UltraLightHome">
+            <Link href="/" className="inline-block" aria-label="Ultralight Home">
               <Image
                 src="/logo.png"
-                alt="UltraLightHome"
+                alt="Ultralight Home"
                 width={1972}
                 height={1674}
                 className="h-28 md:h-48 w-auto brightness-0 invert opacity-90"
