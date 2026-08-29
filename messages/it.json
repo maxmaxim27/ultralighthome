@@ -352,5 +352,37 @@
       "heading": "7. Cookie",
       "body": "L'uso dei cookie è descritto nella nostra <cookies>Cookie Policy</cookies>."
     }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookie",
+    "title": "Informativa sui cookie.",
+    "intro": "I cookie sono piccoli file di testo che i siti salvano sul dispositivo dell'utente. Possono essere <strong>tecnici</strong> (necessari al funzionamento) o di <strong>profilazione</strong> (per tracciare le abitudini di navigazione).",
+    "technical": {
+      "heading": "1. Cookie tecnici",
+      "body": "Per il proprio funzionamento questo sito utilizza esclusivamente <strong>cookie tecnici e necessari</strong>. Non impieghiamo cookie di profilazione né strumenti di analisi statistica per finalità di marketing. I font sono ospitati direttamente sul nostro sito e non comportano richieste a server esterni.",
+      "listIntro": "I cookie tecnici impostati da questo sito sono:",
+      "items": {
+        "0": "<strong>NEXT_LOCALE</strong> — ricorda la lingua che hai scelto per il sito. Durata: {days} giorni. Categoria: tecnico/necessario; non richiede consenso."
+      },
+      "storage": "La tua scelta sui cookie di terze parti viene salvata nel <em>local storage</em> del browser (chiave <code>ulh-consent</code>): resta sul tuo dispositivo, non viene trasmessa ai nostri server e puoi cancellarla svuotando i dati del sito dal browser."
+    },
+    "thirdParty": {
+      "heading": "2. Cookie di terze parti — Google Maps",
+      "body": "Nella pagina <where>Dove siamo</where> incorporiamo una mappa di <strong>Google Maps</strong>. Questo servizio, fornito da Google Ireland Ltd., può installare cookie di terze parti e trattare dati (incluso l'indirizzo IP), con possibili trasferimenti verso gli Stati Uniti.",
+      "consent": "La mappa <strong>non viene caricata automaticamente</strong>: resta sostituita da un'anteprima e i contenuti di Google — con i relativi cookie — vengono attivati <strong>solo dopo il tuo consenso esplicito</strong>, prestato tramite il banner richiamabile dal pulsante «Gestisci cookie».",
+      "google": "Per i dettagli sul trattamento da parte di Google consulta la <link>privacy policy di Google</link>."
+    },
+    "consent": {
+      "heading": "3. Gestione del consenso",
+      "body": "Alla prima visita compare un banner che ti consente di <strong>accettare</strong> o <strong>rifiutare</strong> i cookie di terze parti. I cookie di Google Maps vengono installati solo se presti il consenso. Puoi modificare la tua scelta in qualsiasi momento tramite il link <strong>«Gestisci cookie»</strong> presente nel footer di ogni pagina."
+    },
+    "browser": {
+      "heading": "4. Come gestire i cookie nel browser",
+      "body": "Puoi controllare o eliminare i cookie tramite le impostazioni del tuo browser. La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito."
+    },
+    "updates": {
+      "heading": "5. Aggiornamenti",
+      "body": "Qualora introducessimo nuovi strumenti di terze parti che utilizzano cookie non tecnici, aggiorneremo questa informativa. Per domande: <mail>{email}</mail>."
+    }
   }
 }

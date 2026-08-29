@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
-import { setRequestLocale } from "next-intl/server";
-import type { Locale } from "@/i18n/routing";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { LOCALE_COOKIE_MAX_AGE, type Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 
 export const metadata: Metadata = {
@@ -19,89 +19,76 @@ export default async function CookiePage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("cookiePolicy");
+
+  // The stated duration of NEXT_LOCALE comes from the cookie's own definition,
+  // so the policy cannot drift from what the site actually sets.
+  const localeCookieDays = Math.round(LOCALE_COOKIE_MAX_AGE / (60 * 60 * 24));
+
+  const strong = (chunks: React.ReactNode) => <strong>{chunks}</strong>;
+  const em = (chunks: React.ReactNode) => <em>{chunks}</em>;
+  const code = (chunks: React.ReactNode) => <code>{chunks}</code>;
+  const mail = (chunks: React.ReactNode) => (
+    <a href={`mailto:${SITE.email}`}>{chunks}</a>
+  );
+  const where = (chunks: React.ReactNode) => (
+    <Link href="/dove-siamo">{chunks}</Link>
+  );
+  const googleLink = (chunks: React.ReactNode) => (
+    <a
+      href="https://policies.google.com/privacy"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {chunks}
+    </a>
+  );
 
   return (
     <LegalLayout
-      eyebrow="Cookie"
-      title="Informativa sui cookie."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
       updated={LEGAL.updated}
     >
       <section>
-        <p>
-          I cookie sono piccoli file di testo che i siti salvano sul dispositivo
-          dell&apos;utente. Possono essere <strong>tecnici</strong> (necessari al
-          funzionamento) o di <strong>profilazione</strong> (per tracciare le
-          abitudini di navigazione).
-        </p>
+        <p>{t.rich("intro", { strong })}</p>
       </section>
 
       <section>
-        <h2>1. Cookie tecnici</h2>
-        <p>
-          Per il proprio funzionamento questo sito utilizza esclusivamente{" "}
-          <strong>cookie tecnici e necessari</strong>. Non impieghiamo cookie di
-          profilazione né strumenti di analisi statistica per finalità di
-          marketing. I font sono ospitati direttamente sul nostro sito e non
-          comportano richieste a server esterni.
-        </p>
-        <p>
-          La tua scelta sui cookie di terze parti viene salvata nel{" "}
-          <em>local storage</em> del browser (chiave <code>ulh-consent</code>):
-          resta sul tuo dispositivo, non viene trasmessa ai nostri server e puoi
-          cancellarla svuotando i dati del sito dal browser.
-        </p>
+        <h2>{t("technical.heading")}</h2>
+        <p>{t.rich("technical.body", { strong })}</p>
+        <p>{t("technical.listIntro")}</p>
+        <ul>
+          <li>
+            {t.rich("technical.items.0", {
+              strong,
+              days: localeCookieDays,
+            })}
+          </li>
+        </ul>
+        <p>{t.rich("technical.storage", { em, code })}</p>
       </section>
 
       <section>
-        <h2>2. Cookie di terze parti — Google Maps</h2>
-        <p>
-          Nella pagina <Link href="/dove-siamo">Dove siamo</Link> incorporiamo una
-          mappa di <strong>Google Maps</strong>. Questo servizio, fornito da
-          Google Ireland Ltd., può installare cookie di terze parti e trattare
-          dati (incluso l&apos;indirizzo IP), con possibili trasferimenti verso
-          gli Stati Uniti.
-        </p>
-        <p>
-          La mappa <strong>non viene caricata automaticamente</strong>: resta
-          sostituita da un&apos;anteprima e i contenuti di Google — con i
-          relativi cookie — vengono attivati <strong>solo dopo il tuo consenso
-          esplicito</strong>, prestato tramite il banner richiamabile dal
-          pulsante &laquo;Gestisci cookie&raquo;.
-        </p>
-        <p>
-          Per i dettagli sul trattamento da parte di Google consulta la{" "}
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">privacy policy di Google</a>.
-        </p>
+        <h2>{t("thirdParty.heading")}</h2>
+        <p>{t.rich("thirdParty.body", { strong, where })}</p>
+        <p>{t.rich("thirdParty.consent", { strong })}</p>
+        <p>{t.rich("thirdParty.google", { link: googleLink })}</p>
       </section>
 
       <section>
-        <h2>3. Gestione del consenso</h2>
-        <p>
-          Alla prima visita compare un banner che ti consente di{" "}
-          <strong>accettare</strong> o <strong>rifiutare</strong> i cookie di
-          terze parti. I cookie di Google Maps vengono installati solo se
-          presti il consenso. Puoi modificare la tua scelta in qualsiasi
-          momento tramite il link <strong>&laquo;Gestisci cookie&raquo;</strong>{" "}
-          presente nel footer di ogni pagina.
-        </p>
+        <h2>{t("consent.heading")}</h2>
+        <p>{t.rich("consent.body", { strong })}</p>
       </section>
 
       <section>
-        <h2>4. Come gestire i cookie nel browser</h2>
-        <p>
-          Puoi controllare o eliminare i cookie tramite le impostazioni del tuo
-          browser. La disabilitazione dei cookie tecnici potrebbe compromettere
-          alcune funzionalità del sito.
-        </p>
+        <h2>{t("browser.heading")}</h2>
+        <p>{t("browser.body")}</p>
       </section>
 
       <section>
-        <h2>5. Aggiornamenti</h2>
-        <p>
-          Qualora introducessimo nuovi strumenti di terze parti che utilizzano
-          cookie non tecnici, aggiorneremo questa informativa. Per domande:{" "}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-        </p>
+        <h2>{t("updates.heading")}</h2>
+        <p>{t.rich("updates.body", { mail, email: SITE.email })}</p>
       </section>
     </LegalLayout>
   );

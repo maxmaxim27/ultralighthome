@@ -352,5 +352,37 @@
       "heading": "7. Cookies",
       "body": "Die Verwendung von Cookies ist in unserer <cookies>Cookie-Richtlinie</cookies> beschrieben."
     }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookies",
+    "title": "Cookie-Richtlinie.",
+    "intro": "Cookies sind kleine Textdateien, die Websites auf dem Gerät des Nutzers speichern. Sie können <strong>technisch</strong> sein (für den Betrieb erforderlich) oder der <strong>Profilbildung</strong> dienen (zur Nachverfolgung des Surfverhaltens).",
+    "technical": {
+      "heading": "1. Technische Cookies",
+      "body": "Für ihren Betrieb verwendet diese Website ausschließlich <strong>technische und notwendige Cookies</strong>. Wir setzen weder Cookies zur Profilbildung noch Werkzeuge zur statistischen Analyse für Marketingzwecke ein. Die Schriftarten werden direkt auf unserer Website gehostet und erfordern keine Anfragen an externe Server.",
+      "listIntro": "Die von dieser Website gesetzten technischen Cookies sind:",
+      "items": {
+        "0": "<strong>NEXT_LOCALE</strong> — speichert die von Ihnen gewählte Sprache der Website. Speicherdauer: {days} Tage. Kategorie: technisch/notwendig; keine Einwilligung erforderlich."
+      },
+      "storage": "Ihre Entscheidung über Cookies von Drittanbietern wird im <em>Local Storage</em> des Browsers gespeichert (Schlüssel <code>ulh-consent</code>): Sie bleibt auf Ihrem Gerät, wird nicht an unsere Server übermittelt und Sie können sie löschen, indem Sie die Website-Daten im Browser leeren."
+    },
+    "thirdParty": {
+      "heading": "2. Cookies von Drittanbietern — Google Maps",
+      "body": "Auf der Seite <where>Standorte</where> binden wir eine Karte von <strong>Google Maps</strong> ein. Dieser von Google Ireland Ltd. bereitgestellte Dienst kann Cookies von Drittanbietern setzen und Daten verarbeiten (einschließlich der IP-Adresse), mit möglichen Übermittlungen in die Vereinigten Staaten.",
+      "consent": "Die Karte wird <strong>nicht automatisch geladen</strong>: Sie bleibt durch eine Vorschau ersetzt, und die Inhalte von Google — mit den zugehörigen Cookies — werden <strong>erst nach Ihrer ausdrücklichen Einwilligung</strong> aktiviert, die über das mit der Schaltfläche „Cookies verwalten“ aufrufbare Banner erteilt wird.",
+      "google": "Einzelheiten zur Verarbeitung durch Google finden Sie in der <link>Datenschutzerklärung von Google</link>."
+    },
+    "consent": {
+      "heading": "3. Verwaltung der Einwilligung",
+      "body": "Beim ersten Besuch erscheint ein Banner, mit dem Sie Cookies von Drittanbietern <strong>akzeptieren</strong> oder <strong>ablehnen</strong> können. Die Cookies von Google Maps werden nur gesetzt, wenn Sie Ihre Einwilligung erteilen. Sie können Ihre Entscheidung jederzeit über den Link <strong>„Cookies verwalten“</strong> im Fußbereich jeder Seite ändern."
+    },
+    "browser": {
+      "heading": "4. Cookies im Browser verwalten",
+      "body": "Sie können Cookies über die Einstellungen Ihres Browsers kontrollieren oder löschen. Die Deaktivierung technischer Cookies kann einige Funktionen der Website beeinträchtigen."
+    },
+    "updates": {
+      "heading": "5. Aktualisierungen",
+      "body": "Sollten wir neue Werkzeuge von Drittanbietern einführen, die nicht-technische Cookies verwenden, werden wir diese Informationen aktualisieren. Bei Fragen: <mail>{email}</mail>."
+    }
   }
 }

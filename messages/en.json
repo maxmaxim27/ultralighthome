@@ -352,5 +352,37 @@
       "heading": "7. Cookies",
       "body": "The use of cookies is described in our <cookies>Cookie Policy</cookies>."
     }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookies",
+    "title": "Cookie policy.",
+    "intro": "Cookies are small text files that websites save on the user's device. They can be <strong>technical</strong> (necessary for the site to work) or <strong>profiling</strong> cookies (to track browsing habits).",
+    "technical": {
+      "heading": "1. Technical cookies",
+      "body": "For its own operation this site uses exclusively <strong>technical and necessary cookies</strong>. We do not use profiling cookies or statistical analysis tools for marketing purposes. The fonts are hosted directly on our site and involve no requests to external servers.",
+      "listIntro": "The technical cookies set by this site are:",
+      "items": {
+        "0": "<strong>NEXT_LOCALE</strong> — remembers the language you chose for the site. Duration: {days} days. Category: technical/necessary; no consent required."
+      },
+      "storage": "Your choice about third-party cookies is saved in the browser's <em>local storage</em> (key <code>ulh-consent</code>): it stays on your device, it is not transmitted to our servers and you can delete it by clearing the site data from your browser."
+    },
+    "thirdParty": {
+      "heading": "2. Third-party cookies — Google Maps",
+      "body": "On the <where>Locations</where> page we embed a <strong>Google Maps</strong> map. This service, provided by Google Ireland Ltd., may install third-party cookies and process data (including the IP address), with possible transfers to the United States.",
+      "consent": "The map <strong>is not loaded automatically</strong>: it stays replaced by a preview, and Google's content — with the related cookies — is activated <strong>only after your explicit consent</strong>, given through the banner that can be recalled from the “Manage cookies” button.",
+      "google": "For details on the processing carried out by Google, see <link>Google's privacy policy</link>."
+    },
+    "consent": {
+      "heading": "3. Managing consent",
+      "body": "On your first visit a banner appears that lets you <strong>accept</strong> or <strong>decline</strong> third-party cookies. Google Maps cookies are installed only if you give your consent. You can change your choice at any time through the <strong>“Manage cookies”</strong> link in the footer of every page."
+    },
+    "browser": {
+      "heading": "4. How to manage cookies in your browser",
+      "body": "You can control or delete cookies through your browser settings. Disabling technical cookies may impair some functions of the site."
+    },
+    "updates": {
+      "heading": "5. Updates",
+      "body": "Should we introduce new third-party tools that use non-technical cookies, we will update this notice. For questions: <mail>{email}</mail>."
+    }
   }
 }
