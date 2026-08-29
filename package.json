@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "check:i18n": "node scripts/check-i18n.mjs",
     "build:cf": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
@@ -21,6 +22,7 @@
     "geist": "^1.7.1",
     "lucide-react": "^1.16.0",
     "next": "^16.2.12",
+    "next-intl": "^4.14.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "resend": "^6.16.0"
