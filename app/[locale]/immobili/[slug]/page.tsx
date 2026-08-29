@@ -108,7 +108,7 @@ export default async function PropertyPage({
     address: {
       "@type": "PostalAddress",
       addressLocality: loc?.name,
-      addressRegion: loc?.region,
+      addressRegion: loc ? pick(loc.region, locale) : undefined,
       addressCountry: "IT",
     },
   };
@@ -157,7 +157,7 @@ export default async function PropertyPage({
             <div>
               <Reveal delay={0.05}>
                 <p className="text-xs tracking-[0.3em] uppercase text-stone">
-                  {loc?.name} — {loc?.region}
+                  {loc?.name} — {loc ? pick(loc.region, locale) : ""}
                 </p>
               </Reveal>
               <Reveal delay={0.1}>

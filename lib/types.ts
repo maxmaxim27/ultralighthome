@@ -4,7 +4,7 @@ import type { AmenityKey } from "./amenities";
 export type Location = {
   slug: string;
   name: string;
-  region: string;
+  region: Localized;
   description: Localized;
   heroImage: string;
 };

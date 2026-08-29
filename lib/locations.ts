@@ -4,7 +4,11 @@ export const locations: Location[] = [
   {
     slug: "valdaora",
     name: "Valdaora",
-    region: "Trentino-Alto Adige",
+    region: {
+      it: "Trentino-Alto Adige",
+      en: "South Tyrol",
+      de: "Südtirol",
+    },
     description: {
       it: "Sotto il Plan de Corones, tra piste e sentieri.",
       en: "Below Plan de Corones, between ski runs and hiking trails.",
@@ -15,7 +19,11 @@ export const locations: Location[] = [
   {
     slug: "brunico",
     name: "Brunico",
-    region: "Trentino-Alto Adige",
+    region: {
+      it: "Trentino-Alto Adige",
+      en: "South Tyrol",
+      de: "Südtirol",
+    },
     description: {
       it: "Nel cuore della Val Pusteria, a due passi dagli impianti.",
       en: "In the heart of Val Pusteria, a short walk from the lifts.",
@@ -26,7 +34,11 @@ export const locations: Location[] = [
   {
     slug: "riscone",
     name: "Riscone",
-    region: "Trentino-Alto Adige",
+    region: {
+      it: "Trentino-Alto Adige",
+      en: "South Tyrol",
+      de: "Südtirol",
+    },
     description: {
       it: "Ai piedi del Plan de Corones, comodo per sci ed escursioni.",
       en: "At the foot of Plan de Corones, handy for skiing and hiking.",
@@ -37,7 +49,11 @@ export const locations: Location[] = [
   {
     slug: "san-cassiano",
     name: "San Cassiano",
-    region: "Trentino-Alto Adige",
+    region: {
+      it: "Trentino-Alto Adige",
+      en: "South Tyrol",
+      de: "Südtirol",
+    },
     description: {
       it: "In Alta Badia, vicino alle seggiovie e alle Dolomiti.",
       en: "In Alta Badia, close to the chairlifts and the Dolomites.",
@@ -48,7 +64,11 @@ export const locations: Location[] = [
   {
     slug: "verona",
     name: "Verona",
-    region: "Veneto",
+    region: {
+      it: "Veneto",
+      en: "Veneto",
+      de: "Veneto",
+    },
     description: {
       it: "Appartamenti in città, vicino al centro storico.",
       en: "Apartments in the city, close to the historic centre.",
@@ -59,7 +79,11 @@ export const locations: Location[] = [
   {
     slug: "roma",
     name: "Roma",
-    region: "Lazio",
+    region: {
+      it: "Lazio",
+      en: "Lazio",
+      de: "Latium",
+    },
     description: {
       it: "Nella capitale, ben collegata con la metro.",
       en: "In the capital, well connected by the metro.",
@@ -70,7 +94,11 @@ export const locations: Location[] = [
   {
     slug: "padova",
     name: "Padova",
-    region: "Veneto",
+    region: {
+      it: "Veneto",
+      en: "Veneto",
+      de: "Veneto",
+    },
     description: {
       it: "In centro città, a pochi passi dal Duomo.",
       en: "In the city centre, a few steps from the Duomo.",
@@ -81,7 +109,11 @@ export const locations: Location[] = [
   {
     slug: "castelfranco-veneto",
     name: "Castelfranco Veneto",
-    region: "Veneto",
+    region: {
+      it: "Veneto",
+      en: "Veneto",
+      de: "Veneto",
+    },
     description: {
       it: "Vicino alle mura storiche e ai servizi.",
       en: "Close to the historic walls and to local amenities.",
@@ -92,7 +124,11 @@ export const locations: Location[] = [
   {
     slug: "mestre",
     name: "Mestre",
-    region: "Veneto",
+    region: {
+      it: "Veneto",
+      en: "Veneto",
+      de: "Veneto",
+    },
     description: {
       it: "A due passi dalla magia veneziana, con parcheggio comodo.",
       en: "A short hop from the magic of Venice, with easy parking.",
@@ -103,7 +139,11 @@ export const locations: Location[] = [
   {
     slug: "porto-cervo",
     name: "Porto Cervo",
-    region: "Sardegna",
+    region: {
+      it: "Sardegna",
+      en: "Sardinia",
+      de: "Sardinien",
+    },
     description: {
       it: "Nel cuore della Costa Smeralda, tra mare cristallino e granito.",
       en: "In the heart of the Costa Smeralda, between crystal-clear sea and granite.",
