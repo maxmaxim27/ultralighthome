@@ -369,7 +369,7 @@
     "thirdParty": {
       "heading": "2. Third-party cookies — Google Maps",
       "body": "On the <where>Locations</where> page we embed a <strong>Google Maps</strong> map. This service, provided by Google Ireland Ltd., may install third-party cookies and process data (including the IP address), with possible transfers to the United States.",
-      "consent": "The map <strong>is not loaded automatically</strong>: it stays replaced by a preview, and Google's content — with the related cookies — is activated <strong>only after your explicit consent</strong>, given through the banner that can be recalled from the “Manage cookies” button.",
+      "consent": "The map <strong>is not loaded automatically</strong>: a preview is shown instead, and Google's content — with the related cookies — is activated <strong>only after your explicit consent</strong>, given through the banner that can be recalled from the “Manage cookies” button.",
       "google": "For details on the processing carried out by Google, see <link>Google's privacy policy</link>."
     },
     "consent": {
@@ -390,7 +390,7 @@
     "title": "Terms and conditions.",
     "subject": {
       "heading": "1. Subject",
-      "body": "This site is the showcase of <strong>{owner}</strong>, VAT No. <strong>{vat}</strong>, with registered office at {address}, and presents the properties managed for short stays. Browsing the site implies acceptance of these terms."
+      "body": "This site showcases the properties managed for short stays by <strong>{owner}</strong>, VAT No. <strong>{vat}</strong>, with registered office at {address}. Browsing the site implies acceptance of these terms."
     },
     "bookings": {
       "heading": "2. Bookings",
@@ -402,7 +402,7 @@
     },
     "liability": {
       "heading": "4. Limitation of liability",
-      "body": "We undertake to keep the content up to date and accurate, but we do not guarantee the absence of errors or the uninterrupted availability of the site. We are not liable for any damage arising from the use of, or the impossibility of using, the site or the linked third-party sites."
+      "body": "We undertake to keep the content up to date and accurate, but we do not guarantee the absence of errors or the uninterrupted availability of the site. We are not liable for any damage arising from the use of, or the inability to use, the site or the linked third-party sites."
     },
     "law": {
       "heading": "5. Governing law and jurisdiction",

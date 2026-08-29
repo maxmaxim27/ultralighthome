@@ -318,7 +318,7 @@
       "heading": "2. Daten, die wir erheben",
       "items": {
         "0": "<strong>Daten aus dem Kontaktformular:</strong> Vor- und Nachname, E-Mail-Adresse und der Inhalt der Nachricht, die Sie uns senden.",
-        "1": "<strong>Navigationsdaten:</strong> technische Daten, die von den Servern automatisch erhoben werden (z. B. IP-Adresse, Zugriffsprotokolle), für den Betrieb und die Sicherheit der Website."
+        "1": "<strong>Nutzungsdaten:</strong> technische Daten, die von den Servern automatisch erhoben werden (z. B. IP-Adresse, Zugriffsprotokolle), für den Betrieb und die Sicherheit der Website."
       }
     },
     "purposes": {
@@ -337,7 +337,7 @@
       "heading": "5. Empfänger der Daten",
       "intro": "Die Daten können von Dienstleistern verarbeitet werden, die uns bei der Erbringung des Dienstes unterstützen und gemäß Art. 28 GDPR als Auftragsverarbeiter benannt sind. Wir verkaufen Ihre Daten nicht an Dritte. Derzeit werden folgende Dienstleister eingesetzt:",
       "items": {
-        "0": "<strong>Cloudflare, Inc.</strong> — Hosting der Website und Schutz der Infrastruktur. Verarbeitet Navigationsdaten (IP-Adresse, technische Protokolle). <link>Datenschutzerklärung</link>.",
+        "0": "<strong>Cloudflare, Inc.</strong> — Hosting der Website und Schutz der Infrastruktur. Verarbeitet Nutzungsdaten (IP-Adresse, technische Protokolle). <link>Datenschutzerklärung</link>.",
         "1": "<strong>Resend (Plus Five Five, Inc.)</strong> — Zustellung der über das Kontaktformular erzeugten E-Mails. Verarbeitet Name, E-Mail-Adresse und Inhalt der Nachricht. <link>Datenschutzerklärung</link>."
       },
       "transfers": "Beide Dienstleister haben ihren Sitz in den Vereinigten Staaten: Die Übermittlung erfolgt auf der Grundlage der von der Europäischen Kommission genehmigten Standardvertragsklauseln und, soweit anwendbar, der Zertifizierung nach dem EU-U.S. Data Privacy Framework.",
@@ -359,7 +359,7 @@
     "intro": "Cookies sind kleine Textdateien, die Websites auf dem Gerät des Nutzers speichern. Sie können <strong>technisch</strong> sein (für den Betrieb erforderlich) oder der <strong>Profilbildung</strong> dienen (zur Nachverfolgung des Surfverhaltens).",
     "technical": {
       "heading": "1. Technische Cookies",
-      "body": "Für ihren Betrieb verwendet diese Website ausschließlich <strong>technische und notwendige Cookies</strong>. Wir setzen weder Cookies zur Profilbildung noch Werkzeuge zur statistischen Analyse für Marketingzwecke ein. Die Schriftarten werden direkt auf unserer Website gehostet und erfordern keine Anfragen an externe Server.",
+      "body": "Für ihren Betrieb verwendet diese Website ausschließlich <strong>technische und notwendige Cookies</strong>. Wir setzen weder Cookies zur Profilbildung noch Analysetools für Marketingzwecke ein. Die Schriftarten werden direkt auf unserer Website gehostet und erfordern keine Anfragen an externe Server.",
       "listIntro": "Die von dieser Website gesetzten technischen Cookies sind:",
       "items": {
         "0": "<strong>NEXT_LOCALE</strong> — speichert die von Ihnen gewählte Sprache der Website. Speicherdauer: {days} Tage. Kategorie: technisch/notwendig; keine Einwilligung erforderlich."
@@ -369,7 +369,7 @@
     "thirdParty": {
       "heading": "2. Cookies von Drittanbietern — Google Maps",
       "body": "Auf der Seite <where>Standorte</where> binden wir eine Karte von <strong>Google Maps</strong> ein. Dieser von Google Ireland Ltd. bereitgestellte Dienst kann Cookies von Drittanbietern setzen und Daten verarbeiten (einschließlich der IP-Adresse), mit möglichen Übermittlungen in die Vereinigten Staaten.",
-      "consent": "Die Karte wird <strong>nicht automatisch geladen</strong>: Sie bleibt durch eine Vorschau ersetzt, und die Inhalte von Google — mit den zugehörigen Cookies — werden <strong>erst nach Ihrer ausdrücklichen Einwilligung</strong> aktiviert, die über das mit der Schaltfläche „Cookies verwalten“ aufrufbare Banner erteilt wird.",
+      "consent": "Die Karte wird <strong>nicht automatisch geladen</strong>: Stattdessen wird eine Vorschau angezeigt, und die Inhalte von Google — mit den zugehörigen Cookies — werden <strong>erst nach Ihrer ausdrücklichen Einwilligung</strong> aktiviert, die über das mit der Schaltfläche „Cookies verwalten“ aufrufbare Banner erteilt wird.",
       "google": "Einzelheiten zur Verarbeitung durch Google finden Sie in der <link>Datenschutzerklärung von Google</link>."
     },
     "consent": {
@@ -382,7 +382,7 @@
     },
     "updates": {
       "heading": "5. Aktualisierungen",
-      "body": "Sollten wir neue Werkzeuge von Drittanbietern einführen, die nicht-technische Cookies verwenden, werden wir diese Informationen aktualisieren. Bei Fragen: <mail>{email}</mail>."
+      "body": "Sollten wir neue Tools von Drittanbietern einführen, die nicht-technische Cookies verwenden, werden wir diese Cookie-Richtlinie aktualisieren. Bei Fragen: <mail>{email}</mail>."
     }
   },
   "terms": {
@@ -402,7 +402,7 @@
     },
     "liability": {
       "heading": "4. Haftungsbeschränkung",
-      "body": "Wir bemühen uns, die Inhalte aktuell und richtig zu halten, garantieren jedoch weder die Fehlerfreiheit noch die ununterbrochene Verfügbarkeit der Website. Wir haften nicht für Schäden, die aus der Nutzung oder der Unmöglichkeit der Nutzung der Website oder der verlinkten Websites Dritter entstehen."
+      "body": "Wir verpflichten uns, die Inhalte aktuell und richtig zu halten, garantieren jedoch weder die Fehlerfreiheit noch die ununterbrochene Verfügbarkeit der Website. Wir haften nicht für Schäden, die aus der Nutzung oder der Unmöglichkeit der Nutzung der Website oder der verlinkten Websites Dritter entstehen."
     },
     "law": {
       "heading": "5. Anwendbares Recht und Gerichtsstand",
