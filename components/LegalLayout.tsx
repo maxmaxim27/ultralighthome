@@ -1,7 +1,8 @@
+import { getTranslations } from "next-intl/server";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 
-export default function LegalLayout({
+export default async function LegalLayout({
   eyebrow,
   title,
   updated,
@@ -12,6 +13,7 @@ export default function LegalLayout({
   updated: string;
   children: React.ReactNode;
 }) {
+  const t = await getTranslations("legal");
   return (
     <div className="bg-white pt-32 md:pt-40 pb-24 md:pb-32">
       <SectionWrap>
@@ -27,7 +29,7 @@ export default function LegalLayout({
         </Reveal>
         <Reveal delay={0.15}>
           <p className="mt-6 text-xs tracking-[0.12em] uppercase text-stone">
-            Ultimo aggiornamento: {updated}
+            {t("lastUpdated", { date: updated })}
           </p>
         </Reveal>
 

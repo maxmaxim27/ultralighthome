@@ -5,7 +5,7 @@ import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 import type { Property } from "@/lib/types";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
@@ -49,6 +49,7 @@ export default async function PropertiesPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations("property");
   const groups = buildGroups();
 
   return (
@@ -111,8 +112,7 @@ export default async function PropertiesPage({
                     <p
                       className={`mt-2 text-xs tracking-[0.3em] uppercase ${b.sub}`}
                     >
-                      {g.items.length}{" "}
-                      {g.items.length === 1 ? "immobile" : "immobili"}
+                      {t("count", { count: g.items.length })}
                     </p>
                   </Reveal>
                 </div>

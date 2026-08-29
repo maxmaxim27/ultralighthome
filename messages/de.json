@@ -94,6 +94,7 @@
     "description": "Füllen Sie das Formular aus. Wir antworten innerhalb eines Werktags."
   },
   "property": {
+    "count": "{count, plural, =0 {keine Immobilien} one {# Immobilie} other {# Immobilien}}",
     "summaryHeading": "Die Immobilie im Überblick",
     "sqm": "Wohnfläche",
     "bedrooms": "Schlafzimmer",
@@ -122,5 +123,8 @@
   "amenityList": {
     "showLess": "Weniger anzeigen",
     "showMore": "Mehr anzeigen (+{count})"
+  },
+  "legal": {
+    "lastUpdated": "Zuletzt aktualisiert: {date}"
   }
 }
