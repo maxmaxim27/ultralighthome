@@ -19,6 +19,17 @@ const TYPE_LABELS: Record<string, string> = {
   altro: "Altro",
 };
 
+// Language the enquiry was submitted in — shown to the (Italian-speaking)
+// recipient so they know which language to reply in. The value received from
+// the client is untrusted, so it is only ever used as a lookup key here, never
+// interpolated directly into the email.
+const LOCALE_LABEL: Record<string, string> = {
+  it: "Italiano",
+  en: "Inglese",
+  de: "Tedesco",
+};
+const VALID_LOCALES = new Set(Object.keys(LOCALE_LABEL));
+
 const FROM = "Ultralight Home <noreply@send.ultralighthome.it>";
 
 // Per-IP throttle held in the isolate's memory. It resets whenever Cloudflare
@@ -122,6 +133,15 @@ export async function POST(req: Request) {
   const email = String(body.email ?? "").trim();
   const message = String(body.message ?? "").trim();
   const type = String(body.type ?? "").trim();
+  // Public route, untrusted input: accept only the three known locales, and
+  // fall back to Italian for anything else (missing, wrong type, unknown
+  // value, oversized string) rather than echoing it anywhere.
+  const locale =
+    typeof body.locale === "string" &&
+    body.locale.length <= 5 &&
+    VALID_LOCALES.has(body.locale)
+      ? body.locale
+      : "it";
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: "Campi mancanti" }, { status: 400 });
@@ -154,6 +174,7 @@ export async function POST(req: Request) {
     <p><strong>Nome:</strong> ${escapeHtml(name)}</p>
     <p><strong>Email:</strong> ${escapeHtml(email)}</p>
     <p><strong>Tipo di richiesta:</strong> ${escapeHtml(typeLabel)}</p>
+    <p><strong>Lingua della richiesta:</strong> ${LOCALE_LABEL[locale]}</p>
     <hr />
     <p>${escapeHtml(message).replace(/\n/g, "<br />")}</p>
   `;

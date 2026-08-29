@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -16,6 +16,7 @@ const REQUEST_TYPES = [
 
 export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
   const t = useTranslations("contactForm");
+  const locale = useLocale();
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -60,7 +61,7 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, token: token.current }),
+        body: JSON.stringify({ ...payload, token: token.current, locale }),
       });
       if (!res.ok) {
         const reason = await res
