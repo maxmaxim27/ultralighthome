@@ -92,7 +92,7 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 text-xs text-cream/50">
           <p className="text-center md:text-left">
-            © {year} UltraLightHome. Tutti i diritti riservati.
+            © {year} Ultralight Home. Tutti i diritti riservati.
             <br />
             P.IVA {LEGAL.vat}
           </p>
