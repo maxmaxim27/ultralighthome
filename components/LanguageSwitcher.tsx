@@ -7,9 +7,8 @@ import clsx from "clsx";
 import { ChevronDown } from "lucide-react";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { locales, type Locale } from "@/i18n/routing";
+import { rememberLocale } from "@/lib/locale-cookie";
 import FlagIcon from "./FlagIcon";
-
-const ONE_YEAR = 60 * 60 * 24 * 365;
 
 type Props = {
   variant: "desktop" | "mobile";
@@ -27,8 +26,7 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
   const wrapRef = useRef<HTMLDivElement>(null);
 
   function choose(locale: Locale) {
-    // Cookie tecnico: ricorda la scelta senza passare dal consenso.
-    document.cookie = `NEXT_LOCALE=${locale};path=/;max-age=${ONE_YEAR};samesite=lax`;
+    rememberLocale(locale);
     setOpen(false);
     onSelect?.();
     router.replace(

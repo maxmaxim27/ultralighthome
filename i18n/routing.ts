@@ -3,6 +3,12 @@ import { defineRouting } from "next-intl/routing";
 export const locales = ["it", "en", "de"] as const;
 export type Locale = (typeof locales)[number];
 
+/** La scelta di lingua del visitatore va ricordata per un anno, non solo per
+ *  la sessione del browser (comportamento di default di next-intl). Unica
+ *  definizione: la usano sia `routing` sia `rememberLocale` in
+ *  `@/lib/locale-cookie`, che riscrive il cookie a mano. */
+export const LOCALE_COOKIE_MAX_AGE = 60 * 60 * 24 * 365;
+
 export const routing = defineRouting({
   locales,
   defaultLocale: "it",
@@ -11,10 +17,8 @@ export const routing = defineRouting({
   // La detection la facciamo noi in middleware.ts, e solo sulla home:
   // next-intl altrimenti la applicherebbe a ogni pathname.
   localeDetection: false,
-  // La scelta di lingua del visitatore va ricordata per un anno, non solo
-  // per la sessione del browser (comportamento di default di next-intl).
   localeCookie: {
-    maxAge: 60 * 60 * 24 * 365,
+    maxAge: LOCALE_COOKIE_MAX_AGE,
   },
   pathnames: {
     "/": "/",
