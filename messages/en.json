@@ -79,7 +79,7 @@
   "cookie": {
     "dialogAriaLabel": "Cookie preferences",
     "label": "Cookies",
-    "banner": "We use technical cookies necessary for the site and, only with your consent, third-party cookies. You can accept or decline. Details in the <link>Cookie Policy</link>.",
+    "banner": "We use essential cookies to run the site and, only with your consent, third-party cookies. You can accept or decline. Details in the <link>Cookie Policy</link>.",
     "accept": "Accept",
     "reject": "Decline",
     "managePreferences": "Manage cookies"
@@ -88,7 +88,7 @@
     "scroll": "Scroll"
   },
   "contactDialog": {
-    "ariaLabel": "Value your property",
+    "ariaLabel": "Value my property",
     "close": "Close",
     "title": "Let's talk about your property.",
     "description": "Fill in the form. We will reply within one working day."
@@ -102,13 +102,13 @@
     "guests": "Guests",
     "guestsUpTo": "Up to {count}",
     "kitchen": "Kitchen",
-    "kitchenEquipped": "Yes, fully equipped",
+    "kitchenEquipped": "Yes, equipped",
     "kitchenNone": "—",
     "location": "Location",
     "featuresHeading": "Features"
   },
   "map": {
-    "consentMessage": "Accept third-party cookies to view the Google Maps map."
+    "consentMessage": "Accept third-party cookies to view the map."
   },
   "locationTabs": {
     "all": "All"

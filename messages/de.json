@@ -27,7 +27,7 @@
     "requestTypeLabel": "Art der Anfrage",
     "requestTypeOwner": "Ich bin Eigentümer",
     "requestTypeGuest": "Ich bin Gast",
-    "requestTypePartner": "Ich möchte mitarbeiten",
+    "requestTypePartner": "Ich möchte zusammenarbeiten",
     "messageLabel": "Nachricht",
     "sending": "Wird gesendet…",
     "submit": "Anfrage senden",
@@ -36,7 +36,7 @@
     "errorRateLimited": "Sie haben zu viele Anfragen gesendet. Bitte versuchen Sie es in einigen Minuten erneut.",
     "errorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie uns an info@ultralighthome.it.",
     "successTitle": "Vielen Dank. Wir haben Ihre Anfrage erhalten.",
-    "successBody": "Wir antworten Ihnen innerhalb eines Werktags an die angegebene Adresse."
+    "successBody": "Wir antworten Ihnen innerhalb eines Werktags an die angegebene E-Mail-Adresse."
   },
   "booking": {
     "cta": "Buchen",
@@ -62,16 +62,16 @@
     "next": "Nächstes Foto"
   },
   "carousel": {
-    "empty": "In diesem Reiseziel kommen bald neue Unterkünfte hinzu.",
+    "empty": "Für dieses Reiseziel kommen bald neue Immobilien hinzu.",
     "previous": "Zurück",
     "next": "Weiter",
     "goTo": "Zu Immobilie {index} wechseln"
   },
   "footer": {
     "navHeading": "Navigation",
-    "linkOther": "Weitere",
+    "linkOther": "Weitere Orte",
     "copyright": "© {year} Ultralight Home. Alle Rechte vorbehalten.",
-    "vatLabel": "USt-IdNr. {vat}",
+    "vatLabel": "MwSt.-Nr. {vat}",
     "privacyLink": "Datenschutz",
     "termsLink": "AGB",
     "cookieLink": "Cookies"
