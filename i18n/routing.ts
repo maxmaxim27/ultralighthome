@@ -11,6 +11,11 @@ export const routing = defineRouting({
   // La detection la facciamo noi in middleware.ts, e solo sulla home:
   // next-intl altrimenti la applicherebbe a ogni pathname.
   localeDetection: false,
+  // La scelta di lingua del visitatore va ricordata per un anno, non solo
+  // per la sessione del browser (comportamento di default di next-intl).
+  localeCookie: {
+    maxAge: 60 * 60 * 24 * 365,
+  },
   pathnames: {
     "/": "/",
     "/immobili": {
