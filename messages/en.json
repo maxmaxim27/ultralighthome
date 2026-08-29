@@ -19,5 +19,46 @@
     "backHome": "Back to home",
     "seeProperties": "See our properties",
     "newTab": "(opens in a new tab)"
+  },
+  "contactForm": {
+    "honeypotLabel": "Do not fill in this field",
+    "nameLabel": "Full name",
+    "emailLabel": "Email",
+    "requestTypeLabel": "Type of enquiry",
+    "requestTypeOwner": "I am an owner",
+    "requestTypeGuest": "I am a guest",
+    "requestTypePartner": "I would like to work with you",
+    "messageLabel": "Message",
+    "sending": "Sending…",
+    "submit": "Send enquiry",
+    "privacyNotice": "By submitting the form you confirm you have read the <link>privacy notice</link>. We use your details only to respond to your enquiry.",
+    "errorTooFast": "Sent too quickly. Please wait a moment and try again.",
+    "errorRateLimited": "You have sent too many requests. Please try again in a few minutes.",
+    "errorGeneric": "Sending failed. Please try again or write to us at info@ultralighthome.it.",
+    "successTitle": "Thank you. We have received your enquiry.",
+    "successBody": "We will reply within one working day at the address you provided."
+  },
+  "booking": {
+    "cta": "Book",
+    "comingSoon": "Available soon",
+    "close": "Close",
+    "dialogAriaLabel": "Choose your booking platform",
+    "choosePlatform": "Choose a platform",
+    "title": "How would you like to book?",
+    "description": "Choose where to complete your booking: the final price varies with each platform's fees.",
+    "vikeyTitle": "Book on Vikey",
+    "vikeyRecommended": "Recommended",
+    "vikeyDescription": "A secure, certified platform with the lowest fees.",
+    "airbnbTitle": "Book on Airbnb",
+    "airbnbDescription": "Our main partner, with moderate fees.",
+    "bookingComTitle": "Book on Booking",
+    "bookingComDescription": "An international platform, with higher fees."
+  },
+  "gallery": {
+    "viewAll": "{count, plural, one {See the photo (#)} other {See all photos (#)}}",
+    "photoCount": "{count, plural, one {# photo} other {# photos}}",
+    "close": "Close",
+    "previous": "Previous photo",
+    "next": "Next photo"
   }
 }

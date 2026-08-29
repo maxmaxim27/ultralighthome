@@ -19,5 +19,46 @@
     "backHome": "Torna alla home",
     "seeProperties": "Vedi gli immobili",
     "newTab": "(si apre in una nuova scheda)"
+  },
+  "contactForm": {
+    "honeypotLabel": "Non compilare questo campo",
+    "nameLabel": "Nome e cognome",
+    "emailLabel": "Email",
+    "requestTypeLabel": "Tipo di richiesta",
+    "requestTypeOwner": "Sono un proprietario",
+    "requestTypeGuest": "Sono un ospite",
+    "requestTypePartner": "Voglio collaborare",
+    "messageLabel": "Messaggio",
+    "sending": "Invio in corso…",
+    "submit": "Invia richiesta",
+    "privacyNotice": "Inviando il modulo dichiari di aver letto l'<link>informativa sulla privacy</link>. Usiamo i tuoi dati solo per rispondere alla tua richiesta.",
+    "errorTooFast": "Invio troppo rapido. Attendi un momento e riprova.",
+    "errorRateLimited": "Hai inviato troppe richieste. Riprova tra qualche minuto.",
+    "errorGeneric": "Invio non riuscito. Riprova o scrivici a info@ultralighthome.it.",
+    "successTitle": "Grazie. Abbiamo ricevuto la tua richiesta.",
+    "successBody": "Ti risponderemo entro un giorno lavorativo all'indirizzo indicato."
+  },
+  "booking": {
+    "cta": "Prenota",
+    "comingSoon": "Disponibile a breve",
+    "close": "Chiudi",
+    "dialogAriaLabel": "Scegli la piattaforma di prenotazione",
+    "choosePlatform": "Scegli la piattaforma",
+    "title": "Come vuoi prenotare?",
+    "description": "Scegli dove completare la prenotazione: il prezzo finale cambia in base alle commissioni di ciascuna piattaforma.",
+    "vikeyTitle": "Prenota su Vikey",
+    "vikeyRecommended": "Consigliato",
+    "vikeyDescription": "Piattaforma sicura e certificata, con le commissioni più basse.",
+    "airbnbTitle": "Prenota su Airbnb",
+    "airbnbDescription": "Il nostro partner principale, con commissioni moderate.",
+    "bookingComTitle": "Prenota su Booking",
+    "bookingComDescription": "Piattaforma internazionale, con commissioni più elevate."
+  },
+  "gallery": {
+    "viewAll": "{count, plural, one {Vedi la foto (#)} other {Vedi tutte le foto (#)}}",
+    "photoCount": "{count, plural, one {# foto} other {# foto}}",
+    "close": "Chiudi",
+    "previous": "Precedente",
+    "next": "Successiva"
   }
 }

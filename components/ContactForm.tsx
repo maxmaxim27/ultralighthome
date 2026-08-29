@@ -3,17 +3,19 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Check } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const REQUEST_TYPES = [
-  { value: "proprietario", label: "Sono un proprietario" },
-  { value: "ospite", label: "Sono un ospite" },
-  { value: "collaboratore", label: "Voglio collaborare" },
-];
+  { value: "proprietario", key: "requestTypeOwner" },
+  { value: "ospite", key: "requestTypeGuest" },
+  { value: "collaboratore", key: "requestTypePartner" },
+] as const;
 
 export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
+  const t = useTranslations("contactForm");
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -73,10 +75,10 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
       const reason = err instanceof Error ? err.message : "";
       setError(
         reason === "too-fast"
-          ? "Invio troppo rapido. Attendi un momento e riprova."
+          ? t("errorTooFast")
           : reason === "rate-limited"
-            ? "Hai inviato troppe richieste. Riprova tra qualche minuto."
-            : "Invio non riuscito. Riprova o scrivici a info@ultralighthome.it.",
+            ? t("errorRateLimited")
+            : t("errorGeneric"),
       );
     } finally {
       setSending(false);
@@ -107,7 +109,7 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
               overflow: "hidden",
             }}
           >
-            <label htmlFor="website">Non compilare questo campo</label>
+            <label htmlFor="website">{t("honeypotLabel")}</label>
             <input
               id="website"
               name="website"
@@ -117,30 +119,30 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             />
           </div>
 
-          <Field label="Nome e cognome" name="name" required maxLength={120} />
-          <Field label="Email" name="email" type="email" required maxLength={254} />
+          <Field label={t("nameLabel")} name="name" required maxLength={120} />
+          <Field label={t("emailLabel")} name="email" type="email" required maxLength={254} />
 
           <div>
             <p className="text-xs tracking-[0.2em] uppercase text-stone mb-2">
-              Tipo di richiesta
+              {t("requestTypeLabel")}
             </p>
             <input type="hidden" name="type" value={tipo} />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              {REQUEST_TYPES.map((t) => (
+              {REQUEST_TYPES.map((rt) => (
                 <button
-                  key={t.value}
+                  key={rt.value}
                   type="button"
                   onClick={() =>
-                    setTipo((prev) => (prev === t.value ? "" : t.value))
+                    setTipo((prev) => (prev === rt.value ? "" : rt.value))
                   }
                   className={[
                     "text-left px-3 py-2 rounded-xl border text-sm transition-colors duration-150",
-                    tipo === t.value
+                    tipo === rt.value
                       ? "border-ink bg-ink text-cream"
                       : "border-stone/30 text-stone hover:border-stone/60 hover:text-ink",
                   ].join(" ")}
                 >
-                  {t.label}
+                  {t(rt.key)}
                 </button>
               ))}
             </div>
@@ -148,7 +150,7 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
 
           <div>
             <label className="block text-xs tracking-[0.2em] uppercase text-stone mb-2">
-              Messaggio
+              {t("messageLabel")}
             </label>
             <textarea
               name="message"
@@ -170,16 +172,18 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             disabled={sending}
             className="inline-flex items-center gap-3 rounded-full bg-[#5a5a5a] text-cream px-8 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
           >
-            {sending ? "Invio in corso…" : "Invia richiesta"}
+            {sending ? t("sending") : t("submit")}
           </button>
 
           {/* Art. 13 GDPR: the notice has to be reachable where the data is collected. */}
           <p className="text-xs text-stone leading-relaxed">
-            Inviando il modulo dichiari di aver letto l&apos;
-            <Link href="/privacy" className="underline hover:text-ink">
-              informativa sulla privacy
-            </Link>
-            . Usiamo i tuoi dati solo per rispondere alla tua richiesta.
+            {t.rich("privacyNotice", {
+              link: (chunks) => (
+                <Link href="/privacy" className="underline hover:text-ink">
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </motion.form>
       ) : (
@@ -192,11 +196,10 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
         >
           <Check size={24} strokeWidth={1.4} className="text-clay" />
           <h3 className="font-display mt-4 text-xl md:text-2xl font-light tracking-[-0.01em]">
-            Grazie. Abbiamo ricevuto la tua richiesta.
+            {t("successTitle")}
           </h3>
           <p className="mt-3 text-sm text-stone leading-relaxed">
-            Ti risponderemo entro un giorno lavorativo all&apos;indirizzo
-            indicato.
+            {t("successBody")}
           </p>
         </motion.div>
       )}

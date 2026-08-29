@@ -19,5 +19,46 @@
     "backHome": "Zur Startseite",
     "seeProperties": "Immobilien ansehen",
     "newTab": "(öffnet in einem neuen Tab)"
+  },
+  "contactForm": {
+    "honeypotLabel": "Dieses Feld nicht ausfüllen",
+    "nameLabel": "Vor- und Nachname",
+    "emailLabel": "E-Mail",
+    "requestTypeLabel": "Art der Anfrage",
+    "requestTypeOwner": "Ich bin Eigentümer",
+    "requestTypeGuest": "Ich bin Gast",
+    "requestTypePartner": "Ich möchte mitarbeiten",
+    "messageLabel": "Nachricht",
+    "sending": "Wird gesendet…",
+    "submit": "Anfrage senden",
+    "privacyNotice": "Mit dem Absenden des Formulars bestätigen Sie, die <link>Datenschutzerklärung</link> gelesen zu haben. Wir verwenden Ihre Daten nur, um Ihre Anfrage zu beantworten.",
+    "errorTooFast": "Zu schnell gesendet. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+    "errorRateLimited": "Sie haben zu viele Anfragen gesendet. Bitte versuchen Sie es in einigen Minuten erneut.",
+    "errorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie uns an info@ultralighthome.it.",
+    "successTitle": "Vielen Dank. Wir haben Ihre Anfrage erhalten.",
+    "successBody": "Wir antworten Ihnen innerhalb eines Werktags an die angegebene Adresse."
+  },
+  "booking": {
+    "cta": "Buchen",
+    "comingSoon": "Demnächst verfügbar",
+    "close": "Schließen",
+    "dialogAriaLabel": "Buchungsplattform auswählen",
+    "choosePlatform": "Plattform auswählen",
+    "title": "Wie möchten Sie buchen?",
+    "description": "Wählen Sie, wo Sie die Buchung abschließen möchten: Der Endpreis hängt von den Gebühren der jeweiligen Plattform ab.",
+    "vikeyTitle": "Über Vikey buchen",
+    "vikeyRecommended": "Empfohlen",
+    "vikeyDescription": "Sichere, zertifizierte Plattform mit den niedrigsten Gebühren.",
+    "airbnbTitle": "Über Airbnb buchen",
+    "airbnbDescription": "Unser Hauptpartner mit moderaten Gebühren.",
+    "bookingComTitle": "Über Booking buchen",
+    "bookingComDescription": "Internationale Plattform mit höheren Gebühren."
+  },
+  "gallery": {
+    "viewAll": "{count, plural, one {Foto ansehen (#)} other {Alle Fotos ansehen (#)}}",
+    "photoCount": "{count, plural, one {# Foto} other {# Fotos}}",
+    "close": "Schließen",
+    "previous": "Vorheriges Foto",
+    "next": "Nächstes Foto"
   }
 }
