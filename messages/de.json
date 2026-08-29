@@ -225,5 +225,21 @@
     "alt": {
       "costaSmeralda": "Villa in der Costa Smeralda"
     }
+  },
+  "where": {
+    "eyebrow": "Wo wir sind",
+    "title": "Büro im Herzen von Verona.",
+    "body": "Wir empfangen Sie nach Vereinbarung in unserem Büro im Zentrum. Vereinbaren Sie einen Termin, und wir sprechen persönlich über Ihre Immobilie.",
+    "infoTitle": "Besuchen Sie uns in Verona.",
+    "address": {
+      "label": "Adresse",
+      "value": "Lungadige Matteotti 14\n37126 Verona (VR), Italien"
+    },
+    "hours": {
+      "label": "Öffnungszeiten",
+      "value": "Mo – Fr · 9:30 – 18:30\nNur nach Vereinbarung"
+    },
+    "cta": "Wegbeschreibung",
+    "mapTitle": "Karte — Büro UltraLightHome, Verona"
   }
 }

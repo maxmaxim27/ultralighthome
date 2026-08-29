@@ -225,5 +225,21 @@
     "alt": {
       "costaSmeralda": "Villa in Costa Smeralda"
     }
+  },
+  "where": {
+    "eyebrow": "Where we are",
+    "title": "An office in the heart of Verona.",
+    "body": "We see visitors by appointment at our office in the centre. Arrange an appointment and let's talk about your property in person.",
+    "infoTitle": "Come and see us in Verona.",
+    "address": {
+      "label": "Address",
+      "value": "Lungadige Matteotti 14\n37126 Verona (VR), Italy"
+    },
+    "hours": {
+      "label": "Opening hours",
+      "value": "Mon – Fri · 9:30 – 18:30\nBy appointment only"
+    },
+    "cta": "Directions",
+    "mapTitle": "Map — UltraLightHome office, Verona"
   }
 }

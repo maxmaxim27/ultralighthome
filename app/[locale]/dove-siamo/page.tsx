@@ -4,7 +4,7 @@ import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 import MapEmbed from "@/components/MapEmbed";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
@@ -15,17 +15,9 @@ export const metadata: Metadata = {
 };
 
 const info = [
-  {
-    icon: MapPin,
-    label: "Indirizzo",
-    value: "Lungadige Matteotti 14\n37126 Verona (VR), Italia",
-  },
-  {
-    icon: Clock,
-    label: "Orari",
-    value: "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento",
-  },
-];
+  { icon: MapPin, key: "address" },
+  { icon: Clock, key: "hours" },
+] as const;
 
 const MAP_SRC =
   "https://www.google.com/maps?q=Lungadige%20Matteotti%2014,%2037126%20Verona&output=embed";
@@ -38,6 +30,8 @@ export default async function DoveSiamoPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations("where");
+
   return (
     <>
       {/* HERO */}
@@ -45,18 +39,18 @@ export default async function DoveSiamoPage({
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
-              <span className="font-display text-clay mr-2">—</span> Dove siamo
+              <span className="font-display text-clay mr-2">—</span>{" "}
+              {t("eyebrow")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.01em] max-w-4xl">
-              Ufficio nel cuore di Verona.
+              {t("title")}
             </h1>
           </Reveal>
           <Reveal delay={0.2}>
             <p className="mt-8 max-w-2xl text-base md:text-lg text-stone leading-relaxed">
-              Riceviamo su appuntamento nel nostro ufficio in centro. Fissa un
-              appuntamento e parliamo del tuo immobile di persona.
+              {t("body")}
             </p>
           </Reveal>
         </SectionWrap>
@@ -68,12 +62,12 @@ export default async function DoveSiamoPage({
         <div className="bg-bone p-10 md:p-16 lg:p-20">
           <Reveal>
             <h2 className="font-display text-3xl md:text-4xl font-light tracking-[-0.01em]">
-              Vieni a trovarci a Verona.
+              {t("infoTitle")}
             </h2>
           </Reveal>
           <div className="mt-12 space-y-8">
             {info.map((row, i) => (
-              <Reveal key={row.label} delay={i * 0.08}>
+              <Reveal key={row.key} delay={i * 0.08}>
                 <div className="flex items-start gap-5">
                   <row.icon
                     size={18}
@@ -82,10 +76,10 @@ export default async function DoveSiamoPage({
                   />
                   <div>
                     <p className="text-xs tracking-[0.2em] uppercase text-stone">
-                      {row.label}
+                      {t(`${row.key}.label`)}
                     </p>
                     <p className="mt-2 text-ink whitespace-pre-line leading-relaxed">
-                      {row.value}
+                      {t(`${row.key}.value`)}
                     </p>
                   </div>
                 </div>
@@ -101,17 +95,14 @@ export default async function DoveSiamoPage({
               variant="primary"
               className="mt-12 rounded-full"
             >
-              Indicazioni stradali
+              {t("cta")}
             </ButtonLink>
           </Reveal>
         </div>
 
         {/* RIGHT — map (embed Google Maps con consenso: nessun cookie prima del click) */}
         <div className="bg-bone p-10 md:p-16 lg:p-20 flex">
-          <MapEmbed
-            src={MAP_SRC}
-            title="Mappa — Ufficio UltraLightHome, Verona"
-          />
+          <MapEmbed src={MAP_SRC} title={t("mapTitle")} />
         </div>
       </div>
     </>

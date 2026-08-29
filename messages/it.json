@@ -225,5 +225,21 @@
     "alt": {
       "costaSmeralda": "Villa in Costa Smeralda"
     }
+  },
+  "where": {
+    "eyebrow": "Dove siamo",
+    "title": "Ufficio nel cuore di Verona.",
+    "body": "Riceviamo su appuntamento nel nostro ufficio in centro. Fissa un appuntamento e parliamo del tuo immobile di persona.",
+    "infoTitle": "Vieni a trovarci a Verona.",
+    "address": {
+      "label": "Indirizzo",
+      "value": "Lungadige Matteotti 14\n37126 Verona (VR), Italia"
+    },
+    "hours": {
+      "label": "Orari",
+      "value": "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento"
+    },
+    "cta": "Indicazioni stradali",
+    "mapTitle": "Mappa — Ufficio UltraLightHome, Verona"
   }
 }
