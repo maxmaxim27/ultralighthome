@@ -105,5 +105,11 @@
     "kitchenNone": "—",
     "location": "Lage",
     "featuresHeading": "Ausstattung"
+  },
+  "map": {
+    "consentMessage": "Akzeptieren Sie Cookies von Drittanbietern, um die Google-Maps-Karte anzuzeigen."
+  },
+  "locationTabs": {
+    "all": "Alle"
   }
 }

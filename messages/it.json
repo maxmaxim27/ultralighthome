@@ -105,5 +105,11 @@
     "kitchenNone": "—",
     "location": "Località",
     "featuresHeading": "Caratteristiche"
+  },
+  "map": {
+    "consentMessage": "Accetta i cookie di terze parti per visualizzare la mappa di Google Maps."
+  },
+  "locationTabs": {
+    "all": "Tutti"
   }
 }

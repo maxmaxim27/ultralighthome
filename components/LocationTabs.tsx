@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import type { Location } from "@/lib/types";
 
 type Props = {
@@ -17,8 +18,9 @@ export default function LocationTabs({
   onChange,
   includeAll = false,
 }: Props) {
+  const t = useTranslations("locationTabs");
   const items = includeAll
-    ? [{ slug: "all", name: "Tutti", region: "", description: "", heroImage: "" }, ...locations]
+    ? [{ slug: "all", name: t("all"), region: "", description: "", heroImage: "" }, ...locations]
     : locations;
 
   return (

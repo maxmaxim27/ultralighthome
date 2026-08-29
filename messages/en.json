@@ -105,5 +105,11 @@
     "kitchenNone": "—",
     "location": "Location",
     "featuresHeading": "Features"
+  },
+  "map": {
+    "consentMessage": "Accept third-party cookies to view the Google Maps map."
+  },
+  "locationTabs": {
+    "all": "All"
   }
 }
