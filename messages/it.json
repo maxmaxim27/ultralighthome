@@ -172,5 +172,58 @@
     "eyebrow": "Gli immobili",
     "title": "Gli immobili che curiamo.",
     "empty": "In arrivo nuovi immobili in questa zona."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Chi siamo",
+      "title": "Una squadra,<br></br>immobili curati uno a uno.",
+      "body": "Ultralight Home nasce nel 2021. Da allora gestiamo affitti brevi per chi cerca un interlocutore vero, non un'agenzia che ti tratta come un numero."
+    },
+    "story": {
+      "eyebrow": "Come abbiamo iniziato",
+      "title": "Un immobile a Sottomarina, poi tutto il resto.",
+      "body": "Abbiamo iniziato con un appartamento a Sottomarina dedicato agli affitti stagionali, costruendo il nostro percorso con costanza e passione fino ad arrivare agli chalet nelle Dolomiti e ville in Costa Smeralda."
+    },
+    "approach": {
+      "eyebrow": "Come lavoriamo",
+      "title": "Quattro passi, una direzione.",
+      "items": {
+        "0": {
+          "title": "Contatto",
+          "desc": "Ogni collaborazione nasce da un incontro diretto con il proprietario: solo conoscendoci davvero possiamo costruire un rapporto solido e capire realmente le sue esigenze e i suoi obiettivi."
+        },
+        "1": {
+          "title": "Valutazione immobile",
+          "desc": "Attraverso un'analisi comparativa del mercato locale definiamo il reale potenziale di rendita dell'immobile e la strategia più efficace per massimizzarlo."
+        },
+        "2": {
+          "title": "Cura",
+          "desc": "Ci affidiamo a maestranze e professionisti del design d'interni locali ogni volta che la proprietà lo richiede, per valorizzarne al meglio ogni ambiente."
+        },
+        "3": {
+          "title": "Operatività",
+          "desc": "Gestiamo ogni aspetto operativo dell'immobile in totale autonomia, garantendo al proprietario un report trimestrale puntuale sui risultati ottenuti."
+        }
+      }
+    },
+    "discretion": {
+      "title": "E poi c’è la discrezione.",
+      "body": "La discrezione è qualcosa che va oltre il semplice lavoro. Significa scegliere con attenzione gli ospiti, gestire ogni immobile con cura e proteggere la riservatezza dei tuoi dati."
+    },
+    "team": {
+      "eyebrow": "Il team",
+      "title": "Le persone che ci sono dietro."
+    },
+    "roles": {
+      "founder": "Founder",
+      "salesManager": "Sales Manager",
+      "coFounder": "Co-Founder",
+      "propertyManager": "Property Manager",
+      "interiorDesigner": "Interior Designer",
+      "photographer": "Fotografa"
+    },
+    "alt": {
+      "costaSmeralda": "Villa in Costa Smeralda"
+    }
   }
 }

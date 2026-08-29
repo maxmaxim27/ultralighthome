@@ -2,7 +2,7 @@ import Image from "next/image";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
@@ -12,51 +12,30 @@ export const metadata: Metadata = {
   alternates: { canonical: "/chi-siamo" },
 };
 
-const approach = [
-  {
-    n: "01",
-    title: "Contatto",
-    desc: "Ogni collaborazione nasce da un incontro diretto con il proprietario: solo conoscendoci davvero possiamo costruire un rapporto solido e capire realmente le sue esigenze e i suoi obiettivi.",
-  },
-  {
-    n: "02",
-    title: "Valutazione immobile",
-    desc: "Attraverso un'analisi comparativa del mercato locale definiamo il reale potenziale di rendita dell'immobile e la strategia più efficace per massimizzarlo.",
-  },
-  {
-    n: "03",
-    title: "Cura",
-    desc: "Ci affidiamo a maestranze e professionisti del design d'interni locali ogni volta che la proprietà lo richiede, per valorizzarne al meglio ogni ambiente.",
-  },
-  {
-    n: "04",
-    title: "Operatività",
-    desc: "Gestiamo ogni aspetto operativo dell'immobile in totale autonomia, garantendo al proprietario un report trimestrale puntuale sui risultati ottenuti.",
-  },
-];
+const approach = ["01", "02", "03", "04"] as const;
 
 const team = [
   {
     name: "Alberto Cavinato",
-    roles: ["Founder", "Sales Manager"],
+    roles: ["founder", "salesManager"],
     img: "/about/alberto-cavinato.jpeg",
   },
   {
     name: "Alberto Disarò",
-    roles: ["Co-Founder", "Property Manager"],
+    roles: ["coFounder", "propertyManager"],
     img: "/about/alberto-disaro.JPG",
   },
   {
     name: "IGW Studio",
-    roles: ["Interior Designer"],
+    roles: ["interiorDesigner"],
     img: "/about/igw-studio.jpeg",
   },
   {
     name: "Pamela Zamberlan",
-    roles: ["Fotografa"],
+    roles: ["photographer"],
     img: "/about/fotografa-pamela.jpg",
   },
-];
+] as const;
 
 export default async function AboutPage({
   params,
@@ -66,6 +45,8 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations("about");
+
   return (
     <>
       {/* HERO */}
@@ -73,21 +54,18 @@ export default async function AboutPage({
         <SectionWrap>
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
-              <span className="font-display text-clay mr-2">—</span> Chi siamo
+              <span className="font-display text-clay mr-2">—</span>{" "}
+              {t("hero.eyebrow")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h1 className="font-display mt-6 text-5xl md:text-7xl lg:text-[5.5rem] font-light leading-[1.2] tracking-[-0.02em] max-w-5xl">
-              Una squadra,
-              <br />
-              immobili curati uno a uno.
+              {t.rich("hero.title", { br: () => <br /> })}
             </h1>
           </Reveal>
           <Reveal delay={0.25}>
             <p className="mt-10 max-w-2xl text-base md:text-lg text-stone leading-relaxed">
-              Ultralight Home nasce nel 2021. Da allora gestiamo affitti brevi
-              per chi cerca un interlocutore vero, non un&apos;agenzia che ti
-              tratta come un numero.
+              {t("hero.body")}
             </p>
           </Reveal>
         </SectionWrap>
@@ -101,7 +79,7 @@ export default async function AboutPage({
               <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone">
                 <Image
                   src="/extra/costa-smeralda.jpg"
-                  alt="Villa in Costa Smeralda"
+                  alt={t("alt.costaSmeralda")}
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -112,22 +90,17 @@ export default async function AboutPage({
               <Reveal>
                 <p className="flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-stone">
                   <span className="font-display text-clay">01</span>
-                  <span>Come abbiamo iniziato</span>
+                  <span>{t("story.eyebrow")}</span>
                 </p>
               </Reveal>
               <Reveal delay={0.1}>
                 <h2 className="font-display mt-5 text-4xl md:text-5xl font-light leading-[1.2] tracking-[-0.01em]">
-                  Un immobile a Sottomarina, poi tutto il resto.
+                  {t("story.title")}
                 </h2>
               </Reveal>
               <Reveal delay={0.2}>
                 <div className="mt-8 space-y-6 text-stone leading-relaxed">
-                  <p>
-                    Abbiamo iniziato con un appartamento a Sottomarina dedicato
-                    agli affitti stagionali, costruendo il nostro percorso con
-                    costanza e passione fino ad arrivare agli chalet nelle
-                    Dolomiti e ville in Costa Smeralda.
-                  </p>
+                  <p>{t("story.body")}</p>
                 </div>
               </Reveal>
             </div>
@@ -141,25 +114,25 @@ export default async function AboutPage({
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
               <span className="font-display text-clay mr-2">02</span>
-              Come lavoriamo
+              {t("approach.eyebrow")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.2] tracking-[-0.01em] max-w-3xl">
-              Quattro passi, una direzione.
+              {t("approach.title")}
             </h2>
           </Reveal>
           <div className="mt-20 grid grid-cols-1 md:grid-cols-2 gap-y-16 gap-x-20">
-            {approach.map((a, i) => (
-              <Reveal key={a.n} delay={i * 0.1}>
+            {approach.map((n, i) => (
+              <Reveal key={n} delay={i * 0.1}>
                 <p className="font-display text-5xl md:text-6xl text-clay font-light tracking-[-0.02em]">
-                  {a.n}
+                  {n}
                 </p>
                 <h3 className="font-display mt-6 text-2xl md:text-3xl font-light tracking-[-0.01em]">
-                  {a.title}
+                  {t(`approach.items.${i}.title`)}
                 </h3>
                 <p className="mt-4 text-stone leading-relaxed max-w-md">
-                  {a.desc}
+                  {t(`approach.items.${i}.desc`)}
                 </p>
               </Reveal>
             ))}
@@ -168,12 +141,10 @@ export default async function AboutPage({
           <Reveal delay={0.2}>
             <div className="mt-20 md:mt-24 border-t border-stone/15 pt-12 md:pt-16 max-w-3xl">
               <h3 className="font-display text-2xl md:text-3xl font-light tracking-[-0.01em]">
-                E poi c&apos;è la discrezione.
+                {t("discretion.title")}
               </h3>
               <p className="mt-5 text-stone leading-relaxed">
-                La discrezione è qualcosa che va oltre il semplice lavoro.
-                Significa scegliere con attenzione gli ospiti, gestire ogni
-                immobile con cura e proteggere la riservatezza dei tuoi dati.
+                {t("discretion.body")}
               </p>
             </div>
           </Reveal>
@@ -186,12 +157,12 @@ export default async function AboutPage({
           <Reveal>
             <p className="text-xs tracking-[0.2em] uppercase text-stone">
               <span className="font-display text-clay mr-2">03</span>
-              Il team
+              {t("team.eyebrow")}
             </p>
           </Reveal>
           <Reveal delay={0.1}>
             <h2 className="font-display mt-5 text-4xl md:text-5xl lg:text-6xl font-light leading-[1.2] tracking-[-0.01em]">
-              Le persone che ci sono dietro.
+              {t("team.title")}
             </h2>
           </Reveal>
           <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
@@ -217,7 +188,7 @@ export default async function AboutPage({
                 </h3>
                 <div className="mt-2 text-center text-sm text-stone leading-relaxed">
                   {m.roles.map((r) => (
-                    <p key={r}>{r}</p>
+                    <p key={r}>{t(`roles.${r}`)}</p>
                   ))}
                 </div>
               </Reveal>

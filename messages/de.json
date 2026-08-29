@@ -172,5 +172,58 @@
     "eyebrow": "Die Immobilien",
     "title": "Die Immobilien, die wir betreuen.",
     "empty": "In dieser Region kommen neue Immobilien hinzu."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Über uns",
+      "title": "Ein Team,<br></br>jede Immobilie einzeln betreut.",
+      "body": "Ultralight Home ist 2021 entstanden. Seitdem verwalten wir Kurzzeitvermietungen für alle, die einen echten Ansprechpartner suchen und keine Agentur, die Sie wie eine Nummer behandelt."
+    },
+    "story": {
+      "eyebrow": "Wie wir angefangen haben",
+      "title": "Eine Immobilie in Sottomarina, dann alles Weitere.",
+      "body": "Angefangen haben wir mit einer Wohnung in Sottomarina, die saisonal vermietet wurde, und haben unseren Weg mit Beständigkeit und Leidenschaft weitergebaut, bis hin zu den Chalets in den Dolomiten und den Villen in der Costa Smeralda."
+    },
+    "approach": {
+      "eyebrow": "Wie wir arbeiten",
+      "title": "Vier Schritte, eine Richtung.",
+      "items": {
+        "0": {
+          "title": "Kontakt",
+          "desc": "Jede Zusammenarbeit beginnt mit einem persönlichen Treffen mit dem Eigentümer: Nur wenn wir uns wirklich kennen, können wir eine belastbare Beziehung aufbauen und seine Bedürfnisse und Ziele wirklich verstehen."
+        },
+        "1": {
+          "title": "Bewertung der Immobilie",
+          "desc": "Anhand einer vergleichenden Analyse des lokalen Marktes bestimmen wir das tatsächliche Ertragspotenzial der Immobilie und die wirksamste Strategie, um es auszuschöpfen."
+        },
+        "2": {
+          "title": "Pflege",
+          "desc": "Wenn die Immobilie es verlangt, arbeiten wir mit Handwerksbetrieben und Innenarchitekten aus der Region zusammen, um jeden Raum bestmöglich zur Geltung zu bringen."
+        },
+        "3": {
+          "title": "Betrieb",
+          "desc": "Wir führen den gesamten operativen Betrieb der Immobilie eigenständig und stellen dem Eigentümer pünktlich einen vierteljährlichen Bericht über die erzielten Ergebnisse zu."
+        }
+      }
+    },
+    "discretion": {
+      "title": "Und dann ist da die Diskretion.",
+      "body": "Diskretion ist etwas, das über die reine Arbeit hinausgeht. Sie bedeutet, die Gäste aufmerksam auszuwählen, jede Immobilie sorgfältig zu führen und die Vertraulichkeit Ihrer Daten zu schützen."
+    },
+    "team": {
+      "eyebrow": "Das Team",
+      "title": "Die Menschen dahinter."
+    },
+    "roles": {
+      "founder": "Founder",
+      "salesManager": "Sales Manager",
+      "coFounder": "Co-Founder",
+      "propertyManager": "Property Manager",
+      "interiorDesigner": "Interior Designer",
+      "photographer": "Fotografin"
+    },
+    "alt": {
+      "costaSmeralda": "Villa in der Costa Smeralda"
+    }
   }
 }

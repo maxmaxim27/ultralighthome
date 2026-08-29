@@ -172,5 +172,58 @@
     "eyebrow": "The properties",
     "title": "The properties we look after.",
     "empty": "New properties are coming to this area."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About us",
+      "title": "One team,<br></br>properties looked after one by one.",
+      "body": "Ultralight Home was founded in 2021. Since then we have managed short lets for people who want someone real to deal with, not an agency that treats you as a number."
+    },
+    "story": {
+      "eyebrow": "How we started",
+      "title": "One property in Sottomarina, then everything else.",
+      "body": "We began with an apartment in Sottomarina let out seasonally, building our way forward with constancy and passion until we reached the chalets in the Dolomites and villas in Costa Smeralda."
+    },
+    "approach": {
+      "eyebrow": "How we work",
+      "title": "Four steps, one direction.",
+      "items": {
+        "0": {
+          "title": "Contact",
+          "desc": "Every collaboration begins with meeting the owner in person: only by knowing one another properly can we build a solid relationship and truly understand their needs and their goals."
+        },
+        "1": {
+          "title": "Property valuation",
+          "desc": "Through a comparative analysis of the local market we establish the property's real income potential and the most effective strategy to maximise it."
+        },
+        "2": {
+          "title": "Care",
+          "desc": "We turn to local craftspeople and interior design professionals whenever the property calls for it, to make the most of every room."
+        },
+        "3": {
+          "title": "Operations",
+          "desc": "We handle every operational aspect of the property entirely on our own, giving the owner a punctual quarterly report on the results."
+        }
+      }
+    },
+    "discretion": {
+      "title": "And then there is discretion.",
+      "body": "Discretion is something that goes beyond the work itself. It means choosing guests attentively, managing every property with care and protecting the confidentiality of your data."
+    },
+    "team": {
+      "eyebrow": "The team",
+      "title": "The people behind it."
+    },
+    "roles": {
+      "founder": "Founder",
+      "salesManager": "Sales Manager",
+      "coFounder": "Co-Founder",
+      "propertyManager": "Property Manager",
+      "interiorDesigner": "Interior Designer",
+      "photographer": "Photographer"
+    },
+    "alt": {
+      "costaSmeralda": "Villa in Costa Smeralda"
+    }
   }
 }
