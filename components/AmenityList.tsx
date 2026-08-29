@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import type { AmenityKey } from "@/lib/amenities";
 
 const DEFAULT_VISIBLE = 5;
 
-export default function AmenityList({ features }: { features: string[] }) {
+export default function AmenityList({ features }: { features: AmenityKey[] }) {
   const t = useTranslations("amenityList");
+  const tAmenity = useTranslations("amenities");
   const [showAll, setShowAll] = useState(false);
   const visible = showAll ? features : features.slice(0, DEFAULT_VISIBLE);
   const hidden = features.length - DEFAULT_VISIBLE;
@@ -19,7 +21,7 @@ export default function AmenityList({ features }: { features: string[] }) {
             key={f}
             className="text-xs tracking-wide text-ink border border-stone/30 px-3 py-1.5"
           >
-            {f}
+            {tAmenity(f)}
           </li>
         ))}
       </ul>

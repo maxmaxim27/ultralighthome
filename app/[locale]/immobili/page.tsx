@@ -7,6 +7,7 @@ import type { Property } from "@/lib/types";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
+import { pick } from "@/lib/i18n-content";
 
 export const metadata: Metadata = {
   title: "Immobili in affitto breve — Dolomiti, Verona, Costa Smeralda",
@@ -31,10 +32,10 @@ const BANNER = {
   sub: "text-cream/75",
 };
 
-function buildGroups(): Group[] {
+function buildGroups(locale: Locale): Group[] {
   return locationGroups.map((g, i) => ({
     key: g.key,
-    label: g.label,
+    label: pick(g.label, locale),
     number: String(i + 1).padStart(2, "0"),
     heroImage: g.heroImage,
     items: properties.filter((p) => g.locationSlugs.includes(p.locationSlug)),
@@ -51,7 +52,7 @@ export default async function PropertiesPage({
 
   const t = await getTranslations("property");
   const tPage = await getTranslations("propertiesPage");
-  const groups = buildGroups();
+  const groups = buildGroups(locale);
 
   return (
     <>

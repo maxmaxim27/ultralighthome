@@ -11,8 +11,9 @@ import PropertyCard from "@/components/PropertyCard";
 import BookingButton from "@/components/BookingButton";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing, type Locale } from "@/i18n/routing";
+import { pick } from "@/lib/i18n-content";
 
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
@@ -25,31 +26,32 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
+  const { locale, slug } = await params;
   const property = getProperty(slug);
   if (!property) return {};
 
   const loc = locations.find((l) => l.slug === property.locationSlug);
   const title = `${property.name} — affitto breve a ${loc?.name ?? "Italia"}`;
   const url = absoluteUrl(`/immobili/${property.slug}`);
+  const description = pick(property.shortDescription, locale);
 
   // OG/Twitter images auto-injected from the co-located opengraph-image route.
   return {
     title,
-    description: property.shortDescription,
+    description,
     alternates: { canonical: `/immobili/${property.slug}` },
     openGraph: {
       type: "website",
       url,
       siteName: SITE.name,
       title,
-      description: property.shortDescription,
+      description,
       locale: SITE.locale,
     },
     twitter: {
       card: "summary_large_image",
       title,
-      description: property.shortDescription,
+      description,
     },
   };
 }
@@ -64,6 +66,8 @@ export default async function PropertyPage({
   const property = getProperty(slug);
   if (!property) notFound();
 
+  const tAmenities = await getTranslations("amenities");
+  const shortDescription = pick(property.shortDescription, locale);
   const loc = locations.find((l) => l.slug === property.locationSlug);
   const group = locationGroups.find((g) =>
     g.locationSlugs.includes(property.locationSlug),
@@ -80,7 +84,7 @@ export default async function PropertyPage({
     "@context": "https://schema.org",
     "@type": "Apartment",
     name: property.name,
-    description: property.shortDescription,
+    description: shortDescription,
     url,
     image: property.gallery.map((g) => absoluteUrl(g)),
     numberOfBedrooms: property.specs.bedrooms,
@@ -92,7 +96,7 @@ export default async function PropertyPage({
     },
     amenityFeature: property.features.map((f) => ({
       "@type": "LocationFeatureSpecification",
-      name: f,
+      name: tAmenities(f),
       value: true,
     })),
     address: {
@@ -154,7 +158,7 @@ export default async function PropertyPage({
             <Reveal delay={0.15}>
               <div className="md:text-right md:max-w-md md:ml-auto">
                 <p className="text-stone leading-relaxed">
-                  {property.shortDescription}
+                  {shortDescription}
                 </p>
                 <BookingButton
                   vikeyUrl={property.vikeyUrl}
@@ -198,13 +202,15 @@ export default async function PropertyPage({
                 </h2>
               </Reveal>
               <div className="hairline h-px my-10" />
-              {property.longDescription.split("\n\n").map((para, i) => (
-                <Reveal key={i} delay={0.1 + i * 0.08}>
-                  <p className="text-base md:text-lg text-stone leading-relaxed mb-6">
-                    {para}
-                  </p>
-                </Reveal>
-              ))}
+              {pick(property.longDescription, locale)
+                .split("\n\n")
+                .map((para, i) => (
+                  <Reveal key={i} delay={0.1 + i * 0.08}>
+                    <p className="text-base md:text-lg text-stone leading-relaxed mb-6">
+                      {para}
+                    </p>
+                  </Reveal>
+                ))}
             </div>
 
             <div className="lg:col-span-5">
@@ -221,7 +227,8 @@ export default async function PropertyPage({
             <Reveal>
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
                 <span className="font-display text-clay mr-2">—</span>
-                Altri immobili in {group?.label ?? loc?.name}
+                Altri immobili in{" "}
+                {group ? pick(group.label, locale) : loc?.name}
               </p>
             </Reveal>
             <Reveal delay={0.1}>
