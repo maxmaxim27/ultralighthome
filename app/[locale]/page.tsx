@@ -7,6 +7,8 @@ import SectionHeader from "@/components/SectionHeader";
 import HomeLocations from "@/components/HomeLocations";
 import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Case e appartamenti per soggiorni brevi in Italia",
@@ -39,7 +41,14 @@ const services = [
   },
 ];
 
-export default function Home() {
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <Hero />

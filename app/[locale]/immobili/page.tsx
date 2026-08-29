@@ -5,6 +5,8 @@ import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 import type { Property } from "@/lib/types";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Immobili in affitto breve — Dolomiti, Verona, Costa Smeralda",
@@ -39,7 +41,14 @@ function buildGroups(): Group[] {
   }));
 }
 
-export default function PropertiesPage() {
+export default async function PropertiesPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const groups = buildGroups();
 
   return (

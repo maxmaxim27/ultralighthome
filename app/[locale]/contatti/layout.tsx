@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Contatti — parla con noi",
@@ -7,10 +9,15 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contatti" },
 };
 
-export default function ContattiLayout({
+export default async function ContattiLayout({
   children,
+  params,
 }: {
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
+  setRequestLocale(locale as Locale);
+
   return children;
 }

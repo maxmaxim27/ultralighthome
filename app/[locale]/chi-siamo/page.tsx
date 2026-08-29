@@ -2,6 +2,8 @@ import Image from "next/image";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Chi siamo — gestione affitti brevi dal 2017",
@@ -56,7 +58,14 @@ const team = [
   },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       {/* HERO */}

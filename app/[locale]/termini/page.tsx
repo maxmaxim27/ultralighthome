@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Termini e condizioni",
@@ -9,7 +11,14 @@ export const metadata: Metadata = {
   alternates: { canonical: "/termini" },
 };
 
-export default function TerminiPage() {
+export default async function TerminiPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <LegalLayout
       eyebrow="Termini"

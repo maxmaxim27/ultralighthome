@@ -2,19 +2,22 @@ import { ImageResponse } from "next/og";
 import { getProperty, properties } from "@/lib/properties";
 import { locations } from "@/lib/locations";
 import { SITE } from "@/lib/site";
+import { routing, type Locale } from "@/i18n/routing";
 
 export const alt = "Immobile UltraLightHome";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export function generateStaticParams() {
-  return properties.map((p) => ({ slug: p.slug }));
+  return routing.locales.flatMap((locale) =>
+    properties.map((p) => ({ locale, slug: p.slug })),
+  );
 }
 
 export default async function OgImage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: Locale; slug: string }>;
 }) {
   const { slug } = await params;
   const property = getProperty(slug);

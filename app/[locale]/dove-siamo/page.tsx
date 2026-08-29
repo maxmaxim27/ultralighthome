@@ -4,6 +4,8 @@ import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
 import { ButtonLink } from "@/components/Button";
 import MapEmbed from "@/components/MapEmbed";
+import { setRequestLocale } from "next-intl/server";
+import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Dove siamo",
@@ -28,7 +30,14 @@ const info = [
 const MAP_SRC =
   "https://www.google.com/maps?q=Lungadige%20Matteotti%2014,%2037126%20Verona&output=embed";
 
-export default function DoveSiamoPage() {
+export default async function DoveSiamoPage({
+  params,
+}: {
+  params: Promise<{ locale: Locale }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       {/* HERO */}

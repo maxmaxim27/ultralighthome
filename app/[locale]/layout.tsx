@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
 import { Libre_Baskerville, Nunito_Sans } from "next/font/google";
-import "./globals.css";
+import { notFound } from "next/navigation";
+import { hasLocale, NextIntlClientProvider } from "next-intl";
+import { setRequestLocale } from "next-intl/server";
+import "../globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import CookieConsent from "@/components/CookieConsent";
 import { ConsentProvider } from "@/components/consent";
 import { SITE, absoluteUrl } from "@/lib/site";
+import { routing, type Locale } from "@/i18n/routing";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-heading",
@@ -82,14 +86,24 @@ const organizationLd = {
   sameAs: [`https://wa.me/${SITE.whatsapp}`],
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
+
+export default async function RootLayout({
   children,
+  params,
 }: Readonly<{
   children: React.ReactNode;
+  params: Promise<{ locale: string }>;
 }>) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale as Locale);
+
   return (
     <html
-      lang="it"
+      lang={locale}
       className={`${nunitoSans.variable} ${libreBaskerville.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-white text-ink">
@@ -97,13 +111,15 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationLd) }}
         />
-        <ConsentProvider>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <WhatsAppButton />
-          <CookieConsent />
-        </ConsentProvider>
+        <NextIntlClientProvider>
+          <ConsentProvider>
+            <Navbar />
+            <main className="flex-1">{children}</main>
+            <Footer />
+            <WhatsAppButton />
+            <CookieConsent />
+          </ConsentProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );

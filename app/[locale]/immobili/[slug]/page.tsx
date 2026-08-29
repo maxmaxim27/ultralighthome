@@ -11,15 +11,19 @@ import PropertyCard from "@/components/PropertyCard";
 import BookingButton from "@/components/BookingButton";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
+import { setRequestLocale } from "next-intl/server";
+import { routing, type Locale } from "@/i18n/routing";
 
 export function generateStaticParams() {
-  return properties.map((p) => ({ slug: p.slug }));
+  return routing.locales.flatMap((locale) =>
+    properties.map((p) => ({ locale, slug: p.slug })),
+  );
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: Locale; slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const property = getProperty(slug);
@@ -53,9 +57,10 @@ export async function generateMetadata({
 export default async function PropertyPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: Locale; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
   const property = getProperty(slug);
   if (!property) notFound();
 
