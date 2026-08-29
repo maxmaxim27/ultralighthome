@@ -384,5 +384,33 @@
       "heading": "5. Aktualisierungen",
       "body": "Sollten wir neue Werkzeuge von Drittanbietern einführen, die nicht-technische Cookies verwenden, werden wir diese Informationen aktualisieren. Bei Fragen: <mail>{email}</mail>."
     }
+  },
+  "terms": {
+    "eyebrow": "AGB",
+    "title": "Allgemeine Nutzungsbedingungen.",
+    "subject": {
+      "heading": "1. Gegenstand",
+      "body": "Diese Website ist die Präsentationsseite von <strong>{owner}</strong>, MwSt.-Nr. <strong>{vat}</strong>, mit Sitz in {address}, und stellt die für Kurzaufenthalte verwalteten Immobilien vor. Die Nutzung der Website setzt die Annahme dieser Bedingungen voraus."
+    },
+    "bookings": {
+      "heading": "2. Buchungen",
+      "body": "Die Buchung der Immobilien erfolgt über die verlinkten Plattformen Dritter (z. B. Airbnb). Es gelten die Bedingungen, Konditionen und Stornierungsrichtlinien der jeweiligen Plattform. Die hier veröffentlichten Informationen (Verfügbarkeit, Preise, Ausstattung) dienen der Veranschaulichung und können sich ändern."
+    },
+    "intellectualProperty": {
+      "heading": "3. Geistiges Eigentum",
+      "body": "Texte, Bilder, Marken und Logos auf der Website sind Eigentum des Inhabers oder der jeweiligen Rechteinhaber und dürfen ohne Genehmigung nicht vervielfältigt werden."
+    },
+    "liability": {
+      "heading": "4. Haftungsbeschränkung",
+      "body": "Wir bemühen uns, die Inhalte aktuell und richtig zu halten, garantieren jedoch weder die Fehlerfreiheit noch die ununterbrochene Verfügbarkeit der Website. Wir haften nicht für Schäden, die aus der Nutzung oder der Unmöglichkeit der Nutzung der Website oder der verlinkten Websites Dritter entstehen."
+    },
+    "law": {
+      "heading": "5. Anwendbares Recht und Gerichtsstand",
+      "body": "Diese Bedingungen unterliegen italienischem Recht. Für jede Streitigkeit ist das Gericht von <strong>{court}</strong> zuständig, vorbehaltlich der zwingenden Vorschriften zum Schutz der Verbraucher."
+    },
+    "contact": {
+      "heading": "6. Kontakt",
+      "body": "Für Fragen zu diesen Bedingungen: <mail>{email}</mail>."
+    }
   }
 }

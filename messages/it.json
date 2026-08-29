@@ -384,5 +384,33 @@
       "heading": "5. Aggiornamenti",
       "body": "Qualora introducessimo nuovi strumenti di terze parti che utilizzano cookie non tecnici, aggiorneremo questa informativa. Per domande: <mail>{email}</mail>."
     }
+  },
+  "terms": {
+    "eyebrow": "Termini",
+    "title": "Termini e condizioni.",
+    "subject": {
+      "heading": "1. Oggetto",
+      "body": "Questo sito è la vetrina di <strong>{owner}</strong>, P.IVA <strong>{vat}</strong>, con sede in {address}, e presenta gli immobili gestiti per soggiorni brevi. La consultazione del sito implica l'accettazione dei presenti termini."
+    },
+    "bookings": {
+      "heading": "2. Prenotazioni",
+      "body": "Le prenotazioni degli immobili avvengono tramite le piattaforme di terze parti collegate (es. Airbnb). Si applicano i termini, le condizioni e le politiche di cancellazione della relativa piattaforma. Le informazioni pubblicate qui (disponibilità, prezzi, caratteristiche) hanno scopo illustrativo e possono variare."
+    },
+    "intellectualProperty": {
+      "heading": "3. Proprietà intellettuale",
+      "body": "Testi, immagini, marchi e logo presenti sul sito sono di proprietà del titolare o dei rispettivi aventi diritto e non possono essere riprodotti senza autorizzazione."
+    },
+    "liability": {
+      "heading": "4. Limitazione di responsabilità",
+      "body": "Ci impegniamo a mantenere i contenuti aggiornati e accurati, ma non garantiamo l'assenza di errori o l'ininterrotta disponibilità del sito. Non rispondiamo di eventuali danni derivanti dall'uso o dall'impossibilità di uso del sito o dei siti di terze parti collegati."
+    },
+    "law": {
+      "heading": "5. Legge applicabile e foro competente",
+      "body": "I presenti termini sono regolati dalla legge italiana. Per ogni controversia è competente il foro di <strong>{court}</strong>, fatte salve le norme inderogabili a tutela del consumatore."
+    },
+    "contact": {
+      "heading": "6. Contatti",
+      "body": "Per qualsiasi domanda sui presenti termini: <mail>{email}</mail>."
+    }
   }
 }

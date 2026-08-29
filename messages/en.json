@@ -384,5 +384,33 @@
       "heading": "5. Updates",
       "body": "Should we introduce new third-party tools that use non-technical cookies, we will update this notice. For questions: <mail>{email}</mail>."
     }
+  },
+  "terms": {
+    "eyebrow": "Terms",
+    "title": "Terms and conditions.",
+    "subject": {
+      "heading": "1. Subject",
+      "body": "This site is the showcase of <strong>{owner}</strong>, VAT No. <strong>{vat}</strong>, with registered office at {address}, and presents the properties managed for short stays. Browsing the site implies acceptance of these terms."
+    },
+    "bookings": {
+      "heading": "2. Bookings",
+      "body": "Property bookings take place through the linked third-party platforms (e.g. Airbnb). The terms, conditions and cancellation policies of the relevant platform apply. The information published here (availability, prices, features) is for illustrative purposes and may change."
+    },
+    "intellectualProperty": {
+      "heading": "3. Intellectual property",
+      "body": "Texts, images, trade marks and logos on the site are the property of the owner or of the respective right holders and may not be reproduced without authorisation."
+    },
+    "liability": {
+      "heading": "4. Limitation of liability",
+      "body": "We undertake to keep the content up to date and accurate, but we do not guarantee the absence of errors or the uninterrupted availability of the site. We are not liable for any damage arising from the use of, or the impossibility of using, the site or the linked third-party sites."
+    },
+    "law": {
+      "heading": "5. Governing law and jurisdiction",
+      "body": "These terms are governed by Italian law. The court of <strong>{court}</strong> has jurisdiction over any dispute, without prejudice to the mandatory rules protecting consumers."
+    },
+    "contact": {
+      "heading": "6. Contact",
+      "body": "For any question about these terms: <mail>{email}</mail>."
+    }
   }
 }

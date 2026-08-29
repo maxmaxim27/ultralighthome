@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import LegalLayout from "@/components/LegalLayout";
 import { LEGAL, SITE } from "@/lib/site";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 
 export const metadata: Metadata = {
   title: "Termini e condizioni",
-  description:
-    "Termini e condizioni d'uso del sito UltraLightHome.",
+  description: "Termini e condizioni d'uso del sito UltraLightHome.",
   alternates: { canonical: "/termini" },
 };
 
@@ -18,69 +17,54 @@ export default async function TerminiPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations("terms");
+
+  const strong = (chunks: React.ReactNode) => <strong>{chunks}</strong>;
+  const mail = (chunks: React.ReactNode) => (
+    <a href={`mailto:${SITE.email}`}>{chunks}</a>
+  );
 
   return (
     <LegalLayout
-      eyebrow="Termini"
-      title="Termini e condizioni."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
       updated={LEGAL.updated}
     >
       <section>
-        <h2>1. Oggetto</h2>
+        <h2>{t("subject.heading")}</h2>
         <p>
-          Questo sito è la vetrina di <strong>{LEGAL.owner}</strong>, P.IVA{" "}
-          <strong>{LEGAL.vat}</strong>, con sede in {LEGAL.address}, e presenta
-          gli immobili gestiti per soggiorni brevi. La consultazione del sito
-          implica l&apos;accettazione dei presenti termini.
+          {t.rich("subject.body", {
+            strong,
+            owner: LEGAL.owner,
+            vat: LEGAL.vat,
+            address: LEGAL.address,
+          })}
         </p>
       </section>
 
       <section>
-        <h2>2. Prenotazioni</h2>
-        <p>
-          Le prenotazioni degli immobili avvengono tramite le piattaforme di
-          terze parti collegate (es. Airbnb). Si applicano i termini, le
-          condizioni e le politiche di cancellazione della relativa piattaforma.
-          Le informazioni pubblicate qui (disponibilità, prezzi, caratteristiche)
-          hanno scopo illustrativo e possono variare.
-        </p>
+        <h2>{t("bookings.heading")}</h2>
+        <p>{t("bookings.body")}</p>
       </section>
 
       <section>
-        <h2>3. Proprietà intellettuale</h2>
-        <p>
-          Testi, immagini, marchi e logo presenti sul sito sono di proprietà del
-          titolare o dei rispettivi aventi diritto e non possono essere
-          riprodotti senza autorizzazione.
-        </p>
+        <h2>{t("intellectualProperty.heading")}</h2>
+        <p>{t("intellectualProperty.body")}</p>
       </section>
 
       <section>
-        <h2>4. Limitazione di responsabilità</h2>
-        <p>
-          Ci impegniamo a mantenere i contenuti aggiornati e accurati, ma non
-          garantiamo l&apos;assenza di errori o l&apos;ininterrotta
-          disponibilità del sito. Non rispondiamo di eventuali danni derivanti
-          dall&apos;uso o dall&apos;impossibilità di uso del sito o dei siti di
-          terze parti collegati.
-        </p>
+        <h2>{t("liability.heading")}</h2>
+        <p>{t("liability.body")}</p>
       </section>
 
       <section>
-        <h2>5. Legge applicabile e foro competente</h2>
-        <p>
-          I presenti termini sono regolati dalla legge italiana. Per ogni
-          controversia è competente il foro di <strong>{LEGAL.court}</strong>,
-          fatte salve le norme inderogabili a tutela del consumatore.
-        </p>
+        <h2>{t("law.heading")}</h2>
+        <p>{t.rich("law.body", { strong, court: LEGAL.court })}</p>
       </section>
 
       <section>
-        <h2>6. Contatti</h2>
-        <p>
-          Per qualsiasi domanda sui presenti termini:{" "}
-          <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.
-        </p>
+        <h2>{t("contact.heading")}</h2>
+        <p>{t.rich("contact.body", { mail, email: SITE.email })}</p>
       </section>
     </LegalLayout>
   );
