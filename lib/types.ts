@@ -1,14 +1,17 @@
+import type { Localized } from "./i18n-content";
+import type { AmenityKey } from "./amenities";
+
 export type Location = {
   slug: string;
   name: string;
   region: string;
-  description: string;
+  description: Localized;
   heroImage: string;
 };
 
 export type LocationGroup = {
   key: string;
-  label: string;
+  label: Localized;
   heroImage: string;
   locationSlugs: string[];
 };
@@ -17,8 +20,8 @@ export type Property = {
   slug: string;
   name: string;
   locationSlug: string;
-  shortDescription: string;
-  longDescription: string;
+  shortDescription: Localized;
+  longDescription: Localized;
   coverImage: string;
   gallery: string[];
   specs: {
@@ -28,7 +31,7 @@ export type Property = {
     guests: number;
     hasKitchen: boolean;
   };
-  features: string[];
+  features: AmenityKey[];
   pricePerNightFrom: number;
   airbnbUrl: string;
   /** Vikey hosted booking-engine page. When set, the "Prenota" button opens
