@@ -9,6 +9,7 @@
     "lint": "eslint",
     "check:i18n": "node scripts/check-i18n.mjs",
     "check:links": "node scripts/check-links.mjs",
+    "check:icu": "node scripts/check-icu.mjs",
     "build:cf": "opennextjs-cloudflare build",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
@@ -38,6 +39,7 @@
     "eslint-config-next": "^16.2.12",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "use-intl": "^4.14.1",
     "wrangler": "^4.114.0"
   }
 }
