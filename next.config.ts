@@ -9,7 +9,12 @@ const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 // and a frame-src that only admits the Google Maps embed.
 const CSP = [
   "default-src 'self'",
-  "script-src 'self' 'unsafe-inline'",
+  // React's development build calls eval() to reconstruct callstacks across
+  // environments, and Turbopack's HMR runtime does the same; production React
+  // never does, so the relaxation stays out of the deployed header.
+  process.env.NODE_ENV === "production"
+    ? "script-src 'self' 'unsafe-inline'"
+    : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data: blob: https://images.unsplash.com https://plus.unsplash.com",
   "media-src 'self'",
