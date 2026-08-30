@@ -58,8 +58,8 @@
     "viewAll": "{count, plural, one {See the photo (#)} other {See all photos (#)}}",
     "photoCount": "{count, plural, one {# photo} other {# photos}}",
     "close": "Close",
-    "previous": "Previous photo",
-    "next": "Next photo"
+    "previous": "Previous",
+    "next": "Next"
   },
   "carousel": {
     "empty": "New properties are coming to this destination.",
@@ -114,7 +114,7 @@
     "backToProperties": "Back to the properties"
   },
   "map": {
-    "consentMessage": "Accept third-party cookies to view the map."
+    "consentMessage": "Accept third-party cookies to view the Google Maps map."
   },
   "locationTabs": {
     "all": "All"

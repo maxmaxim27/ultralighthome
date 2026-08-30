@@ -32,7 +32,7 @@ export default async function OgImage({
     : undefined;
 
   const name = property?.name ?? SITE.name;
-  const place = loc ? `${loc.name} · ${pick(loc.region, locale)}` : "Italia";
+  const place = loc ? `${loc.name} · ${pick(loc.region, locale)}` : "";
   const description = property
     ? pick(property.shortDescription, locale)
     : undefined;

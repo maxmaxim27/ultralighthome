@@ -58,8 +58,8 @@
     "viewAll": "{count, plural, one {Foto ansehen (#)} other {Alle Fotos ansehen (#)}}",
     "photoCount": "{count, plural, one {# Foto} other {# Fotos}}",
     "close": "Schließen",
-    "previous": "Vorheriges Foto",
-    "next": "Nächstes Foto"
+    "previous": "Zurück",
+    "next": "Weiter"
   },
   "carousel": {
     "empty": "Für dieses Reiseziel kommen neue Immobilien hinzu.",
@@ -204,7 +204,7 @@
     },
     "where": {
       "eyebrow": "Wo wir sind",
-      "title": "Besuchen Sie uns, oder schreiben Sie uns.",
+      "title": "Besuchen Sie uns oder schreiben Sie uns.",
       "cta": "Termin vereinbaren",
       "officeCaption": "Unser Büro"
     },
@@ -275,7 +275,7 @@
     }
   },
   "where": {
-    "eyebrow": "Wo wir sind",
+    "eyebrow": "Standorte",
     "title": "Büro im Herzen von Verona.",
     "body": "Wir empfangen Sie nach Vereinbarung in unserem Büro im Zentrum. Vereinbaren Sie einen Termin, und wir sprechen persönlich über Ihre Immobilie.",
     "infoTitle": "Besuchen Sie uns in Verona.",
@@ -427,7 +427,7 @@
     },
     "properties": {
       "title": "Ferienwohnungen zur Kurzzeitmiete: Dolomiten, Verona, Costa Smeralda",
-      "description": "Alle unsere Unterkünfte für kurze Aufenthalte, nach Region geordnet: Kronplatz und Dolomiten, Verona, Costa Smeralda und weitere italienische Städte."
+      "description": "Alle unsere Immobilien für kurze Aufenthalte, nach Region geordnet: Kronplatz und Dolomiten, Verona, Costa Smeralda und weitere italienische Städte."
     },
     "property": {
       "title": "{name}, Ferienwohnung in {location}",
@@ -443,7 +443,7 @@
     },
     "contact": {
       "title": "Kontakt: sprechen Sie mit uns",
-      "description": "Schreiben Sie uns, wenn Sie eine Unterkunft mieten oder uns die Verwaltung Ihrer Immobilie anvertrauen möchten: E-Mail, Telefon, WhatsApp. Wir antworten noch am selben Tag."
+      "description": "Schreiben Sie uns, wenn Sie eine Immobilie mieten oder uns die Verwaltung Ihrer Immobilie anvertrauen möchten: E-Mail, Telefon, WhatsApp. Wir antworten noch am selben Tag."
     },
     "privacy": {
       "title": "Datenschutzerklärung",
