@@ -18,12 +18,14 @@ type Props = {
 
 export default function LanguageSwitcher({ variant, onSelect }: Props) {
   const t = useTranslations("language");
-  const active = useLocale() as Locale;
+  const active = useLocale();
   const pathname = usePathname();
   const params = useParams();
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const wrapRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+  const optionRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   function choose(locale: Locale) {
     // Non è ridondante con quanto scrive il middleware di next-intl: il
@@ -46,13 +48,65 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
     );
   }
 
+  function closeAndReturnFocus() {
+    setOpen(false);
+    triggerRef.current?.focus();
+  }
+
+  function focusOptionAt(index: number) {
+    const count = locales.length;
+    const wrapped = ((index % count) + count) % count;
+    optionRefs.current[wrapped]?.focus();
+  }
+
+  function onTriggerKeyDown(event: React.KeyboardEvent<HTMLButtonElement>) {
+    if (event.key === "ArrowDown" || event.key === "ArrowUp") {
+      event.preventDefault();
+      setOpen(true);
+      const startIndex = locales.indexOf(active);
+      // Il rAF aspetta che il pannello smetta di essere inert prima di
+      // spostarci il focus dentro.
+      requestAnimationFrame(() => focusOptionAt(startIndex));
+    }
+  }
+
+  function onOptionKeyDown(
+    event: React.KeyboardEvent<HTMLButtonElement>,
+    index: number,
+  ) {
+    switch (event.key) {
+      case "ArrowDown":
+        event.preventDefault();
+        focusOptionAt(index + 1);
+        break;
+      case "ArrowUp":
+        event.preventDefault();
+        focusOptionAt(index - 1);
+        break;
+      case "Home":
+        event.preventDefault();
+        focusOptionAt(0);
+        break;
+      case "End":
+        event.preventDefault();
+        focusOptionAt(locales.length - 1);
+        break;
+      case "Escape":
+        event.preventDefault();
+        closeAndReturnFocus();
+        break;
+      default:
+        break;
+    }
+  }
+
   useEffect(() => {
     if (!open) return;
     function onPointerDown(event: MouseEvent) {
       if (!wrapRef.current?.contains(event.target as Node)) setOpen(false);
     }
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") closeAndReturnFocus();
     }
     document.addEventListener("mousedown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
@@ -64,7 +118,11 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
 
   if (variant === "mobile") {
     return (
-      <div className="flex items-center gap-3" aria-label={t("label")}>
+      <div
+        className="flex items-center gap-3"
+        role="group"
+        aria-label={t("label")}
+      >
         {locales.map((locale) => (
           <button
             key={locale}
@@ -89,8 +147,10 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
   return (
     <div ref={wrapRef} className="relative">
       <button
+        ref={triggerRef}
         type="button"
         onClick={() => setOpen((v) => !v)}
+        onKeyDown={onTriggerKeyDown}
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-label={t("label")}
@@ -107,6 +167,11 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
 
       <div
         role="listbox"
+        aria-label={t("label")}
+        // `inert` toglie il pannello dal tab order e dall'accessibility tree
+        // quando è chiuso, senza rinunciare alla dissolvenza CSS (a
+        // differenza di `hidden`, che disabiliterebbe la transizione).
+        inert={!open}
         className={clsx(
           "absolute right-0 top-full mt-2 min-w-[10rem] rounded-2xl overflow-hidden",
           "bg-ink/95 backdrop-blur-xl border border-cream/10 shadow-[0_8px_40px_-12px_rgba(0,0,0,0.5)]",
@@ -116,13 +181,18 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
             : "opacity-0 scale-95 pointer-events-none",
         )}
       >
-        {locales.map((locale) => (
+        {locales.map((locale, index) => (
           <button
             key={locale}
+            ref={(el) => {
+              optionRefs.current[index] = el;
+            }}
             type="button"
             role="option"
             aria-selected={locale === active}
+            tabIndex={open ? 0 : -1}
             onClick={() => choose(locale)}
+            onKeyDown={(event) => onOptionKeyDown(event, index)}
             className={clsx(
               "w-full flex items-center gap-3 px-4 py-3 text-sm text-left transition-colors hover:bg-white/10",
               locale === active ? "text-cream" : "text-cream/70",
