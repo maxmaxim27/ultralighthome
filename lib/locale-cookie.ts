@@ -9,5 +9,9 @@ import { LOCALE_COOKIE_MAX_AGE, type Locale } from "@/i18n/routing";
  *  browser da un valore catturato in render, e segnala l'assegnazione a
  *  `document.cookie` anche quando avviene in un event handler. */
 export function rememberLocale(locale: Locale): void {
-  document.cookie = `NEXT_LOCALE=${locale};path=/;max-age=${LOCALE_COOKIE_MAX_AGE};samesite=lax`;
+  // Secure evita che il cookie viaggi su un downgrade in chiaro; condizionato
+  // al protocollo perché su http://localhost (sviluppo locale) un cookie
+  // Secure non verrebbe mai impostato dal browser.
+  const secure = location.protocol === "https:" ? ";Secure" : "";
+  document.cookie = `NEXT_LOCALE=${locale};path=/;max-age=${LOCALE_COOKIE_MAX_AGE};samesite=lax${secure}`;
 }

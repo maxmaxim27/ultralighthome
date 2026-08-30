@@ -14,11 +14,19 @@ function preferredLocale(header: string | null): Locale | null {
     .map((part) => {
       const [tag, ...params] = part.trim().split(";");
       const q = params.find((p) => p.trim().startsWith("q="));
+      // Assente => q=1 di default (RFC 9110). Presente ma non numerico =>
+      // 0, non NaN: altrimenti sopravvivrebbe al filtro "q > 0" sotto, dato
+      // che NaN > 0 e' false ma anche NaN === NaN e' false, e certi ordini
+      // di confronto in sort() lo lascerebbero comunque in lista.
+      const parsedQ = q ? Number.parseFloat(q.split("=")[1]) : 1;
       return {
         base: tag.trim().split("-")[0].toLowerCase(),
-        q: q ? Number.parseFloat(q.split("=")[1]) : 1,
+        q: Number.isNaN(parsedQ) ? 0 : parsedQ,
       };
     })
+    // q=0 vuol dire esplicitamente "non accettabile" (RFC 9110): va escluso,
+    // non solo posposto in coda all'ordinamento.
+    .filter(({ q }) => q > 0)
     .sort((a, b) => b.q - a.q);
 
   for (const { base } of ranked) {
@@ -31,7 +39,9 @@ export default function middleware(request: NextRequest) {
   // Detection automatica solo sulla home. Un link diretto a una pagina interna
   // non viene mai dirottato: chi lo riceve deve vedere la pagina che gli è
   // stata mandata, e Googlebot deve poter scansionare tutte le lingue.
-  if (request.nextUrl.pathname === "/") {
+  const isRoot = request.nextUrl.pathname === "/";
+
+  if (isRoot) {
     const cookieLocale = request.cookies.get(LOCALE_COOKIE)?.value;
     const chosen =
       cookieLocale && (locales as readonly string[]).includes(cookieLocale)
@@ -52,6 +62,16 @@ export default function middleware(request: NextRequest) {
     }
   }
 
+  // La risposta italiana di "/" (nessun redirect) dipende dagli stessi
+  // segnali del redirect sopra, ma non può portare lo stesso Vary: verificato
+  // su build (next start e, dietro `run_worker_first`, lo stesso codice sotto
+  // OpenNext/Cloudflare), sia un header impostato qui su questa risposta di
+  // passthrough sia una regola in next.config.ts per il path "/" vengono
+  // sovrascritti dal Vary che l'App Router calcola da sé per la
+  // negoziazione RSC ("rsc, next-router-state-tree, ..."), su OGNI risposta
+  // di pagina, statica o meno — non solo su questa. Non risulta un modo,
+  // nelle API pubbliche di Next 16, per aggiungere un valore a quel Vary da
+  // middleware o da next.config.ts su una pagina dell'App Router.
   return intlMiddleware(request);
 }
 
