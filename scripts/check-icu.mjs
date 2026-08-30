@@ -86,6 +86,23 @@ for (const locale of LOCALES) {
         `${locale}: ${path} — l'output renderizzato contiene "<" letterale (probabile apostrofo che apre un literal quotato ICU): ${JSON.stringify(out)}`,
       );
     }
+
+    // Stessa causa (un apostrofo che apre un literal quotato ICU), effetto
+    // diverso: se a essere "mangiato" è un argomento semplice ({action}) e
+    // non un tag, nell'output sopravvive una graffa non sostituita invece di
+    // un "<". Nota: ICU ammette anche una graffa letterale legittima tramite
+    // l'escape `'{'`/`'}'`, che SOPRAVVIVE nell'output (es. "vedi '{'"
+    // renderizza "vedi {") — quindi in linea di principio potrebbe generare
+    // un falso positivo qui. Nessun messaggio attuale usa questo escape
+    // (verificato con `grep "'{" messages/*.json`), quindi non serve
+    // gestirlo esplicitamente: se in futuro un messaggio lo usasse
+    // legittimamente, andrebbe escluso da questo controllo (es. con una
+    // whitelist di path) invece di ignorare l'avviso.
+    if (typeof out === "string" && /[{}]/.test(out)) {
+      problems.push(
+        `${locale}: ${path} — l'output renderizzato contiene "{" o "}" non sostituiti (probabile apostrofo che apre un literal quotato ICU e mangia un placeholder): ${JSON.stringify(out)}`,
+      );
+    }
   }
 }
 
