@@ -10,11 +10,10 @@ import PropertyCarousel from "./PropertyCarousel";
 import { locationGroups } from "@/lib/locations";
 import { properties } from "@/lib/properties";
 import { pick } from "@/lib/i18n-content";
-import type { Locale } from "@/i18n/routing";
 
 export default function HomeLocations() {
   const t = useTranslations("homeLocations");
-  const locale = useLocale() as Locale;
+  const locale = useLocale();
   const tabLocations = locationGroups.map((g) => ({
     slug: g.key,
     name: pick(g.label, locale),

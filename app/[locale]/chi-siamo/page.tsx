@@ -132,10 +132,13 @@ export default async function AboutPage({
                   {n}
                 </p>
                 <h3 className="font-display mt-6 text-2xl md:text-3xl font-light tracking-[-0.01em]">
-                  {t(`approach.items.${i}.title`)}
+                  {/* Chiave costruita sull'indice del loop: gli 4 elementi
+                      esistono davvero (vedi messages/*.json, about.approach.items),
+                      ma next-intl non può verificarlo per una chiave dinamica. */}
+                  {t(`approach.items.${i}.title` as Parameters<typeof t>[0])}
                 </h3>
                 <p className="mt-4 text-stone leading-relaxed max-w-md">
-                  {t(`approach.items.${i}.desc`)}
+                  {t(`approach.items.${i}.desc` as Parameters<typeof t>[0])}
                 </p>
               </Reveal>
             ))}

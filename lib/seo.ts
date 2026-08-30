@@ -120,11 +120,15 @@ export async function staticPageMetadata({
 }): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "meta" });
 
+  // `key` è condiviso da più pagine (about/contact/terms/...): next-intl non
+  // può verificare a compile time una chiave "meta.<key>.title" costruita da
+  // una variabile, anche se ogni chiamante passa un `key` che esiste
+  // davvero sotto `meta` in messages/*.json.
   return pageMetadata({
     locale,
     href,
-    title: t(`${key}.title`),
-    description: t(`${key}.description`),
+    title: t(`${key}.title` as Parameters<typeof t>[0]),
+    description: t(`${key}.description` as Parameters<typeof t>[0]),
     image: { url: localeUrl("/opengraph-image", locale), alt: t("ogAlt") },
   });
 }

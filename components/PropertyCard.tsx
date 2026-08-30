@@ -8,7 +8,6 @@ import { useLocale } from "next-intl";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
 import { pick } from "@/lib/i18n-content";
-import type { Locale } from "@/i18n/routing";
 import BookingButton from "@/components/BookingButton";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -20,7 +19,7 @@ export default function PropertyCard({
   property: Property;
   index?: number;
 }) {
-  const locale = useLocale() as Locale;
+  const locale = useLocale();
   const loc = locations.find((l) => l.slug === property.locationSlug);
 
   return (

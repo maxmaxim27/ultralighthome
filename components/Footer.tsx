@@ -5,12 +5,11 @@ import CookiePreferencesButton from "./CookiePreferencesButton";
 import { LEGAL } from "@/lib/site";
 import { locationGroups } from "@/lib/locations";
 import { pick } from "@/lib/i18n-content";
-import type { Locale } from "@/i18n/routing";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
   const tNav = await getTranslations("nav");
-  const locale = (await getLocale()) as Locale;
+  const locale = await getLocale();
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink text-cream">

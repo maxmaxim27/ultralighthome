@@ -119,7 +119,7 @@ export default async function RootLayout({
 }>) {
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
-  setRequestLocale(locale as Locale);
+  setRequestLocale(locale);
 
   return (
     <html
@@ -130,7 +130,7 @@ export default async function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(organizationLd(locale as Locale)),
+            __html: JSON.stringify(organizationLd(locale)),
           }}
         />
         <NextIntlClientProvider>

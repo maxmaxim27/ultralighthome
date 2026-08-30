@@ -1,7 +1,7 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import SectionWrap from "@/components/SectionWrap";
 import Reveal from "@/components/Reveal";
-import { FORMATTING_LOCALES, routing, type Locale } from "@/i18n/routing";
+import { FORMATTING_LOCALES, routing } from "@/i18n/routing";
 
 export default async function LegalLayout({
   eyebrow,
@@ -17,7 +17,7 @@ export default async function LegalLayout({
   children: React.ReactNode;
 }) {
   const t = await getTranslations("legal");
-  const locale = (await getLocale()) as Locale;
+  const locale = await getLocale();
   const updatedLabel = new Intl.DateTimeFormat(FORMATTING_LOCALES[locale], {
     dateStyle: "long",
     timeZone: "Europe/Rome",
