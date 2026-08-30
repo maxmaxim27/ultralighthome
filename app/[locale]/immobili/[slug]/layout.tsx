@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import type { Locale } from "@/i18n/routing";
+import { notFound } from "next/navigation";
+import { routing, type Locale } from "@/i18n/routing";
 import { notFoundMetadata } from "@/lib/seo";
 
 // Uno slug inesistente fa chiamare notFound() alla pagina, e Next ne scarta i
@@ -25,6 +27,10 @@ export default async function PropertyLayout(
   props: LayoutProps<"/[locale]/immobili/[slug]">,
 ) {
   const { locale } = await props.params;
-  setRequestLocale(locale as Locale);
+  // Il layout di lingua sopra questo ha già scartato ogni locale che non sia
+  // "it" | "en" | "de"; il controllo qui serve solo a restringere il tipo di
+  // `locale` a Locale senza un cast, per poterlo passare a setRequestLocale.
+  if (!hasLocale(routing.locales, locale)) notFound();
+  setRequestLocale(locale);
   return props.children;
 }
