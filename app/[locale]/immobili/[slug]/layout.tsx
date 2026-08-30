@@ -12,7 +12,12 @@ export async function generateMetadata({
   params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return notFoundMetadata(locale);
+  const metadata = await notFoundMetadata(locale);
+  // Uno slug inesistente non deve ereditare né il canonical né l'hreflang di
+  // questo layout (che punterebbero alla homepage): un canonical → homepage
+  // su una pagina 404 è un segnale di soft-404 per Google. Le schede reali
+  // impostano il proprio `alternates` in `pageMetadata` e non sono toccate.
+  return { ...metadata, alternates: { canonical: null } };
 }
 
 export default function PropertyLayout({
