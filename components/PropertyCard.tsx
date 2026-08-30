@@ -1,11 +1,13 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
+import { Link } from "@/i18n/navigation";
 import { motion } from "framer-motion";
 import { ArrowUpRight, BedDouble, Bath, Users } from "lucide-react";
+import { useLocale } from "next-intl";
 import type { Property } from "@/lib/types";
 import { locations } from "@/lib/locations";
+import { pick } from "@/lib/i18n-content";
 import BookingButton from "@/components/BookingButton";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -17,6 +19,7 @@ export default function PropertyCard({
   property: Property;
   index?: number;
 }) {
+  const locale = useLocale();
   const loc = locations.find((l) => l.slug === property.locationSlug);
 
   return (
@@ -29,7 +32,7 @@ export default function PropertyCard({
     >
       {/* Whole-card link to the detail page (stretched behind content) */}
       <Link
-        href={`/immobili/${property.slug}`}
+        href={{ pathname: "/immobili/[slug]", params: { slug: property.slug } }}
         className="absolute inset-0 z-0"
         aria-label={property.name}
       />
@@ -60,7 +63,7 @@ export default function PropertyCard({
           {property.name}
         </h3>
         <p className="mt-2 text-sm text-stone leading-relaxed line-clamp-2">
-          {property.shortDescription}
+          {pick(property.shortDescription, locale)}
         </p>
 
         {/* Flexible spacer: keeps a minimum gap to the divider while pushing

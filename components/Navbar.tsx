@@ -1,21 +1,23 @@
 "use client";
 
-import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ContactDialog from "@/components/ContactDialog";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const nav = [
-  { href: "/immobili", label: "Immobili" },
-  { href: "/chi-siamo", label: "Chi siamo" },
-  { href: "/dove-siamo", label: "Dove siamo" },
-  { href: "/contatti", label: "Contatti" },
-];
+  { href: "/immobili", key: "properties" },
+  { href: "/chi-siamo", key: "about" },
+  { href: "/dove-siamo", key: "locations" },
+  { href: "/contatti", key: "contact" },
+] as const;
 
 export default function Navbar() {
+  const t = useTranslations("nav");
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
@@ -47,7 +49,7 @@ export default function Navbar() {
             {/* desktop: footer logo image only */}
             <Image
               src="/logo_icon.png"
-              alt="UltraLightHome"
+              alt="Ultralight Home"
               width={1972}
               height={1674}
               priority
@@ -59,7 +61,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 lg:gap-10 absolute left-1/2 -translate-x-1/2">
+          <nav className="hidden md:flex items-center gap-6 md:gap-5 lg:gap-8 xl:gap-10 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
             {nav.map((n) => (
               <Link
                 key={n.href}
@@ -71,34 +73,40 @@ export default function Navbar() {
                     : "text-cream/70 font-normal hover:text-cream",
                 )}
               >
-                {n.label}
+                {t(n.key)}
               </Link>
             ))}
           </nav>
 
-          <ContactDialog
-            trigger={(open) => (
-              <button
-                type="button"
-                onClick={open}
-                className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-white hover:text-ink transition-colors"
-              >
-                Valuta immobile
-              </button>
-            )}
-          />
+          <div className="flex items-center gap-3">
+            <ContactDialog
+              trigger={(open) => (
+                <button
+                  type="button"
+                  onClick={open}
+                  className="hidden md:inline-flex items-center h-10 px-5 rounded-full border border-cream/40 text-sm hover:bg-white hover:text-ink transition-colors"
+                >
+                  {t("evaluate")}
+                </button>
+              )}
+            />
 
-          <button
-            aria-label={open ? "Chiudi menu" : "Apri menu"}
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative z-60"
-          >
-            {open ? (
-              <X size={22} strokeWidth={1.5} />
-            ) : (
-              <Menu size={22} strokeWidth={1.5} />
-            )}
-          </button>
+            <div className="hidden md:block">
+              <LanguageSwitcher variant="desktop" />
+            </div>
+
+            <button
+              aria-label={open ? t("closeMenu") : t("openMenu")}
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden size-10 rounded-full flex items-center justify-center hover:bg-white/10 transition-colors relative z-60"
+            >
+              {open ? (
+                <X size={22} strokeWidth={1.5} />
+              ) : (
+                <Menu size={22} strokeWidth={1.5} />
+              )}
+            </button>
+          </div>
         </div>
       </header>
 
@@ -126,7 +134,7 @@ export default function Navbar() {
                 )}
                 style={{ transitionDelay: open ? `${150 + i * 70}ms` : "0ms" }}
               >
-                {n.label}
+                {t(n.key)}
               </Link>
             ))}
           </nav>
@@ -142,7 +150,7 @@ export default function Navbar() {
             <div className="mb-8 flex justify-center">
               <Image
                 src="/logo.png"
-                alt="UltraLightHome"
+                alt="Ultralight Home"
                 width={1972}
                 height={1674}
                 className="h-24 w-auto brightness-0 invert opacity-80"
@@ -155,13 +163,12 @@ export default function Navbar() {
                   onClick={() => { setOpen(false); openDialog(); }}
                   className="block w-full text-center bg-white text-ink py-4 rounded-full text-sm"
                 >
-                  Valuta immobile
+                  {t("evaluate")}
                 </button>
               )}
             />
-            <div className="mt-6 flex items-center justify-between text-xs tracking-[0.2em] uppercase text-cream/50">
-              <span>IT / EN</span>
-              <span>Verona · Dolomiti · Costa Smeralda</span>
+            <div className="mt-6">
+              <LanguageSwitcher variant="mobile" onSelect={() => setOpen(false)} />
             </div>
           </div>
         </div>

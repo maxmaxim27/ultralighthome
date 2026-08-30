@@ -1,0 +1,465 @@
+{
+  "language": {
+    "label": "Lingua",
+    "it": "Italiano",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "nav": {
+    "properties": "Immobili",
+    "about": "Chi siamo",
+    "locations": "Dove siamo",
+    "contact": "Contatti",
+    "evaluate": "Valuta immobile",
+    "openMenu": "Apri menu",
+    "closeMenu": "Chiudi menu"
+  },
+  "common": {
+    "discoverMore": "Scopri di più",
+    "backHome": "Torna alla home",
+    "seeProperties": "Vedi gli immobili",
+    "newTab": "(si apre in una nuova scheda)"
+  },
+  "contactForm": {
+    "honeypotLabel": "Non compilare questo campo",
+    "nameLabel": "Nome e cognome",
+    "emailLabel": "Email",
+    "requestTypeLabel": "Tipo di richiesta",
+    "requestTypeOwner": "Sono un proprietario",
+    "requestTypeGuest": "Sono un ospite",
+    "requestTypePartner": "Voglio collaborare",
+    "messageLabel": "Messaggio",
+    "sending": "Invio in corso…",
+    "submit": "Invia richiesta",
+    "privacyNotice": "Inviando il modulo dichiari di aver letto l’<link>informativa sulla privacy</link>. Usiamo i tuoi dati solo per rispondere alla tua richiesta.",
+    "errorTooFast": "Invio troppo rapido. Attendi un momento e riprova.",
+    "errorRateLimited": "Hai inviato troppe richieste. Riprova tra qualche minuto.",
+    "errorGeneric": "Invio non riuscito. Riprova o scrivici a info@ultralighthome.it.",
+    "successTitle": "Grazie. Abbiamo ricevuto la tua richiesta.",
+    "successBody": "Ti risponderemo entro un giorno lavorativo all'indirizzo indicato."
+  },
+  "booking": {
+    "cta": "Prenota",
+    "comingSoon": "Disponibile a breve",
+    "close": "Chiudi",
+    "dialogAriaLabel": "Scegli la piattaforma di prenotazione",
+    "choosePlatform": "Scegli la piattaforma",
+    "title": "Come vuoi prenotare?",
+    "description": "Scegli dove completare la prenotazione: il prezzo finale cambia in base alle commissioni di ciascuna piattaforma.",
+    "vikeyTitle": "Prenota su Vikey",
+    "vikeyRecommended": "Consigliato",
+    "vikeyDescription": "Piattaforma sicura e certificata, con le commissioni più basse.",
+    "airbnbTitle": "Prenota su Airbnb",
+    "airbnbDescription": "Il nostro partner principale, con commissioni moderate.",
+    "bookingComTitle": "Prenota su Booking",
+    "bookingComDescription": "Piattaforma internazionale, con commissioni più elevate."
+  },
+  "gallery": {
+    "viewAll": "{count, plural, one {Vedi la foto (#)} other {Vedi tutte le foto (#)}}",
+    "photoCount": "{count, plural, one {# foto} other {# foto}}",
+    "close": "Chiudi",
+    "previous": "Precedente",
+    "next": "Successiva"
+  },
+  "carousel": {
+    "empty": "In arrivo nuove proprietà in questa destinazione.",
+    "previous": "Precedente",
+    "next": "Successivo",
+    "goTo": "Vai alla proprietà {index}"
+  },
+  "footer": {
+    "navHeading": "Naviga",
+    "copyright": "© {year} Ultralight Home. Tutti i diritti riservati.",
+    "vatLabel": "P.IVA {vat}",
+    "privacyLink": "Privacy",
+    "termsLink": "Termini",
+    "cookieLink": "Cookie"
+  },
+  "cookie": {
+    "dialogAriaLabel": "Preferenze cookie",
+    "label": "Cookie",
+    "banner": "Usiamo cookie tecnici necessari al sito e, solo con il tuo consenso, cookie di terze parti. Puoi accettare o rifiutare. Dettagli nella <link>Cookie Policy</link>.",
+    "accept": "Accetta",
+    "reject": "Rifiuta",
+    "managePreferences": "Gestisci cookie"
+  },
+  "hero": {
+    "scroll": "Scroll"
+  },
+  "contactDialog": {
+    "ariaLabel": "Valuta il tuo immobile",
+    "close": "Chiudi",
+    "title": "Parliamo del tuo immobile.",
+    "description": "Compila il modulo. Risponderemo entro un giorno lavorativo."
+  },
+  "property": {
+    "count": "{count, plural, =0 {nessun immobile} one {# immobile} other {# immobili}}",
+    "summaryHeading": "L'immobile in breve",
+    "sqm": "Metri quadri",
+    "bedrooms": "Camere",
+    "bathrooms": "Bagni",
+    "guests": "Ospiti",
+    "guestsUpTo": "Fino a {count}",
+    "kitchen": "Cucina",
+    "kitchenEquipped": "Sì, attrezzata",
+    "kitchenNone": "—",
+    "location": "Località",
+    "featuresHeading": "Caratteristiche"
+  },
+  "propertyDetail": {
+    "sectionLabel": "L'immobile",
+    "heading": "Cosa ti aspetta.",
+    "relatedLabel": "Altri immobili in {location}",
+    "relatedHeading": "Da vedere anche.",
+    "backToProperties": "Torna agli immobili"
+  },
+  "map": {
+    "consentMessage": "Accetta i cookie di terze parti per visualizzare la mappa di Google Maps."
+  },
+  "locationTabs": {
+    "all": "Tutti"
+  },
+  "homeLocations": {
+    "seeAll": "Vedi tutti gli immobili"
+  },
+  "whatsapp": {
+    "ariaLabel": "Scrivici su WhatsApp",
+    "message": "Ciao! Vorrei fissare un appuntamento."
+  },
+  "amenityList": {
+    "showLess": "Mostra meno",
+    "showMore": "Mostra di più (+{count})"
+  },
+  "amenities": {
+    "airConditioning": "Aria condizionata",
+    "balconyPrivate": "Balcone privato",
+    "balconyShared": "Balcone condiviso",
+    "bathtub": "Vasca da bagno",
+    "bayView": "Vista sulla baia",
+    "bodySoap": "Sapone per il corpo",
+    "cityView": "Vista sul panorama urbano",
+    "cleaningProducts": "Prodotti per la pulizia",
+    "conditioner": "Balsamo",
+    "cotAvailable": "Culla disponibile",
+    "coveredParking": "Posto auto coperto",
+    "courtyardView": "Vista sul cortile",
+    "dedicatedWorkspace": "Spazio di lavoro dedicato",
+    "dryer": "Asciugatrice",
+    "elevator": "Ascensore",
+    "fencedGarden": "Giardino recintato",
+    "freeGarage": "Garage gratuito",
+    "freeParking": "Parcheggio gratuito",
+    "freeParkingOnPremises": "Parcheggio gratuito in loco",
+    "freeParkingOnStreet": "Parcheggio gratuito in strada",
+    "fridge": "Frigorifero",
+    "gardenView": "Vista sul giardino",
+    "hairDryer": "Asciugacapelli",
+    "kidsToys": "Giochi per bambini",
+    "kitchen": "Cucina",
+    "luggageDropOff": "Deposito bagagli",
+    "microwave": "Forno a microonde",
+    "mountainView": "Vista sulle montagne",
+    "panoramicViews": "Viste panoramiche",
+    "petsAllowed": "Animali domestici ammessi",
+    "poolView": "Vista sulla piscina",
+    "privatePool": "Piscina privata",
+    "seaView": "Vista sul mare",
+    "shampoo": "Shampoo",
+    "skiInSkiOut": "Sulle piste",
+    "tv": "TV",
+    "washingMachine": "Lavatrice",
+    "wifi": "Wifi",
+    "wifiFast": "Wifi veloce"
+  },
+  "legal": {
+    "lastUpdated": "Ultimo aggiornamento: {date}",
+    "translationNotice": "Questa pagina è disponibile anche in inglese e tedesco. In caso di discrepanza fra le versioni, prevale il testo italiano."
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "Gli immobili",
+      "title": "Appartamenti, ville e chalet nel territorio nazionale",
+      "subtitle": "Sfoglia le proposte per zona: città, montagna, mare. Ogni immobile ha la sua storia e la sua dimensione."
+    },
+    "services": {
+      "eyebrow": "Come lavoriamo",
+      "title": "I nostri servizi",
+      "shortLets": {
+        "title": "Affitti brevi",
+        "desc": "Gestiamo ogni aspetto operativo dell'immobile: prenotazioni, check-in, pulizie, manutenzione e adempimenti fiscali. Il proprietario si dedica all'immobile, noi a tutto il resto."
+      },
+      "restyling": {
+        "title": "Restyling interni",
+        "desc": "Quando necessario, curiamo la riqualificazione dell'immobile per renderlo più accogliente, dai piccoli interventi ai restyling completi, avvalendoci di artigiani e professionisti del territorio."
+      },
+      "photos": {
+        "title": "Foto e annunci",
+        "desc": "Realizziamo fotografie professionali e testi curati, garantendo presenza sui canali più adeguati, con attenzione costante e senza eccessi."
+      }
+    },
+    "about": {
+      "eyebrow": "Chi siamo",
+      "title": "Immobili gestiti con metodo. Clienti soddisfatti.",
+      "body": "Lavoriamo con un numero limitato di proprietari per dedicare tempo vero a ogni immobile. Utilizziamo strumenti e automazioni per migliorare l’esperienza degli ospiti, senza rinunciare a una gestione attenta e personalizzata."
+    },
+    "where": {
+      "eyebrow": "Dove siamo",
+      "title": "Vieni a trovarci, o scrivici.",
+      "cta": "Fissa un appuntamento",
+      "officeCaption": "Il nostro ufficio"
+    },
+    "partners": {
+      "title": "In collaborazione con"
+    },
+    "alt": {
+      "dolomiti": "Chalet sulle Dolomiti",
+      "office": "Il nostro ufficio a Verona"
+    }
+  },
+  "propertiesPage": {
+    "eyebrow": "Gli immobili",
+    "title": "Gli immobili che curiamo.",
+    "empty": "In arrivo nuovi immobili in questa zona."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Chi siamo",
+      "title": "Una squadra,<br></br>immobili curati uno a uno.",
+      "body": "Ultralight Home nasce nel 2021. Da allora gestiamo affitti brevi per chi cerca un interlocutore vero, non un'agenzia che ti tratta come un numero."
+    },
+    "story": {
+      "eyebrow": "Come abbiamo iniziato",
+      "title": "Un immobile a Sottomarina, poi tutto il resto.",
+      "body": "Abbiamo iniziato con un appartamento a Sottomarina dedicato agli affitti stagionali, costruendo il nostro percorso con costanza e passione fino ad arrivare agli chalet nelle Dolomiti e ville in Costa Smeralda."
+    },
+    "approach": {
+      "eyebrow": "Come lavoriamo",
+      "title": "Quattro passi, una direzione.",
+      "items": {
+        "0": {
+          "title": "Contatto",
+          "desc": "Ogni collaborazione nasce da un incontro diretto con il proprietario: solo conoscendoci davvero possiamo costruire un rapporto solido e capire realmente le sue esigenze e i suoi obiettivi."
+        },
+        "1": {
+          "title": "Valutazione immobile",
+          "desc": "Attraverso un'analisi comparativa del mercato locale definiamo il reale potenziale di rendita dell'immobile e la strategia più efficace per massimizzarlo."
+        },
+        "2": {
+          "title": "Cura",
+          "desc": "Ci affidiamo a maestranze e professionisti del design d'interni locali ogni volta che la proprietà lo richiede, per valorizzarne al meglio ogni ambiente."
+        },
+        "3": {
+          "title": "Operatività",
+          "desc": "Gestiamo ogni aspetto operativo dell'immobile in totale autonomia, garantendo al proprietario un report trimestrale puntuale sui risultati ottenuti."
+        }
+      }
+    },
+    "discretion": {
+      "title": "E poi c’è la discrezione.",
+      "body": "La discrezione è qualcosa che va oltre il semplice lavoro. Significa scegliere con attenzione gli ospiti, gestire ogni immobile con cura e proteggere la riservatezza dei tuoi dati."
+    },
+    "team": {
+      "eyebrow": "Il team",
+      "title": "Le persone che ci sono dietro."
+    },
+    "roles": {
+      "founder": "Founder",
+      "salesManager": "Sales Manager",
+      "coFounder": "Co-Founder",
+      "propertyManager": "Property Manager",
+      "interiorDesigner": "Interior Designer",
+      "photographer": "Fotografa"
+    },
+    "alt": {
+      "costaSmeralda": "Villa in Costa Smeralda"
+    }
+  },
+  "where": {
+    "eyebrow": "Dove siamo",
+    "title": "Ufficio nel cuore di Verona.",
+    "body": "Riceviamo su appuntamento nel nostro ufficio in centro. Fissa un appuntamento e parliamo del tuo immobile di persona.",
+    "infoTitle": "Vieni a trovarci a Verona.",
+    "address": {
+      "label": "Indirizzo",
+      "value": "Lungadige Matteotti 14\n37126 Verona (VR), Italia"
+    },
+    "hours": {
+      "label": "Orari",
+      "value": "Lun – Ven · 9:30 – 18:30\nSolo su appuntamento"
+    },
+    "cta": "Indicazioni stradali",
+    "mapTitle": "Mappa — Ufficio Ultralight Home, Verona"
+  },
+  "contactPage": {
+    "eyebrow": "Contatti",
+    "title": "Iniziamo una conversazione.",
+    "infoTitle": "Contattaci.",
+    "formTitle": "Scrivici.",
+    "formIntro": "Compila il modulo. Risponderemo entro un giorno lavorativo.",
+    "emailLabel": "Email",
+    "phoneLabel": "Telefono",
+    "instagramLabel": "Instagram"
+  },
+  "notFound": {
+    "eyebrow": "Pagina non trovata",
+    "title": "Questa porta<br></br>non si apre.",
+    "body": "L'immobile o la pagina che cerchi non esiste, o è stata spostata. Torna alla home o sfoglia gli immobili che curiamo."
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "Informativa sulla privacy.",
+    "intro": "La presente informativa descrive come trattiamo i dati personali raccolti tramite questo sito, ai sensi del Regolamento UE 2016/679 («GDPR») e della normativa italiana applicabile.",
+    "controller": {
+      "heading": "1. Titolare del trattamento",
+      "body": "Titolare del trattamento è <strong>{owner}</strong>, P.IVA <strong>{vat}</strong>, con sede in <strong>{address}</strong>.",
+      "contact": "Per qualsiasi richiesta relativa ai tuoi dati puoi scrivere a <mail>{email}</mail>."
+    },
+    "collected": {
+      "heading": "2. Dati che raccogliamo",
+      "items": {
+        "0": "<strong>Dati del modulo contatti:</strong> nome e cognome, email e il contenuto del messaggio che ci invii.",
+        "1": "<strong>Dati di navigazione:</strong> dati tecnici raccolti automaticamente dai server (es. indirizzo IP, log di accesso) per il funzionamento e la sicurezza del sito."
+      }
+    },
+    "purposes": {
+      "heading": "3. Finalità e base giuridica",
+      "items": {
+        "0": "Rispondere alle tue richieste e gestire i contatti — base giuridica: esecuzione di misure precontrattuali e legittimo interesse (art. 6.1 lett. b e f GDPR).",
+        "1": "Garantire sicurezza e corretto funzionamento del sito — legittimo interesse (art. 6.1 lett. f GDPR).",
+        "2": "Adempiere a obblighi di legge — art. 6.1 lett. c GDPR."
+      }
+    },
+    "retention": {
+      "heading": "4. Conservazione dei dati",
+      "body": "Conserviamo i dati del modulo contatti per il tempo necessario alle finalità indicate e comunque non oltre <strong>{retention}</strong> dall'ultimo scambio con te, salvo diversi obblighi di legge. I log tecnici del server sono conservati per periodi più brevi dal fornitore di hosting."
+    },
+    "recipients": {
+      "heading": "5. Destinatari dei dati",
+      "intro": "I dati possono essere trattati da fornitori che ci supportano nell'erogazione del servizio, nominati responsabili del trattamento ai sensi dell'art. 28 GDPR. Non vendiamo i tuoi dati a terzi. I fornitori attualmente utilizzati sono:",
+      "items": {
+        "0": "<strong>Cloudflare, Inc.</strong> — hosting del sito e protezione dell'infrastruttura. Tratta dati di navigazione (indirizzo IP, log tecnici). <link>Privacy policy</link>.",
+        "1": "<strong>Resend (Plus Five Five, Inc.)</strong> — recapito delle email generate dal modulo contatti. Tratta nome, email e contenuto del messaggio. <link>Privacy policy</link>."
+      },
+      "transfers": "Entrambi i fornitori hanno sede negli Stati Uniti: il trasferimento avviene sulla base delle Clausole Contrattuali Standard approvate dalla Commissione Europea e, ove applicabile, della certificazione EU-U.S. Data Privacy Framework.",
+      "maps": "La pagina <where>Dove siamo</where> integra una mappa di <strong>Google Maps</strong> (Google Ireland Ltd.), caricata solo previo tuo consenso: in tal caso Google può trattare dati, anche con trasferimento verso gli Stati Uniti, nel rispetto delle garanzie previste dal GDPR. Maggiori informazioni nella <cookies>Cookie Policy</cookies>."
+    },
+    "rights": {
+      "heading": "6. I tuoi diritti",
+      "body": "Hai diritto di accedere ai tuoi dati, chiederne la rettifica o la cancellazione, limitarne o opporti al trattamento, e alla portabilità dei dati (artt. 15-22 GDPR). Puoi esercitare questi diritti scrivendo a <mail>{email}</mail>.",
+      "complaint": "Hai inoltre diritto di proporre reclamo al Garante per la protezione dei dati personali (<link>garanteprivacy.it</link>)."
+    },
+    "cookies": {
+      "heading": "7. Cookie",
+      "body": "L'uso dei cookie è descritto nella nostra <cookies>Cookie Policy</cookies>."
+    }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookie",
+    "title": "Informativa sui cookie.",
+    "intro": "I cookie sono piccoli file di testo che i siti salvano sul dispositivo dell'utente. Possono essere <strong>tecnici</strong> (necessari al funzionamento) o di <strong>profilazione</strong> (per tracciare le abitudini di navigazione).",
+    "technical": {
+      "heading": "1. Cookie tecnici",
+      "body": "Per il proprio funzionamento questo sito utilizza esclusivamente <strong>cookie tecnici e necessari</strong>. Non impieghiamo cookie di profilazione né strumenti di analisi statistica per finalità di marketing. I font sono ospitati direttamente sul nostro sito e non comportano richieste a server esterni.",
+      "listIntro": "I cookie tecnici impostati da questo sito sono:",
+      "items": {
+        "0": "<strong>NEXT_LOCALE</strong> — ricorda la lingua che hai scelto per il sito. Durata: {days} giorni. Categoria: tecnico/necessario; non richiede consenso."
+      },
+      "storage": "La tua scelta sui cookie di terze parti viene salvata nel <em>local storage</em> del browser (chiave <code>ulh-consent</code>): resta sul tuo dispositivo, non viene trasmessa ai nostri server e puoi cancellarla svuotando i dati del sito dal browser."
+    },
+    "thirdParty": {
+      "heading": "2. Cookie di terze parti — Google Maps",
+      "body": "Nella pagina <where>Dove siamo</where> incorporiamo una mappa di <strong>Google Maps</strong>. Questo servizio, fornito da Google Ireland Ltd., può installare cookie di terze parti e trattare dati (incluso l'indirizzo IP), con possibili trasferimenti verso gli Stati Uniti.",
+      "consent": "La mappa <strong>non viene caricata automaticamente</strong>: resta sostituita da un'anteprima e i contenuti di Google — con i relativi cookie — vengono attivati <strong>solo dopo il tuo consenso esplicito</strong>, prestato tramite il banner richiamabile dal pulsante «Gestisci cookie».",
+      "google": "Per i dettagli sul trattamento da parte di Google consulta la <link>privacy policy di Google</link>."
+    },
+    "consent": {
+      "heading": "3. Gestione del consenso",
+      "body": "Alla prima visita compare un banner che ti consente di <strong>accettare</strong> o <strong>rifiutare</strong> i cookie di terze parti. I cookie di Google Maps vengono installati solo se presti il consenso. Puoi modificare la tua scelta in qualsiasi momento tramite il link <strong>«Gestisci cookie»</strong> presente nel footer di ogni pagina."
+    },
+    "browser": {
+      "heading": "4. Come gestire i cookie nel browser",
+      "body": "Puoi controllare o eliminare i cookie tramite le impostazioni del tuo browser. La disabilitazione dei cookie tecnici potrebbe compromettere alcune funzionalità del sito."
+    },
+    "updates": {
+      "heading": "5. Aggiornamenti",
+      "body": "Qualora introducessimo nuovi strumenti di terze parti che utilizzano cookie non tecnici, aggiorneremo questa informativa. Per domande: <mail>{email}</mail>."
+    }
+  },
+  "terms": {
+    "eyebrow": "Termini",
+    "title": "Termini e condizioni.",
+    "subject": {
+      "heading": "1. Oggetto",
+      "body": "Questo sito è la vetrina di <strong>{owner}</strong>, P.IVA <strong>{vat}</strong>, con sede in {address}, e presenta gli immobili gestiti per soggiorni brevi. La consultazione del sito implica l'accettazione dei presenti termini."
+    },
+    "bookings": {
+      "heading": "2. Prenotazioni",
+      "body": "Le prenotazioni degli immobili avvengono tramite le piattaforme di terze parti collegate (es. Airbnb). Si applicano i termini, le condizioni e le politiche di cancellazione della relativa piattaforma. Le informazioni pubblicate qui (disponibilità, prezzi, caratteristiche) hanno scopo illustrativo e possono variare."
+    },
+    "intellectualProperty": {
+      "heading": "3. Proprietà intellettuale",
+      "body": "Testi, immagini, marchi e logo presenti sul sito sono di proprietà del titolare o dei rispettivi aventi diritto e non possono essere riprodotti senza autorizzazione."
+    },
+    "liability": {
+      "heading": "4. Limitazione di responsabilità",
+      "body": "Ci impegniamo a mantenere i contenuti aggiornati e accurati, ma non garantiamo l'assenza di errori o l'ininterrotta disponibilità del sito. Non rispondiamo di eventuali danni derivanti dall'uso o dall'impossibilità di uso del sito o dei siti di terze parti collegati."
+    },
+    "law": {
+      "heading": "5. Legge applicabile e foro competente",
+      "body": "I presenti termini sono regolati dalla legge italiana. Per ogni controversia è competente il foro di <strong>{court}</strong>, fatte salve le norme inderogabili a tutela del consumatore."
+    },
+    "contact": {
+      "heading": "6. Contatti",
+      "body": "Per qualsiasi domanda sui presenti termini: <mail>{email}</mail>."
+    }
+  },
+  "meta": {
+    "siteTagline": "Immobili curati, ben gestiti",
+    "description": "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda, Roma e altro. Case curate, ben gestite, pronte da prenotare.",
+    "keywords": "affitti brevi, case vacanza Italia, appartamenti Dolomiti, appartamenti Verona, appartamenti Roma, villa Costa Smeralda, soggiorni brevi, Plan de Corones, Val Pusteria, Porto Cervo",
+    "ogAlt": "Ultralight Home — Immobili curati, ben gestiti",
+    "ogLine1": "Immobili curati,",
+    "ogLine2": "ben gestiti.",
+    "ogPlaces": "Dolomiti · Verona · Costa Smeralda · Roma",
+    "home": {
+      "title": "Case e appartamenti per soggiorni brevi in Italia",
+      "description": "Immobili curati da affittare per qualche giorno: Dolomiti, Verona, Costa Smeralda, Roma e altro. Selezione, gestione e ospitalità con la stessa attenzione."
+    },
+    "properties": {
+      "title": "Immobili in affitto breve: Dolomiti, Verona, Costa Smeralda",
+      "description": "Tutti i nostri immobili da affittare per soggiorni brevi, raggruppati per zona: Dolomiti, Verona, Costa Smeralda e altre città italiane."
+    },
+    "property": {
+      "title": "{name}, affitto breve a {location}",
+      "ogAlt": "{name} — Ultralight Home"
+    },
+    "about": {
+      "title": "Chi siamo: gestione affitti brevi dal 2021",
+      "description": "Ultralight Home gestisce affitti brevi in Italia dal 2021: pochi immobili, scelti con cura e seguiti in ogni dettaglio. Il nostro approccio e il team."
+    },
+    "where": {
+      "title": "Dove siamo",
+      "description": "Il nostro ufficio a Verona. Vieni a trovarci o fissa un appuntamento: Lungadige Matteotti 14, 37126 Verona."
+    },
+    "contact": {
+      "title": "Contatti: parla con noi",
+      "description": "Scrivici per affittare un immobile o affidarci la gestione del tuo: email, telefono, WhatsApp. Rispondiamo in giornata."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Informativa sul trattamento dei dati personali di Ultralight Home ai sensi del Regolamento UE 2016/679 (GDPR)."
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy",
+      "description": "Informativa sui cookie di Ultralight Home: solo cookie tecnici necessari, nessuna profilazione."
+    },
+    "terms": {
+      "title": "Termini e condizioni",
+      "description": "Termini e condizioni d'uso del sito Ultralight Home."
+    },
+    "notFound": {
+      "title": "Pagina non trovata",
+      "description": "L'indirizzo richiesto non corrisponde a nessuna pagina del sito."
+    }
+  }
+}

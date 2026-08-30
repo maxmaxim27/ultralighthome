@@ -2,10 +2,13 @@
 
 import { motion } from "framer-motion";
 import clsx from "clsx";
-import type { Location } from "@/lib/types";
+import { useTranslations } from "next-intl";
+
+/** I nomi arrivano già risolti nella lingua corrente: il tab non traduce. */
+export type LocationTab = { slug: string; name: string };
 
 type Props = {
-  locations: Location[];
+  locations: LocationTab[];
   active: string;
   onChange: (slug: string) => void;
   includeAll?: boolean;
@@ -17,8 +20,9 @@ export default function LocationTabs({
   onChange,
   includeAll = false,
 }: Props) {
+  const t = useTranslations("locationTabs");
   const items = includeAll
-    ? [{ slug: "all", name: "Tutti", region: "", description: "", heroImage: "" }, ...locations]
+    ? [{ slug: "all", name: t("all") }, ...locations]
     : locations;
 
   return (

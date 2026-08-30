@@ -4,12 +4,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import clsx from "clsx";
+import { useTranslations } from "next-intl";
 import type { Property } from "@/lib/types";
 import PropertyCard from "./PropertyCard";
 
 const AUTOPLAY_DELAY = 5000;
 
 export default function PropertyCarousel({ items }: { items: Property[] }) {
+  const t = useTranslations("carousel");
   const single = items.length <= 1;
   const [paused, setPaused] = useState(false);
   const pausedRef = useRef(paused);
@@ -67,7 +69,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
   if (items.length === 0) {
     return (
       <p className="text-center text-stone py-20">
-        In arrivo nuove proprietà in questa destinazione.
+        {t("empty")}
       </p>
     );
   }
@@ -107,7 +109,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
       <div className="flex items-center justify-center gap-4">
         <button
           type="button"
-          aria-label="Precedente"
+          aria-label={t("previous")}
           onClick={() => emblaApi?.scrollPrev()}
           disabled={!canPrev}
           className="size-11 rounded-full border border-stone/25 flex items-center justify-center text-ink transition-all duration-300 hover:bg-ink hover:text-cream disabled:opacity-30 disabled:pointer-events-none"
@@ -120,7 +122,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
             <button
               key={i}
               type="button"
-              aria-label={`Vai alla proprietà ${i + 1}`}
+              aria-label={t("goTo", { index: i + 1 })}
               onClick={() => emblaApi?.scrollTo(i)}
               className={clsx(
                 "h-1.5 rounded-full transition-all duration-300",
@@ -134,7 +136,7 @@ export default function PropertyCarousel({ items }: { items: Property[] }) {
 
         <button
           type="button"
-          aria-label="Successivo"
+          aria-label={t("next")}
           onClick={() => emblaApi?.scrollNext()}
           disabled={!canNext}
           className="size-11 rounded-full border border-stone/25 flex items-center justify-center text-ink transition-all duration-300 hover:bg-ink hover:text-cream disabled:opacity-30 disabled:pointer-events-none"

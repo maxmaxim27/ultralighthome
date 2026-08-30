@@ -4,6 +4,7 @@ import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { ChevronLeft, ChevronRight, X, LayoutGrid } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Button from "./Button";
 
 const PREVIEW = 5;
@@ -23,6 +24,7 @@ export default function PropertyGallery({
   uniform?: boolean;
   alwaysShowAllButton?: boolean;
 }) {
+  const t = useTranslations("gallery");
   const [openIdx, setOpenIdx] = useState<number | null>(null);
   const [showAll, setShowAll] = useState(false);
 
@@ -95,7 +97,7 @@ export default function PropertyGallery({
             onClick={() => setShowAll(true)}
           >
             <LayoutGrid size={16} />
-            Vedi tutte le foto ({images.length})
+            {t("viewAll", { count: images.length })}
           </Button>
         </div>
       )}
@@ -115,10 +117,10 @@ export default function PropertyGallery({
           >
             <div className="sticky top-0 z-10 flex items-center justify-between bg-white/90 backdrop-blur-md px-6 md:px-10 py-5 border-b border-stone/15">
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
-                {alt} — {images.length} foto
+                {alt} — {t("photoCount", { count: images.length })}
               </p>
               <button
-                aria-label="Chiudi"
+                aria-label={t("close")}
                 onClick={() => setShowAll(false)}
                 className="size-10 rounded-full flex items-center justify-center text-ink hover:bg-ink hover:text-cream transition-colors"
               >
@@ -164,21 +166,21 @@ export default function PropertyGallery({
             onClick={close}
           >
             <button
-              aria-label="Chiudi"
+              aria-label={t("close")}
               onClick={close}
               className="absolute top-6 right-6 z-20 text-cream/80 hover:text-cream p-3"
             >
               <X size={22} />
             </button>
             <button
-              aria-label="Precedente"
+              aria-label={t("previous")}
               onClick={(e) => { e.stopPropagation(); prev(); }}
               className="absolute left-4 md:left-8 z-20 text-cream/80 hover:text-cream p-3"
             >
               <ChevronLeft size={32} />
             </button>
             <button
-              aria-label="Successiva"
+              aria-label={t("next")}
               onClick={(e) => { e.stopPropagation(); next(); }}
               className="absolute right-4 md:right-8 z-20 text-cream/80 hover:text-cream p-3"
             >

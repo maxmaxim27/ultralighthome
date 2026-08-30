@@ -1,0 +1,465 @@
+{
+  "language": {
+    "label": "Sprache",
+    "it": "Italiano",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "nav": {
+    "properties": "Immobilien",
+    "about": "Über uns",
+    "locations": "Standorte",
+    "contact": "Kontakt",
+    "evaluate": "Immobilie bewerten",
+    "openMenu": "Menü öffnen",
+    "closeMenu": "Menü schließen"
+  },
+  "common": {
+    "discoverMore": "Mehr erfahren",
+    "backHome": "Zur Startseite",
+    "seeProperties": "Immobilien ansehen",
+    "newTab": "(öffnet in einem neuen Tab)"
+  },
+  "contactForm": {
+    "honeypotLabel": "Dieses Feld nicht ausfüllen",
+    "nameLabel": "Vor- und Nachname",
+    "emailLabel": "E-Mail",
+    "requestTypeLabel": "Art der Anfrage",
+    "requestTypeOwner": "Ich bin Eigentümer",
+    "requestTypeGuest": "Ich bin Gast",
+    "requestTypePartner": "Ich möchte zusammenarbeiten",
+    "messageLabel": "Nachricht",
+    "sending": "Wird gesendet…",
+    "submit": "Anfrage senden",
+    "privacyNotice": "Mit dem Absenden des Formulars bestätigen Sie, die <link>Datenschutzerklärung</link> gelesen zu haben. Wir verwenden Ihre Daten nur, um Ihre Anfrage zu beantworten.",
+    "errorTooFast": "Zu schnell gesendet. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+    "errorRateLimited": "Sie haben zu viele Anfragen gesendet. Bitte versuchen Sie es in einigen Minuten erneut.",
+    "errorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie uns an info@ultralighthome.it.",
+    "successTitle": "Vielen Dank. Wir haben Ihre Anfrage erhalten.",
+    "successBody": "Wir antworten Ihnen innerhalb eines Werktags an die angegebene E-Mail-Adresse."
+  },
+  "booking": {
+    "cta": "Buchen",
+    "comingSoon": "Demnächst verfügbar",
+    "close": "Schließen",
+    "dialogAriaLabel": "Buchungsplattform auswählen",
+    "choosePlatform": "Plattform auswählen",
+    "title": "Wie möchten Sie buchen?",
+    "description": "Wählen Sie, wo Sie die Buchung abschließen möchten: Der Endpreis hängt von den Gebühren der jeweiligen Plattform ab.",
+    "vikeyTitle": "Über Vikey buchen",
+    "vikeyRecommended": "Empfohlen",
+    "vikeyDescription": "Sichere, zertifizierte Plattform mit den niedrigsten Gebühren.",
+    "airbnbTitle": "Über Airbnb buchen",
+    "airbnbDescription": "Unser Hauptpartner mit moderaten Gebühren.",
+    "bookingComTitle": "Über Booking buchen",
+    "bookingComDescription": "Internationale Plattform mit höheren Gebühren."
+  },
+  "gallery": {
+    "viewAll": "{count, plural, one {Foto ansehen (#)} other {Alle Fotos ansehen (#)}}",
+    "photoCount": "{count, plural, one {# Foto} other {# Fotos}}",
+    "close": "Schließen",
+    "previous": "Zurück",
+    "next": "Weiter"
+  },
+  "carousel": {
+    "empty": "Für dieses Reiseziel kommen neue Immobilien hinzu.",
+    "previous": "Zurück",
+    "next": "Weiter",
+    "goTo": "Zu Immobilie {index} wechseln"
+  },
+  "footer": {
+    "navHeading": "Navigation",
+    "copyright": "© {year} Ultralight Home. Alle Rechte vorbehalten.",
+    "vatLabel": "MwSt.-Nr. {vat}",
+    "privacyLink": "Datenschutz",
+    "termsLink": "Nutzungsbedingungen",
+    "cookieLink": "Cookies"
+  },
+  "cookie": {
+    "dialogAriaLabel": "Cookie-Einstellungen",
+    "label": "Cookies",
+    "banner": "Wir verwenden technisch notwendige Cookies und, nur mit Ihrer Zustimmung, Cookies von Drittanbietern. Sie können zustimmen oder ablehnen. Details in der <link>Cookie-Richtlinie</link>.",
+    "accept": "Akzeptieren",
+    "reject": "Ablehnen",
+    "managePreferences": "Cookies verwalten"
+  },
+  "hero": {
+    "scroll": "Scrollen"
+  },
+  "contactDialog": {
+    "ariaLabel": "Bewerten Sie Ihre Immobilie",
+    "close": "Schließen",
+    "title": "Sprechen wir über Ihre Immobilie.",
+    "description": "Füllen Sie das Formular aus. Wir antworten innerhalb eines Werktags."
+  },
+  "property": {
+    "count": "{count, plural, =0 {keine Immobilien} one {# Immobilie} other {# Immobilien}}",
+    "summaryHeading": "Die Immobilie im Überblick",
+    "sqm": "Wohnfläche",
+    "bedrooms": "Schlafzimmer",
+    "bathrooms": "Badezimmer",
+    "guests": "Gäste",
+    "guestsUpTo": "Bis zu {count}",
+    "kitchen": "Küche",
+    "kitchenEquipped": "Ja, ausgestattet",
+    "kitchenNone": "—",
+    "location": "Lage",
+    "featuresHeading": "Ausstattung"
+  },
+  "propertyDetail": {
+    "sectionLabel": "Die Immobilie",
+    "heading": "Das erwartet Sie.",
+    "relatedLabel": "Weitere Immobilien in {location}",
+    "relatedHeading": "Auch interessant.",
+    "backToProperties": "Zurück zu den Immobilien"
+  },
+  "map": {
+    "consentMessage": "Akzeptieren Sie Cookies von Drittanbietern, um die Google-Maps-Karte anzuzeigen."
+  },
+  "locationTabs": {
+    "all": "Alle"
+  },
+  "homeLocations": {
+    "seeAll": "Alle Immobilien ansehen"
+  },
+  "whatsapp": {
+    "ariaLabel": "Schreiben Sie uns auf WhatsApp",
+    "message": "Hallo! Ich möchte gerne einen Termin vereinbaren."
+  },
+  "amenityList": {
+    "showLess": "Weniger anzeigen",
+    "showMore": "Mehr anzeigen (+{count})"
+  },
+  "amenities": {
+    "airConditioning": "Klimaanlage",
+    "balconyPrivate": "Privater Balkon",
+    "balconyShared": "Gemeinschaftsbalkon",
+    "bathtub": "Badewanne",
+    "bayView": "Blick auf die Bucht",
+    "bodySoap": "Duschgel",
+    "cityView": "Blick auf die Stadt",
+    "cleaningProducts": "Reinigungsmittel",
+    "conditioner": "Haarspülung",
+    "cotAvailable": "Kinderbett verfügbar",
+    "coveredParking": "Überdachter Stellplatz",
+    "courtyardView": "Blick auf den Innenhof",
+    "dedicatedWorkspace": "Eigener Arbeitsbereich",
+    "dryer": "Trockner",
+    "elevator": "Aufzug",
+    "fencedGarden": "Eingezäunter Garten",
+    "freeGarage": "Kostenlose Garage",
+    "freeParking": "Kostenloser Parkplatz",
+    "freeParkingOnPremises": "Kostenloser Parkplatz auf dem Grundstück",
+    "freeParkingOnStreet": "Kostenloser Parkplatz an der Straße",
+    "fridge": "Kühlschrank",
+    "gardenView": "Blick auf den Garten",
+    "hairDryer": "Föhn",
+    "kidsToys": "Spielsachen für Kinder",
+    "kitchen": "Küche",
+    "luggageDropOff": "Gepäckaufbewahrung",
+    "microwave": "Mikrowelle",
+    "mountainView": "Blick auf die Berge",
+    "panoramicViews": "Panoramablick",
+    "petsAllowed": "Haustiere erlaubt",
+    "poolView": "Blick auf den Pool",
+    "privatePool": "Privater Pool",
+    "seaView": "Meerblick",
+    "shampoo": "Shampoo",
+    "skiInSkiOut": "Ski-in/Ski-out",
+    "tv": "TV",
+    "washingMachine": "Waschmaschine",
+    "wifi": "WLAN",
+    "wifiFast": "Schnelles WLAN"
+  },
+  "legal": {
+    "lastUpdated": "Zuletzt aktualisiert: {date}",
+    "translationNotice": "Diese Seite ist eine Übersetzung zur Erleichterung des Verständnisses. Bei Abweichungen zwischen den Fassungen ist der italienische Text maßgeblich."
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "Die Immobilien",
+      "title": "Wohnungen, Villen und Chalets in ganz Italien",
+      "subtitle": "Durchstöbern Sie die Angebote nach Gebiet: Stadt, Berge, Meer. Jede Immobilie hat ihre eigene Geschichte und ihre eigene Größe."
+    },
+    "services": {
+      "eyebrow": "Wie wir arbeiten",
+      "title": "Unsere Leistungen",
+      "shortLets": {
+        "title": "Kurzzeitvermietung",
+        "desc": "Wir übernehmen den gesamten operativen Betrieb der Immobilie: Buchungen, Check-in, Reinigung, Instandhaltung und steuerliche Pflichten. Der Eigentümer widmet sich der Immobilie, wir uns allem Übrigen."
+      },
+      "restyling": {
+        "title": "Restyling der Innenräume",
+        "desc": "Wo es nötig ist, betreuen wir die Aufwertung der Immobilie, damit sie einladender wird – von kleinen Eingriffen bis zum vollständigen Restyling, gemeinsam mit Handwerkern und Fachleuten aus der Region."
+      },
+      "photos": {
+        "title": "Fotos und Inserate",
+        "desc": "Wir erstellen professionelle Fotografien und sorgfältige Texte und sorgen für Präsenz auf den passendsten Kanälen, mit beständiger Aufmerksamkeit und ohne Übertreibung."
+      }
+    },
+    "about": {
+      "eyebrow": "Über uns",
+      "title": "Immobilien mit Methode verwaltet. Zufriedene Kunden.",
+      "body": "Wir arbeiten mit einer begrenzten Zahl von Eigentümern, um jeder Immobilie wirklich Zeit widmen zu können. Wir setzen Werkzeuge und Automatisierungen ein, um das Erlebnis der Gäste zu verbessern, ohne auf eine aufmerksame und persönliche Betreuung zu verzichten."
+    },
+    "where": {
+      "eyebrow": "Wo wir sind",
+      "title": "Besuchen Sie uns oder schreiben Sie uns.",
+      "cta": "Termin vereinbaren",
+      "officeCaption": "Unser Büro"
+    },
+    "partners": {
+      "title": "In Zusammenarbeit mit"
+    },
+    "alt": {
+      "dolomiti": "Chalet in den Dolomiten",
+      "office": "Unser Büro in Verona"
+    }
+  },
+  "propertiesPage": {
+    "eyebrow": "Die Immobilien",
+    "title": "Die Immobilien, die wir betreuen.",
+    "empty": "In dieser Region kommen neue Immobilien hinzu."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "Über uns",
+      "title": "Ein Team,<br></br>jede Immobilie einzeln betreut.",
+      "body": "Ultralight Home ist 2021 entstanden. Seitdem verwalten wir Kurzzeitvermietungen für alle, die einen echten Ansprechpartner suchen und keine Agentur, die Sie wie eine Nummer behandelt."
+    },
+    "story": {
+      "eyebrow": "Wie wir angefangen haben",
+      "title": "Eine Immobilie in Sottomarina, dann alles Weitere.",
+      "body": "Angefangen haben wir mit einer Wohnung in Sottomarina, die saisonal vermietet wurde, und haben unseren Weg mit Beständigkeit und Leidenschaft fortgesetzt, bis hin zu den Chalets in den Dolomiten und den Villen an der Costa Smeralda."
+    },
+    "approach": {
+      "eyebrow": "Wie wir arbeiten",
+      "title": "Vier Schritte, eine Richtung.",
+      "items": {
+        "0": {
+          "title": "Kontakt",
+          "desc": "Jede Zusammenarbeit beginnt mit einem persönlichen Treffen mit dem Eigentümer: Nur wenn wir uns wirklich kennen, können wir eine belastbare Beziehung aufbauen und seine Bedürfnisse und Ziele tatsächlich verstehen."
+        },
+        "1": {
+          "title": "Bewertung der Immobilie",
+          "desc": "Anhand einer vergleichenden Analyse des lokalen Marktes bestimmen wir das tatsächliche Ertragspotenzial der Immobilie und die wirksamste Strategie, um es auszuschöpfen."
+        },
+        "2": {
+          "title": "Pflege",
+          "desc": "Wenn die Immobilie es verlangt, arbeiten wir mit Handwerksbetrieben und Innenarchitekten aus der Region zusammen, um jeden Raum bestmöglich zur Geltung zu bringen."
+        },
+        "3": {
+          "title": "Betrieb",
+          "desc": "Wir führen den gesamten operativen Betrieb der Immobilie eigenständig und stellen dem Eigentümer pünktlich einen vierteljährlichen Bericht über die erzielten Ergebnisse zu."
+        }
+      }
+    },
+    "discretion": {
+      "title": "Und dann ist da noch die Diskretion.",
+      "body": "Diskretion ist etwas, das über die reine Arbeit hinausgeht. Sie bedeutet, die Gäste aufmerksam auszuwählen, jede Immobilie sorgfältig zu betreuen und die Vertraulichkeit Ihrer Daten zu schützen."
+    },
+    "team": {
+      "eyebrow": "Das Team",
+      "title": "Die Menschen dahinter."
+    },
+    "roles": {
+      "founder": "Founder",
+      "salesManager": "Sales Manager",
+      "coFounder": "Co-Founder",
+      "propertyManager": "Property Manager",
+      "interiorDesigner": "Interior Designer",
+      "photographer": "Fotografin"
+    },
+    "alt": {
+      "costaSmeralda": "Villa an der Costa Smeralda"
+    }
+  },
+  "where": {
+    "eyebrow": "Standorte",
+    "title": "Büro im Herzen von Verona.",
+    "body": "Wir empfangen Sie nach Vereinbarung in unserem Büro im Zentrum. Vereinbaren Sie einen Termin, und wir sprechen persönlich über Ihre Immobilie.",
+    "infoTitle": "Besuchen Sie uns in Verona.",
+    "address": {
+      "label": "Adresse",
+      "value": "Lungadige Matteotti 14\n37126 Verona (VR), Italien"
+    },
+    "hours": {
+      "label": "Öffnungszeiten",
+      "value": "Mo – Fr · 9:30 – 18:30\nNur nach Vereinbarung"
+    },
+    "cta": "Wegbeschreibung",
+    "mapTitle": "Karte — Büro Ultralight Home, Verona"
+  },
+  "contactPage": {
+    "eyebrow": "Kontakt",
+    "title": "Beginnen wir ein Gespräch.",
+    "infoTitle": "Nehmen Sie Kontakt auf.",
+    "formTitle": "Schreiben Sie uns.",
+    "formIntro": "Füllen Sie das Formular aus. Wir antworten innerhalb eines Werktags.",
+    "emailLabel": "E-Mail",
+    "phoneLabel": "Telefon",
+    "instagramLabel": "Instagram"
+  },
+  "notFound": {
+    "eyebrow": "Seite nicht gefunden",
+    "title": "Diese Tür<br></br>lässt sich nicht öffnen.",
+    "body": "Die Immobilie oder die Seite, die Sie suchen, gibt es nicht, oder sie wurde verschoben. Kehren Sie zur Startseite zurück oder sehen Sie sich die Immobilien an, die wir betreuen."
+  },
+  "privacy": {
+    "eyebrow": "Datenschutz",
+    "title": "Datenschutzerklärung.",
+    "intro": "Diese Erklärung beschreibt, wie wir die über diese Website erhobenen personenbezogenen Daten verarbeiten, gemäß der Verordnung (EU) 2016/679 („DSGVO“) und dem geltenden italienischen Recht.",
+    "controller": {
+      "heading": "1. Verantwortlicher",
+      "body": "Verantwortlicher ist <strong>{owner}</strong>, MwSt.-Nr. <strong>{vat}</strong>, mit Sitz in <strong>{address}</strong>.",
+      "contact": "Für jede Anfrage zu Ihren Daten können Sie an <mail>{email}</mail> schreiben."
+    },
+    "collected": {
+      "heading": "2. Daten, die wir erheben",
+      "items": {
+        "0": "<strong>Daten aus dem Kontaktformular:</strong> Vor- und Nachname, E-Mail-Adresse und der Inhalt der Nachricht, die Sie uns senden.",
+        "1": "<strong>Nutzungsdaten:</strong> technische Daten, die von den Servern automatisch erhoben werden (z. B. IP-Adresse, Zugriffsprotokolle), für den Betrieb und die Sicherheit der Website."
+      }
+    },
+    "purposes": {
+      "heading": "3. Zwecke und Rechtsgrundlage",
+      "items": {
+        "0": "Beantwortung Ihrer Anfragen und Verwaltung der Kontakte — Rechtsgrundlage: Durchführung vorvertraglicher Maßnahmen und berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO).",
+        "1": "Gewährleistung der Sicherheit und des ordnungsgemäßen Betriebs der Website — berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).",
+        "2": "Erfüllung gesetzlicher Pflichten — Art. 6 Abs. 1 lit. c DSGVO."
+      }
+    },
+    "retention": {
+      "heading": "4. Speicherdauer",
+      "body": "Wir speichern die Daten aus dem Kontaktformular so lange, wie es für die genannten Zwecke erforderlich ist, in jedem Fall jedoch nicht länger als <strong>{retention}</strong> ab dem letzten Austausch mit Ihnen, vorbehaltlich anderer gesetzlicher Pflichten. Die technischen Protokolle des Servers werden vom Hosting-Anbieter für kürzere Zeiträume gespeichert."
+    },
+    "recipients": {
+      "heading": "5. Empfänger der Daten",
+      "intro": "Die Daten können von Dienstleistern verarbeitet werden, die uns bei der Erbringung des Dienstes unterstützen und gemäß Art. 28 DSGVO als Auftragsverarbeiter benannt sind. Wir verkaufen Ihre Daten nicht an Dritte. Derzeit werden folgende Dienstleister eingesetzt:",
+      "items": {
+        "0": "<strong>Cloudflare, Inc.</strong> — Hosting der Website und Schutz der Infrastruktur. Verarbeitet Nutzungsdaten (IP-Adresse, technische Protokolle). <link>Datenschutzerklärung</link>.",
+        "1": "<strong>Resend (Plus Five Five, Inc.)</strong> — Zustellung der über das Kontaktformular erzeugten E-Mails. Verarbeitet Name, E-Mail-Adresse und Inhalt der Nachricht. <link>Datenschutzerklärung</link>."
+      },
+      "transfers": "Beide Dienstleister haben ihren Sitz in den Vereinigten Staaten: Die Übermittlung erfolgt auf der Grundlage der von der Europäischen Kommission genehmigten Standardvertragsklauseln und, soweit anwendbar, der Zertifizierung nach dem EU-U.S. Data Privacy Framework.",
+      "maps": "Die Seite <where>Standorte</where> bindet eine Karte von <strong>Google Maps</strong> (Google Ireland Ltd.) ein, die nur nach Ihrer vorherigen Einwilligung geladen wird: In diesem Fall kann Google Daten verarbeiten, auch mit Übermittlung in die Vereinigten Staaten, unter Einhaltung der im DSGVO vorgesehenen Garantien. Weitere Informationen finden Sie in der <cookies>Cookie-Richtlinie</cookies>."
+    },
+    "rights": {
+      "heading": "6. Ihre Rechte",
+      "body": "Sie haben das Recht auf Auskunft über Ihre Daten (Auskunftsrecht), das Recht auf Berichtigung oder Löschung, das Recht auf Einschränkung der Verarbeitung sowie das Widerspruchsrecht gegen die Verarbeitung und das Recht auf Datenübertragbarkeit (Art. 15-22 DSGVO). Sie können diese Rechte ausüben, indem Sie an <mail>{email}</mail> schreiben.",
+      "complaint": "Sie haben außerdem das Recht, Beschwerde bei der italienischen Datenschutzbehörde, Garante per la protezione dei dati personali (<link>garanteprivacy.it</link>), einzulegen."
+    },
+    "cookies": {
+      "heading": "7. Cookies",
+      "body": "Die Verwendung von Cookies ist in unserer <cookies>Cookie-Richtlinie</cookies> beschrieben."
+    }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookies",
+    "title": "Cookie-Richtlinie.",
+    "intro": "Cookies sind kleine Textdateien, die Websites auf dem Gerät des Nutzers speichern. Sie können <strong>technisch</strong> sein (für den Betrieb erforderlich) oder der <strong>Profilbildung</strong> dienen (zur Nachverfolgung des Surfverhaltens).",
+    "technical": {
+      "heading": "1. Technische Cookies",
+      "body": "Für ihren Betrieb verwendet diese Website ausschließlich <strong>technische und notwendige Cookies</strong>. Wir setzen weder Cookies zur Profilbildung noch Analysetools für Marketingzwecke ein. Die Schriftarten werden direkt auf unserer Website gehostet und erfordern keine Anfragen an externe Server.",
+      "listIntro": "Die von dieser Website gesetzten technischen Cookies sind:",
+      "items": {
+        "0": "<strong>NEXT_LOCALE</strong> — speichert die von Ihnen gewählte Sprache der Website. Speicherdauer: {days} Tage. Kategorie: technisch/notwendig; keine Einwilligung erforderlich."
+      },
+      "storage": "Ihre Entscheidung über Cookies von Drittanbietern wird im <em>Local Storage</em> des Browsers gespeichert (Schlüssel <code>ulh-consent</code>): Sie bleibt auf Ihrem Gerät, wird nicht an unsere Server übermittelt und Sie können sie löschen, indem Sie die Website-Daten im Browser leeren."
+    },
+    "thirdParty": {
+      "heading": "2. Cookies von Drittanbietern — Google Maps",
+      "body": "Auf der Seite <where>Standorte</where> binden wir eine Karte von <strong>Google Maps</strong> ein. Dieser von Google Ireland Ltd. bereitgestellte Dienst kann Cookies von Drittanbietern setzen und Daten verarbeiten (einschließlich der IP-Adresse), mit möglichen Übermittlungen in die Vereinigten Staaten.",
+      "consent": "Die Karte wird <strong>nicht automatisch geladen</strong>: Stattdessen wird eine Vorschau angezeigt, und die Inhalte von Google — mit den zugehörigen Cookies — werden <strong>erst nach Ihrer ausdrücklichen Einwilligung</strong> aktiviert, die über das mit der Schaltfläche „Cookies verwalten“ aufrufbare Banner erteilt wird.",
+      "google": "Einzelheiten zur Verarbeitung durch Google finden Sie in der <link>Datenschutzerklärung von Google</link>."
+    },
+    "consent": {
+      "heading": "3. Verwaltung der Einwilligung",
+      "body": "Beim ersten Besuch erscheint ein Banner, mit dem Sie Cookies von Drittanbietern <strong>akzeptieren</strong> oder <strong>ablehnen</strong> können. Die Cookies von Google Maps werden nur gesetzt, wenn Sie Ihre Einwilligung erteilen. Sie können Ihre Entscheidung jederzeit über den Link <strong>„Cookies verwalten“</strong> im Fußbereich jeder Seite ändern."
+    },
+    "browser": {
+      "heading": "4. Cookies im Browser verwalten",
+      "body": "Sie können Cookies über die Einstellungen Ihres Browsers kontrollieren oder löschen. Die Deaktivierung technischer Cookies kann einige Funktionen der Website beeinträchtigen."
+    },
+    "updates": {
+      "heading": "5. Aktualisierungen",
+      "body": "Sollten wir neue Tools von Drittanbietern einführen, die nicht-technische Cookies verwenden, werden wir diese Cookie-Richtlinie aktualisieren. Bei Fragen: <mail>{email}</mail>."
+    }
+  },
+  "terms": {
+    "eyebrow": "Nutzungsbedingungen",
+    "title": "Allgemeine Nutzungsbedingungen.",
+    "subject": {
+      "heading": "1. Gegenstand",
+      "body": "Diese Website ist die Präsentationsseite von <strong>{owner}</strong>, MwSt.-Nr. <strong>{vat}</strong>, mit Sitz in {address}, und stellt die für Kurzaufenthalte verwalteten Immobilien vor. Die Nutzung der Website setzt die Annahme dieser Bedingungen voraus."
+    },
+    "bookings": {
+      "heading": "2. Buchungen",
+      "body": "Die Buchung der Immobilien erfolgt über die verlinkten Plattformen Dritter (z. B. Airbnb). Es gelten die Bedingungen, Konditionen und Stornierungsrichtlinien der jeweiligen Plattform. Die hier veröffentlichten Informationen (Verfügbarkeit, Preise, Ausstattung) dienen der Veranschaulichung und können sich ändern."
+    },
+    "intellectualProperty": {
+      "heading": "3. Geistiges Eigentum",
+      "body": "Texte, Bilder, Marken und Logos auf der Website sind Eigentum des Inhabers oder der jeweiligen Rechteinhaber und dürfen ohne Genehmigung nicht vervielfältigt werden."
+    },
+    "liability": {
+      "heading": "4. Haftungsbeschränkung",
+      "body": "Wir verpflichten uns, die Inhalte aktuell und richtig zu halten, garantieren jedoch weder die Fehlerfreiheit noch die ununterbrochene Verfügbarkeit der Website. Wir haften nicht für Schäden, die aus der Nutzung oder der Unmöglichkeit der Nutzung der Website oder der verlinkten Websites Dritter entstehen."
+    },
+    "law": {
+      "heading": "5. Anwendbares Recht und Gerichtsstand",
+      "body": "Diese Bedingungen unterliegen italienischem Recht. Für jede Streitigkeit ist das Gericht von <strong>{court}</strong> zuständig, vorbehaltlich der zwingenden Vorschriften zum Schutz der Verbraucher."
+    },
+    "contact": {
+      "heading": "6. Kontakt",
+      "body": "Für Fragen zu diesen Bedingungen: <mail>{email}</mail>."
+    }
+  },
+  "meta": {
+    "siteTagline": "Gepflegte Immobilien, gut verwaltet",
+    "description": "Ausgewählte Ferienwohnungen für kurze Aufenthalte: Kronplatz und Dolomiten, Verona, Costa Smeralda, Rom und mehr. Gepflegt, gut verwaltet, sofort buchbar.",
+    "keywords": "Ferienwohnung Kronplatz, Ferienwohnung Bruneck, Ferienwohnung Olang, Unterkunft Pustertal, Ferienwohnung Dolomiten, Ferienwohnung Südtirol, Ferienhaus Verona, Ferienwohnung Rom, Villa Costa Smeralda, Ferienwohnung Italien",
+    "ogAlt": "Ultralight Home — Gepflegte Immobilien, gut verwaltet",
+    "ogLine1": "Gepflegte Immobilien,",
+    "ogLine2": "gut verwaltet.",
+    "ogPlaces": "Dolomiten · Verona · Costa Smeralda · Rom",
+    "home": {
+      "title": "Ferienwohnungen und Ferienhäuser in Italien",
+      "description": "Gepflegte Immobilien für ein paar Tage: Kronplatz und Dolomiten, Verona, Costa Smeralda, Rom und mehr. Auswahl, Verwaltung und Gastfreundschaft mit derselben Sorgfalt."
+    },
+    "properties": {
+      "title": "Ferienwohnungen zur Kurzzeitmiete: Dolomiten, Verona, Costa Smeralda",
+      "description": "Alle unsere Immobilien für kurze Aufenthalte, nach Region geordnet: Kronplatz und Dolomiten, Verona, Costa Smeralda und weitere italienische Städte."
+    },
+    "property": {
+      "title": "{name}, Ferienwohnung in {location}",
+      "ogAlt": "{name} — Ultralight Home"
+    },
+    "about": {
+      "title": "Über uns: Kurzzeitvermietung seit 2021",
+      "description": "Ultralight Home verwaltet seit 2021 Kurzzeitvermietungen in Italien: wenige Immobilien, sorgfältig ausgewählt und in jedem Detail betreut. Unser Ansatz und unser Team."
+    },
+    "where": {
+      "title": "Wo Sie uns finden: Büro in Verona",
+      "description": "Unser Büro in Verona. Besuchen Sie uns oder vereinbaren Sie einen Termin: Lungadige Matteotti 14, 37126 Verona."
+    },
+    "contact": {
+      "title": "Kontakt: sprechen Sie mit uns",
+      "description": "Schreiben Sie uns, wenn Sie eine Immobilie mieten oder uns die Verwaltung Ihrer Immobilie anvertrauen möchten: E-Mail, Telefon, WhatsApp. Wir antworten noch am selben Tag."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Informationen zur Verarbeitung personenbezogener Daten durch Ultralight Home gemäß Verordnung (EU) 2016/679 (DSGVO)."
+    },
+    "cookiePolicy": {
+      "title": "Cookie-Richtlinie",
+      "description": "Cookie-Hinweis von Ultralight Home: ausschließlich technisch notwendige Cookies, keine Profilbildung."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "description": "Nutzungsbedingungen für die Website von Ultralight Home."
+    },
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "description": "Die aufgerufene Adresse entspricht keiner Seite dieser Website."
+    }
+  }
+}

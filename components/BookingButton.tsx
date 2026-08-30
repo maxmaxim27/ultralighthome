@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, X } from "lucide-react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useMounted } from "@/lib/use-mounted";
 
 type Props = {
@@ -22,6 +23,7 @@ export default function BookingButton({
   comingSoon = false,
   size = "hero",
 }: Props) {
+  const t = useTranslations("booking");
   const [open, setOpen] = useState(false);
   const mounted = useMounted();
 
@@ -46,7 +48,7 @@ export default function BookingButton({
         ? "mt-6 inline-flex w-full items-center justify-center rounded-full border border-stone/15 bg-stone/10 text-stone px-6 py-3.5 text-xs tracking-[0.12em] uppercase"
         : "mt-6 inline-flex items-center rounded-full border border-stone/15 bg-stone/10 text-stone px-7 py-4 text-sm tracking-[0.08em] uppercase";
 
-    return <span className={badgeClass}>Disponibile a breve</span>;
+    return <span className={badgeClass}>{t("comingSoon")}</span>;
   }
 
   // No alternative platforms → link straight to Airbnb.
@@ -59,7 +61,7 @@ export default function BookingButton({
         onClick={(e) => e.stopPropagation()}
         className={baseClass}
       >
-        Prenota
+        {t("cta")}
         <ArrowUpRight size={size === "card" ? 15 : 16} />
       </a>
     );
@@ -87,27 +89,26 @@ export default function BookingButton({
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               role="dialog"
               aria-modal="true"
-              aria-label="Scegli la piattaforma di prenotazione"
+              aria-label={t("dialogAriaLabel")}
               className="pointer-events-auto relative w-full max-w-lg bg-white rounded-3xl p-8 md:p-10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.35)] text-left"
             >
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 className="absolute top-5 right-5 size-8 rounded-full flex items-center justify-center text-stone hover:bg-stone/10 transition-colors"
-                aria-label="Chiudi"
+                aria-label={t("close")}
               >
                 <X size={16} />
               </button>
 
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
-                Scegli la piattaforma
+                {t("choosePlatform")}
               </p>
               <h2 className="font-display mt-3 text-2xl md:text-3xl font-light leading-tight tracking-[-0.01em]">
-                Come vuoi prenotare?
+                {t("title")}
               </h2>
               <p className="mt-4 text-sm text-stone leading-relaxed">
-                Scegli dove completare la prenotazione: il prezzo finale cambia
-                in base alle commissioni di ciascuna piattaforma.
+                {t("description")}
               </p>
 
               <div className="mt-8 grid grid-cols-1 gap-4">
@@ -129,14 +130,13 @@ export default function BookingButton({
                     />
                     <div className="flex-1 text-left">
                       <p className="flex flex-col-reverse md:flex-row font-display text-lg font-light tracking-[-0.01em] md:items-center gap-2">
-                        Prenota su Vikey
+                        {t("vikeyTitle")}
                         <span className="text-[10px] tracking-[0.15em] uppercase bg-white/20 rounded-full px-2 py-0.5 w-fit">
-                          Consigliato
+                          {t("vikeyRecommended")}
                         </span>
                       </p>
                       <p className="mt-1 text-sm text-cream/80 leading-relaxed">
-                        Piattaforma sicura e certificata, con le commissioni più
-                        basse.
+                        {t("vikeyDescription")}
                       </p>
                     </div>
                     <ArrowUpRight
@@ -163,10 +163,10 @@ export default function BookingButton({
                   />
                   <div className="flex-1 text-left">
                     <p className="font-display text-lg font-light tracking-[-0.01em] text-ink">
-                      Prenota su Airbnb
+                      {t("airbnbTitle")}
                     </p>
                     <p className="mt-1 text-sm text-stone leading-relaxed">
-                      Il nostro partner principale, con commissioni moderate.
+                      {t("airbnbDescription")}
                     </p>
                   </div>
                   <ArrowUpRight
@@ -193,10 +193,10 @@ export default function BookingButton({
                     />
                     <div className="flex-1 text-left">
                       <p className="font-display text-lg font-light tracking-[-0.01em] text-ink">
-                        Prenota su Booking
+                        {t("bookingComTitle")}
                       </p>
                       <p className="mt-1 text-sm text-stone leading-relaxed">
-                        Piattaforma internazionale, con commissioni più elevate.
+                        {t("bookingComDescription")}
                       </p>
                     </div>
                     <ArrowUpRight
@@ -223,7 +223,7 @@ export default function BookingButton({
         }}
         className={baseClass}
       >
-        Prenota
+        {t("cta")}
         <ArrowUpRight size={size === "card" ? 15 : 16} />
       </button>
       {mounted && createPortal(overlay, document.body)}

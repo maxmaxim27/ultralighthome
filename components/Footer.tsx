@@ -1,19 +1,25 @@
-import Link from "next/link";
 import Image from "next/image";
+import { getTranslations, getLocale } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 import CookiePreferencesButton from "./CookiePreferencesButton";
 import { LEGAL } from "@/lib/site";
+import { locationGroups } from "@/lib/locations";
+import { pick } from "@/lib/i18n-content";
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations("footer");
+  const tNav = await getTranslations("nav");
+  const locale = await getLocale();
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink text-cream">
       <div className="mx-auto max-w-[1400px] px-6 md:px-10 py-20">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="md:col-span-2 flex items-center justify-center">
-            <Link href="/" className="inline-block" aria-label="UltraLightHome">
+            <Link href="/" className="inline-block" aria-label="Ultralight Home">
               <Image
                 src="/logo.png"
-                alt="UltraLightHome"
+                alt="Ultralight Home"
                 width={1972}
                 height={1674}
                 className="h-28 md:h-48 w-auto brightness-0 invert opacity-90"
@@ -23,45 +29,32 @@ export default function Footer() {
 
           <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">
-              Naviga
+              {t("navHeading")}
             </p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li>
-                <Link href="/immobili#dolomiti" className="link-underline">
-                  Dolomiti
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/immobili#costa-smeralda"
-                  className="link-underline"
-                >
-                  Costa Smeralda
-                </Link>
-              </li>
-              <li>
-                <Link href="/immobili#verona" className="link-underline">
-                  Verona
-                </Link>
-              </li>
-              <li>
-                <Link href="/immobili#altro" className="link-underline">
-                  Altro
-                </Link>
-              </li>
+              {locationGroups.map((g) => (
+                <li key={g.key}>
+                  <Link
+                    href={{ pathname: "/immobili", hash: g.key }}
+                    className="link-underline"
+                  >
+                    {pick(g.label, locale)}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link href="/chi-siamo" className="link-underline">
-                  Chi siamo
+                  {tNav("about")}
                 </Link>
               </li>
               <li>
                 <Link href="/dove-siamo" className="link-underline">
-                  Dove siamo
+                  {tNav("locations")}
                 </Link>
               </li>
               <li>
                 <Link href="/contatti" className="link-underline">
-                  Contatti
+                  {tNav("contact")}
                 </Link>
               </li>
             </ul>
@@ -69,7 +62,7 @@ export default function Footer() {
 
           <div className="text-center md:text-left">
             <p className="text-xs tracking-[0.2em] uppercase text-cream/50">
-              Contatti
+              {tNav("contact")}
             </p>
             <ul className="mt-5 space-y-3 text-sm text-cream/80">
               <li>Lungadige Matteotti 14, 37126 Verona</li>
@@ -92,19 +85,19 @@ export default function Footer() {
 
         <div className="mt-16 pt-8 border-t border-cream/15 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 text-xs text-cream/50">
           <p className="text-center md:text-left">
-            © {year} Ultralight Home. Tutti i diritti riservati.
+            {t("copyright", { year })}
             <br />
-            P.IVA {LEGAL.vat}
+            {t("vatLabel", { vat: LEGAL.vat })}
           </p>
           <div className="flex gap-6">
             <Link href="/privacy" className="link-underline">
-              Privacy
+              {t("privacyLink")}
             </Link>
             <Link href="/termini" className="link-underline">
-              Termini
+              {t("termsLink")}
             </Link>
             <Link href="/cookie" className="link-underline">
-              Cookie
+              {t("cookieLink")}
             </Link>
             <CookiePreferencesButton />
           </div>

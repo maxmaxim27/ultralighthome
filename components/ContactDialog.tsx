@@ -5,6 +5,7 @@ import { createPortal } from "react-dom";
 import { useMounted } from "@/lib/use-mounted";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
+import { useTranslations } from "next-intl";
 import ContactForm from "@/components/ContactForm";
 
 type Props = {
@@ -12,6 +13,8 @@ type Props = {
 };
 
 export default function ContactDialog({ trigger }: Props) {
+  const t = useTranslations("contactDialog");
+  const tNav = useTranslations("nav");
   const [open, setOpen] = useState(false);
   const mounted = useMounted();
 
@@ -44,26 +47,26 @@ export default function ContactDialog({ trigger }: Props) {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
               role="dialog"
               aria-modal="true"
-              aria-label="Valuta il tuo immobile"
+              aria-label={t("ariaLabel")}
               className="pointer-events-auto relative w-full max-w-xl bg-white rounded-3xl p-8 md:p-10 shadow-[0_32px_80px_-20px_rgba(0,0,0,0.35)] text-left overflow-y-auto max-h-[90vh]"
             >
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 className="absolute top-5 right-5 size-8 rounded-full flex items-center justify-center text-stone hover:bg-stone/10 transition-colors"
-                aria-label="Chiudi"
+                aria-label={t("close")}
               >
                 <X size={16} />
               </button>
 
               <p className="text-xs tracking-[0.2em] uppercase text-stone">
-                Valuta immobile
+                {tNav("evaluate")}
               </p>
               <h2 className="font-display mt-3 text-2xl md:text-3xl font-light leading-tight tracking-[-0.01em]">
-                Parliamo del tuo immobile.
+                {t("title")}
               </h2>
               <p className="mt-3 text-sm text-stone leading-relaxed">
-                Compila il modulo. Risponderemo entro un giorno lavorativo.
+                {t("description")}
               </p>
 
               <div className="mt-6">

@@ -1,6 +1,10 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
 import clsx from "clsx";
-import type { ReactNode, ComponentPropsWithoutRef } from "react";
+import type {
+  ReactNode,
+  ComponentPropsWithoutRef,
+  AnchorHTMLAttributes,
+} from "react";
 
 type Variant = "primary" | "outline" | "ghost";
 
@@ -22,8 +26,8 @@ const variants: Record<Variant, string> = {
 };
 
 type LinkBtnProps = CommonProps &
-  Omit<ComponentPropsWithoutRef<typeof Link>, "className" | "children"> & {
-    href: string;
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "className" | "children" | "href"> & {
+    href: ComponentPropsWithoutRef<typeof Link>["href"] | string;
   };
 
 type BtnProps = CommonProps &
@@ -33,10 +37,31 @@ export function ButtonLink({
   variant = "primary",
   className,
   children,
+  href,
   ...rest
 }: LinkBtnProps) {
+  // Gli href esterni non passano dal Link localizzato: non hanno una
+  // controparte nella mappa degli slug.
+  const isExternal = typeof href === "string" && /^(https?:|mailto:|tel:)/.test(href);
+
+  if (isExternal) {
+    return (
+      <a
+        href={href as string}
+        className={clsx(base, variants[variant], className)}
+        {...rest}
+      >
+        {children}
+      </a>
+    );
+  }
+
   return (
-    <Link className={clsx(base, variants[variant], className)} {...rest}>
+    <Link
+      href={href as ComponentPropsWithoutRef<typeof Link>["href"]}
+      className={clsx(base, variants[variant], className)}
+      {...rest}
+    >
       {children}
     </Link>
   );

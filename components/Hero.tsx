@@ -3,8 +3,10 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import { useEffect, useRef } from "react";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
+  const t = useTranslations("hero");
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -70,7 +72,7 @@ export default function Hero() {
         transition={{ duration: 1, delay: 1.8 }}
         className="absolute bottom-8 left-4 md:left-10 z-10 flex items-center gap-3 text-xs tracking-[0.2em] uppercase text-cream/70"
       >
-        Scroll
+        {t("scroll")}
         <ArrowDown size={14} className="animate-pulse" />
       </motion.div>
     </section>

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { routing } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 
 export default function manifest(): MetadataRoute.Manifest {
@@ -6,6 +7,10 @@ export default function manifest(): MetadataRoute.Manifest {
     name: SITE.name,
     short_name: SITE.name,
     description: SITE.description,
+    // Il manifest è servito a livello di dominio, senza locale: resta nella
+    // lingua di default, dichiarata qui esplicitamente perché un manifest
+    // senza `lang` viene interpretato dal browser come inglese.
+    lang: routing.defaultLocale,
     start_url: "/",
     display: "standalone",
     background_color: "#F5F1EA",

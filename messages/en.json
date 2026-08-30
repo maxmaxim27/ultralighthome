@@ -1,0 +1,465 @@
+{
+  "language": {
+    "label": "Language",
+    "it": "Italiano",
+    "en": "English",
+    "de": "Deutsch"
+  },
+  "nav": {
+    "properties": "Properties",
+    "about": "About",
+    "locations": "Locations",
+    "contact": "Contact",
+    "evaluate": "Value my property",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "common": {
+    "discoverMore": "Find out more",
+    "backHome": "Back to home",
+    "seeProperties": "See our properties",
+    "newTab": "(opens in a new tab)"
+  },
+  "contactForm": {
+    "honeypotLabel": "Do not fill in this field",
+    "nameLabel": "Full name",
+    "emailLabel": "Email",
+    "requestTypeLabel": "Type of enquiry",
+    "requestTypeOwner": "I am an owner",
+    "requestTypeGuest": "I am a guest",
+    "requestTypePartner": "I would like to work with you",
+    "messageLabel": "Message",
+    "sending": "Sending…",
+    "submit": "Send enquiry",
+    "privacyNotice": "By submitting the form you confirm you have read the <link>privacy notice</link>. We use your details only to respond to your enquiry.",
+    "errorTooFast": "Sent too quickly. Please wait a moment and try again.",
+    "errorRateLimited": "You have sent too many requests. Please try again in a few minutes.",
+    "errorGeneric": "Sending failed. Please try again or write to us at info@ultralighthome.it.",
+    "successTitle": "Thank you. We have received your enquiry.",
+    "successBody": "We will reply within one working day at the address you provided."
+  },
+  "booking": {
+    "cta": "Book",
+    "comingSoon": "Available soon",
+    "close": "Close",
+    "dialogAriaLabel": "Choose your booking platform",
+    "choosePlatform": "Choose a platform",
+    "title": "How would you like to book?",
+    "description": "Choose where to complete your booking: the final price varies with each platform's fees.",
+    "vikeyTitle": "Book on Vikey",
+    "vikeyRecommended": "Recommended",
+    "vikeyDescription": "A secure, certified platform with the lowest fees.",
+    "airbnbTitle": "Book on Airbnb",
+    "airbnbDescription": "Our main partner, with moderate fees.",
+    "bookingComTitle": "Book on Booking",
+    "bookingComDescription": "An international platform, with higher fees."
+  },
+  "gallery": {
+    "viewAll": "{count, plural, one {See the photo (#)} other {See all photos (#)}}",
+    "photoCount": "{count, plural, one {# photo} other {# photos}}",
+    "close": "Close",
+    "previous": "Previous",
+    "next": "Next"
+  },
+  "carousel": {
+    "empty": "New properties are coming to this destination.",
+    "previous": "Previous",
+    "next": "Next",
+    "goTo": "Go to property {index}"
+  },
+  "footer": {
+    "navHeading": "Explore",
+    "copyright": "© {year} Ultralight Home. All rights reserved.",
+    "vatLabel": "VAT No. {vat}",
+    "privacyLink": "Privacy",
+    "termsLink": "Terms",
+    "cookieLink": "Cookies"
+  },
+  "cookie": {
+    "dialogAriaLabel": "Cookie preferences",
+    "label": "Cookies",
+    "banner": "We use essential cookies to run the site and, only with your consent, third-party cookies. You can accept or decline. Details in the <link>Cookie Policy</link>.",
+    "accept": "Accept",
+    "reject": "Decline",
+    "managePreferences": "Manage cookies"
+  },
+  "hero": {
+    "scroll": "Scroll"
+  },
+  "contactDialog": {
+    "ariaLabel": "Value my property",
+    "close": "Close",
+    "title": "Let's talk about your property.",
+    "description": "Fill in the form. We will reply within one working day."
+  },
+  "property": {
+    "count": "{count, plural, =0 {no properties} one {# property} other {# properties}}",
+    "summaryHeading": "The property at a glance",
+    "sqm": "Floor area",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "guests": "Guests",
+    "guestsUpTo": "Up to {count}",
+    "kitchen": "Kitchen",
+    "kitchenEquipped": "Yes, equipped",
+    "kitchenNone": "—",
+    "location": "Location",
+    "featuresHeading": "Features"
+  },
+  "propertyDetail": {
+    "sectionLabel": "The property",
+    "heading": "What to expect.",
+    "relatedLabel": "More properties in {location}",
+    "relatedHeading": "You may also like.",
+    "backToProperties": "Back to the properties"
+  },
+  "map": {
+    "consentMessage": "Accept third-party cookies to view the Google Maps map."
+  },
+  "locationTabs": {
+    "all": "All"
+  },
+  "homeLocations": {
+    "seeAll": "See all properties"
+  },
+  "whatsapp": {
+    "ariaLabel": "Message us on WhatsApp",
+    "message": "Hello! I would like to arrange an appointment."
+  },
+  "amenityList": {
+    "showLess": "Show less",
+    "showMore": "Show more (+{count})"
+  },
+  "amenities": {
+    "airConditioning": "Air conditioning",
+    "balconyPrivate": "Private balcony",
+    "balconyShared": "Shared balcony",
+    "bathtub": "Bathtub",
+    "bayView": "Bay view",
+    "bodySoap": "Body soap",
+    "cityView": "City skyline view",
+    "cleaningProducts": "Cleaning products",
+    "conditioner": "Conditioner",
+    "cotAvailable": "Cot available",
+    "coveredParking": "Covered parking space",
+    "courtyardView": "Courtyard view",
+    "dedicatedWorkspace": "Dedicated workspace",
+    "dryer": "Tumble dryer",
+    "elevator": "Lift",
+    "fencedGarden": "Fenced garden",
+    "freeGarage": "Free garage",
+    "freeParking": "Free parking",
+    "freeParkingOnPremises": "Free parking on the premises",
+    "freeParkingOnStreet": "Free on-street parking",
+    "fridge": "Fridge",
+    "gardenView": "Garden view",
+    "hairDryer": "Hairdryer",
+    "kidsToys": "Children's toys",
+    "kitchen": "Kitchen",
+    "luggageDropOff": "Luggage drop-off",
+    "microwave": "Microwave",
+    "mountainView": "Mountain view",
+    "panoramicViews": "Panoramic views",
+    "petsAllowed": "Pets allowed",
+    "poolView": "Pool view",
+    "privatePool": "Private pool",
+    "seaView": "Sea view",
+    "shampoo": "Shampoo",
+    "skiInSkiOut": "Ski-in/ski-out",
+    "tv": "TV",
+    "washingMachine": "Washing machine",
+    "wifi": "Wifi",
+    "wifiFast": "Fast wifi"
+  },
+  "legal": {
+    "lastUpdated": "Last updated: {date}",
+    "translationNotice": "This page is a translation provided for convenience. In the event of any discrepancy between versions, the Italian text prevails."
+  },
+  "home": {
+    "portfolio": {
+      "eyebrow": "The properties",
+      "title": "Apartments, villas and chalets across Italy",
+      "subtitle": "Browse by area: city, mountains, sea. Every property has its own story and its own scale."
+    },
+    "services": {
+      "eyebrow": "How we work",
+      "title": "Our services",
+      "shortLets": {
+        "title": "Short lets",
+        "desc": "We handle every operational aspect of the property: bookings, check-ins, cleaning, maintenance and tax obligations. The owner attends to the property, we to everything else."
+      },
+      "restyling": {
+        "title": "Interior restyling",
+        "desc": "Where needed, we oversee the refurbishment of the property to make it more welcoming, from small improvements to complete restyling, working with local craftspeople and professionals."
+      },
+      "photos": {
+        "title": "Photography and listings",
+        "desc": "We produce professional photography and carefully written copy, and make sure the property is present on the most suitable channels, with constant attention and without excess."
+      }
+    },
+    "about": {
+      "eyebrow": "About us",
+      "title": "Methodical management. Satisfied clients.",
+      "body": "We work with a limited number of owners so that we can give real time to every property. We use tools and automation to improve the guest experience, without giving up attentive, personal management."
+    },
+    "where": {
+      "eyebrow": "Where we are",
+      "title": "Come and see us, or write to us.",
+      "cta": "Arrange an appointment",
+      "officeCaption": "Our office"
+    },
+    "partners": {
+      "title": "In partnership with"
+    },
+    "alt": {
+      "dolomiti": "Chalet in the Dolomites",
+      "office": "Our office in Verona"
+    }
+  },
+  "propertiesPage": {
+    "eyebrow": "The properties",
+    "title": "The properties we look after.",
+    "empty": "New properties are coming to this area."
+  },
+  "about": {
+    "hero": {
+      "eyebrow": "About us",
+      "title": "One team,<br></br>properties looked after one by one.",
+      "body": "Ultralight Home was founded in 2021. Since then we have managed short lets for owners who want someone real to deal with, not an agency that treats you like a number."
+    },
+    "story": {
+      "eyebrow": "How we started",
+      "title": "One property in Sottomarina, then everything else.",
+      "body": "We began with an apartment in Sottomarina let out seasonally, building our way forward steadily and with real passion until we reached the chalets in the Dolomites and villas on the Costa Smeralda."
+    },
+    "approach": {
+      "eyebrow": "How we work",
+      "title": "Four steps, one direction.",
+      "items": {
+        "0": {
+          "title": "Contact",
+          "desc": "Every collaboration begins with meeting the owner in person: only by knowing one another properly can we build a solid relationship and truly understand their needs and their goals."
+        },
+        "1": {
+          "title": "Property valuation",
+          "desc": "Through a comparative analysis of the local market we establish the property's real income potential and the most effective strategy to maximise it."
+        },
+        "2": {
+          "title": "Care",
+          "desc": "We turn to local craftspeople and interior design professionals whenever the property calls for it, to make the most of every room."
+        },
+        "3": {
+          "title": "Operations",
+          "desc": "We handle every operational aspect of the property with complete autonomy, giving the owner a quarterly report on the results, on time."
+        }
+      }
+    },
+    "discretion": {
+      "title": "And then there is discretion.",
+      "body": "Discretion is something that goes beyond the work itself. It means choosing guests carefully, managing every property with care and protecting the confidentiality of your data."
+    },
+    "team": {
+      "eyebrow": "The team",
+      "title": "The people behind it all."
+    },
+    "roles": {
+      "founder": "Founder",
+      "salesManager": "Sales Manager",
+      "coFounder": "Co-Founder",
+      "propertyManager": "Property Manager",
+      "interiorDesigner": "Interior Designer",
+      "photographer": "Photographer"
+    },
+    "alt": {
+      "costaSmeralda": "Villa on the Costa Smeralda"
+    }
+  },
+  "where": {
+    "eyebrow": "Where we are",
+    "title": "An office in the heart of Verona.",
+    "body": "We receive visitors by appointment at our office in the centre. Arrange an appointment and let's talk about your property in person.",
+    "infoTitle": "Come and see us in Verona.",
+    "address": {
+      "label": "Address",
+      "value": "Lungadige Matteotti 14\n37126 Verona (VR), Italy"
+    },
+    "hours": {
+      "label": "Opening hours",
+      "value": "Mon – Fri · 9:30 – 18:30\nBy appointment only"
+    },
+    "cta": "Directions",
+    "mapTitle": "Map — Ultralight Home office, Verona"
+  },
+  "contactPage": {
+    "eyebrow": "Contact",
+    "title": "Let's start a conversation.",
+    "infoTitle": "Get in touch.",
+    "formTitle": "Write to us.",
+    "formIntro": "Fill in the form. We will reply within one working day.",
+    "emailLabel": "Email",
+    "phoneLabel": "Phone",
+    "instagramLabel": "Instagram"
+  },
+  "notFound": {
+    "eyebrow": "Page not found",
+    "title": "This door<br></br>does not open.",
+    "body": "The property or the page you are looking for does not exist, or it has been moved. Go back to the home page or browse the properties we look after."
+  },
+  "privacy": {
+    "eyebrow": "Privacy",
+    "title": "Privacy policy.",
+    "intro": "This notice describes how we process the personal data collected through this website, pursuant to Regulation (EU) 2016/679 (“GDPR”) and to the applicable Italian legislation.",
+    "controller": {
+      "heading": "1. Data controller",
+      "body": "The data controller is <strong>{owner}</strong>, VAT No. <strong>{vat}</strong>, with registered office at <strong>{address}</strong>.",
+      "contact": "For any request concerning your data you can write to <mail>{email}</mail>."
+    },
+    "collected": {
+      "heading": "2. Data we collect",
+      "items": {
+        "0": "<strong>Contact form data:</strong> first and last name, email address and the content of the message you send us.",
+        "1": "<strong>Browsing data:</strong> technical data collected automatically by the servers (e.g. IP address, access logs) for the operation and the security of the site."
+      }
+    },
+    "purposes": {
+      "heading": "3. Purposes and legal basis",
+      "items": {
+        "0": "Replying to your requests and managing enquiries — legal basis: performance of pre-contractual measures and legitimate interest (art. 6(1)(b) and (f) GDPR).",
+        "1": "Ensuring the security and the correct operation of the site — legitimate interest (art. 6(1)(f) GDPR).",
+        "2": "Complying with legal obligations — art. 6(1)(c) GDPR."
+      }
+    },
+    "retention": {
+      "heading": "4. Data retention",
+      "body": "We retain contact form data for as long as necessary for the purposes indicated and in any case for no longer than <strong>{retention}</strong> from our last exchange with you, save for different legal obligations. The technical server logs are retained by the hosting provider for shorter periods."
+    },
+    "recipients": {
+      "heading": "5. Data recipients",
+      "intro": "The data may be processed by suppliers who support us in providing the service, appointed as data processors pursuant to art. 28 GDPR. We do not sell your data to third parties. The suppliers currently used are:",
+      "items": {
+        "0": "<strong>Cloudflare, Inc.</strong> — site hosting and infrastructure protection. Processes browsing data (IP address, technical logs). <link>Privacy policy</link>.",
+        "1": "<strong>Resend (Plus Five Five, Inc.)</strong> — delivery of the emails generated by the contact form. Processes name, email address and message content. <link>Privacy policy</link>."
+      },
+      "transfers": "Both suppliers are based in the United States: the transfer takes place on the basis of the Standard Contractual Clauses approved by the European Commission and, where applicable, of the EU-U.S. Data Privacy Framework certification.",
+      "maps": "The <where>Locations</where> page embeds a <strong>Google Maps</strong> map (Google Ireland Ltd.), loaded only with your prior consent: in that case Google may process data, including transfers to the United States, in compliance with the safeguards provided for by the GDPR. Further information in the <cookies>Cookie Policy</cookies>."
+    },
+    "rights": {
+      "heading": "6. Your rights",
+      "body": "You have the right of access to your data, to request its rectification or erasure, to restrict or object to the processing, and the right to data portability (arts. 15-22 GDPR). You can exercise these rights by writing to <mail>{email}</mail>.",
+      "complaint": "You also have the right to lodge a complaint with the Italian Data Protection Authority, Garante per la protezione dei dati personali (<link>garanteprivacy.it</link>)."
+    },
+    "cookies": {
+      "heading": "7. Cookies",
+      "body": "The use of cookies is described in our <cookies>Cookie Policy</cookies>."
+    }
+  },
+  "cookiePolicy": {
+    "eyebrow": "Cookies",
+    "title": "Cookie policy.",
+    "intro": "Cookies are small text files that websites save on the user's device. They can be <strong>technical</strong> (necessary for the site to work) or <strong>profiling</strong> cookies (to track browsing habits).",
+    "technical": {
+      "heading": "1. Technical cookies",
+      "body": "For its own operation this site uses exclusively <strong>technical and necessary cookies</strong>. We do not use profiling cookies or statistical analysis tools for marketing purposes. The fonts are hosted directly on our site and involve no requests to external servers.",
+      "listIntro": "The technical cookies set by this site are:",
+      "items": {
+        "0": "<strong>NEXT_LOCALE</strong> — remembers the language you chose for the site. Duration: {days} days. Category: technical/necessary; no consent required."
+      },
+      "storage": "Your choice about third-party cookies is saved in the browser's <em>local storage</em> (key <code>ulh-consent</code>): it stays on your device, it is not transmitted to our servers and you can delete it by clearing the site data from your browser."
+    },
+    "thirdParty": {
+      "heading": "2. Third-party cookies — Google Maps",
+      "body": "On the <where>Locations</where> page we embed a <strong>Google Maps</strong> map. This service, provided by Google Ireland Ltd., may install third-party cookies and process data (including the IP address), with possible transfers to the United States.",
+      "consent": "The map <strong>is not loaded automatically</strong>: a preview is shown instead, and Google's content — with the related cookies — is activated <strong>only after your explicit consent</strong>, given through the banner that can be recalled from the “Manage cookies” button.",
+      "google": "For details on the processing carried out by Google, see <link>Google's privacy policy</link>."
+    },
+    "consent": {
+      "heading": "3. Managing consent",
+      "body": "On your first visit a banner appears that lets you <strong>accept</strong> or <strong>decline</strong> third-party cookies. Google Maps cookies are installed only if you give your consent. You can change your choice at any time through the <strong>“Manage cookies”</strong> link in the footer of every page."
+    },
+    "browser": {
+      "heading": "4. How to manage cookies in your browser",
+      "body": "You can control or delete cookies through your browser settings. Disabling technical cookies may impair some functions of the site."
+    },
+    "updates": {
+      "heading": "5. Updates",
+      "body": "Should we introduce new third-party tools that use non-technical cookies, we will update this notice. For questions: <mail>{email}</mail>."
+    }
+  },
+  "terms": {
+    "eyebrow": "Terms",
+    "title": "Terms and conditions.",
+    "subject": {
+      "heading": "1. Subject",
+      "body": "This site showcases the properties managed for short stays by <strong>{owner}</strong>, VAT No. <strong>{vat}</strong>, with registered office at {address}. Browsing the site implies acceptance of these terms."
+    },
+    "bookings": {
+      "heading": "2. Bookings",
+      "body": "Property bookings take place through the linked third-party platforms (e.g. Airbnb). The terms, conditions and cancellation policies of the relevant platform apply. The information published here (availability, prices, features) is for illustrative purposes and may change."
+    },
+    "intellectualProperty": {
+      "heading": "3. Intellectual property",
+      "body": "Texts, images, trade marks and logos on the site are the property of the owner or of the respective right holders and may not be reproduced without authorisation."
+    },
+    "liability": {
+      "heading": "4. Limitation of liability",
+      "body": "We undertake to keep the content up to date and accurate, but we do not guarantee the absence of errors or the uninterrupted availability of the site. We are not liable for any damage arising from the use of, or the inability to use, the site or the linked third-party sites."
+    },
+    "law": {
+      "heading": "5. Governing law and jurisdiction",
+      "body": "These terms are governed by Italian law. The court of <strong>{court}</strong> has jurisdiction over any dispute, without prejudice to the mandatory rules protecting consumers."
+    },
+    "contact": {
+      "heading": "6. Contact",
+      "body": "For any question about these terms: <mail>{email}</mail>."
+    }
+  },
+  "meta": {
+    "siteTagline": "Properties looked after, well managed",
+    "description": "Selected properties to rent for short stays: the Dolomites, Verona, the Costa Smeralda, Rome and more. Homes looked after, well managed, ready to book.",
+    "keywords": "short lets Italy, holiday apartments Dolomites, holiday rentals Verona, apartments Rome, villa Costa Smeralda, short stays Italy, Plan de Corones, Val Pusteria, Porto Cervo, self-catering Italy",
+    "ogAlt": "Ultralight Home — Properties looked after, well managed",
+    "ogLine1": "Properties looked after,",
+    "ogLine2": "well managed.",
+    "ogPlaces": "Dolomites · Verona · Costa Smeralda · Rome",
+    "home": {
+      "title": "Houses and apartments for short stays in Italy",
+      "description": "Properties looked after, to rent for a few days: the Dolomites, Verona, the Costa Smeralda, Rome and more. Selection, management and hospitality with the same care."
+    },
+    "properties": {
+      "title": "Short-let properties: Dolomites, Verona, Costa Smeralda",
+      "description": "Every property we rent for short stays, grouped by area: the Dolomites, Verona, the Costa Smeralda and other Italian cities."
+    },
+    "property": {
+      "title": "{name}, short let in {location}",
+      "ogAlt": "{name} — Ultralight Home"
+    },
+    "about": {
+      "title": "About us: short-let management since 2021",
+      "description": "Ultralight Home has managed short lets in Italy since 2021: a few properties, chosen with care and followed in every detail. Our approach and our team."
+    },
+    "where": {
+      "title": "Where we are",
+      "description": "Our office in Verona. Come and see us or arrange an appointment: Lungadige Matteotti 14, 37126 Verona."
+    },
+    "contact": {
+      "title": "Contact: talk to us",
+      "description": "Write to us to rent a property, or to hand us the management of your own: email, telephone, WhatsApp. We reply the same day."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How Ultralight Home processes personal data under Regulation (EU) 2016/679 (GDPR)."
+    },
+    "cookiePolicy": {
+      "title": "Cookie Policy",
+      "description": "Ultralight Home's cookie notice: strictly necessary technical cookies only, no profiling."
+    },
+    "terms": {
+      "title": "Terms and conditions",
+      "description": "Terms and conditions of use of the Ultralight Home website."
+    },
+    "notFound": {
+      "title": "Page not found",
+      "description": "The address requested does not match any page on this website."
+    }
+  }
+}
