@@ -69,7 +69,6 @@
   },
   "footer": {
     "navHeading": "Naviga",
-    "linkOther": "Altro",
     "copyright": "© {year} Ultralight Home. Tutti i diritti riservati.",
     "vatLabel": "P.IVA {vat}",
     "privacyLink": "Privacy",

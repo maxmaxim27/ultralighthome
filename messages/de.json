@@ -69,7 +69,6 @@
   },
   "footer": {
     "navHeading": "Navigation",
-    "linkOther": "Weitere Orte",
     "copyright": "© {year} Ultralight Home. Alle Rechte vorbehalten.",
     "vatLabel": "MwSt.-Nr. {vat}",
     "privacyLink": "Datenschutz",

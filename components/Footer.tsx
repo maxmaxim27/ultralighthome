@@ -1,12 +1,16 @@
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import CookiePreferencesButton from "./CookiePreferencesButton";
 import { LEGAL } from "@/lib/site";
+import { locationGroups } from "@/lib/locations";
+import { pick } from "@/lib/i18n-content";
+import type { Locale } from "@/i18n/routing";
 
 export default async function Footer() {
   const t = await getTranslations("footer");
   const tNav = await getTranslations("nav");
+  const locale = (await getLocale()) as Locale;
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ink text-cream">
@@ -29,38 +33,16 @@ export default async function Footer() {
               {t("navHeading")}
             </p>
             <ul className="mt-5 space-y-3 text-sm">
-              <li>
-                <Link
-                  href={{ pathname: "/immobili", hash: "dolomiti" }}
-                  className="link-underline"
-                >
-                  Dolomiti
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={{ pathname: "/immobili", hash: "costa-smeralda" }}
-                  className="link-underline"
-                >
-                  Costa Smeralda
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={{ pathname: "/immobili", hash: "verona" }}
-                  className="link-underline"
-                >
-                  Verona
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href={{ pathname: "/immobili", hash: "altro" }}
-                  className="link-underline"
-                >
-                  {t("linkOther")}
-                </Link>
-              </li>
+              {locationGroups.map((g) => (
+                <li key={g.key}>
+                  <Link
+                    href={{ pathname: "/immobili", hash: g.key }}
+                    className="link-underline"
+                  >
+                    {pick(g.label, locale)}
+                  </Link>
+                </li>
+              ))}
               <li>
                 <Link href="/chi-siamo" className="link-underline">
                   {tNav("about")}
