@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import type { Locale } from "@/i18n/routing";
 import { notFoundMetadata } from "@/lib/seo";
 
@@ -20,10 +21,10 @@ export async function generateMetadata({
   return { ...metadata, alternates: { canonical: null } };
 }
 
-export default function PropertyLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return children;
+export default async function PropertyLayout(
+  props: LayoutProps<"/[locale]/immobili/[slug]">,
+) {
+  const { locale } = await props.params;
+  setRequestLocale(locale as Locale);
+  return props.children;
 }
