@@ -61,7 +61,7 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-8 lg:gap-10 absolute left-1/2 -translate-x-1/2">
+          <nav className="hidden md:flex items-center gap-6 md:gap-5 lg:gap-8 xl:gap-10 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
             {nav.map((n) => (
               <Link
                 key={n.href}
