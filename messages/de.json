@@ -308,7 +308,7 @@
   "privacy": {
     "eyebrow": "Datenschutz",
     "title": "Datenschutzerklärung.",
-    "intro": "Diese Erklärung beschreibt, wie wir die über diese Website erhobenen personenbezogenen Daten verarbeiten, gemäß der Verordnung (EU) 2016/679 („GDPR“) und dem geltenden italienischen Recht.",
+    "intro": "Diese Erklärung beschreibt, wie wir die über diese Website erhobenen personenbezogenen Daten verarbeiten, gemäß der Verordnung (EU) 2016/679 („DSGVO“) und dem geltenden italienischen Recht.",
     "controller": {
       "heading": "1. Verantwortlicher",
       "body": "Verantwortlicher ist <strong>{owner}</strong>, MwSt.-Nr. <strong>{vat}</strong>, mit Sitz in <strong>{address}</strong>.",
@@ -324,9 +324,9 @@
     "purposes": {
       "heading": "3. Zwecke und Rechtsgrundlage",
       "items": {
-        "0": "Beantwortung Ihrer Anfragen und Verwaltung der Kontakte — Rechtsgrundlage: Durchführung vorvertraglicher Maßnahmen und berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f GDPR).",
-        "1": "Gewährleistung der Sicherheit und des ordnungsgemäßen Betriebs der Website — berechtigtes Interesse (Art. 6 Abs. 1 lit. f GDPR).",
-        "2": "Erfüllung gesetzlicher Pflichten — Art. 6 Abs. 1 lit. c GDPR."
+        "0": "Beantwortung Ihrer Anfragen und Verwaltung der Kontakte — Rechtsgrundlage: Durchführung vorvertraglicher Maßnahmen und berechtigtes Interesse (Art. 6 Abs. 1 lit. b und f DSGVO).",
+        "1": "Gewährleistung der Sicherheit und des ordnungsgemäßen Betriebs der Website — berechtigtes Interesse (Art. 6 Abs. 1 lit. f DSGVO).",
+        "2": "Erfüllung gesetzlicher Pflichten — Art. 6 Abs. 1 lit. c DSGVO."
       }
     },
     "retention": {
@@ -335,17 +335,17 @@
     },
     "recipients": {
       "heading": "5. Empfänger der Daten",
-      "intro": "Die Daten können von Dienstleistern verarbeitet werden, die uns bei der Erbringung des Dienstes unterstützen und gemäß Art. 28 GDPR als Auftragsverarbeiter benannt sind. Wir verkaufen Ihre Daten nicht an Dritte. Derzeit werden folgende Dienstleister eingesetzt:",
+      "intro": "Die Daten können von Dienstleistern verarbeitet werden, die uns bei der Erbringung des Dienstes unterstützen und gemäß Art. 28 DSGVO als Auftragsverarbeiter benannt sind. Wir verkaufen Ihre Daten nicht an Dritte. Derzeit werden folgende Dienstleister eingesetzt:",
       "items": {
         "0": "<strong>Cloudflare, Inc.</strong> — Hosting der Website und Schutz der Infrastruktur. Verarbeitet Nutzungsdaten (IP-Adresse, technische Protokolle). <link>Datenschutzerklärung</link>.",
         "1": "<strong>Resend (Plus Five Five, Inc.)</strong> — Zustellung der über das Kontaktformular erzeugten E-Mails. Verarbeitet Name, E-Mail-Adresse und Inhalt der Nachricht. <link>Datenschutzerklärung</link>."
       },
       "transfers": "Beide Dienstleister haben ihren Sitz in den Vereinigten Staaten: Die Übermittlung erfolgt auf der Grundlage der von der Europäischen Kommission genehmigten Standardvertragsklauseln und, soweit anwendbar, der Zertifizierung nach dem EU-U.S. Data Privacy Framework.",
-      "maps": "Die Seite <where>Standorte</where> bindet eine Karte von <strong>Google Maps</strong> (Google Ireland Ltd.) ein, die nur nach Ihrer vorherigen Einwilligung geladen wird: In diesem Fall kann Google Daten verarbeiten, auch mit Übermittlung in die Vereinigten Staaten, unter Einhaltung der im GDPR vorgesehenen Garantien. Weitere Informationen finden Sie in der <cookies>Cookie-Richtlinie</cookies>."
+      "maps": "Die Seite <where>Standorte</where> bindet eine Karte von <strong>Google Maps</strong> (Google Ireland Ltd.) ein, die nur nach Ihrer vorherigen Einwilligung geladen wird: In diesem Fall kann Google Daten verarbeiten, auch mit Übermittlung in die Vereinigten Staaten, unter Einhaltung der im DSGVO vorgesehenen Garantien. Weitere Informationen finden Sie in der <cookies>Cookie-Richtlinie</cookies>."
     },
     "rights": {
       "heading": "6. Ihre Rechte",
-      "body": "Sie haben das Recht auf Auskunft über Ihre Daten (Auskunftsrecht), das Recht auf Berichtigung oder Löschung, das Recht auf Einschränkung der Verarbeitung sowie das Widerspruchsrecht gegen die Verarbeitung und das Recht auf Datenübertragbarkeit (Art. 15-22 GDPR). Sie können diese Rechte ausüben, indem Sie an <mail>{email}</mail> schreiben.",
+      "body": "Sie haben das Recht auf Auskunft über Ihre Daten (Auskunftsrecht), das Recht auf Berichtigung oder Löschung, das Recht auf Einschränkung der Verarbeitung sowie das Widerspruchsrecht gegen die Verarbeitung und das Recht auf Datenübertragbarkeit (Art. 15-22 DSGVO). Sie können diese Rechte ausüben, indem Sie an <mail>{email}</mail> schreiben.",
       "complaint": "Sie haben außerdem das Recht, Beschwerde bei der italienischen Datenschutzbehörde, Garante per la protezione dei dati personali (<link>garanteprivacy.it</link>), einzulegen."
     },
     "cookies": {
