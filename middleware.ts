@@ -41,7 +41,14 @@ export default function middleware(request: NextRequest) {
     if (chosen && chosen !== routing.defaultLocale) {
       const url = new URL(`/${chosen}`, request.url);
       url.search = request.nextUrl.search;
-      return NextResponse.redirect(url);
+      const response = NextResponse.redirect(url);
+      // Questo redirect dipende da Accept-Language e dal cookie NEXT_LOCALE:
+      // non deve mai essere messo in cache (né dal browser né da una cache
+      // rule su Cloudflare), altrimenti la lingua del primo visitatore
+      // verrebbe fissata per tutti.
+      response.headers.set("Vary", "Accept-Language, Cookie");
+      response.headers.set("Cache-Control", "private, no-store");
+      return response;
     }
   }
 
