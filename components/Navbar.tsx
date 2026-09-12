@@ -119,7 +119,7 @@ export default function Navbar() {
             : "opacity-0 pointer-events-none",
         )}
       >
-        <div className="h-full w-full flex flex-col pt-24 pb-10 px-8">
+        <div className="h-full w-full overflow-y-auto overscroll-contain flex flex-col pt-20 pb-[calc(2.5rem+env(safe-area-inset-bottom))] px-8">
           <nav className="flex flex-col gap-1 flex-1">
             {nav.map((n, i) => (
               <Link
@@ -127,7 +127,7 @@ export default function Navbar() {
                 href={n.href}
                 onClick={() => setOpen(false)}
                 className={clsx(
-                  "font-display text-4xl tracking-[-0.01em] font-light py-4 border-b border-cream/15 transition-all duration-500",
+                  "font-display text-3xl tracking-[-0.01em] font-light py-3.5 border-b border-cream/15 transition-all duration-500",
                   open
                     ? "opacity-100 translate-y-0"
                     : "opacity-0 translate-y-4",
@@ -141,19 +141,19 @@ export default function Navbar() {
 
           <div
             className={clsx(
-              "transition-all duration-500",
+              "mt-8 transition-all duration-500",
               open ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
             )}
             style={{ transitionDelay: open ? "450ms" : "0ms" }}
           >
             {/* footer logo — sits above the CTA in the open mobile menu */}
-            <div className="mb-8 flex justify-center">
+            <div className="mb-6 flex justify-center">
               <Image
                 src="/logo.png"
                 alt="Ultralight Home"
                 width={1972}
                 height={1674}
-                className="h-24 w-auto brightness-0 invert opacity-80"
+                className="h-20 max-h-[11vh] w-auto brightness-0 invert opacity-80"
               />
             </div>
             <ContactDialog
