@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
+import { logoDataUri } from "@/lib/og-assets";
 import { SITE } from "@/lib/site";
 import { routing, type Locale } from "@/i18n/routing";
 
@@ -21,6 +22,8 @@ export default async function OgImage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
+  // logo.png = marchio + wordmark impilati: da solo dice già il nome del sito.
+  const logo = await logoDataUri("logo.png");
 
   return new ImageResponse(
     (
@@ -30,32 +33,34 @@ export default async function OgImage({
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          background: "linear-gradient(135deg, #1A1815 0%, #2C2A26 100%)",
-          color: "#F5F1EA",
+          alignItems: "center",
+          justifyContent: "center",
+          background: "#FFFFFF",
+          color: "#1A1815",
           padding: "80px",
           fontFamily: "serif",
         }}
       >
+        {/* Il logo è già nel grigio del brand (#A2AAAD): nessun filtro. */}
+        <img src={logo} width={240} height={204} alt="" />
         <div
           style={{
-            fontSize: 30,
-            letterSpacing: "0.3em",
-            textTransform: "uppercase",
-            color: "#7E8A90",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            marginTop: 40,
           }}
         >
-          {SITE.name}
-        </div>
-        <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 84, lineHeight: 1.05, fontWeight: 300 }}>
+          <div style={{ fontSize: 64, lineHeight: 1.05, fontWeight: 300 }}>
             {t("ogLine1")}
           </div>
-          <div style={{ fontSize: 84, lineHeight: 1.05, fontWeight: 300 }}>
+          <div style={{ fontSize: 64, lineHeight: 1.05, fontWeight: 300 }}>
             {t("ogLine2")}
           </div>
         </div>
-        <div style={{ fontSize: 30, color: "#C9C2B6" }}>{t("ogPlaces")}</div>
+        <div style={{ marginTop: 32, fontSize: 26, color: "#7E8A90" }}>
+          {t("ogPlaces")}
+        </div>
       </div>
     ),
     { ...size },

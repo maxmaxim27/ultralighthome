@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
+import { logoDataUri } from "@/lib/og-assets";
 import { getProperty, properties } from "@/lib/properties";
 import { locations } from "@/lib/locations";
 import { SITE } from "@/lib/site";
@@ -27,6 +28,9 @@ export default async function OgImage({
   const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: "property" });
   const property = getProperty(slug);
+  // logo_icon.png = solo il marchio: nella fascia in alto il wordmark
+  // stampato sarebbe illeggibile, quindi resta testo come in navbar.
+  const mark = await logoDataUri("logo_icon.png");
   const loc = property
     ? locations.find((l) => l.slug === property.locationSlug)
     : undefined;
@@ -53,8 +57,8 @@ export default async function OgImage({
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "linear-gradient(135deg, #1A1815 0%, #2C2A26 100%)",
-          color: "#F5F1EA",
+          background: "#FFFFFF",
+          color: "#1A1815",
           padding: "80px",
           fontFamily: "serif",
         }}
@@ -62,15 +66,24 @@ export default async function OgImage({
         <div
           style={{
             display: "flex",
+            alignItems: "center",
             justifyContent: "space-between",
-            fontSize: 26,
-            letterSpacing: "0.3em",
+            gap: 48,
+            // Corpo e spaziatura sono tarati sul caso peggiore: marchio +
+            // wordmark a sinistra e la località più lunga a destra devono
+            // stare su una riga sola, senza che i due blocchi si tocchino.
+            fontSize: 22,
+            letterSpacing: "0.18em",
             textTransform: "uppercase",
             color: "#7E8A90",
           }}
         >
-          <span>{SITE.name}</span>
-          <span>{place}</span>
+          <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+            {/* Il marchio è già nel grigio del brand (#A2AAAD): nessun filtro. */}
+            <img src={mark} width={52} height={49} alt="" />
+            <span>{SITE.name}</span>
+          </div>
+          <span style={{ textAlign: "right" }}>{place}</span>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 78, lineHeight: 1.05, fontWeight: 300 }}>
@@ -82,7 +95,7 @@ export default async function OgImage({
                 marginTop: 28,
                 fontSize: 30,
                 lineHeight: 1.35,
-                color: "#C9C2B6",
+                color: "#6B6357",
                 // L'immagine è alta 630px: una descrizione lunga andrebbe
                 // fuori quadro, quindi si taglia sulle prime due righe.
                 display: "block",
@@ -94,7 +107,7 @@ export default async function OgImage({
             </div>
           )}
         </div>
-        <div style={{ fontSize: 30, color: "#C9C2B6" }}>{specs}</div>
+        <div style={{ fontSize: 30, color: "#6B6357" }}>{specs}</div>
       </div>
     ),
     { ...size },
