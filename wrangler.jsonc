@@ -6,12 +6,14 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS",
-    // Everything goes through the Next worker, except the video: served from
-    // the worker it comes back as a plain 200 with no Accept-Ranges, and
-    // Safari's media loader needs byte ranges (206) to stream progressively.
-    // The asset worker answers ranges natively and still applies public/_headers.
-    "run_worker_first": ["/*", "!/video/*"]
+    "binding": "ASSETS"
+    // No "run_worker_first" on purpose. Asset-first is the default: any request
+    // matching a file (public/, /_next/static) is answered by the asset binding,
+    // which is free, unlimited and applies public/_headers, and the Worker only
+    // runs for pages, OG images and /api. A catch-all "/*" turned every image
+    // and JS chunk into a billed invocation — about 25 per first page view.
+    // Safe because the OpenNext build puts no HTML in .open-next/assets, so no
+    // page can skip the i18n middleware.
   }
   // No "images" binding on purpose: next.config.ts sets images.unoptimized, so
   // nothing goes through Cloudflare Images and nothing can bill transformations.
