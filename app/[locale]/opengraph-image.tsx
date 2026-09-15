@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
-import { logoDataUri } from "@/lib/og-assets";
+import { OG_LOGO } from "@/lib/og-assets";
 import { SITE } from "@/lib/site";
 import { routing, type Locale } from "@/i18n/routing";
 
@@ -22,8 +22,6 @@ export default async function OgImage({
 }) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
-  // logo.png = marchio + wordmark impilati: da solo dice già il nome del sito.
-  const logo = await logoDataUri("logo.png");
 
   return new ImageResponse(
     (
@@ -41,8 +39,9 @@ export default async function OgImage({
           fontFamily: "serif",
         }}
       >
-        {/* Il logo è già nel grigio del brand (#A2AAAD): nessun filtro. */}
-        <img src={logo} width={240} height={204} alt="" />
+        {/* Marchio + wordmark impilati: da solo dice già il nome del sito. È
+            già nel grigio del brand (#A2AAAD): nessun filtro. */}
+        <img src={OG_LOGO} width={240} height={204} alt="" />
         <div
           style={{
             display: "flex",

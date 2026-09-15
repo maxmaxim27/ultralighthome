@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getTranslations } from "next-intl/server";
-import { logoDataUri } from "@/lib/og-assets";
+import { OG_MARK } from "@/lib/og-assets";
 import { getProperty, properties } from "@/lib/properties";
 import { locations } from "@/lib/locations";
 import { SITE } from "@/lib/site";
@@ -28,9 +28,6 @@ export default async function OgImage({
   const { locale, slug } = await params;
   const t = await getTranslations({ locale, namespace: "property" });
   const property = getProperty(slug);
-  // logo_icon.png = solo il marchio: nella fascia in alto il wordmark
-  // stampato sarebbe illeggibile, quindi resta testo come in navbar.
-  const mark = await logoDataUri("logo_icon.png");
   const loc = property
     ? locations.find((l) => l.slug === property.locationSlug)
     : undefined;
@@ -79,8 +76,10 @@ export default async function OgImage({
           }}
         >
           <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
-            {/* Il marchio è già nel grigio del brand (#A2AAAD): nessun filtro. */}
-            <img src={mark} width={52} height={49} alt="" />
+            {/* Solo il marchio: a questo corpo il wordmark stampato sarebbe
+                illeggibile, quindi resta testo come in navbar. È già nel
+                grigio del brand (#A2AAAD): nessun filtro. */}
+            <img src={OG_MARK} width={52} height={49} alt="" />
             <span>{SITE.name}</span>
           </div>
           <span style={{ textAlign: "right" }}>{place}</span>
