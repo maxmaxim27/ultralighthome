@@ -76,13 +76,25 @@ Le pagine di dettaglio sono generate staticamente via `generateStaticParams()` i
 
 ### Sostituire il video hero
 
-Il video hero è in `components/Hero.tsx`. Attualmente punta a un placeholder pubblico da Pexels (vedi il commento `{/* TODO: sostituire con video del cliente */}`).
+La hero ha due tagli, scelti in `components/Hero.tsx` in base all'orientamento dello schermo:
 
-Per usare un file locale:
+| File                                   | Taglio                  | Usato su                 |
+| -------------------------------------- | ----------------------- | ------------------------ |
+| `public/video/hero-desktop.mp4`        | orizzontale, 1920×1080  | schermi in orizzontale   |
+| `public/video/hero-mobile.mp4`         | verticale, 1080×1920    | schermi in verticale     |
+| `public/video/hero-poster-desktop.jpg` | primo fotogramma        | prima che parta il video |
+| `public/video/hero-poster-mobile.jpg`  | primo fotogramma        | prima che parta il video |
 
-1. Posiziona il file in `public/hero.mp4`.
-2. In `components/Hero.tsx`, sostituisci la `<source src="…">` con `<source src="/hero.mp4" type="video/mp4" />`.
-3. (Opzionale) Aggiorna l'attributo `poster=` con un frame di copertina locale (`/hero-poster.jpg`).
+Per sostituire un video, ricomprimi l'export (H.264, senza audio, `faststart`) e rigenera il poster dal primo fotogramma:
+
+```bash
+# desktop: CRF 28; mobile: CRF 30 (più dettaglio, pesa di più a parità di qualità)
+ffmpeg -i export.mp4 -an -map_metadata -1 -dn -c:v libx264 -preset slow -crf 28 \
+  -profile:v high -pix_fmt yuv420p -movflags +faststart public/video/hero-desktop.mp4
+ffmpeg -i export.mp4 -frames:v 1 -q:v 9 public/video/hero-poster-desktop.jpg
+```
+
+Tieni ogni video sotto qualche MB (il limite per file su Cloudflare è 25 MiB). I file in `public/video/` hanno una cache di una settimana (`public/_headers`): se il cambio deve vedersi subito, usa un nome nuovo e aggiorna le costanti `DESKTOP`/`MOBILE` in `Hero.tsx`.
 
 ---
 
