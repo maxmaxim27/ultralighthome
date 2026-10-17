@@ -225,7 +225,7 @@
     "hero": {
       "eyebrow": "Chi siamo",
       "title": "Una squadra,<br></br>immobili curati uno a uno.",
-      "body": "Ultralight Home nasce nel 2021. Da allora gestiamo affitti brevi per chi cerca un interlocutore vero, non un'agenzia che ti tratta come un numero."
+      "body": "Ultralight Home è stata fondata nel 2021 da Alberto Cavinato e Alberto Disarò con l'obiettivo di offrire una gestione attenta e personalizzata degli immobili."
     },
     "story": {
       "eyebrow": "Come abbiamo iniziato",
@@ -263,10 +263,10 @@
       "title": "Le persone che ci sono dietro."
     },
     "roles": {
-      "founder": "Founder",
-      "salesManager": "Sales Manager",
-      "coFounder": "Co-Founder",
-      "propertyManager": "Property Manager",
+      "founder": "Fondatore",
+      "salesManager": "Responsabile Commerciale",
+      "coFounder": "Co-Fondatore",
+      "propertyManager": "Responsabile Tecnico",
       "interiorDesigner": "Interior Designer",
       "photographer": "Fotografa"
     },
