@@ -24,8 +24,9 @@ export const routing = defineRouting({
   defaultLocale: "it",
   // L'italiano resta alla radice: /immobili, non /it/immobili.
   localePrefix: "as-needed",
-  // La detection la facciamo noi in middleware.ts, e solo sulla home:
-  // next-intl altrimenti la applicherebbe a ogni pathname.
+  // La detection la fa worker/home.ts, e solo sulla home: il sito è un export
+  // statico, senza il middleware di next-intl, che la applicherebbe a ogni
+  // pathname.
   localeDetection: false,
   localeCookie: {
     maxAge: LOCALE_COOKIE_MAX_AGE,

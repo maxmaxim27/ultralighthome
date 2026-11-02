@@ -7,6 +7,9 @@ import { routing, type Locale } from "@/i18n/routing";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Written to a file at build time: `output: "export"` requires it of route handlers.
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }

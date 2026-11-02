@@ -2,6 +2,9 @@ import type { MetadataRoute } from "next";
 import { routing } from "@/i18n/routing";
 import { SITE } from "@/lib/site";
 
+// Written to a file at build time: `output: "export"` requires it of route handlers.
+export const dynamic = "force-static";
+
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: SITE.name,

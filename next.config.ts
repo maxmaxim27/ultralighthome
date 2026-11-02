@@ -1,67 +1,63 @@
 import type { NextConfig } from "next";
+import { PHASE_DEVELOPMENT_SERVER, PHASE_PRODUCTION_BUILD } from "next/constants";
 import createNextIntlPlugin from "next-intl/plugin";
+import { routing } from "./i18n/routing";
 
 const withNextIntl = createNextIntlPlugin("./i18n/request.ts");
 
-// Content-Security-Policy. Next inlines its bootstrap script and Tailwind emits
-// inline styles, so script/style keep 'unsafe-inline'; the value here is in the
-// directives that can't be relaxed away — frame-ancestors, form-action, base-uri
-// and a frame-src that only admits the Google Maps embed.
-const CSP = [
-  "default-src 'self'",
-  // React's development build calls eval() to reconstruct callstacks across
-  // environments, and Turbopack's HMR runtime does the same; production React
-  // never does, so the relaxation stays out of the deployed header.
-  process.env.NODE_ENV === "production"
-    ? "script-src 'self' 'unsafe-inline'"
-    : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-  "style-src 'self' 'unsafe-inline'",
-  "img-src 'self' data: blob: https://images.unsplash.com https://plus.unsplash.com",
-  "media-src 'self'",
-  "font-src 'self' data:",
-  "connect-src 'self'",
-  "frame-src https://www.google.com https://maps.google.com",
-  "frame-ancestors 'self'",
-  "form-action 'self'",
-  "base-uri 'self'",
-  "object-src 'none'",
-  // Production is HTTPS-only, so this is free there. In development it would
-  // rewrite every asset request to https://, which `next dev` cannot answer —
-  // that silently breaks video and images when testing from a phone over LAN.
-  ...(process.env.NODE_ENV === "production" ? ["upgrade-insecure-requests"] : []),
-].join("; ");
+/**
+ * The export writes each page under its folder name in app/[locale]
+ * (/it/immobili, /en/immobili/x), and scripts/localize-export.mjs then moves it
+ * to its public URL (/immobili, /en/properties/x). `next dev` serves the
+ * folders directly, so these rewrites give it the same public URLs. Dev only:
+ * an export has no rewrites.
+ */
+function devRewrites() {
+  const toPattern = (path: string) => path.replace(/\[(\w+)\]/g, ":$1");
+  const rules: { source: string; destination: string }[] = [];
+  for (const locale of routing.locales) {
+    const prefix = locale === routing.defaultLocale ? "" : `/${locale}`;
+    for (const [internal, localized] of Object.entries(routing.pathnames)) {
+      const external = typeof localized === "string" ? localized : localized[locale];
+      const source = toPattern(`${prefix}${external === "/" ? "" : external}`) || "/";
+      const destination = toPattern(`/${locale}${internal === "/" ? "" : internal}`);
+      if (source !== destination) rules.push({ source, destination });
+    }
+  }
+  return rules;
+}
 
-// Applied to worker-rendered responses. public/_headers covers the same ground
-// for files served straight from Cloudflare's asset binding.
-const SECURITY_HEADERS = [
-  { key: "X-Content-Type-Options", value: "nosniff" },
-  { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-  { key: "X-Frame-Options", value: "SAMEORIGIN" },
-  {
-    key: "Permissions-Policy",
-    value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
-  },
-  {
-    key: "Strict-Transport-Security",
-    value: "max-age=31536000; includeSubDomains",
-  },
-  { key: "Content-Security-Policy", value: CSP },
-];
+export default function nextConfig(phase: string): NextConfig {
+  // The site key ends up in the contact form's JS. A build without it would
+  // ship a form that can never be sent, so refuse to build instead.
+  if (phase === PHASE_PRODUCTION_BUILD && !process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY) {
+    throw new Error(
+      "NEXT_PUBLIC_TURNSTILE_SITE_KEY is not set. Set it as a build variable " +
+        "(Workers Builds: Settings > Build > Variables and secrets), or run " +
+        "`npm run preview`, which uses Cloudflare's test key.",
+    );
+  }
 
-const nextConfig: NextConfig = {
-  async headers() {
-    return [{ source: "/:path*", headers: SECURITY_HEADERS }];
-  },
-  images: {
-    // Cloudflare bills image transformations beyond the free monthly allowance,
-    // so images are served as-is from the asset binding, which is free.
-    // The sources in public/ are already sized for the layout.
-    unoptimized: true,
-    remotePatterns: [
-      { protocol: "https", hostname: "images.unsplash.com" },
-      { protocol: "https", hostname: "plus.unsplash.com" },
-    ],
-  },
-};
+  const dev = phase === PHASE_DEVELOPMENT_SERVER;
 
-export default withNextIntl(nextConfig);
+  return withNextIntl({
+    // The whole site is static files in out/, served by Cloudflare's asset
+    // layer without running the Worker. Security headers and the CSP live in
+    // public/_headers: an export ignores `headers()`.
+    //
+    // Not in `next dev`: export mode there rejects any page reached through a
+    // rewrite, and the rewrites below are what give dev the public URLs.
+    // `next build` still enforces every export rule.
+    output: dev ? undefined : "export",
+    images: {
+      // An export has no image optimizer. The sources in public/ are already
+      // sized for the layout, and are served as-is by the asset layer.
+      unoptimized: true,
+      remotePatterns: [
+        { protocol: "https", hostname: "images.unsplash.com" },
+        { protocol: "https", hostname: "plus.unsplash.com" },
+      ],
+    },
+    ...(dev && { rewrites: async () => devRewrites() }),
+  });
+}

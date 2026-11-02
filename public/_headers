@@ -1,9 +1,26 @@
+# Security headers for every response the asset layer gives, pages included:
+# the site is a static export, so nothing else sets them.
+#
+# Content-Security-Policy. Next inlines its bootstrap script and Tailwind emits
+# inline styles, so script/style keep 'unsafe-inline'; the value here is in the
+# directives that can't be relaxed away — frame-ancestors, form-action, base-uri
+# and a frame-src that only admits the Google Maps embed and the Turnstile
+# widget (challenges.cloudflare.com, which also serves its script).
 /*
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: SAMEORIGIN
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://images.unsplash.com https://plus.unsplash.com; media-src 'self'; font-src 'self' data:; connect-src 'self'; frame-src https://www.google.com https://maps.google.com https://challenges.cloudflare.com; frame-ancestors 'self'; form-action 'self'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests
+
+# The share cards are exported as files with no extension, which the asset
+# layer would otherwise serve without a Content-Type.
+/opengraph-image
+  Content-Type: image/png
+
+/*/opengraph-image
+  Content-Type: image/png
 
 # Filenames carry a content hash, so these can never go stale.
 /_next/static/*

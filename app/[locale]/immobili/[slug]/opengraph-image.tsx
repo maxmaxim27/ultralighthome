@@ -14,6 +14,9 @@ export const alt = `${SITE.name} — immobile`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+// Written to a file at build time: `output: "export"` requires it of route handlers.
+export const dynamic = "force-static";
+
 export function generateStaticParams() {
   return routing.locales.flatMap((locale) =>
     properties.map((p) => ({ locale, slug: p.slug })),

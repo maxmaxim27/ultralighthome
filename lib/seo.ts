@@ -97,11 +97,12 @@ export function pageMetadata({
 
 /** Titolo e descrizione del 404, tradotti.
  *
- *  Next scarta i metadata del segmento che ha chiamato `notFound()`, ma non
- *  quelli dei layout sopra il boundary: per questo il 404 prende il titolo da
- *  un layout, affiancato da un `not-found.tsx` che abbassa il boundary. Il
- *  `noindex` non va messo qui — sarebbe ereditato dalle pagine valide sotto
- *  lo stesso layout; su una risposta 404 lo aggiunge gia' Next da solo. */
+ *  Li usa la pagina app/[locale]/404, che il sito esportato serve per ogni
+ *  URL inesistente. In `next dev` li usa anche il layout di una scheda
+ *  immobile: Next scarta i metadata del segmento che ha chiamato `notFound()`,
+ *  ma non quelli dei layout sopra il boundary. Il `noindex` non va messo qui —
+ *  sarebbe ereditato dalle schede valide sotto quel layout; la pagina 404 lo
+ *  dichiara da sé. */
 export async function notFoundMetadata(locale: Locale): Promise<Metadata> {
   const t = await getTranslations({ locale, namespace: "meta.notFound" });
   return { title: t("title"), description: t("description") };

@@ -1,27 +1,25 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  // Wraps .open-next/worker.js to add byte-range support for /video/*.
-  "main": "worker.ts",
   "name": "ultralighthome",
+  "main": "worker/index.ts",
   "compatibility_date": "2026-07-01",
-  "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "compatibility_flags": ["global_fetch_strictly_public"],
   "assets": {
-    "directory": ".open-next/assets",
+    // The static export of the whole site (`npm run build`). Requests that
+    // match a file here are answered by the asset layer, which is free, does
+    // not count against the Worker's CPU limit, and applies out/_headers and
+    // out/_redirects.
+    "directory": "./out",
     "binding": "ASSETS",
-    // Asset-first is the default: any request matching a file (public/,
-    // /_next/static) is answered by the asset binding, which is free, unlimited
-    // and applies public/_headers, and the Worker only runs for pages, OG images
-    // and /api. A catch-all "/*" once turned every image and JS chunk into a
-    // billed invocation — about 25 per first page view. Safe because the
-    // OpenNext build puts no HTML in .open-next/assets, so no page can skip the
-    // i18n middleware.
-    //
-    // The one exception is /video/*: the asset binding ignores `Range` and
-    // always sends the whole file as a 200, while Safari streams video through
-    // 206 responses. worker.ts answers those ranges, at the cost of a few
-    // invocations per visit.
-    "run_worker_first": ["/video/*"]
+    // A URL with no file gets the nearest 404.html with status 404: /en/x gets
+    // out/en/404.html, /x the Italian out/404.html. No Worker involved.
+    "not_found_handling": "404-page",
+    // The only paths that run code:
+    //   /         picks the visitor's language (worker/home.ts);
+    //   /api/*    the contact form (worker/contact.ts);
+    //   /video/*  byte ranges, which the asset layer ignores and Safari needs
+    //             to play the hero video (worker/video.ts).
+    // "/" matches the home page alone, not every path.
+    "run_worker_first": ["/", "/api/*", "/video/*"]
   }
-  // No "images" binding on purpose: next.config.ts sets images.unoptimized, so
-  // nothing goes through Cloudflare Images and nothing can bill transformations.
 }

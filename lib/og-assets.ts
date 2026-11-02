@@ -1,13 +1,13 @@
 /** Loghi delle card opengraph-image, inlinati come data URI.
  *
  *  Satori non scarica risorse, quindi un PNG dentro `ImageResponse` deve
- *  arrivare già come bytes. Non si possono leggere da `public/` a runtime: su
- *  Cloudflare le card le genera il Worker, che non ha un filesystem, e la
- *  lettura da disco faceva rispondere 500 a ogni anteprima.
+ *  arrivare già come bytes. Le card oggi le genera `next build` (il sito è un
+ *  export statico); inlinate funzionano anche dove non c'è un filesystem,
+ *  come sul Worker che le generava prima.
  *
  *  Sono copie ridotte al doppio della misura a cui vengono disegnate (logo
- *  240px, marchio 52px), così il bundle del Worker non si porta dietro gli
- *  originali da ~2000px. Dopo un cambio di logo vanno rigenerate:
+ *  240px, marchio 52px), così il bundle non si porta dietro gli originali da
+ *  ~2000px. Dopo un cambio di logo vanno rigenerate:
  *
  *    sips -Z 480 public/logo.png --out og-logo.png
  *    sips -Z 104 public/logo_icon.png --out og-mark.png

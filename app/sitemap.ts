@@ -3,6 +3,9 @@ import { routing, type Locale } from "@/i18n/routing";
 import { properties } from "@/lib/properties";
 import { localeUrl, type SeoHref } from "@/lib/seo";
 
+// Written to a file at build time: `output: "export"` requires it of route handlers.
+export const dynamic = "force-static";
+
 type Entry = MetadataRoute.Sitemap[number];
 
 /** Le pagine statiche del sito, come pathname interni: gli slug tradotti li

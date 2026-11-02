@@ -17,9 +17,10 @@ Apri http://localhost:3000.
 
 Comandi disponibili:
 
-- `npm run dev` — server di sviluppo
-- `npm run build` — build di produzione
-- `npm run start` — server produzione (dopo build)
+- `npm run dev` — server di sviluppo (senza Worker: il form contatti non invia)
+- `npm run build` — export statico in `out/`; richiede `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+- `npm run preview` — build con la chiave di test di Turnstile e `wrangler dev` su https://localhost:8787 (certificato locale da accettare). Con `.dev.vars` il form fa tutti i controlli ma non invia email
+- `npm run deploy` — build e `wrangler deploy`
 - `npm run lint` — ESLint
 
 ---

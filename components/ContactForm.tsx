@@ -14,6 +14,50 @@ const REQUEST_TYPES = [
   { value: "collaboratore", key: "requestTypePartner" },
 ] as const;
 
+const TURNSTILE_SCRIPT =
+  "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
+
+// In production builds the key comes from the environment (next.config.ts
+// refuses to build without it). `next dev` falls back to Cloudflare's public
+// test key, which always passes.
+const TURNSTILE_SITE_KEY =
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ??
+  (process.env.NODE_ENV === "development" ? "1x00000000000000000000AA" : "");
+
+type Turnstile = {
+  render(container: HTMLElement, options: Record<string, unknown>): string;
+  reset(widgetId: string): void;
+  remove(widgetId: string): void;
+};
+
+declare global {
+  interface Window {
+    turnstile?: Turnstile;
+  }
+}
+
+let turnstileLoading: Promise<Turnstile> | null = null;
+
+/** Loads Turnstile once per page, and only once a form is on screen: pages
+ *  without the form never contact challenges.cloudflare.com. */
+function loadTurnstile(): Promise<Turnstile> {
+  if (window.turnstile) return Promise.resolve(window.turnstile);
+  turnstileLoading ??= new Promise((resolve, reject) => {
+    const script = document.createElement("script");
+    script.src = TURNSTILE_SCRIPT;
+    script.async = true;
+    script.onload = () =>
+      window.turnstile ? resolve(window.turnstile) : reject(new Error("turnstile"));
+    script.onerror = () => {
+      // Let the next form try again, e.g. after a network hiccup.
+      turnstileLoading = null;
+      reject(new Error("turnstile"));
+    };
+    document.head.appendChild(script);
+  });
+  return turnstileLoading;
+}
+
 export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
   const t = useTranslations("contactForm");
   const locale = useLocale();
@@ -21,30 +65,67 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [tipo, setTipo] = useState<string>("");
-  const token = useRef("");
-
-  // Signed timestamp issued when the form appears: the API uses it to reject
-  // submissions that come back faster than a human could fill the fields.
-  async function refreshToken() {
-    try {
-      const res = await fetch("/api/contact", { cache: "no-store" });
-      const json = await res.json();
-      token.current = String(json.token ?? "");
-    } catch {
-      token.current = "";
-    }
-  }
+  // Whether Turnstile is showing its checkbox, which then needs room above
+  // the submit button. Most visitors never see it.
+  const [challengeShown, setChallengeShown] = useState(false);
+  // Turnstile could not run (script blocked, network down, widget error):
+  // waiting will not help, so a submit points to the email address instead.
+  const [turnstileFailed, setTurnstileFailed] = useState(false);
+  const widgetRef = useRef<HTMLDivElement>(null);
+  const widgetId = useRef<string | null>(null);
+  // Proof from Turnstile that a human is filling the form; the Worker checks
+  // it with Cloudflare before sending any email. Single use, valid 5 minutes:
+  // the widget renews it on its own when it expires.
+  const turnstileToken = useRef("");
 
   useEffect(() => {
-    refreshToken();
-    // Keep it well inside the server's max age so a long-open tab never expires.
-    const id = setInterval(refreshToken, 6 * 60 * 60 * 1000);
-    return () => clearInterval(id);
-  }, []);
+    if (submitted) return;
+    let cancelled = false;
+    loadTurnstile()
+      .then((turnstile) => {
+        if (cancelled || !widgetRef.current) return;
+        widgetId.current = turnstile.render(widgetRef.current, {
+          sitekey: TURNSTILE_SITE_KEY,
+          language: locale,
+          theme: "light",
+          // Invisible unless Cloudflare needs the visitor to click.
+          appearance: "interaction-only",
+          callback: (token: string) => {
+            turnstileToken.current = token;
+            setTurnstileFailed(false);
+          },
+          "expired-callback": () => {
+            turnstileToken.current = "";
+          },
+          "error-callback": () => {
+            turnstileToken.current = "";
+            setTurnstileFailed(true);
+          },
+          "before-interactive-callback": () => setChallengeShown(true),
+        });
+      })
+      .catch(() => {
+        if (!cancelled) setTurnstileFailed(true);
+      });
+    return () => {
+      cancelled = true;
+      if (widgetId.current) window.turnstile?.remove(widgetId.current);
+      widgetId.current = null;
+      turnstileToken.current = "";
+    };
+  }, [locale, submitted]);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (sending) return;
+
+    const token = turnstileToken.current;
+    if (!token) {
+      // Still verifying: retrying in a moment works. Failed for good: only
+      // the email address in errorGeneric does.
+      setError(turnstileFailed ? t("errorGeneric") : t("errorCaptcha"));
+      return;
+    }
 
     const data = new FormData(e.currentTarget);
     const payload = {
@@ -61,7 +142,7 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...payload, token: token.current, locale }),
+        body: JSON.stringify({ ...payload, turnstileToken: token, locale }),
       });
       if (!res.ok) {
         const reason = await res
@@ -75,12 +156,15 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
     } catch (err) {
       const reason = err instanceof Error ? err.message : "";
       setError(
-        reason === "too-fast"
-          ? t("errorTooFast")
+        reason === "captcha"
+          ? t("errorCaptcha")
           : reason === "rate-limited"
             ? t("errorRateLimited")
             : t("errorGeneric"),
       );
+      // The token may have been spent on this attempt: get a fresh one.
+      turnstileToken.current = "";
+      if (widgetId.current) window.turnstile?.reset(widgetId.current);
     } finally {
       setSending(false);
     }
@@ -168,13 +252,17 @@ export default function ContactForm({ onSuccess }: { onSuccess?: () => void }) {
             </p>
           )}
 
-          <button
-            type="submit"
-            disabled={sending}
-            className="inline-flex items-center gap-3 rounded-full bg-[#5a5a5a] text-cream px-8 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            {sending ? t("sending") : t("submit")}
-          </button>
+          <div>
+            {/* Turnstile draws itself here only when it needs a click. */}
+            <div ref={widgetRef} className={challengeShown ? "mb-5" : undefined} />
+            <button
+              type="submit"
+              disabled={sending}
+              className="inline-flex items-center gap-3 rounded-full bg-[#5a5a5a] text-cream px-8 py-3.5 text-sm tracking-[0.08em] uppercase hover:bg-[#515151] transition-colors duration-300 disabled:opacity-60 disabled:cursor-not-allowed"
+            >
+              {sending ? t("sending") : t("submit")}
+            </button>
+          </div>
 
           {/* Art. 13 GDPR: the notice has to be reachable where the data is collected. */}
           <p className="text-xs text-stone leading-relaxed">

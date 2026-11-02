@@ -32,7 +32,7 @@
     "sending": "Wird gesendet…",
     "submit": "Anfrage senden",
     "privacyNotice": "Mit dem Absenden des Formulars bestätigen Sie, die <link>Datenschutzerklärung</link> gelesen zu haben. Wir verwenden Ihre Daten nur, um Ihre Anfrage zu beantworten.",
-    "errorTooFast": "Zu schnell gesendet. Bitte warten Sie einen Moment und versuchen Sie es erneut.",
+    "errorCaptcha": "Die Spam-Prüfung ist noch nicht abgeschlossen. Bitte warten Sie einige Sekunden und versuchen Sie es erneut.",
     "errorRateLimited": "Sie haben zu viele Anfragen gesendet. Bitte versuchen Sie es in einigen Minuten erneut.",
     "errorGeneric": "Senden fehlgeschlagen. Bitte versuchen Sie es erneut oder schreiben Sie uns an info@ultralighthome.it.",
     "successTitle": "Vielen Dank. Wir haben Ihre Anfrage erhalten.",

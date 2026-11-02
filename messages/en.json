@@ -32,7 +32,7 @@
     "sending": "Sending…",
     "submit": "Send enquiry",
     "privacyNotice": "By submitting the form you confirm you have read the <link>privacy notice</link>. We use your details only to respond to your enquiry.",
-    "errorTooFast": "Sent too quickly. Please wait a moment and try again.",
+    "errorCaptcha": "The spam check has not finished. Please wait a few seconds and try again.",
     "errorRateLimited": "You have sent too many requests. Please try again in a few minutes.",
     "errorGeneric": "Sending failed. Please try again or write to us at info@ultralighthome.it.",
     "successTitle": "Thank you. We have received your enquiry.",

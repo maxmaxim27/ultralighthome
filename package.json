@@ -4,17 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build && node scripts/localize-export.mjs",
     "lint": "eslint",
     "check:i18n": "node scripts/check-i18n.mjs",
     "check:links": "node scripts/check-links.mjs",
     "check:icu": "node scripts/check-icu.mjs",
-    "build:cf": "opennextjs-cloudflare build",
-    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
-    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-    "upload": "opennextjs-cloudflare build && opennextjs-cloudflare upload",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+    "preview": "NEXT_PUBLIC_TURNSTILE_SITE_KEY=1x00000000000000000000AA npm run build && wrangler dev --local-protocol https",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -26,11 +22,9 @@
     "next": "^16.2.12",
     "next-intl": "^4.14.1",
     "react": "19.2.4",
-    "react-dom": "19.2.4",
-    "resend": "^6.16.0"
+    "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "^1.20.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

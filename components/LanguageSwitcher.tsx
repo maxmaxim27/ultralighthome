@@ -28,10 +28,9 @@ export default function LanguageSwitcher({ variant, onSelect }: Props) {
   const optionRefs = useRef<Array<HTMLButtonElement | null>>([]);
 
   function choose(locale: Locale) {
-    // Non è ridondante con quanto scrive il middleware di next-intl: il
-    // redirect di "/" in middleware.ts non imposta mai il cookie, quindi
-    // passare a italiano (il cui URL non ha prefisso) non persisterebbe
-    // senza questa scrittura lato client.
+    // Il cookie lo legge worker/home.ts per scegliere la lingua di "/": senza
+    // questa scrittura lato client, passare a italiano (il cui URL non ha
+    // prefisso) non persisterebbe.
     rememberLocale(locale);
     setOpen(false);
     onSelect?.();
