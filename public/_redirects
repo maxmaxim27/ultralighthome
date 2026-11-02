@@ -1,0 +1,15 @@
+# Scritti a mano. scripts/localize-export.mjs ci accoda i redirect generati.
+
+# Immobili tolti dal sito: 301 verso l'elenco, così i link già condivisi o
+# indicizzati non finiscono su un 404. Una riga per lingua, con e senza "/"
+# finale; /it/... passa prima dalla regola con splat e poi arriva qui.
+/immobili/dimora-romana /immobili 301
+/immobili/dimora-romana/ /immobili 301
+/en/properties/dimora-romana /en/properties 301
+/en/properties/dimora-romana/ /en/properties 301
+/en/immobili/dimora-romana /en/properties 301
+/en/immobili/dimora-romana/ /en/properties 301
+/de/immobilien/dimora-romana /de/immobilien 301
+/de/immobilien/dimora-romana/ /de/immobilien 301
+/de/immobili/dimora-romana /de/immobilien 301
+/de/immobili/dimora-romana/ /de/immobilien 301
