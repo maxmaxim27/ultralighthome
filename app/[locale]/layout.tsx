@@ -35,14 +35,14 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meta" });
 
-  const siteTitle = `${SITE.name} — ${t("siteTagline")}`;
+  const siteTitle = SITE.name;
   const description = t("description");
   const images = [
     {
       url: localeUrl("/opengraph-image", locale),
       width: 1200,
       height: 630,
-      alt: t("ogAlt"),
+      alt: SITE.name,
     },
   ];
 

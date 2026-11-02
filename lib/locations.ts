@@ -77,21 +77,6 @@ export const locations: Location[] = [
     heroImage: "/properties/verona-green-heaven/01.jpeg",
   },
   {
-    slug: "roma",
-    name: "Roma",
-    region: {
-      it: "Lazio",
-      en: "Lazio",
-      de: "Latium",
-    },
-    description: {
-      it: "Nella capitale, ben collegata con la metro.",
-      en: "In the capital, well connected by the metro.",
-      de: "In der Hauptstadt, gut an die Metro angebunden.",
-    },
-    heroImage: "/properties/dimora-romana/01.jpg",
-  },
-  {
     slug: "padova",
     name: "Padova",
     region: {
@@ -179,7 +164,7 @@ export const locationGroups: LocationGroup[] = [
   {
     key: "altro",
     label: { it: "Altrove", en: "Elsewhere", de: "Weitere Orte" },
-    heroImage: "/properties/dimora-romana/01.jpg",
-    locationSlugs: ["roma", "padova", "castelfranco-veneto", "mestre"],
+    heroImage: "/properties/centrum-living/01.jpeg",
+    locationSlugs: ["padova", "castelfranco-veneto", "mestre"],
   },
 ];

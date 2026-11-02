@@ -414,16 +414,12 @@
     }
   },
   "meta": {
-    "siteTagline": "Immobili curati, ben gestiti",
-    "description": "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda, Roma e altro. Case curate, ben gestite, pronte da prenotare.",
-    "keywords": "affitti brevi, case vacanza Italia, appartamenti Dolomiti, appartamenti Verona, appartamenti Roma, villa Costa Smeralda, soggiorni brevi, Plan de Corones, Val Pusteria, Porto Cervo",
-    "ogAlt": "Ultralight Home — Immobili curati, ben gestiti",
-    "ogLine1": "Immobili curati,",
-    "ogLine2": "ben gestiti.",
-    "ogPlaces": "Dolomiti · Verona · Costa Smeralda · Roma",
+    "description": "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda e altro. Case curate, ben gestite, pronte da prenotare.",
+    "keywords": "affitti brevi, case vacanza Italia, appartamenti Dolomiti, appartamenti Verona, villa Costa Smeralda, soggiorni brevi, Plan de Corones, Val Pusteria, Porto Cervo",
+    "ogPlaces": "Dolomiti · Verona · Costa Smeralda",
     "home": {
       "title": "Case e appartamenti per soggiorni brevi in Italia",
-      "description": "Immobili curati da affittare per qualche giorno: Dolomiti, Verona, Costa Smeralda, Roma e altro. Selezione, gestione e ospitalità con la stessa attenzione."
+      "description": "Immobili curati da affittare per qualche giorno: Dolomiti, Verona, Costa Smeralda e altro. Selezione, gestione e ospitalità con la stessa attenzione."
     },
     "properties": {
       "title": "Immobili in affitto breve: Dolomiti, Verona, Costa Smeralda",

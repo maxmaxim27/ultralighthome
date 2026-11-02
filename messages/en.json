@@ -414,16 +414,12 @@
     }
   },
   "meta": {
-    "siteTagline": "Properties looked after, well managed",
-    "description": "Selected properties to rent for short stays: the Dolomites, Verona, the Costa Smeralda, Rome and more. Homes looked after, well managed, ready to book.",
-    "keywords": "short lets Italy, holiday apartments Dolomites, holiday rentals Verona, apartments Rome, villa Costa Smeralda, short stays Italy, Plan de Corones, Val Pusteria, Porto Cervo, self-catering Italy",
-    "ogAlt": "Ultralight Home — Properties looked after, well managed",
-    "ogLine1": "Properties looked after,",
-    "ogLine2": "well managed.",
-    "ogPlaces": "Dolomites · Verona · Costa Smeralda · Rome",
+    "description": "Selected properties to rent for short stays: the Dolomites, Verona, the Costa Smeralda and more. Homes looked after, well managed, ready to book.",
+    "keywords": "short lets Italy, holiday apartments Dolomites, holiday rentals Verona, villa Costa Smeralda, short stays Italy, Plan de Corones, Val Pusteria, Porto Cervo, self-catering Italy",
+    "ogPlaces": "Dolomites · Verona · Costa Smeralda",
     "home": {
       "title": "Houses and apartments for short stays in Italy",
-      "description": "Properties looked after, to rent for a few days: the Dolomites, Verona, the Costa Smeralda, Rome and more. Selection, management and hospitality with the same care."
+      "description": "Properties looked after, to rent for a few days: the Dolomites, Verona, the Costa Smeralda and more. Selection, management and hospitality with the same care."
     },
     "properties": {
       "title": "Short-let properties: Dolomites, Verona, Costa Smeralda",

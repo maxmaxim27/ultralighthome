@@ -414,16 +414,12 @@
     }
   },
   "meta": {
-    "siteTagline": "Gepflegte Immobilien, gut verwaltet",
-    "description": "Ausgewählte Ferienwohnungen für kurze Aufenthalte: Kronplatz und Dolomiten, Verona, Costa Smeralda, Rom und mehr. Gepflegt, gut verwaltet, sofort buchbar.",
-    "keywords": "Ferienwohnung Kronplatz, Ferienwohnung Bruneck, Ferienwohnung Olang, Unterkunft Pustertal, Ferienwohnung Dolomiten, Ferienwohnung Südtirol, Ferienhaus Verona, Ferienwohnung Rom, Villa Costa Smeralda, Ferienwohnung Italien",
-    "ogAlt": "Ultralight Home — Gepflegte Immobilien, gut verwaltet",
-    "ogLine1": "Gepflegte Immobilien,",
-    "ogLine2": "gut verwaltet.",
-    "ogPlaces": "Dolomiten · Verona · Costa Smeralda · Rom",
+    "description": "Ausgewählte Ferienwohnungen für kurze Aufenthalte: Kronplatz und Dolomiten, Verona, Costa Smeralda und mehr. Gepflegt, gut verwaltet, sofort buchbar.",
+    "keywords": "Ferienwohnung Kronplatz, Ferienwohnung Bruneck, Ferienwohnung Olang, Unterkunft Pustertal, Ferienwohnung Dolomiten, Ferienwohnung Südtirol, Ferienhaus Verona, Villa Costa Smeralda, Ferienwohnung Italien",
+    "ogPlaces": "Dolomiten · Verona · Costa Smeralda",
     "home": {
       "title": "Ferienwohnungen und Ferienhäuser in Italien",
-      "description": "Gepflegte Immobilien für ein paar Tage: Kronplatz und Dolomiten, Verona, Costa Smeralda, Rom und mehr. Auswahl, Verwaltung und Gastfreundschaft mit derselben Sorgfalt."
+      "description": "Gepflegte Immobilien für ein paar Tage: Kronplatz und Dolomiten, Verona, Costa Smeralda und mehr. Auswahl, Verwaltung und Gastfreundschaft mit derselben Sorgfalt."
     },
     "properties": {
       "title": "Ferienwohnungen zur Kurzzeitmiete: Dolomiten, Verona, Costa Smeralda",

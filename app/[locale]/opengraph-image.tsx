@@ -42,25 +42,11 @@ export default async function OgImage({
           fontFamily: "serif",
         }}
       >
-        {/* Marchio + wordmark impilati: da solo dice già il nome del sito. È
-            già nel grigio del brand (#A2AAAD): nessun filtro. */}
-        <img src={OG_LOGO} width={240} height={204} alt="" />
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            marginTop: 40,
-          }}
-        >
-          <div style={{ fontSize: 64, lineHeight: 1.05, fontWeight: 300 }}>
-            {t("ogLine1")}
-          </div>
-          <div style={{ fontSize: 64, lineHeight: 1.05, fontWeight: 300 }}>
-            {t("ogLine2")}
-          </div>
-        </div>
-        <div style={{ marginTop: 32, fontSize: 26, color: "#7E8A90" }}>
+        {/* Marchio + wordmark impilati: da solo dice già il nome del sito, e
+            per scelta del cliente non lo accompagna nessuno slogan. È già nel
+            grigio del brand (#A2AAAD): nessun filtro. */}
+        <img src={OG_LOGO} width={360} height={306} alt="" />
+        <div style={{ marginTop: 48, fontSize: 28, color: "#7E8A90" }}>
           {t("ogPlaces")}
         </div>
       </div>

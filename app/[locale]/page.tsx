@@ -27,10 +27,10 @@ export async function generateMetadata({
     // dello stesso segmento, quindi il brand va aggiunto qui a mano.
     title: `${t("home.title")} — ${SITE.name}`,
     description: t("home.description"),
-    ogTitle: `${SITE.name} — ${t("siteTagline")}`,
+    ogTitle: SITE.name,
     image: {
       url: localeUrl("/opengraph-image", locale),
-      alt: t("ogAlt"),
+      alt: SITE.name,
     },
   });
 }

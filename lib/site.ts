@@ -9,7 +9,7 @@ export const SITE = {
   // La lingua non vive qui: og:locale lo deriva dal locale della richiesta in
   // lib/seo.ts, e il sito parla tre lingue.
   description:
-    "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda, Roma e altro. Case curate, ben gestite, pronte da prenotare.",
+    "Immobili selezionati da affittare per soggiorni brevi: Dolomiti, Verona, Costa Smeralda e altro. Case curate, ben gestite, pronte da prenotare.",
   // Keep in sync with components/Footer.tsx + components/WhatsAppButton.tsx
   email: "info@ultralighthome.it",
   phone: "+393792997428",
