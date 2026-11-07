@@ -268,7 +268,13 @@
       "coFounder": "Co-Founder",
       "propertyManager": "Property Manager",
       "interiorDesigner": "Interior Designer",
-      "photographer": "Photographer"
+      "photographer": "Photographer",
+      "salesAssistant": "Sales Assistant",
+      "webOperations": "Web Development & Operations",
+      "marketingProjectManager": "Marketing Project Manager",
+      "businessStrategist": "Business Strategist",
+      "businessConsultant": "Business Consultant",
+      "marketingSpecialist": "Marketing Specialist"
     },
     "alt": {
       "costaSmeralda": "Villa on the Costa Smeralda"

@@ -29,6 +29,16 @@ const team = [
     img: "/about/alberto-disaro.JPG",
   },
   {
+    name: "Alessandro Marangon",
+    roles: ["salesAssistant"],
+    img: "/about/alessandro-marangon.jpg",
+  },
+  {
+    name: "Marco Massimi",
+    roles: ["webOperations"],
+    img: "/about/marco-massimi.jpg",
+  },
+  {
     name: "IGW Studio",
     roles: ["interiorDesigner"],
     img: "/about/igw-studio.jpeg",
@@ -37,6 +47,37 @@ const team = [
     name: "Pamela Zamberlan",
     roles: ["photographer"],
     img: "/about/fotografa-pamela.jpg",
+  },
+  // Team marketing: per loro va il logo dell'agenzia al posto della foto.
+  {
+    name: "Jessica Bloisi",
+    roles: ["salesAssistant"],
+    img: "/about/marketing-team.png",
+    logo: true,
+  },
+  {
+    name: "Alice Stochino",
+    roles: ["marketingProjectManager"],
+    img: "/about/marketing-team.png",
+    logo: true,
+  },
+  {
+    name: "Alessio Di Mauro",
+    roles: ["businessStrategist"],
+    img: "/about/marketing-team.png",
+    logo: true,
+  },
+  {
+    name: "Luca Riccardi",
+    roles: ["businessConsultant"],
+    img: "/about/marketing-team.png",
+    logo: true,
+  },
+  {
+    name: "Marika Poggi",
+    roles: ["marketingSpecialist"],
+    img: "/about/marketing-team.png",
+    logo: true,
   },
 ] as const;
 
@@ -171,18 +212,37 @@ export default async function AboutPage({
               {t("team.title")}
             </h2>
           </Reveal>
-          <div className="mt-20 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-12">
+          {/* Flex invece di grid: le card dell'ultima riga incomplete
+              (2 su desktop, 1 su mobile) restano centrate. Le larghezze
+              tolgono i gap per avere 2 colonne su mobile e 3 su desktop. */}
+          <div className="mt-20 flex flex-wrap justify-center gap-x-6 lg:gap-x-10 gap-y-12 lg:gap-y-16">
             {team.map((m, i) => (
-              <Reveal key={m.name} delay={i * 0.08}>
-                <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone border border-stone/5 shadow-[0_32px_70px_-16px_rgba(0,0,0,0.3)]">
-                  <Image
-                    src={m.img}
-                    alt={m.name}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 25vw"
-                    className="object-cover grayscale"
-                  />
-                </div>
+              <Reveal
+                key={m.name}
+                delay={(i % 3) * 0.08}
+                className="w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-5rem)/3)]"
+              >
+                {"logo" in m ? (
+                  <div className="relative mx-auto aspect-square w-[72%] rounded-full shadow-[0_32px_70px_-16px_rgba(0,0,0,0.3)]">
+                    <Image
+                      src={m.img}
+                      alt={m.name}
+                      fill
+                      sizes="(max-width: 1024px) 36vw, 24vw"
+                      className="object-contain grayscale"
+                    />
+                  </div>
+                ) : (
+                  <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-bone border border-stone/5 shadow-[0_32px_70px_-16px_rgba(0,0,0,0.3)]">
+                    <Image
+                      src={m.img}
+                      alt={m.name}
+                      fill
+                      sizes="(max-width: 1024px) 50vw, 33vw"
+                      className="object-cover grayscale"
+                    />
+                  </div>
+                )}
                 <h3 className="font-display mt-6 text-xl md:text-2xl font-light tracking-[-0.01em] text-center">
                   {m.name.split(" ").map((word, idx, arr) => (
                     <span key={idx}>
